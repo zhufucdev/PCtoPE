@@ -135,7 +135,11 @@ public class ConversionActivity extends AppCompatActivity {
             else if(iconPC.exists()&&texturePC.exists()){
                 Log.d("status","Icon for PC exists.");
                 Log.d("status","Textures for PC exist.");
-                onPcDecisions(root);
+                try {
+                    onPcDecisions(root);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 return true;
             }
         }
@@ -163,7 +167,6 @@ public class ConversionActivity extends AppCompatActivity {
                 int bytesum = 0, byteread = 0;
                 while ((byteread = inputStream.read(buffer))!=-1){
                     bytesum += byteread;
-                    Log.d("files","[Copying icon] byte = "+bytesum);
                     outputStream.write(buffer, 0, byteread);
                 }
                 inputStream.close();
@@ -218,7 +221,7 @@ public class ConversionActivity extends AppCompatActivity {
         return filelist;
     }
 
-    public void onPcDecisions(File rootPath) {
+    public void onPcDecisions(File rootPath) throws FileNotFoundException {
         File icon = new File(rootPath + "/pack.png");
         File iconPE = new File(rootPath + "/pack_icon.png");
         icon.renameTo(iconPE);//Rename icon to PE
@@ -278,9 +281,20 @@ public class ConversionActivity extends AppCompatActivity {
 
         //Write JSONs
         Resources raw = getResources();
-        InputStream flipbook = raw.openRawResource(R.raw.flipbook_textures),
-                item = raw.openRawResource(R.raw.item_texture),terrain = raw.openRawResource(R.raw.terrain_texture);
-        byte[] bflipbook = new byte[3346],bitem = new byte[24356],bterr = new byte[58389];
+        InputStream data[] = {raw.openRawResource(R.raw.flipbook_textures),
+            raw.openRawResource(R.raw.item_texture),raw.openRawResource(R.raw.terrain_texture)};
+        byte[][] bt = {new byte[3346],new byte[24356],new byte[58389]};
+        FileOutputStream pathes[] = {new FileOutputStream(path+"/textures/flipbook_textures.json"),new FileOutputStream(path+"/textures/item_texture.json")
+                                ,new FileOutputStream(path+"/textures/terrain_texture.json")};
+        for(int i=0;i<pathes.length;i++)
+            try {
+                while (data[i].read(bt[i])>0){
+                    pathes[i].write(bt[i]);
+                }
+            } catch (IOException e) {
+                MakeErrorDialog(e.toString());
+                e.printStackTrace();
+            }
     }
     public void onPEDecisions(File rootPath){
 
