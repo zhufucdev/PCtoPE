@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PCtoPE</string>
+    <string name="error">错误...</string>
+    <string name="error_dialog">哎呀! 我们解压时遇到了一些问题:</string>
+    <string name="close">关闭</string>
+    <string name="copy">复制</string>
+    <string name="not_pack">这不是PE或PC的材质包</string>
+    <string name="deleting">删除中...</string>
+    <string name="completed">完成!</string>
+    <string name="failed">失败...</string>
+    <string name="deleted_completed">删除完成!</string>
+    <string name="deteted_failed">删除失败...</string>
+    <string name="preparing_for_firstboot">正在准备首次启动</string>
+    <string name="permissions_request">你需要给予应用权限</string>
+    <string name="ok">好的</string>
+    <string name="choosing_alert">请选择一个zip文件</string>
+    <string name="choosing_none">你什么都没选</string>
+    <string name="guide_welcome">欢迎来到转化向导</string>
+    <string name="label_guide">转化向导</string>
+    <string name="project_name">项目名称</string>
+    <string name="project_description">描述</string>
+    <string name="project_unnamed">未命名</string>
+    <string name="project_icon_edit">编辑</string>
+    <string name="project_icon_open">打开</string>
+    <string name="project_icon_title">图标</string>
+    <string name="following_title">更多参数</string>
+    <string name="unzipping">正在解压缩...</string>
+    <string name="conversionact_edit_dialog_title">选择一项以继续</string>
+    <string name="cover">使用一个图片文件覆盖</string>
+    <string name="edit_converactdialog">调用一个已安装的应用程序编辑</string>
+</resources>
