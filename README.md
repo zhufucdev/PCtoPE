@@ -1,7 +1,7 @@
 #PCtoPE
 
 English:
-This Android Studio project is named 'PCtoPE' by zhufucomcom.It will be able to convert texture packs of Minecraft Java Edition into Pocket Edition after being developed.
+This Android Studio project is named 'PCtoPE' by zhufucomcom.It will be able to convert texture packs of Minecraft Java Edition into Pocket Edition after having been developed.
 As a new Chinese developer,I'm tring my best to develop although it may take me lots of time.
 
 Chinese:
