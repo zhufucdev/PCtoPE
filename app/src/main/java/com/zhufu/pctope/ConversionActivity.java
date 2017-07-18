@@ -15,8 +15,11 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
+import android.support.annotation.BoolRes;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.view.ScrollingView;
@@ -74,6 +77,7 @@ import javax.xml.transform.Result;
 
 import static com.zhufu.pctope.R.id.cards;
 import static com.zhufu.pctope.R.id.error_layout;
+import static com.zhufu.pctope.R.id.finish;
 import static com.zhufu.pctope.R.id.text;
 import static com.zhufu.pctope.R.id.unzipping_tip;
 
@@ -103,43 +107,27 @@ public class ConversionActivity extends AppCompatActivity {
         }).show();
     }
 
+    //==>define
+    String path,packname="Unnamed",description;
+    boolean isPreFinished = false;
 
-    String path;
-
-    /**
-     *
-     * @param packRoot
-     * @return -1 Unknown
-     * @return 0 PE
-     * @return 1 PC
-     * @return 2 Unknown but can be conversed
-     */
-    public boolean doVersionDecisions(String packRoot){
-        File root = new File(packRoot);
+    public boolean doVersionDecisions(){
+        File root = new File(path);
         if(root.exists()){
             File iconPE = new File(root+"/pack_icon.png");
             File iconPC = new File(root+"/pack.png");
             File texturePE = new File(root+"/textures");
             File texturePC = new File(root+"/assets/minecraft/textures");
-            Log.d("status","Icon for PE may be at "+iconPE.toString());
-            Log.d("status","Icon for PC may be at "+iconPC.toString());
-            Log.d("status","Textures for PE may be at "+texturePE.toString());
-            Log.d("status","Textures for PC may be at "+texturePC.toString());
             if(iconPE.exists()&&texturePE.exists()){
                 Log.d("status","Icon for PE exists.");
                 Log.d("status","Textures for PE exist.");
-                onPEDecisions(root);
+                onPEDecisions();
                 return true;
-
             }
             else if(iconPC.exists()&&texturePC.exists()){
                 Log.d("status","Icon for PC exists.");
                 Log.d("status","Textures for PC exist.");
-                try {
-                    onPcDecisions(root);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+                onPcDecisions();
                 return true;
             }
         }
@@ -221,24 +209,24 @@ public class ConversionActivity extends AppCompatActivity {
         return filelist;
     }
 
-    public void onPcDecisions(File rootPath) throws FileNotFoundException {
-        File icon = new File(rootPath + "/pack.png");
-        File iconPE = new File(rootPath + "/pack_icon.png");
+    public void onPcDecisions() {
+        File icon = new File(path + "/pack.png");
+        File iconPE = new File(path + "/pack_icon.png");
         icon.renameTo(iconPE);//Rename icon to PE
-        File texture = new File(rootPath + "/assets/minecraft/textures");
-        File texturePE = new File(rootPath + "/textures");
+        File texture = new File(path + "/assets/minecraft/textures");
+        File texturePE = new File(path + "/textures");
         texture.renameTo(texturePE);//Move textures folder
 
         //Delete something that we don't need
-        new File(rootPath+"/pack.mcmeta").delete();
-        DeleteFolder(rootPath+"/assets");
+        new File(path+"/pack.mcmeta").delete();
+        DeleteFolder(path+"/assets");
 
-        ArrayList<String> files = ListFiles(rootPath);
+        ArrayList<String> files = ListFiles(new File(path));
         int fileslength = files.size()-1;
         Log.d("files", "Now we have " + fileslength + " files...Writing to textures_list.json...");
         Log.d("files","The first(0) one is "+files.get(0));
         Log.d("files","The final("+fileslength+") one is "+files.get(fileslength));
-        File textures_list = new File(rootPath + "/textures/textures_list.json");
+        File textures_list = new File(path + "/textures/textures_list.json");
         if (fileslength != 0) {
             FileOutputStream out = null;
             try {
@@ -278,28 +266,42 @@ public class ConversionActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        
+    }
 
-        //Write JSONs
+
+    public void onPEDecisions(){
+
+
+    }
+    
+    public void onJSONWriting() throws FileNotFoundException {
+        //==>define
         Resources raw = getResources();
         InputStream data[] = {raw.openRawResource(R.raw.flipbook_textures),
-            raw.openRawResource(R.raw.item_texture),raw.openRawResource(R.raw.terrain_texture)};
-        byte[][] bt = {new byte[3346],new byte[24356],new byte[58389]};
+                raw.openRawResource(R.raw.item_texture),raw.openRawResource(R.raw.terrain_texture)};
+        byte[] bt = new byte[1444];
         FileOutputStream pathes[] = {new FileOutputStream(path+"/textures/flipbook_textures.json"),new FileOutputStream(path+"/textures/item_texture.json")
-                                ,new FileOutputStream(path+"/textures/terrain_texture.json")};
+                ,new FileOutputStream(path+"/textures/terrain_texture.json")};
+        String textBefore = "{"+System.getProperty("line.separator")+"\"resource_pack_name\":"+"\""+packname+"\"";
+        
         for(int i=0;i<pathes.length;i++)
             try {
-                while (data[i].read(bt[i])>0){
-                    pathes[i].write(bt[i]);
+                if(i==2){
+                    pathes[i].write(textBefore.getBytes());
                 }
+                int bytesum = 0, byteread = 0;
+                while ((byteread=data[i].read(bt))!=-1){
+                    bytesum += byteread;
+                    pathes[i].write(bt, 0, byteread);
+                }
+                pathes[i].close();
             } catch (IOException e) {
                 MakeErrorDialog(e.toString());
                 e.printStackTrace();
             }
     }
-    public void onPEDecisions(File rootPath){
-
-
-    }
+    
     public static void unzip(File zipFile, String dest, String passwd) throws ZipException, net.lingala.zip4j.exception.ZipException {
         net.lingala.zip4j.core.ZipFile zFile = new net.lingala.zip4j.core.ZipFile(zipFile); // 首先创建ZipFile指向磁盘上的.zip文件
         zFile.setFileNameCharset("GBK");       // 设置文件名编码，在GBK系统中需要设置
@@ -419,10 +421,12 @@ public class ConversionActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if(charSequence!=null){
+                    packname = charSequence.toString();
                     collapsingbar.setTitle(charSequence.toString());
                 }
                 else{
                     String text = getApplicationContext().getResources().getString(R.string.project_unnamed);
+                    packname = text;
                     collapsingbar.setTitle(text);
                 }
 
@@ -432,24 +436,61 @@ public class ConversionActivity extends AppCompatActivity {
 
             }
         });
-        //set appbar change listener
-        //unable
-        //set file outof zip
+
+        //for FAB
+        final FloatingActionButton button_finish = (FloatingActionButton)findViewById(R.id.finish);
+        final FloatingActionButton button_finish_bottom = (FloatingActionButton)findViewById(R.id.finishBottom);
+        button_finish_bottom.hide();
+        AppBarLayout appBarLayout = (AppBarLayout)findViewById(R.id.appBar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (button_finish.isShown()) button_finish_bottom.hide();
+                else button_finish_bottom.show();
+                if (Math.abs(verticalOffset)>=appBarLayout.getTotalScrollRange()-toolbar.getScrollBarSize()) button_finish_bottom.show();
+            }
+        });
+
         Intent intent=getIntent();
         final String file = intent.getStringExtra("filePath");
 
-        //Unzip domain
+        //do main
         class UnzippingTask extends AsyncTask<Void, Integer ,Boolean>{
             //==>define
             final LinearLayout unzipping_tip = (LinearLayout) findViewById(R.id.unzipping_tip);
             final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_layout);
             final LinearLayout error_layout = (LinearLayout)findViewById(R.id.error_layout);
+
+            protected void doFinishButtonDoes(View v){
+                if (isPreFinished){
+                    try {
+                        onJSONWriting();
+                    } catch (FileNotFoundException e) {
+                        MakeErrorDialog(e.toString());
+                        e.printStackTrace();
+                    }
+                }
+                else
+                    Snackbar.make(v,R.string.unclickable_unzipping,Snackbar.LENGTH_LONG).show();
+            }
             @Override
             protected void onPreExecute(){
                 cards.setVisibility(View.GONE);
                 unzipping_tip.setVisibility(View.VISIBLE);
                 Context context=getApplicationContext();
                 path = context.getExternalCacheDir().getPath().toString();
+                button_finish.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        doFinishButtonDoes(v);
+                    }
+                });
+                button_finish_bottom.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        doFinishButtonDoes(v);
+                    }
+                });
             }
 
             @Override
@@ -481,7 +522,7 @@ public class ConversionActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(Boolean result){
                 if(result==true){
-                    if(doVersionDecisions(path)){
+                    if(doVersionDecisions()){
                         doOnSuccesses();
                     }
                     else {
@@ -526,6 +567,9 @@ public class ConversionActivity extends AppCompatActivity {
         unzipping_tip.setVisibility(View.GONE);
         error_layout.setVisibility(View.GONE);
         LinearLayout cards_layout = (LinearLayout) findViewById(R.id.cards_layout);
+
+        isPreFinished = true;
+
         Animation animation = AnimationUtils.loadAnimation(ConversionActivity.this, R.anim.cards_show);
         cards.startAnimation(animation);
         //Load icon

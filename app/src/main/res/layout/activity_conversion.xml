@@ -5,11 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pctope.zhufu.pctope.ConversionActivity">
+    tools:context="com.zhufu.pctope.ConversionActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="250dp"
+        android:id="@+id/appBar">
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/collapsing_bar"
@@ -130,12 +131,24 @@
                 <include layout="@layout/card_icon" />
 
             </LinearLayout>
-
-
-
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finish"
+        android:src="@drawable/chevron_right"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_anchor="@id/appBar"
+        app:layout_anchorGravity="bottom|end" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/finishBottom"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/chevron_right"/>
 
 </android.support.design.widget.CoordinatorLayout>
-

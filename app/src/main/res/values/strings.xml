@@ -28,4 +28,5 @@
     <string name="conversionact_edit_dialog_title">Select an item to continue...</string>
     <string name="cover">Use a image file to overwrite it.</string>
     <string name="edit_converactdialog">Transfer an installed application to edit.</string>
+    <string name="unclickable_unzipping">You can\'t continue while unzipping.</string>
 </resources>

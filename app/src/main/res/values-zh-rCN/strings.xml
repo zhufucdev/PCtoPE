@@ -29,4 +29,5 @@
     <string name="conversionact_edit_dialog_title">选择一项以继续</string>
     <string name="cover">使用一个图片文件覆盖</string>
     <string name="edit_converactdialog">调用一个已安装的应用程序编辑</string>
+    <string name="unclickable_unzipping">你不能在解压时继续。</string>
 </resources>
