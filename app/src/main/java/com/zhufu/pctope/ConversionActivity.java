@@ -2,6 +2,7 @@ package com.zhufu.pctope;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -399,8 +400,8 @@ public class ConversionActivity extends AppCompatActivity {
         //Preload
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversion);
-        TextInputEditText name = (TextInputEditText) findViewById(R.id.pname);
-        TextInputEditText description = (TextInputEditText) findViewById(R.id.pdescription);
+        final TextInputEditText name = (TextInputEditText) findViewById(R.id.pname);
+        final TextInputEditText description = (TextInputEditText) findViewById(R.id.pdescription);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         final CollapsingToolbarLayout collapsingbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_bar);
         //set default title
@@ -463,12 +464,20 @@ public class ConversionActivity extends AppCompatActivity {
 
             protected void doFinishButtonDoes(View v){
                 if (isPreFinished){
+                    ProgressDialog loadingDialog = new ProgressDialog(ConversionActivity.this);
+                    loadingDialog.setTitle(R.string.loading);
+                    loadingDialog.setMessage(getApplicationContext().getString(R.string.do_final_step));
+                    loadingDialog.setCancelable(false);
+                    loadingDialog.show();
+
                     try {
                         onJSONWriting();
                     } catch (FileNotFoundException e) {
                         MakeErrorDialog(e.toString());
                         e.printStackTrace();
                     }
+
+                    //loadingDialog.hide();
                 }
                 else
                     Snackbar.make(v,R.string.unclickable_unzipping,Snackbar.LENGTH_LONG).show();
