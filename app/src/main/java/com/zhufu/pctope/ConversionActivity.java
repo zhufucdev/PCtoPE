@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ClipboardManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -52,6 +53,8 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -67,6 +70,9 @@ import java.nio.BufferUnderflowException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Objects;
+import java.util.Random;
+import java.util.UUID;
 import java.util.zip.CRC32;
 import java.util.zip.CheckedInputStream;
 import java.util.zip.ZipEntry;
@@ -79,11 +85,19 @@ import javax.xml.transform.Result;
 import static com.zhufu.pctope.R.id.cards;
 import static com.zhufu.pctope.R.id.error_layout;
 import static com.zhufu.pctope.R.id.finish;
+import static com.zhufu.pctope.R.id.pdescription;
+import static com.zhufu.pctope.R.id.pname;
 import static com.zhufu.pctope.R.id.text;
 import static com.zhufu.pctope.R.id.unzipping_tip;
 
 
 public class ConversionActivity extends AppCompatActivity {
+
+    public String makeSpace(int i){
+        String spaces="";
+        for (int j=0;j<=i;j++) spaces+=" ";
+        return spaces;
+    }
 
     public void MakeErrorDialog(final String errorString){
         //make up a error dialog
@@ -109,7 +123,7 @@ public class ConversionActivity extends AppCompatActivity {
     }
 
     //==>define
-    String path,packname="Unnamed",description;
+    String path,packname="Unnamed",packdescription;
     boolean isPreFinished = false;
 
     public boolean doVersionDecisions(){
@@ -275,22 +289,95 @@ public class ConversionActivity extends AppCompatActivity {
 
 
     }
+
+    public String doJsonFixing(InputStream data,int SearchFrom){
+        ByteArrayOutputStream bais = new ByteArrayOutputStream();
+        int temp;
+        try {
+            while ((temp=data.read())!=-1){
+                bais.write(temp);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String terrainTxt = bais.toString();
+        ArrayList<String> terrainText = new ArrayList<String>();
+        int j=0;
+
+        for (int i=0;i<terrainTxt.length();i++){
+            if (terrainTxt.charAt(i)=='\n'){
+                String line = terrainTxt.substring(j,i);
+                terrainText.add(line);
+                j=i;
+            }
+        }
+
+        for (int i=SearchFrom;i<terrainText.size();i++) {
+            String str = terrainText.get(i);
+            for (int a=0;a<str.length()-9;a++){
+                if (Objects.equals(str.substring(a, a + 9), "textures/")){
+                    String texturePath;int g;
+                    for (g=a+1;g<str.length();g++){
+                        if (Objects.equals(str.charAt(g),'\"'))
+                            break;
+                    }
+                    texturePath = str.substring(a,g);
+                    File testPath = new File(path+"/"+texturePath+".png");
+                    if (!testPath.exists()){
+                        int x=i,y=i+1,t=0;
+                        Boolean isFound = false;
+                        while (x>=0){
+                            for (t=0;t<terrainText.get(x).length();t++)
+                                if((terrainText.get(x).charAt(t)=='{')){
+                                    isFound = true;
+                                    break;
+                                }
+                            if (isFound) break;
+                            else x--;
+                        }
+                        isFound = false;
+                        while (y<terrainText.size()){
+                            for (t=0;t<terrainText.get(y).length()-1;t++)
+                                if(Objects.equals(terrainText.get(y).charAt(t),'}')){
+                                    isFound = true;
+                                    break;
+                                }
+                            if (isFound) break;
+                            else y++;
+                        }
+
+                        for (int b=0;b<=y-x;b++){
+                            terrainText.remove(x);
+                        }
+                        break;
+                    }
+                    else    break;
+                }
+            }
+        }
+        String FinalText = "";
+        for (int i=0;i<terrainText.size();i++) FinalText+=terrainText.get(i);
+        return FinalText;
+    }
     
-    public void onJSONWriting() throws FileNotFoundException {
+    public void doJSONWriting() throws FileNotFoundException {
         //==>define
+        //for basic information
         Resources raw = getResources();
-        InputStream data[] = {raw.openRawResource(R.raw.flipbook_textures),
-                raw.openRawResource(R.raw.item_texture),raw.openRawResource(R.raw.terrain_texture)};
+        InputStream data[] = {
+                 raw.openRawResource(R.raw.items_client)
+                ,raw.openRawResource(R.raw.blocks)
+                ,raw.openRawResource(R.raw.flipbook_textures)
+                ,raw.openRawResource(R.raw.item_texture)
+                ,raw.openRawResource(R.raw.terrain_texture)};
         byte[] bt = new byte[1444];
-        FileOutputStream pathes[] = {new FileOutputStream(path+"/textures/flipbook_textures.json"),new FileOutputStream(path+"/textures/item_texture.json")
-                ,new FileOutputStream(path+"/textures/terrain_texture.json")};
-        String textBefore = "{"+System.getProperty("line.separator")+"\"resource_pack_name\":"+"\""+packname+"\"";
-        
+        FileOutputStream pathes[] = {
+                 new FileOutputStream(path+"/items_client.json")
+                ,new FileOutputStream(path+"/blocks.json") };
+
         for(int i=0;i<pathes.length;i++)
             try {
-                if(i==2){
-                    pathes[i].write(textBefore.getBytes());
-                }
                 int bytesum = 0, byteread = 0;
                 while ((byteread=data[i].read(bt))!=-1){
                     bytesum += byteread;
@@ -301,6 +388,64 @@ public class ConversionActivity extends AppCompatActivity {
                 MakeErrorDialog(e.toString());
                 e.printStackTrace();
             }
+
+        //for terrain block textures
+        String textBefore = "{"+System.getProperty("line.separator")+makeSpace(4)+"\"resource_pack_name\":"+"\""+packname+"\""+System.getProperty("line.separator");
+        FileOutputStream terrainOut = new FileOutputStream(path+"/textures/terrain_texture.json");
+        try {
+            terrainOut.write((textBefore).getBytes());
+            terrainOut.write(doJsonFixing(data[4],77).getBytes());
+        } catch (IOException e) {
+            MakeErrorDialog(e.toString());
+            e.printStackTrace();
+        }
+
+        //for item texture file
+
+        FileOutputStream itemOut = new FileOutputStream(path+"/textures/item_texture.json");
+        try {
+            itemOut.write(textBefore.getBytes());
+            itemOut.write(doJsonFixing(data[3],5).getBytes());
+        } catch (IOException e1) {
+            MakeErrorDialog(e1.toString());
+            e1.printStackTrace();
+        }
+
+        //for flip book texture
+        FileOutputStream flipOut = new FileOutputStream(path+"/textures/flipbook_textures.json");
+        try {
+            flipOut.write(doJsonFixing(data[2],1).getBytes());
+        } catch (IOException e) {
+            MakeErrorDialog(e.toString());
+            e.printStackTrace();
+        }
+
+        //for manifest file
+        FileOutputStream manifest = new FileOutputStream(path+"/manifest.json");
+        String intro;
+        intro="{"+System.getProperty("line.separator");
+        intro+=makeSpace(2)+"\"format_version\": 1,"+System.getProperty("line.separator");
+        intro+=makeSpace(2)+"\"header\": {"+System.getProperty("line.separator");
+        intro+=makeSpace(4)+"\"description\": \""+packdescription+"\","+System.getProperty("line.separator");
+        intro+=makeSpace(4)+"\"name\": \""+packname+"\","+System.getProperty("line.separator");
+        String uuid = new UUID(12,4).randomUUID().toString();
+        intro+=makeSpace(4)+"\"uuid\": \""+uuid+"\","+System.getProperty("line.separator");
+        intro+=makeSpace(4)+"\"version\": [0, 0, 1]"+System.getProperty("line.separator");
+        intro+=makeSpace(2)+"},"+System.getProperty("line.separator");
+        intro+=makeSpace(2)+"\"modules\": ["+System.getProperty("line.separator");
+        intro+=makeSpace(4)+"{"+System.getProperty("line.separator");
+        intro+=makeSpace(6)+"\"description\": \""+packdescription+"\","+System.getProperty("line.separator");
+        intro+=makeSpace(6)+"\"type\": \"resources\","+System.getProperty("line.separator");
+        intro+=makeSpace(6)+"\"uuid\": \""+new UUID(12,4).randomUUID().toString()+"\",";
+        intro+=makeSpace(6)+"\"version\" :[0, 0, 1]"+System.getProperty("line.separator");
+        intro+=makeSpace(4)+"}"+System.getProperty("line.separator");
+        intro+=makeSpace(2)+"]"+System.getProperty("line.separator");;
+        intro+="}";
+        try {
+            manifest.write(intro.getBytes());
+        } catch (IOException e2) {
+            e2.printStackTrace();
+        }
     }
     
     public static void unzip(File zipFile, String dest, String passwd) throws ZipException, net.lingala.zip4j.exception.ZipException {
@@ -404,8 +549,6 @@ public class ConversionActivity extends AppCompatActivity {
         final TextInputEditText description = (TextInputEditText) findViewById(R.id.pdescription);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         final CollapsingToolbarLayout collapsingbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_bar);
-        //set default title
-        toolbar.setTitle(R.string.project_unnamed);
         //set back button
         setSupportActionBar(toolbar);
         final ActionBar actionbar = getSupportActionBar();
@@ -462,22 +605,52 @@ public class ConversionActivity extends AppCompatActivity {
             final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_layout);
             final LinearLayout error_layout = (LinearLayout)findViewById(R.id.error_layout);
 
+            ProgressDialog loadDialog = new ProgressDialog(ConversionActivity.this);
+            loadingDialog.setTitle(R.string.loading);
+            loadingDialog.setMessage(getApplicationContext().getString(R.string.do_final_step));
+            loadingDialog.setCancelable(false);
+            loadingDialog.show();
+
             protected void doFinishButtonDoes(View v){
                 if (isPreFinished){
-                    ProgressDialog loadingDialog = new ProgressDialog(ConversionActivity.this);
-                    loadingDialog.setTitle(R.string.loading);
-                    loadingDialog.setMessage(getApplicationContext().getString(R.string.do_final_step));
-                    loadingDialog.setCancelable(false);
-                    loadingDialog.show();
+                    packdescription = description.getText().toString();
+                    class LoadingTasks extends AsyncTask<Void,Integer,Boolean>{
 
-                    try {
-                        onJSONWriting();
-                    } catch (FileNotFoundException e) {
-                        MakeErrorDialog(e.toString());
-                        e.printStackTrace();
+                        @Override
+                        protected void onPreExecute(){
+
+                            name.setEnabled(false);
+                            description.setEnabled(false);
+                            try {
+                                doJSONWriting();
+                                File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
+                                if (dest.isDirectory()&&dest.exists()) dest.mkdir();
+                                new File(path).renameTo(dest);
+                            } catch (FileNotFoundException e) {
+                                MakeErrorDialog(e.toString());
+                                e.printStackTrace();
+                            }
+                            loadingDialog.hide();
+                            Snackbar.make(cards,R.string.completed,Snackbar.LENGTH_LONG).show();
+                        }
+
+                        @Override
+                        protected Boolean doInBackground(Void... params) {
+                            try {
+                                Thread.sleep(1000);
+                                finish();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            return null;
+                        }
+
+                        @Override
+                        protected void onPostExecute(Boolean result){
+                            finish();
+                        }
                     }
-
-                    //loadingDialog.hide();
+                    new LoadingTasks().execute();
                 }
                 else
                     Snackbar.make(v,R.string.unclickable_unzipping,Snackbar.LENGTH_LONG).show();
@@ -595,7 +768,7 @@ public class ConversionActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i){
-                            case 0:
+                            case 0://overwrite
                                 Intent choose = new Intent(Intent.ACTION_GET_CONTENT);
                                 choose.setType("image/*");
                                 choose.addCategory(Intent.CATEGORY_OPENABLE);
@@ -603,6 +776,14 @@ public class ConversionActivity extends AppCompatActivity {
                         }
                     }
                 }).show();
+            }
+        });
+        //Set icon open button
+        Button open = (Button)findViewById(R.id.card_icon_open);
+        open.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v,"Ummm....",Snackbar.LENGTH_SHORT).show();
             }
         });
     }

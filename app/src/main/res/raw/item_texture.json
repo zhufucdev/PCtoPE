@@ -1,6 +1,4 @@
-{
-  "resource_pack_name": "vanilla",
-  "texture_name": "atlas.items",
+ "texture_name": "atlas.items",
   "texture_data": {
     "apple": {
       "textures": "textures/items/apple"
