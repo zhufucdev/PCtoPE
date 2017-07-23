@@ -17,6 +17,8 @@ public class ErrorsCollector extends Application{
         Log.d("ErrorCollector","Error added，id:"+errorID+";string:"+errorString);
     }
     public static String getError(int errorID){
-        return errors.get(errorID);
+        if (errorID<errors.size())
+            return errors.get(errorID);
+        else return null;
     }
 }

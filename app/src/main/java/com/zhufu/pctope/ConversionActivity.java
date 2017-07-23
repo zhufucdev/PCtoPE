@@ -605,52 +605,58 @@ public class ConversionActivity extends AppCompatActivity {
             final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_layout);
             final LinearLayout error_layout = (LinearLayout)findViewById(R.id.error_layout);
 
-            ProgressDialog loadDialog = new ProgressDialog(ConversionActivity.this);
-            loadingDialog.setTitle(R.string.loading);
-            loadingDialog.setMessage(getApplicationContext().getString(R.string.do_final_step));
-            loadingDialog.setCancelable(false);
-            loadingDialog.show();
-
             protected void doFinishButtonDoes(View v){
                 if (isPreFinished){
                     packdescription = description.getText().toString();
-                    class LoadingTasks extends AsyncTask<Void,Integer,Boolean>{
+                    final ProgressDialog loadingDialog = new ProgressDialog(ConversionActivity.this);
+                    name.setEnabled(false);
+                    description.setEnabled(false);
+                    loadingDialog.hide();
 
+                    new Thread(new Runnable() {
                         @Override
-                        protected void onPreExecute(){
+                        public void run() {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    loadingDialog.setTitle(R.string.loading);
+                                    loadingDialog.setMessage(getApplicationContext().getString(R.string.do_final_step));
+                                    loadingDialog.setCancelable(false);
+                                    loadingDialog.show();
+                                }
+                            });
 
-                            name.setEnabled(false);
-                            description.setEnabled(false);
                             try {
                                 doJSONWriting();
                                 File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
                                 if (dest.isDirectory()&&dest.exists()) dest.mkdir();
                                 new File(path).renameTo(dest);
                             } catch (FileNotFoundException e) {
-                                MakeErrorDialog(e.toString());
+                                ErrorsCollector.putError(e.toString(),1);
                                 e.printStackTrace();
                             }
-                            loadingDialog.hide();
-                            Snackbar.make(cards,R.string.completed,Snackbar.LENGTH_LONG).show();
-                        }
 
-                        @Override
-                        protected Boolean doInBackground(Void... params) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    loadingDialog.hide();
+                                    if (ErrorsCollector.getError(1)==null) {
+                                        Snackbar.make(cards, R.string.completed, Snackbar.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+
                             try {
                                 Thread.sleep(1000);
-                                finish();
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
-                            return null;
-                        }
-
-                        @Override
-                        protected void onPostExecute(Boolean result){
                             finish();
                         }
-                    }
-                    new LoadingTasks().execute();
+                    }).start();
+
+                    if (ErrorsCollector.getError(1)!=null)
+                        MakeErrorDialog(ErrorsCollector.getError(1));
                 }
                 else
                     Snackbar.make(v,R.string.unclickable_unzipping,Snackbar.LENGTH_LONG).show();
@@ -703,7 +709,7 @@ public class ConversionActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(Boolean result){
-                if(result==true){
+                if(result){
                     if(doVersionDecisions()){
                         doOnSuccesses();
                     }
