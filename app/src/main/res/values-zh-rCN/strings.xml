@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">PCtoPE</string>
     <string name="error">错误…</string>
-    <string name="error_dialog">哎呀! 我们解压时遇到了一些问题:</string>
+    <string name="error_dialog">哎呀! 我们遇到了一些问题:</string>
     <string name="close">关闭</string>
     <string name="copy">复制</string>
     <string name="not_pack">这不是PE或PC的材质包</string>

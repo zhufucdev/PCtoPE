@@ -16,7 +16,7 @@
     <string name="following_title">More Options</string>
     <string name="unzipping">Unzipping…</string>
     <string name="error">Error…</string>
-    <string name="error_dialog">Whoops! We met some trouble while decompression:</string>
+    <string name="error_dialog">Whoops! We met some trouble:</string>
     <string name="close">close</string>
     <string name="copy">copy</string>
     <string name="not_pack">This is not a PC or PE textures pack.</string>

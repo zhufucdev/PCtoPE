@@ -125,5 +125,6 @@
     <orderEntry type="library" exported="" name="glide-3.7.0" level="project" />
     <orderEntry type="library" exported="" name="percent-24.2.1" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-24.2.1" level="project" />
+    <orderEntry type="library" exported="" name="android-android-25" level="project" />
   </component>
 </module>

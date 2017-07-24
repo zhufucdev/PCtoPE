@@ -73,5 +73,11 @@ public class FirstActivity extends AppCompatActivity {
             }
             new Waiting().execute();
         }
+        else {
+            Intent domain = new Intent(FirstActivity.this, MainActivity.class);
+            domain.putExtra("isgranted",true);
+            startActivity(domain);
+            finish();
+        }
     }
 }

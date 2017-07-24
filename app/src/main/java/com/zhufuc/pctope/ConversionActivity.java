@@ -342,9 +342,11 @@ public class ConversionActivity extends AppCompatActivity {
                             else y++;
                         }
 
+
                         for (int b=0;b<=y-x;b++){
                             terrainText.remove(x);
                         }
+                        i--;
                         break;
                     }
                     else    break;
@@ -409,7 +411,7 @@ public class ConversionActivity extends AppCompatActivity {
         //for flip book texture
         FileOutputStream flipOut = new FileOutputStream(path+"/textures/flipbook_textures.json");
         try {
-            flipOut.write(doJsonFixing(data[2],1).getBytes());
+            flipOut.write(doJsonFixing(data[2],2).getBytes());
         } catch (IOException e) {
             MakeErrorDialog(e.toString());
             e.printStackTrace();
@@ -625,14 +627,14 @@ public class ConversionActivity extends AppCompatActivity {
 
                             try {
                                 doJSONWriting();
-                                File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
-                                if (dest.isDirectory()&&dest.exists()) dest.mkdir();
-                                new File(path).renameTo(dest);
+
                             } catch (FileNotFoundException e) {
                                 ErrorsCollector.putError(e.toString(),1);
                                 e.printStackTrace();
                             }
-
+                            File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
+                            if (dest.isDirectory()&&dest.exists()) dest.mkdir();
+                            new File(path).renameTo(dest);
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -640,16 +642,15 @@ public class ConversionActivity extends AppCompatActivity {
                                     if (ErrorsCollector.getError(1)==null) {
                                         Snackbar.make(cards, R.string.completed, Snackbar.LENGTH_LONG).show();
                                         finishIntent.putExtra("Status_return",true);
+                                        try {
+                                            Thread.sleep(1000);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                        finish();
                                     }
                                 }
                             });
-
-                            try {
-                                Thread.sleep(1000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            finish();
                         }
                     }).start();
 
@@ -659,6 +660,7 @@ public class ConversionActivity extends AppCompatActivity {
                 else
                     Snackbar.make(v,R.string.unclickable_unzipping,Snackbar.LENGTH_LONG).show();
             }
+
             @Override
             protected void onPreExecute(){
                 cards.setVisibility(View.GONE);

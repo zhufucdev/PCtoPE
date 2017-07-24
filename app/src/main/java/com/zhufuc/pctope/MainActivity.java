@@ -2,6 +2,9 @@ package com.zhufuc.pctope;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -15,6 +18,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -35,6 +39,29 @@ import static android.widget.Toast.makeText;
 public class MainActivity extends AppCompatActivity {
 
     private List<Textures> texturesList = new ArrayList<>();
+
+    public void MakeErrorDialog(final String errorString){
+        //make up a error dialog
+        AlertDialog.Builder error_dialog = new AlertDialog.Builder(MainActivity.this);
+        error_dialog.setTitle(R.string.error);
+        error_dialog.setMessage(MainActivity.this.getString(R.string.error_dialog)+errorString);
+        error_dialog.setIcon(R.drawable.alert_octagram);
+        error_dialog.setCancelable(false);
+        error_dialog.setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        error_dialog.setNegativeButton(R.string.copy, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                ClipboardManager copy = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+                copy.setText(errorString);
+                finish();
+            }
+        }).show();
+    }
 
     private void Choose(){
         makeText(MainActivity.this, R.string.choosing_alert, Toast.LENGTH_SHORT).show();
@@ -197,15 +224,21 @@ public class MainActivity extends AppCompatActivity {
         texturesList.clear();
         File packsListDir = new File(Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/")
                 ,packsList[] = null;
-        if (packsListDir.exists()) packsList = packsListDir.listFiles();
-        else packsListDir.mkdir();
-        Textures textures[] = new Textures[packsList.length];
-        for (int i=0;i<packsList.length;i++){
-            if (packsList[i].exists())
-                if (packsList[i].isDirectory()){
-                    textures[i] = new Textures(packsList[i]);
-                    texturesList.add(textures[i]);
-                }
+        Boolean make = true;
+
+        if (!packsListDir.exists()) make = packsListDir.mkdirs();
+
+        if (make){
+            packsList = packsListDir.listFiles();
+            Textures textures[] = new Textures[packsList.length];
+            for (int i=0;i<packsList.length;i++){
+                if (packsList[i].exists())
+                    if (packsList[i].isDirectory()){
+                        textures[i] = new Textures(packsList[i]);
+                        texturesList.add(textures[i]);
+                    }
+            }
         }
+        else MakeErrorDialog("Failed to make textures root directory.");
     }
 }
