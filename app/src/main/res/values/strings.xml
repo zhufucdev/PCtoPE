@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PCtoPE</string>
-    <string name="preparing_for_firstboot">Preparing for the First Boot...</string>
+    <string name="preparing_for_firstboot">Preparing for the First Boot…</string>
     <string name="permissions_request">You need to grant the permissions.</string>
     <string name="ok">OK</string>
     <string name="choosing_alert">Please choose a zip file.</string>
@@ -14,21 +14,21 @@
     <string name="project_icon_open">open</string>
     <string name="project_icon_title">icon</string>
     <string name="following_title">More Options</string>
-    <string name="unzipping">Unzipping...</string>
-    <string name="error">Error...</string>
+    <string name="unzipping">Unzipping…</string>
+    <string name="error">Error…</string>
     <string name="error_dialog">Whoops! We met some trouble while decompression:</string>
     <string name="close">close</string>
     <string name="copy">copy</string>
     <string name="not_pack">This is not a PC or PE textures pack.</string>
-    <string name="deleting">deleting...</string>
+    <string name="deleting">deleting…</string>
     <string name="completed">Completed!</string>
-    <string name="failed">Failed...</string>
+    <string name="failed">Failed…</string>
     <string name="deleted_completed">Deleting is completed!</string>
-    <string name="deteted_failed">Deleting is failed...</string>
-    <string name="conversionact_edit_dialog_title">Select an item to continue...</string>
+    <string name="deteted_failed">Deleting is failed…</string>
+    <string name="conversionact_edit_dialog_title">Select an item to continue…</string>
     <string name="cover">Use a image file to overwrite it.</string>
     <string name="edit_converactdialog">Transfer an installed application to edit.</string>
     <string name="unclickable_unzipping">You can\'t continue while unzipping.</string>
-    <string name="do_final_step">Now we\'re doing final steps.Please wait...</string>
-    <string name="loading">Loading...</string>
+    <string name="do_final_step">Now we\'re doing final steps.Please wait…</string>
+    <string name="loading">Loading…</string>
 </resources>
