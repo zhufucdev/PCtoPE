@@ -46,13 +46,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 0){
+            Boolean result = data.getBooleanExtra("Status_return",false);
+            if (result)
+                AllInOne();
+        }
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == 1) {
                 Uri uri = data.getData();
                 String realPath = GetPathFromUri4kitkat.getPath(MainActivity.this,uri);
                 Intent intent = new Intent(MainActivity.this,ConversionActivity.class);
                 intent.putExtra("filePath",realPath);
-                startActivity(intent);
+                startActivityForResult(intent,0);
             }
         }
         else{
@@ -76,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         isgranted = intent.getBooleanExtra("isgranted", true);
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-
+        final RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycle_view);
         Log.d("status", isgranted + "");
         //file choosing
         fab.setOnClickListener(new View.OnClickListener() {
@@ -85,16 +90,7 @@ public class MainActivity extends AppCompatActivity {
             Choose();
             }
         });
-        fab.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                Intent intent = new Intent(MainActivity.this,ConversionActivity.class);
-                startActivity(intent);
-                return false;
-            }
-        });
 
-        final RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycle_view);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -108,10 +104,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        if (isgranted) {
+            initActivity();
+        }
+        else{
+            Snackbar.make(fab, R.string.permissions_request, Snackbar.LENGTH_LONG)
+                    .setAction(R.string.ok, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            ActivityCompat.requestPermissions(MainActivity.this, permissions, 1);
+                            new Thread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    while (ContextCompat.checkSelfPermission(MainActivity.this,permissions[0]) == PackageManager.PERMISSION_DENIED){}
+                                    runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            initActivity();
+                                        }
+                                    });
+                                }
+                            }).start();
+                        }
+                    }).show();
+        }
+    }
+
+    private void initActivity(){
+        final RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycle_view);
+        //init for textures list
+        AllInOne();
+
         //for swipe refresh layout
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.google_green),getResources().getColor(R.color.google_blue)
-        ,getResources().getColor(R.color.google_red),getResources().getColor(R.color.google_yellow));
+                ,getResources().getColor(R.color.google_red),getResources().getColor(R.color.google_yellow));
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -154,42 +182,6 @@ public class MainActivity extends AppCompatActivity {
                 }).start();
             }
         });
-
-    }
-
-    @Override
-    protected void onStart(){
-        super.onStart();
-        Intent intent = getIntent();
-        isgranted = intent.getBooleanExtra("isgranted", true);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        if (isgranted){
-            AllInOne();
-        }
-        else {
-            Snackbar.make(fab, R.string.permissions_request, Snackbar.LENGTH_LONG)
-                    .setAction(R.string.ok, new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            ActivityCompat.requestPermissions(MainActivity.this, permissions, 1);
-                            class WaitTask extends AsyncTask<Void,Integer,Boolean>{
-                                @Override
-                                protected Boolean doInBackground(Void... params) {
-                                    while (ContextCompat.checkSelfPermission(MainActivity.this,permissions[0]) == PackageManager.PERMISSION_DENIED){}
-                                    return null;
-                                }
-
-                                @Override
-                                protected void onPostExecute(Boolean result){
-                                    AllInOne();
-                                }
-                            }
-                            new WaitTask().execute();
-                        }
-                    }).show();
-        }
-
-
     }
 
     private void AllInOne(){

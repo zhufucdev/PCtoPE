@@ -16,12 +16,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d3ad24b6-7af1-469c-9d9c-a2b3ff4d4ecf" name="Default" comment="第一个发布版本">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/TextureItems.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/Textures.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/anim/show_swipe.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/texture_item.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" afterPath="" />
+    <list default="true" id="d3ad24b6-7af1-469c-9d9c-a2b3ff4d4ecf" name="Default" comment="第一个发布版本+fixing some bugs">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
@@ -30,12 +25,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/ConversionActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/ConversionActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/ErrorsCollector.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/ErrorsCollector.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/anim/cards_hide.xml" afterPath="$PROJECT_DIR$/app/src/main/res/anim/cards_hide.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/anim/cards_show.xml" afterPath="$PROJECT_DIR$/app/src/main/res/anim/cards_show.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
     </list>
     <ignored path="PCtoPE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,15 +72,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1845">
-              <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+            <state relative-caret-position="159">
+              <caret line="119" column="148" selection-start-line="119" selection-start-column="148" selection-end-line="119" selection-end-column="148" />
               <folding>
-                <element signature="e#5808#5809#0" expanded="true" />
-                <element signature="e#5898#5899#0" expanded="true" />
+                <element signature="e#4055#4083#0" expanded="true" />
+                <element signature="e#4138#4149#0" expanded="true" />
+                <element signature="e#4151#5109#0" expanded="true" />
+                <element signature="e#4408#5051#0" expanded="true" />
+                <element signature="e#4719#4985#0" expanded="true" />
+                <element signature="e#4984#4985#0" expanded="true" />
+                <element signature="e#5050#5051#0" expanded="true" />
+                <element signature="e#5108#5109#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FirstActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/FirstActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="50" column="130" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="130" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,23 +124,19 @@
       <file leaf-file-name="Textures.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/Textures.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
+            <state relative-caret-position="980">
               <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConversionActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConversionActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/ConversionActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="641" column="57" selection-start-line="641" selection-start-column="57" selection-end-line="641" selection-end-column="57" />
-              <folding>
-                <element signature="e#23830#23846#0" expanded="true" />
-                <element signature="e#23910#23967#0" expanded="true" />
-                <element signature="e#25112#25130#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="553" column="66" selection-start-line="553" selection-start-column="66" selection-end-line="553" selection-end-column="66" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -140,7 +144,7 @@
       <file leaf-file-name="ErrorsCollector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/ErrorsCollector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
+            <state relative-caret-position="270">
               <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding />
             </state>
@@ -2035,15 +2039,16 @@
         <option value="$PROJECT_DIR$/app/src/main/res/anim/cards_hide.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/anim/cards_show.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/anim/show_swipe.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/TextureItems.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/ErrorsCollector.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/ConversionActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/MainActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
+    <option name="x" value="-4" />
+    <option name="width" value="1374" />
     <option name="height" value="732" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -2093,9 +2098,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2216,7 +2222,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2636,7 +2641,14 @@
       <option name="project" value="LOCAL" />
       <updated>1500723098321</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="第一个发布版本">
+      <created>1500854055654</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1500854055654</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -2645,7 +2657,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="732" extended-state="6" />
+    <frame x="-4" y="0" width="1374" height="732" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2661,7 +2673,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24848942" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2697,7 +2709,8 @@
     <MESSAGE value="创建一个进度对话框。。。" />
     <MESSAGE value="第一个基础功能完成的版本" />
     <MESSAGE value="第一个发布版本" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一个发布版本" />
+    <MESSAGE value="第一个发布版本+fixing some bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="第一个发布版本+fixing some bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3016,14 +3029,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/FirstActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="50" column="130" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="130" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -3071,25 +3076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/Textures.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1845">
-          <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
-          <folding>
-            <element signature="e#5808#5809#0" expanded="true" />
-            <element signature="e#5898#5899#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/TextureItems.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -3102,20 +3088,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/ErrorsCollector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
+        <state relative-caret-position="270">
           <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/Textures.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="90" column="30" selection-start-line="90" selection-start-column="30" selection-end-line="90" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/ConversionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="641" column="57" selection-start-line="641" selection-start-column="57" selection-end-line="641" selection-end-column="57" />
+        <state relative-caret-position="135">
+          <caret line="553" column="66" selection-start-line="553" selection-start-column="66" selection-end-line="553" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/FirstActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="50" column="130" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="119" column="148" selection-start-line="119" selection-start-column="148" selection-end-line="119" selection-end-column="148" />
           <folding>
-            <element signature="e#23830#23846#0" expanded="true" />
-            <element signature="e#23910#23967#0" expanded="true" />
-            <element signature="e#25112#25130#0" expanded="true" />
+            <element signature="e#4055#4083#0" expanded="true" />
+            <element signature="e#4138#4149#0" expanded="true" />
+            <element signature="e#4151#5109#0" expanded="true" />
+            <element signature="e#4408#5051#0" expanded="true" />
+            <element signature="e#4719#4985#0" expanded="true" />
+            <element signature="e#4984#4985#0" expanded="true" />
+            <element signature="e#5050#5051#0" expanded="true" />
+            <element signature="e#5108#5109#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -93,6 +93,8 @@ import static com.zhufu.pctope.R.id.unzipping_tip;
 
 public class ConversionActivity extends AppCompatActivity {
 
+    final Intent finishIntent = new Intent();
+
     public String makeSpace(int i){
         String spaces="";
         for (int j=0;j<=i;j++) spaces+=" ";
@@ -549,13 +551,14 @@ public class ConversionActivity extends AppCompatActivity {
         final TextInputEditText description = (TextInputEditText) findViewById(R.id.pdescription);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         final CollapsingToolbarLayout collapsingbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_bar);
+        setResult(RESULT_OK,finishIntent);//I don't need to use it
         //set back button
         setSupportActionBar(toolbar);
         final ActionBar actionbar = getSupportActionBar();
         if(actionbar!=null){
             actionbar.setDisplayHomeAsUpEnabled(true);
         }
-        //set project name on changed
+        //set project name on changed listener
         name.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -642,6 +645,7 @@ public class ConversionActivity extends AppCompatActivity {
                                     loadingDialog.hide();
                                     if (ErrorsCollector.getError(1)==null) {
                                         Snackbar.make(cards, R.string.completed, Snackbar.LENGTH_LONG).show();
+                                        finishIntent.putExtra("Status_return",true);
                                     }
                                 }
                             });
@@ -839,6 +843,7 @@ public class ConversionActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                finishIntent.putExtra("Status_return",false);
                 finish();
                 return r;
             }
@@ -851,6 +856,7 @@ public class ConversionActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case android.R.id.home:
+                finishIntent.putExtra("Status_return",false);
                 finish();
                 return true;
         }
