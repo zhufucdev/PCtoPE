@@ -114,7 +114,7 @@ public class ConversionActivity extends AppCompatActivity {
     String path,packname,packdescription;
     boolean isPreFinished = false;
 
-    public boolean doVersionDecisions(){
+    private boolean doVersionDecisions(){
         File root = new File(path);
         if(root.exists()){
             File iconPE = new File(root+"/pack_icon.png");
@@ -125,15 +125,20 @@ public class ConversionActivity extends AppCompatActivity {
                 Log.d("status","Icon for PE exists.");
                 Log.d("status","Textures for PE exist.");
                 onPEDecisions();
-                return true;
             }
             else if(iconPC.exists()&&texturePC.exists()){
                 Log.d("status","Icon for PC exists.");
                 Log.d("status","Textures for PC exist.");
                 onPcDecisions();
-                return true;
             }
-            else if (texturePC.exists()||texturePE.exists()) return true;
+            else if (texturePC.exists()){
+                onPcDecisions();
+            }
+            else if (texturePE.exists()){
+                onPEDecisions();
+            }
+            else return false;
+            return true;
         }
         return false;
     }
@@ -394,49 +399,66 @@ public class ConversionActivity extends AppCompatActivity {
         //for item texture file
 
         FileOutputStream itemOut = new FileOutputStream(path+"/textures/item_texture.json");
-        try {
-            itemOut.write(textBefore.getBytes());
-            itemOut.write(doJsonFixing(data[3],5).getBytes());
-        } catch (IOException e1) {
-            MakeErrorDialog(e1.toString());
-            e1.printStackTrace();
+        Boolean isCreated = true;
+        String[] temp = {path+"/textures/item_texture.json",path+"/textures/flipbook_textures.json",path+"/manifest.json"};
+        for (int i=0;i<temp.length;i++){
+            File t = new File(temp[i]);
+            if (!t.exists())
+                try {
+                    if(!t.createNewFile())
+                        isCreated = false;
+                } catch (IOException e) {
+                    MakeErrorDialog(e.toString());
+                    e.printStackTrace();
+                }
         }
+        if (isCreated){
+            try {
+                itemOut.write(textBefore.getBytes());
+                itemOut.write(doJsonFixing(data[3],5).getBytes());
+            } catch (IOException e1) {
+                MakeErrorDialog(e1.toString());
+                e1.printStackTrace();
+            }
 
-        //for flip book texture
-        FileOutputStream flipOut = new FileOutputStream(path+"/textures/flipbook_textures.json");
-        try {
-            flipOut.write(doJsonFixing(data[2],2).getBytes());
-        } catch (IOException e) {
-            MakeErrorDialog(e.toString());
-            e.printStackTrace();
-        }
+            //for flip book texture
+            FileOutputStream flipOut = new FileOutputStream(path+"/textures/flipbook_textures.json");
+            try {
+                flipOut.write(doJsonFixing(data[2],2).getBytes());
+            } catch (IOException e) {
+                MakeErrorDialog(e.toString());
+                e.printStackTrace();
+            }
 
-        //for manifest file
-        FileOutputStream manifest = new FileOutputStream(path+"/manifest.json");
-        String intro;
-        intro="{"+System.getProperty("line.separator");
-        intro+=makeSpace(2)+"\"format_version\": 1,"+System.getProperty("line.separator");
-        intro+=makeSpace(2)+"\"header\": {"+System.getProperty("line.separator");
-        intro+=makeSpace(4)+"\"description\": \""+packdescription+"\","+System.getProperty("line.separator");
-        intro+=makeSpace(4)+"\"name\": \""+packname+"\","+System.getProperty("line.separator");
-        String uuid = new UUID(12,4).randomUUID().toString();
-        intro+=makeSpace(4)+"\"uuid\": \""+uuid+"\","+System.getProperty("line.separator");
-        intro+=makeSpace(4)+"\"version\": [0, 0, 1]"+System.getProperty("line.separator");
-        intro+=makeSpace(2)+"},"+System.getProperty("line.separator");
-        intro+=makeSpace(2)+"\"modules\": ["+System.getProperty("line.separator");
-        intro+=makeSpace(4)+"{"+System.getProperty("line.separator");
-        intro+=makeSpace(6)+"\"description\": \""+packdescription+"\","+System.getProperty("line.separator");
-        intro+=makeSpace(6)+"\"type\": \"resources\","+System.getProperty("line.separator");
-        intro+=makeSpace(6)+"\"uuid\": \""+new UUID(12,4).randomUUID().toString()+"\",";
-        intro+=makeSpace(6)+"\"version\" :[0, 0, 1]"+System.getProperty("line.separator");
-        intro+=makeSpace(4)+"}"+System.getProperty("line.separator");
-        intro+=makeSpace(2)+"]"+System.getProperty("line.separator");;
-        intro+="}";
-        try {
-            manifest.write(intro.getBytes());
-        } catch (IOException e2) {
-            e2.printStackTrace();
+            //for manifest file
+            FileOutputStream manifest = new FileOutputStream(path+"/manifest.json");
+            String intro;
+            intro="{"+System.getProperty("line.separator");
+            intro+=makeSpace(2)+"\"format_version\": 1,"+System.getProperty("line.separator");
+            intro+=makeSpace(2)+"\"header\": {"+System.getProperty("line.separator");
+            intro+=makeSpace(4)+"\"description\": \""+packdescription+"\","+System.getProperty("line.separator");
+            intro+=makeSpace(4)+"\"name\": \""+packname+"\","+System.getProperty("line.separator");
+            String uuid = new UUID(12,4).randomUUID().toString();
+            intro+=makeSpace(4)+"\"uuid\": \""+uuid+"\","+System.getProperty("line.separator");
+            intro+=makeSpace(4)+"\"version\": [0, 0, 1]"+System.getProperty("line.separator");
+            intro+=makeSpace(2)+"},"+System.getProperty("line.separator");
+            intro+=makeSpace(2)+"\"modules\": ["+System.getProperty("line.separator");
+            intro+=makeSpace(4)+"{"+System.getProperty("line.separator");
+            intro+=makeSpace(6)+"\"description\": \""+packdescription+"\","+System.getProperty("line.separator");
+            intro+=makeSpace(6)+"\"type\": \"resources\","+System.getProperty("line.separator");
+            intro+=makeSpace(6)+"\"uuid\": \""+new UUID(12,4).randomUUID().toString()+"\",";
+            intro+=makeSpace(6)+"\"version\" :[0, 0, 1]"+System.getProperty("line.separator");
+            intro+=makeSpace(4)+"}"+System.getProperty("line.separator");
+            intro+=makeSpace(2)+"]"+System.getProperty("line.separator");;
+            intro+="}";
+            try {
+                manifest.write(intro.getBytes());
+            } catch (IOException e2) {
+                e2.printStackTrace();
+            }
         }
+        else MakeErrorDialog("Could not create JSON files.");
+
     }
     
     public static void unzip(File zipFile, String dest, String passwd) throws ZipException, net.lingala.zip4j.exception.ZipException {
@@ -621,14 +643,32 @@ public class ConversionActivity extends AppCompatActivity {
 
                             try {
                                 doJSONWriting();
-
                             } catch (FileNotFoundException e) {
                                 ErrorsCollector.putError(e.toString(),1);
                                 e.printStackTrace();
                             }
+
+                            //For if icon doesn't exist
+                            File iconTest = new File(path+"/pack_icon.png");
+                            if (!iconTest.exists()){
+                                byte[] buffer = new byte[1444];int i;
+                                InputStream inputStream = getResources().openRawResource(R.raw.bug_pack_icon);
+                                try {
+                                    FileOutputStream outputStream = new FileOutputStream(path+"pack_icon.png");
+                                    while ((i=inputStream.read(buffer))!=-1){
+                                        outputStream.write(buffer,0,i);
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            
+                            //Move to dest
                             File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
                             if (dest.isDirectory()&&dest.exists()) dest.mkdir();
                             new File(path).renameTo(dest);
+
+                            //Done
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -774,7 +814,7 @@ public class ConversionActivity extends AppCompatActivity {
         }
         else{
             FloatingActionButton finishBottom = (FloatingActionButton)findViewById(R.id.finishBottom);
-            Snackbar.make(finishBottom,R.string.pack_icon_not_found,Snackbar.LENGTH_LONG)
+            Snackbar.make(finishBottom,R.string.pack_icon_not_found,5000)
                     .setAction(R.string.ok, new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
