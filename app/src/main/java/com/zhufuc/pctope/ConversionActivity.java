@@ -73,14 +73,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
-import java.util.zip.CRC32;
-import java.util.zip.CheckedInputStream;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
-import java.util.zip.ZipInputStream;
-import java.util.zip.ZipOutputStream;
 
-import javax.xml.transform.Result;
 
 
 
@@ -704,7 +697,41 @@ public class ConversionActivity extends AppCompatActivity {
                     ErrorsCollector.putError(e.toString(),0);
                     return false;
                 }
-                return true;
+
+                //Find the true root path
+                return isPathUseful();
+            }
+
+            private Boolean isPathUseful(){
+                File pathDecisions = new File(path);
+                if(pathDecisions.exists()&&pathDecisions.isDirectory()){
+                    File[] FileListInPath = pathDecisions.listFiles();
+                    ArrayList<File> Dirs = new ArrayList<>();
+                    int FilesFound = 0 ,DirsFound = 0;
+                    for (File test : FileListInPath){
+                        if (test.isFile()) FilesFound++;
+                        else if (test.isDirectory()) {
+                            Dirs.add(test);
+                            DirsFound++;
+                        }
+                    }
+                    if (FilesFound>=1&&DirsFound>=1){
+                        return true;
+                    }
+                    else {
+                        Boolean isFoundNext = false;
+                        for (int i = 0;i<Dirs.size();i++){
+                            path=Dirs.get(i).getPath();
+                            if (isPathUseful()){
+                                isFoundNext = true;
+                                return true;
+                            }
+                        }
+                        if (!isFoundNext) return false;
+                    }
+                }
+                else return false;
+                return null;
             }
 
             @Override
@@ -829,7 +856,13 @@ public class ConversionActivity extends AppCompatActivity {
             @Override
             protected Boolean doInBackground(Void... voids) {
                 Snackbar.make(text,R.string.deleting,Snackbar.LENGTH_LONG).show();
-                Boolean r = DeleteFolder(notpack.toString());
+                Boolean r = false;
+                if (notpack.exists())
+                    r = DeleteFolder(notpack.toString());
+                else
+                    r = true;
+
+
                 if(r)
                     Snackbar.make(text,R.string.deleted_completed,Snackbar.LENGTH_LONG).show();
                 else
