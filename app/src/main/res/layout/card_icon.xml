@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginEnd="@dimen/text_margin_small"
+                android:layout_marginEnd="@dimen/text_margin"
                 android:text="@string/project_icon_title"
                 android:textColor="@color/black"
                 android:textSize="20sp" />

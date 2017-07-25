@@ -31,4 +31,5 @@
     <string name="unclickable_unzipping">You can\'t continue while unzipping.</string>
     <string name="do_final_step">Now we\'re doing final steps.Please wait…</string>
     <string name="loading">Loading…</string>
+    <string name="pack_icon_not_found">This may be a pack without an icon.You can change it.</string>
 </resources>

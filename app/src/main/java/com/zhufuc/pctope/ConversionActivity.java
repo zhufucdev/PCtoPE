@@ -111,7 +111,7 @@ public class ConversionActivity extends AppCompatActivity {
     }
 
     //==>define
-    String path,packname = null,packdescription;
+    String path,packname,packdescription;
     boolean isPreFinished = false;
 
     public boolean doVersionDecisions(){
@@ -133,6 +133,7 @@ public class ConversionActivity extends AppCompatActivity {
                 onPcDecisions();
                 return true;
             }
+            else if (texturePC.exists()||texturePE.exists()) return true;
         }
         return false;
     }
@@ -658,8 +659,7 @@ public class ConversionActivity extends AppCompatActivity {
             protected void onPreExecute(){
                 cards.setVisibility(View.GONE);
                 unzipping_tip.setVisibility(View.VISIBLE);
-                Context context=getApplicationContext();
-                path = context.getExternalCacheDir().getPath().toString();
+                path = ConversionActivity.this.getExternalCacheDir().getPath();
                 button_finish.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -767,8 +767,26 @@ public class ConversionActivity extends AppCompatActivity {
         ImageView icon = (ImageView) findViewById(R.id.img_card_icon);
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize=2;
-        Bitmap bm = BitmapFactory.decodeFile(path.toString()+"/pack_icon.png",options);
-        icon.setImageBitmap(bm);
+        File iconTest = new File(path.toString()+"/pack_icon.png");
+        if (iconTest.exists()){
+            Bitmap bm = BitmapFactory.decodeFile(iconTest.getPath(),options);
+            icon.setImageBitmap(bm);
+        }
+        else{
+            FloatingActionButton finishBottom = (FloatingActionButton)findViewById(R.id.finishBottom);
+            Snackbar.make(finishBottom,R.string.pack_icon_not_found,Snackbar.LENGTH_LONG)
+                    .setAction(R.string.ok, new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent choose = new Intent(Intent.ACTION_GET_CONTENT);
+                            choose.setType("image/*");
+                            choose.addCategory(Intent.CATEGORY_OPENABLE);
+                            startActivityForResult(choose, 0);
+                        }
+                    })
+                    .setActionTextColor(getResources().getColor(R.color.colorPrimaryDark))
+                    .show();
+        }
     }
 
 

@@ -32,4 +32,5 @@
     <string name="unclickable_unzipping">你不能在解压时继续。</string>
     <string name="do_final_step">我们正在完成最后一步，请稍后…</string>
     <string name="loading">加载中…</string>
+    <string name="pack_icon_not_found">这或许是个没有图标的包，你可以更改它</string>
 </resources>
