@@ -29,7 +29,7 @@ public class FirstActivity extends AppCompatActivity {
 
     private ArrayList<TutorialItem> getTutorialItems(Context context){
         TutorialItem item1 = new TutorialItem(context.getString(R.string.tutorial_welcome),context.getString(R.string.tutorial_wlcome_subtitle)
-                ,R.color.amber_primary,0,R.mipmap.ic_launcher);
+                ,R.color.amber_primary,0,R.drawable.ic_launcher_foreground);
         TutorialItem item2 = new TutorialItem(context.getString(R.string.tutorial_step1),context.getString(R.string.tutorial_step1_subtitle)
                 ,R.color.app_blue_dark,R.drawable.for_step2_fab,R.drawable.for_step2_background);
         TutorialItem item3 = new TutorialItem(context.getString(R.string.tutorial_step2),context.getString(R.string.tutorial_step2_subtitle)

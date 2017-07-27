@@ -279,9 +279,9 @@ public class ConversionActivity extends AppCompatActivity {
 
         for (int i=0;i<terrainTxt.length();i++){
             if (terrainTxt.charAt(i)=='\n'){
-                String line = terrainTxt.substring(j,i);
+                String line = terrainTxt.substring(j,i+1);
                 terrainText.add(line);
-                j=i;
+                j=i+1;
             }
         }
 
@@ -319,15 +319,13 @@ public class ConversionActivity extends AppCompatActivity {
                             else y++;
                         }
 
-
-                        for (int b=0;b<=y-x;b++){
+                        for (int b=1;b<=y-x+1;b++){
                             terrainText.remove(x);
                         }
-                        i--;
-                        break;
                     }
-                    else    break;
+                    break;
                 }
+
             }
         }
         String FinalText = "";

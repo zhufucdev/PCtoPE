@@ -13,6 +13,10 @@ import java.util.ArrayList;
 public class ErrorsCollector extends Application{
     private static ArrayList<String> errors = new ArrayList<String>();
     public static void putError(String errorString,int errorID){
+        if (errorID >= errors.size()){
+            for (int i=0;i<errorID;i++)
+                errors.add(null);
+        }
         errors.add(errorID,errorString);
         Log.d("ErrorCollector","Error added，id:"+errorID+";string:"+errorString);
     }
