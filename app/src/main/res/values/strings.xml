@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PCtoPE</string>
+    <string name="app_name" translatable="false">PCtoPE</string>
     <string name="preparing_for_firstboot">Preparing for the First Boot…</string>
     <string name="permissions_request">You need to grant the permissions.</string>
     <string name="ok">OK</string>
@@ -32,4 +32,19 @@
     <string name="do_final_step">Now we\'re doing final steps.Please wait…</string>
     <string name="loading">Loading…</string>
     <string name="pack_icon_not_found">This may be a pack without an icon.You can change it.</string>
+    <string name="android_nothing">Nothing here! Why not add one?</string>
+    <string name="tutorial_welcome">Welcome to PCtoPE!</string>
+    <string name="tutorial_wlcome_subtitle">We shall use an easy guide to tell you how to use this APP.</string>
+    <string name="tutorial_step1">There\'s a \"+\" button at the bottom of the screen.</string>
+    <string name="tutorial_step1_subtitle">Click it and choose a minecraft resource pack(.zip). Open the resource pack on the file manager.</string>
+    <string name="tutorial_step2">Wait util it finished.</string>
+    <string name="tutorial_step2_subtitle">Then, type some information you want and press the \">\" button.</string>
+    <string name="tutorial_step3">Finially, you can see it on the list.</string>
+    <string name="tutorial_step3_subtitle">Don\'t worry. We have things to do next.</string>
+    <string name="tutorial_step4">Time for Minecraft!</string>
+    <string name="tutorial_step4_subtitle">Click Settings>Global Resources, find the pack you want.Then click the \"+\" button.</string>
+    <string name="tutorial_step5">Then you can see it at the top of the list.Restart MC.</string>
+    <string name="tutorial_step5_subtitle">Don\'t open the save. Usually you need to restart minecraft to load the texture pack.</string>
+    <string name="tutorial_hope">Hope You Enjoy!</string>
+    <string name="tutorial_hope_subtitle">If you need help, you can call me on QQ(1095291434) or e-mail me.Thanks!</string>
 </resources>

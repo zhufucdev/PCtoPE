@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PCtoPE</string>
     <string name="error">错误…</string>
     <string name="error_dialog">哎呀! 我们遇到了一些问题:</string>
     <string name="close">关闭</string>
@@ -33,4 +32,19 @@
     <string name="do_final_step">我们正在完成最后一步，请稍后…</string>
     <string name="loading">加载中…</string>
     <string name="pack_icon_not_found">这或许是个没有图标的包，你可以更改它</string>
+    <string name="android_nothing">这里什么都没有！ 为什么不添加一个？</string>
+    <string name="tutorial_welcome">欢迎来到PCtoPE!</string>
+    <string name="tutorial_wlcome_subtitle">我们将会用一个简单的向导来告诉你如何使用这个APP</string>
+    <string name="tutorial_step1">屏幕底部有一个“+”按钮</string>
+    <string name="tutorial_step1_subtitle">点击按钮，然后选择一个MC的资源包(.zip)，并在文件管理器中打开这个资源包。</string>
+    <string name="tutorial_step2">等待，直到解压结束</string>
+    <string name="tutorial_step2_subtitle">随后，输入你想要的信息，点击“>”按钮。</string>
+    <string name="tutorial_step3">最终，你就能看到资源包出现在列表上了</string>
+    <string name="tutorial_step3_subtitle">别急，我们下一步还有事做。</string>
+    <string name="tutorial_step4">是时候打开Minecraft了！</string>
+    <string name="tutorial_step4_subtitle">依次点 设置>全局资源，找到你想要的资源包，点击“+”按钮。</string>
+    <string name="tutorial_step5">随后，你就能看到你选择的资源包在列表首位。重启MC</string>
+    <string name="tutorial_step5_subtitle">不要急着打开存档。通常你需要重启MC以加载材质包。</string>
+    <string name="tutorial_hope">希望你喜欢！</string>
+    <string name="tutorial_hope_subtitle">如果需要帮助，你可以加我QQ(1095291434)，给我发电子邮件，或是在酷安评论区留言。感谢您的使用！</string>
 </resources>

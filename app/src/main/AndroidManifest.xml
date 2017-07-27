@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.zhufuc.pctope">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-
 
     <application
         android:allowBackup="true"
@@ -14,21 +14,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FirstActivity"
+            android:name=".Activities.FirstActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="PCtoPE"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".GuideActivity"
+            android:name=".Activities.GuideActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ConversionActivity"
+        <activity android:name=".Activities.ConversionActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="Unnamed"/>
     </application>
