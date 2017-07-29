@@ -47,4 +47,5 @@
     <string name="tutorial_step5_subtitle">Don\'t open the save. Usually you need to restart minecraft to load the texture pack.</string>
     <string name="tutorial_hope">Hope You Enjoy!</string>
     <string name="tutorial_hope_subtitle">If you need help, you can call me on QQ(1095291434) or e-mail me.Thanks!</string>
+    <string name="undo">UNDO</string>
 </resources>

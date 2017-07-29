@@ -18,10 +18,13 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -31,21 +34,21 @@ import android.widget.Toast;
 import com.zhufuc.pctope.Collectors.ActivityCollector;
 import com.zhufuc.pctope.Adapters.TextureItems;
 import com.zhufuc.pctope.Adapters.Textures;
+import com.zhufuc.pctope.Interf.DeletingCallback;
+import com.zhufuc.pctope.Utils.*;
 import com.zhufuc.pctope.R;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import za.co.riggaroo.materialhelptutorial.TutorialItem;
-import za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity;
 
 import static android.widget.Toast.makeText;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Textures> texturesList = new ArrayList<>();
 
     public void MakeErrorDialog(final String errorString){
         //make up a error dialog
@@ -104,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
     Intent intent = getIntent();
     boolean isgranted;
 
+    FloatingActionButton fab = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         ActivityCollector.addActivity(MainActivity.this);
         Intent intent = getIntent();
         isgranted = intent.getBooleanExtra("isgranted", true);
-        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         final RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycle_view);
         Log.d("status", isgranted + "");
 
@@ -166,15 +171,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private RecyclerView recyclerView;private TextureItems items = new TextureItems();
     private void initActivity(){
-        final RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycle_view);
         final CardView android_nothing_card = (CardView)findViewById(R.id.android_nothing);
         //init for textures list
+        recyclerView = (RecyclerView)findViewById(R.id.recycle_view);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+        RecyclerView.ItemAnimator swipe = new DefaultItemAnimator();
+        recyclerView.setItemAnimator(swipe);
+        recyclerView.setAdapter(items);
+        recyclerView.setHasFixedSize(true);
+
         AllInOne();
+
         //for swipe refresh layout
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
-        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.google_green),getResources().getColor(R.color.google_blue)
-                ,getResources().getColor(R.color.google_red),getResources().getColor(R.color.google_yellow));
+        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent),getResources().getColor(R.color.google_blue)
+                ,getResources().getColor(R.color.google_red),getResources().getColor(R.color.google_green));
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -201,7 +216,8 @@ public class MainActivity extends AppCompatActivity {
 
                                     @Override
                                     public void onAnimationEnd(Animation animation) {
-                                        AllInOne();
+                                        loadList();
+                                        recyclerView.startAnimation(show);
                                     }
 
                                     @Override
@@ -245,16 +261,54 @@ public class MainActivity extends AppCompatActivity {
 
     private void AllInOne(){
         loadList();
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycle_view);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        TextureItems items = new TextureItems(texturesList);
-        recyclerView.setAdapter(items);
 
+        ItemTouchHelper.Callback mCallback = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.START|ItemTouchHelper.END) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                final int position = viewHolder.getAdapterPosition();
+                final Textures deleting = items.getItem(position);
+                final File test = new File(deleting.getPath().toString());
+                final TextureItems oldTemp = items;
+                items.remove(position);
+
+                DiffUtil.Callback callback = new DiffUtilCallback(oldTemp,items);
+                final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
+                diffResult.dispatchUpdatesTo(items);
+                items.notifyItemRemoved(position);
+
+                Snackbar.make(fab,R.string.deleted_completed,Snackbar.LENGTH_SHORT)
+                        .setCallback(new DeletingCallback(test))
+                        .setAction(R.string.undo, new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (test.exists()){
+                                    TextureItems oldTemp1 = items;
+                                    items.addItem(position,deleting);
+                                    DiffUtil.Callback callback1 = new DiffUtilCallback(oldTemp1,items);
+                                    DiffUtil.DiffResult diffResult1 = DiffUtil.calculateDiff(callback1);
+                                    diffResult.dispatchUpdatesTo(items);
+                                    items.notifyItemInserted(position);
+                                }
+                                else {
+                                    Snackbar.make(fab,R.string.completed,Snackbar.LENGTH_SHORT).show();
+                                }
+                            }
+                        }).show();
+            }
+        };
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(mCallback);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
     private void loadList(){
-        texturesList.clear();
+        TextureItems oldTemp = items;
+        items.clear();
+
         File packsListDir = new File(Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/")
                 ,packsList[] = null;
         Boolean make = true;
@@ -267,25 +321,31 @@ public class MainActivity extends AppCompatActivity {
 
         if (make){
             packsList = packsListDir.listFiles();
-            Textures textures[] = new Textures[packsList.length];
+
             for (int i=0;i<packsList.length;i++){
                 if (packsList[i].exists())
                     if (packsList[i].isDirectory()){
-                        textures[i] = new Textures(packsList[i]);
+                        Textures texture = new Textures(packsList[i]);
                         if (!isLoaded){
                             recyclerView.setVisibility(View.VISIBLE);
                             android_nothing_card.setVisibility(View.GONE);
                             isLoaded = true;
                         }
-
-                        texturesList.add(textures[i]);
+                        if (texture.IfIsResourcePack()) {
+                            items.addItem(texture);
+                        }
                     }
             }
 
-            if (texturesList.size() == 0){
+            if (items.getItemCount() == 0){
                 recyclerView.setVisibility(View.GONE);
                 android_nothing_card.setVisibility(View.VISIBLE);
             }
+
+            DiffUtil.Callback callback = new DiffUtilCallback(oldTemp,items);
+            final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
+            diffResult.dispatchUpdatesTo(items);
+            items.notifyDataSetChanged();
         }
         else MakeErrorDialog("Failed to make textures root directory.");
     }

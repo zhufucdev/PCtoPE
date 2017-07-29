@@ -36,6 +36,7 @@ import android.widget.TextView;
 
 import com.zhufuc.pctope.Collectors.ErrorsCollector;
 import com.zhufuc.pctope.R;
+import com.zhufuc.pctope.Tools.DeleteFolder;
 
 import net.lingala.zip4j.exception.ZipException;
 
@@ -206,7 +207,7 @@ public class ConversionActivity extends AppCompatActivity {
 
         //Delete something that we don't need
         new File(path+"/pack.mcmeta").delete();
-        DeleteFolder(path+"/assets");
+        DeleteFolder.Delete(path+"/assets");
 
         ArrayList<String> files = ListFiles(new File(path));
         int fileslength = files.size()-1;
@@ -456,72 +457,6 @@ public class ConversionActivity extends AppCompatActivity {
         zFile.extractAll(dest);      // 将文件抽出到解压目录(解压)
     }
 
-    /**
-     * 删除单个文件
-     * @param   filePath    被删除文件的文件名
-     * @return 文件删除成功返回true，否则返回false
-     */
-    public boolean deleteFile(String filePath) {
-        File file = new File(filePath);
-        if (file.isFile() && file.exists()) {
-            return file.delete();
-        }
-        return false;
-    }
-    /**
-     * 删除文件夹以及目录下的文件
-     * @param   filePath 被删除目录的文件路径
-     * @return  目录删除成功返回true，否则返回false
-     */
-    public boolean deleteDirectory(String filePath) {
-        boolean flag = false;
-        //如果filePath不以文件分隔符结尾，自动添加文件分隔符
-        if (!filePath.endsWith(File.separator)) {
-            filePath = filePath + File.separator;
-        }
-        File dirFile = new File(filePath);
-        if (!dirFile.exists() || !dirFile.isDirectory()) {
-            return false;
-        }
-        flag = true;
-        File[] files = dirFile.listFiles();
-        //遍历删除文件夹下的所有文件(包括子目录)
-        for (int i = 0; i < files.length; i++) {
-            if (files[i].isFile()) {
-                //删除子文件
-                flag = deleteFile(files[i].getAbsolutePath());
-                if (!flag) break;
-            } else {
-                //删除子目录
-                flag = deleteDirectory(files[i].getAbsolutePath());
-                if (!flag) break;
-            }
-        }
-        if (!flag) return false;
-        //删除当前空目录
-        return dirFile.delete();
-    }
-
-    /**
-     *  根据路径删除指定的目录或文件，无论存在与否
-     *@param filePath  要删除的目录或文件
-     *@return 删除成功返回 true，否则返回 false。
-     */
-    public boolean DeleteFolder(String filePath) {
-        File file = new File(filePath);
-        if (!file.exists()) {
-            return false;
-        } else {
-            if (file.isFile()) {
-                // 为文件时调用删除文件方法
-                return deleteFile(filePath);
-            } else {
-                // 为目录时调用删除目录方法
-                return deleteDirectory(filePath);
-            }
-        }
-    }
-
 
 
     @Override
@@ -630,7 +565,7 @@ public class ConversionActivity extends AppCompatActivity {
                                 byte[] buffer = new byte[1444];int i;
                                 InputStream inputStream = getResources().openRawResource(R.raw.bug_pack_icon);
                                 try {
-                                    FileOutputStream outputStream = new FileOutputStream(path+"pack_icon.png");
+                                    FileOutputStream outputStream = new FileOutputStream(path+"/pack_icon.png");
                                     while ((i=inputStream.read(buffer))!=-1){
                                         outputStream.write(buffer,0,i);
                                     }
@@ -892,7 +827,7 @@ public class ConversionActivity extends AppCompatActivity {
                 Snackbar.make(text,R.string.deleting,Snackbar.LENGTH_LONG).show();
                 Boolean r = false;
                 if (notpack.exists())
-                    r = DeleteFolder(notpack.toString());
+                    r = DeleteFolder.Delete(notpack.toString());
                 else
                     r = true;
 

@@ -47,4 +47,5 @@
     <string name="tutorial_step5_subtitle">不要急着打开存档。通常你需要重启MC以加载材质包。</string>
     <string name="tutorial_hope">希望你喜欢！</string>
     <string name="tutorial_hope_subtitle">如果需要帮助，你可以加我QQ(1095291434)，给我发电子邮件，或是在酷安评论区留言。感谢您的使用！</string>
+    <string name="undo">撤销</string>
 </resources>

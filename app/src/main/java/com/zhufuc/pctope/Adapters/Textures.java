@@ -27,9 +27,15 @@ public class Textures {
 
     private String name,description;
 
+    private Boolean isResourcePack = true;
+
     public Textures(File path){
         this.path = path;
         readManifest();
+    }
+
+    public Boolean IfIsResourcePack(){
+        return isResourcePack;
     }
 
     private void readManifest(){
@@ -52,7 +58,6 @@ public class Textures {
                     e.printStackTrace();
                 }
                 String intro = stringBuilder.toString();
-                Log.d("TestForManifest: ",stringBuilder.toString());
                 //look for information
 
                 for (int i=11;i<intro.length();i++){
@@ -92,7 +97,9 @@ public class Textures {
                     }
                 }
             }
+            else isResourcePack = false;
         }
+        else isResourcePack = false;
         return;
     }
 

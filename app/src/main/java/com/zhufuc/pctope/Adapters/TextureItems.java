@@ -1,7 +1,13 @@
 package com.zhufuc.pctope.Adapters;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.os.Message;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +20,7 @@ import android.widget.TextView;
 
 import com.zhufuc.pctope.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +28,7 @@ import java.util.List;
  */
 
 public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> {
-    private List<Textures> mTextures;
+    private ArrayList<Textures> mTextures;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView TextureName;
@@ -29,17 +36,21 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
         ImageView TextureIcon;
         CardView cardView;
 
+
         public ViewHolder(View v){
             super(v);
             cardView = (CardView)v.findViewById(R.id.card_texture_card);
             TextureIcon = (ImageView)v.findViewById(R.id.card_texture_icon);
             TextureName = (TextView)v.findViewById(R.id.card_texture_name);
             TextureDescription = (TextView)v.findViewById(R.id.card_texture_name_subname);
+
+            //for sth else
+
         }
     }
 
-    public TextureItems(List<Textures> textureList){
-        mTextures = textureList;
+    public TextureItems(){
+        this.mTextures = new ArrayList<>();
     }
 
     @Override
@@ -67,14 +78,29 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize=2;
-        Bitmap bm = BitmapFactory.decodeFile(textures.getIcon().getPath(),options);
-        holder.TextureIcon.setImageBitmap(bm);
-        Animation swipe = AnimationUtils.loadAnimation(holder.cardView.getContext(),R.anim.show_swipe);
-        holder.cardView.startAnimation(swipe);
+
+        if (!(textures.getIcon() == null)){
+            String pathIcon = textures.getIcon().getPath();
+            Bitmap bm = BitmapFactory.decodeFile(pathIcon,options);
+            holder.TextureIcon.setImageBitmap(bm);
+        }
+
     }
 
     @Override
     public int getItemCount(){
         return mTextures.size();
     }
+
+    public void addItem(int index,Textures texture){
+        mTextures.add(index,texture);
+    }
+
+    public void addItem(Textures texture){mTextures.add(texture);}
+
+    public void remove(int position){mTextures.remove(position);}
+
+    public Textures getItem(int index){return mTextures.get(index);}
+
+    public void clear(){mTextures.clear();}
 }
