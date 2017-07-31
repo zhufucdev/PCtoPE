@@ -12,6 +12,8 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.os.Looper;
+import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -37,6 +39,8 @@ import android.widget.TextView;
 import com.zhufuc.pctope.Collectors.ErrorsCollector;
 import com.zhufuc.pctope.R;
 import com.zhufuc.pctope.Tools.DeleteFolder;
+import com.zhufuc.pctope.Tools.GetPathFromUri4kitkat;
+import com.zhufuc.pctope.Tools.PackVersionDecisions;
 
 import net.lingala.zip4j.exception.ZipException;
 
@@ -66,7 +70,7 @@ public class ConversionActivity extends AppCompatActivity {
         return spaces;
     }
 
-    public void MakeErrorDialog(final String errorString){
+    private void MakeErrorDialog(final String errorString){
         //make up a error dialog
         AlertDialog.Builder error_dialog = new AlertDialog.Builder(ConversionActivity.this);
         error_dialog.setTitle(R.string.error);
@@ -89,34 +93,34 @@ public class ConversionActivity extends AppCompatActivity {
         }).show();
     }
 
+
     //==>define
     String path,packname,packdescription;
     boolean isPreFinished = false;
+    private TextInputEditText name;
+    private TextInputEditText description;
+
+    private final String fullPC = "Found:full PC pack.";
+    private final String brokenPE = "Found:broken PE pack.";
+    private final String brokenPC = "Found:broken PC pack.";
 
     private boolean doVersionDecisions(){
         File root = new File(path);
-        if(root.exists()){
-            File iconPE = new File(root+"/pack_icon.png");
-            File iconPC = new File(root+"/pack.png");
-            File texturePE = new File(root+"/textures");
-            File texturePC = new File(root+"/assets/minecraft/textures");
-            if(iconPE.exists()&&texturePE.exists()){
-                Log.d("status","Icon for PE exists.");
-                Log.d("status","Textures for PE exist.");
+        PackVersionDecisions decisions = new PackVersionDecisions(root);
+        String v = decisions.getPackVersion();
+        Log.d("Textures",v);
+        if (v.charAt(0) != 'E'){
+            String fullPE = "Found:full PE pack.";
+            if (v.equals(fullPE) || v.equals(fullPC)){
+                name.setText(decisions.getName());
+                description.setText(decisions.getDescription());
+            }
+            else if (v.equals(brokenPE)){
                 onPEDecisions();
             }
-            else if(iconPC.exists()&&texturePC.exists()){
-                Log.d("status","Icon for PC exists.");
-                Log.d("status","Textures for PC exist.");
+            else if (v.equals(brokenPC)){
                 onPcDecisions();
             }
-            else if (texturePC.exists()){
-                onPcDecisions();
-            }
-            else if (texturePE.exists()){
-                onPEDecisions();
-            }
-            else return false;
             return true;
         }
         return false;
@@ -181,8 +185,8 @@ public class ConversionActivity extends AppCompatActivity {
                     if (j>=2) break;
                 }
                 fileindir+=strnow.substring(i);
-                String lastStr = new String(fileindir.substring(fileindir.lastIndexOf('.')));
-                if(lastStr == ".mcmeta"){
+                String lastStr = fileindir.substring(fileindir.lastIndexOf('.'));
+                if(Objects.equals(lastStr, ".mcmeta")){
                     f.delete();
                     Log.d("files","Deleted .mcmeta file:"+f);
                 }
@@ -259,8 +263,12 @@ public class ConversionActivity extends AppCompatActivity {
 
 
     public void onPEDecisions(){
-
-
+        File[] JSONs = new File(path+"/textures/").listFiles();
+        for (File f:JSONs){
+            String n = f.getPath();
+            if (n.substring(n.lastIndexOf('.'),n.length())==".json")
+                f.delete();
+        }
     }
 
     public String doJsonFixing(InputStream data,int SearchFrom){
@@ -440,26 +448,33 @@ public class ConversionActivity extends AppCompatActivity {
     
     public static void unzip(File zipFile, String dest, String passwd) throws ZipException, net.lingala.zip4j.exception.ZipException {
         net.lingala.zip4j.core.ZipFile zFile = new net.lingala.zip4j.core.ZipFile(zipFile); // 首先创建ZipFile指向磁盘上的.zip文件
-        zFile.setFileNameCharset("GBK");       // 设置文件名编码，在GBK系统中需要设置
         if (!zFile.isValidZipFile()) {   // 验证.zip文件是否合法，包括文件是否存在、是否为zip文件、是否被损坏等
             throw new ZipException("压缩文件不合法,可能被损坏.");
         }
-        File destDir = new File(dest);     // 解压目录
-        if (destDir.isDirectory() && !destDir.exists()) {
-            destDir.mkdir();
+        File destDir = new File(dest);// 解压目录
+        if (destDir.exists()){
+            DeleteFolder.Delete(dest);
         }
+        destDir.mkdirs();
         if (zFile.isEncrypted()) {
             zFile.setPassword(passwd.toCharArray());  // 设置密码
-        }
-        if(destDir.exists()&&destDir.getTotalSpace() >= zipFile.getTotalSpace()){
-            return;
         }
         zFile.extractAll(dest);      // 将文件抽出到解压目录(解压)
     }
 
+    private String doDestFixing(final String old){
+        File dest = new File(Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/" + old);
+        int plus = 0;
+        String str = old;
+        while (dest.exists()){
+            plus++;
+            str = old+plus;
+            dest = new File(Environment.getExternalStorageDirectory() + "/games/com.mojang/resource_packs/" + str);
+        }
+        return str;
+    }
 
-
-    @Override
+    Boolean skipUnzip = false;
     protected void onCreate(Bundle savedInstanceState) {
         //Test Area
         //*Code Something for test
@@ -469,12 +484,14 @@ public class ConversionActivity extends AppCompatActivity {
         //Preload
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversion);
-        final TextInputEditText name = (TextInputEditText) findViewById(R.id.pname);
-        final TextInputEditText description = (TextInputEditText) findViewById(R.id.pdescription);
+
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         final CollapsingToolbarLayout collapsingbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_bar);
         setResult(RESULT_OK,finishIntent);//I don't need to use it
-        packname = getResources().getString(R.string.project_unnamed);
+
+        name = (TextInputEditText) findViewById(R.id.pname);
+        description = (TextInputEditText) findViewById(R.id.pdescription);
+        path = this.getExternalCacheDir().getPath();
 
         //set back button
         setSupportActionBar(toolbar);
@@ -482,7 +499,12 @@ public class ConversionActivity extends AppCompatActivity {
         if(actionbar!=null){
             actionbar.setDisplayHomeAsUpEnabled(true);
         }
+
         //set project name on changed listener
+        packname = getResources().getString(R.string.project_unnamed);
+        packname = doDestFixing(packname);
+        collapsingbar.setTitle(packname);
+
         name.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -491,12 +513,14 @@ public class ConversionActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(charSequence!=null){
+                if(!charSequence.toString().equals("")){
                     packname = charSequence.toString();
-                    collapsingbar.setTitle(charSequence.toString());
+                    packname = doDestFixing(packname);
+                    collapsingbar.setTitle(packname);
                 }
                 else{
                     packname = getResources().getString(R.string.project_unnamed);
+                    packname = doDestFixing(packname);
                     collapsingbar.setTitle(packname);
                 }
 
@@ -523,6 +547,21 @@ public class ConversionActivity extends AppCompatActivity {
 
         Intent intent=getIntent();
         final String file = intent.getStringExtra("filePath");
+        String fileName="";
+        //==>get file name
+        for(int i=file.length()-1;i>=0;i--){
+            if(file.charAt(i)=='/'){
+                Log.d("files","/ is at "+i);
+                for (int j=i+1;j<file.length();j++){
+                    fileName+=file.charAt(j);
+                }
+                fileName=fileName.substring(0,fileName.lastIndexOf('.'));
+                break;
+            }
+        }
+        path+="/"+fileName;
+        Log.d("unzip","We will unzip "+file+" to "+path);
+        final File fileIn = new File(file);
 
         //do main
         class UnzippingTask extends AsyncTask<Void, Integer ,Boolean>{
@@ -531,13 +570,12 @@ public class ConversionActivity extends AppCompatActivity {
             final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_layout);
             final LinearLayout error_layout = (LinearLayout)findViewById(R.id.error_layout);
 
-            protected void doFinishButtonDoes(View v){
+            private void doFinishButtonDoes(View v){
                 if (isPreFinished){
                     packdescription = description.getText().toString();
                     final ProgressDialog loadingDialog = new ProgressDialog(ConversionActivity.this);
                     name.setEnabled(false);
                     description.setEnabled(false);
-                    loadingDialog.hide();
 
                     new Thread(new Runnable() {
                         @Override
@@ -576,26 +614,22 @@ public class ConversionActivity extends AppCompatActivity {
                             
                             //Move to dest
                             File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
-                            if (dest.isDirectory()&&dest.exists()) dest.mkdir();
+                            if (dest.isDirectory()&&dest.exists()) dest.mkdirs();
                             new File(path).renameTo(dest);
-
-                            //Done
+                            finishIntent.putExtra("Status_return",true);
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    loadingDialog.hide();
-                                    if (ErrorsCollector.getError(1)==null) {
-                                        Snackbar.make(cards, R.string.completed, Snackbar.LENGTH_LONG).show();
-                                        finishIntent.putExtra("Status_return",true);
-                                        try {
-                                            Thread.sleep(1000);
-                                        } catch (InterruptedException e) {
-                                            e.printStackTrace();
-                                        }
-                                        finish();
-                                    }
+                                    loadingDialog.setMessage(getResources().getString(R.string.completed));
                                 }
                             });
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            finish();
+                            //Done
                         }
                     }).start();
 
@@ -610,7 +644,8 @@ public class ConversionActivity extends AppCompatActivity {
             protected void onPreExecute(){
                 cards.setVisibility(View.GONE);
                 unzipping_tip.setVisibility(View.VISIBLE);
-                path = ConversionActivity.this.getExternalCacheDir().getPath();
+
+                //Listeners
                 button_finish.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -627,33 +662,21 @@ public class ConversionActivity extends AppCompatActivity {
 
             @Override
             protected Boolean doInBackground(Void... params){
-                try {
-                    String fileName="";
-                    //==>get file name
-                    for(int i=file.length()-1;i>=0;i--){
-                        if(file.charAt(i)=='/'){
-                            Log.d("files","/ is at "+i);
-                            for (int j=i+1;j<file.length();j++){
-                                fileName+=file.charAt(j);
-                            }
-                            fileName=fileName.substring(0,fileName.lastIndexOf('.'));
-                            break;
-                        }
+                if (!skipUnzip)
+                    try {
+                        Log.d("unzip","Unzipping to "+path);
+                        unzip(fileIn,path,"0");
+                    } catch (Exception e) {
+                        ErrorsCollector.putError(e.toString(),0);
+                        return false;
                     }
-                    path+="/"+fileName+"/";
-                    Log.d("unzip","Unzipping "+file+" to "+path);
-                    File fileIn = new File(file);
-                    unzip(fileIn,path,"0");
-                } catch (Exception e) {
-                    ErrorsCollector.putError(e.toString(),0);
-                    return false;
-                }
 
                 //Find the true root path
-                return isPathUseful();
+                return isPathUseful(path);
             }
 
-            private Boolean isPathUseful(){
+            @Nullable
+            private Boolean isPathUseful(String path){
                 File pathDecisions = new File(path);
                 if(pathDecisions.exists()&&pathDecisions.isDirectory()){
                     File[] FileListInPath = pathDecisions.listFiles();
@@ -673,22 +696,26 @@ public class ConversionActivity extends AppCompatActivity {
                         Boolean isFoundNext = false;
                         for (int i = 0;i<Dirs.size();i++){
                             path=Dirs.get(i).getPath();
-                            if (isPathUseful()){
+                            if (isPathUseful(path)){
                                 isFoundNext = true;
                                 return true;
                             }
                         }
-                        if (!isFoundNext) return false;
+                        if (!isFoundNext){
+                            ErrorsCollector.putError("There's nothing useful in the unzipped directory.",0);
+                            return false;
+                        }
                     }
                 }
-                else return false;
-                return null;
+                return false;
             }
+
 
             @Override
             protected void onPostExecute(Boolean result){
                 if(result){
-                    if(doVersionDecisions()){
+                    Boolean isDecided = doVersionDecisions();
+                    if(isDecided){
                         doOnSuccesses();
                     }
                     else {
@@ -701,16 +728,34 @@ public class ConversionActivity extends AppCompatActivity {
                     cards.setVisibility(View.GONE);
                     unzipping_tip.setVisibility(View.GONE);
                     error_layout.setVisibility(View.VISIBLE);
-                    //define
-                    FileInputStream in = null;
-                    BufferedReader reader = null;
-                    final StringBuilder content = new StringBuilder();
                     //Read errors
                     MakeErrorDialog(ErrorsCollector.getError(0));
                 }
             }
         }
-        new UnzippingTask().execute();
+
+        if (new File(path).exists()){
+            AlertDialog.Builder dialog = new AlertDialog.Builder(ConversionActivity.this);
+            dialog.setTitle(R.string.overwrite_title);
+            dialog.setMessage(R.string.overwrite_content);
+            dialog.setCancelable(false);
+            dialog.setNegativeButton(R.string.skip, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    skipUnzip = true;
+                    new UnzippingTask().execute();
+                }
+            });
+            dialog.setPositiveButton(R.string.overwrite, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    skipUnzip = false;
+                    new UnzippingTask().execute();
+                }
+            });
+            dialog.show();
+        }
+        else new UnzippingTask().execute();
     }
 
 
@@ -718,7 +763,7 @@ public class ConversionActivity extends AppCompatActivity {
         ImageView icon = (ImageView) findViewById(R.id.img_card_icon);
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize=2;
-        File iconTest = new File(path.toString()+"/pack_icon.png");
+        File iconTest = new File(path+"/pack_icon.png");
         if (iconTest.exists()){
             Bitmap bm = BitmapFactory.decodeFile(iconTest.getPath(),options);
             icon.setImageBitmap(bm);
@@ -759,7 +804,7 @@ public class ConversionActivity extends AppCompatActivity {
         //Load icon
         loadIcon();
         //Set icon editor
-        Button edit = (Button) findViewById(R.id.card_icon_edit);
+        ImageView edit = (ImageView) findViewById(R.id.card_icon_edit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -780,14 +825,6 @@ public class ConversionActivity extends AppCompatActivity {
                 }).show();
             }
         });
-        //Set icon open button
-        Button open = (Button)findViewById(R.id.card_icon_open);
-        open.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Snackbar.make(v,"Ummm....",Snackbar.LENGTH_SHORT).show();
-            }
-        });
     }
 
     //onResult
@@ -797,8 +834,8 @@ public class ConversionActivity extends AppCompatActivity {
             if(requestCode == 0){
                 Uri uri = data.getData();
                 String fileLocation = GetPathFromUri4kitkat.getPath(ConversionActivity.this,uri);
-                Log.d("files","Copying image to "+path+"pack_icon.png");
-                if(!CopyFileOnSD(fileLocation,path+"pack_icon.png")) MakeErrorDialog(ErrorsCollector.getError(0));
+                Log.d("files","Copying image to "+path+"/pack_icon.png");
+                if(!CopyFileOnSD(fileLocation,path+"/pack_icon.png")) MakeErrorDialog(ErrorsCollector.getError(0));
                 else{
                     LinearLayout viewC = (LinearLayout)findViewById(R.id.cards);
                     Snackbar.make(viewC,R.string.completed,Snackbar.LENGTH_SHORT).show();
@@ -860,7 +897,4 @@ public class ConversionActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
 }

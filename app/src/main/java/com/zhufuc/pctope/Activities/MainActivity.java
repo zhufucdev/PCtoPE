@@ -6,7 +6,6 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,6 +24,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.util.AndroidException;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
@@ -35,14 +35,11 @@ import com.zhufuc.pctope.Collectors.ActivityCollector;
 import com.zhufuc.pctope.Adapters.TextureItems;
 import com.zhufuc.pctope.Adapters.Textures;
 import com.zhufuc.pctope.Interf.DeletingCallback;
+import com.zhufuc.pctope.Tools.GetPathFromUri4kitkat;
 import com.zhufuc.pctope.Utils.*;
 import com.zhufuc.pctope.R;
 
-import org.w3c.dom.Text;
-
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import static android.widget.Toast.makeText;
 
@@ -149,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
             initActivity();
         }
         else{
-            Snackbar.make(fab, R.string.permissions_request, Snackbar.LENGTH_LONG)
+            Snackbar.make(fab, R.string.permissions_request, Snackbar.LENGTH_INDEFINITE)
                     .setAction(R.string.ok, new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -276,6 +273,14 @@ public class MainActivity extends AppCompatActivity {
                 final TextureItems oldTemp = items;
                 items.remove(position);
 
+                final CardView android_nothing_card = (CardView)findViewById(R.id.android_nothing);
+                if (items.getItemCount() == 0){
+                    recyclerView.setVisibility(View.GONE);
+                    android_nothing_card.setVisibility(View.VISIBLE);
+                    Animation show = AnimationUtils.loadAnimation(MainActivity.this,R.anim.cards_show);
+                    android_nothing_card.startAnimation(show);
+                }
+
                 DiffUtil.Callback callback = new DiffUtilCallback(oldTemp,items);
                 final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
                 diffResult.dispatchUpdatesTo(items);
@@ -291,6 +296,8 @@ public class MainActivity extends AppCompatActivity {
                                     items.addItem(position,deleting);
                                     DiffUtil.Callback callback1 = new DiffUtilCallback(oldTemp1,items);
                                     DiffUtil.DiffResult diffResult1 = DiffUtil.calculateDiff(callback1);
+                                    recyclerView.setVisibility(View.VISIBLE);
+                                    android_nothing_card.setVisibility(View.GONE);
                                     diffResult.dispatchUpdatesTo(items);
                                     items.notifyItemInserted(position);
                                 }

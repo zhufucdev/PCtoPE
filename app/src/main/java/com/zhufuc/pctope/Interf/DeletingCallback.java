@@ -20,14 +20,13 @@ public class DeletingCallback extends Snackbar.Callback{
     @Override
     public void onDismissed(Snackbar snackbar, int event){
         super.onDismissed(snackbar,event);
-        if (event !=DISMISS_EVENT_ACTION){
+        if (event != DISMISS_EVENT_ACTION){
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     DeleteFolder.Delete(WhatWillBeDeleted.getPath());
                 }
             }).start();
-
         }
     }
 

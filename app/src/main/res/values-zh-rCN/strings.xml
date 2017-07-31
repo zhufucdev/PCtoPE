@@ -48,4 +48,10 @@
     <string name="tutorial_hope">希望你喜欢！</string>
     <string name="tutorial_hope_subtitle">如果需要帮助，你可以加我QQ(1095291434)，给我发电子邮件，或是在酷安评论区留言。感谢您的使用！</string>
     <string name="undo">撤销</string>
+    <string name="overwrite_title">覆盖？</string>
+    <string name="overwrite_content">已经有一个同名的文件夹了。你想要覆盖它吗？</string>
+    <string name="overwrite">覆盖</string>
+    <string name="no">不</string>
+    <string name="skip">跳过</string>
+    <string name="destination_exists">目标已存在！</string>
 </resources>

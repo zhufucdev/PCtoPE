@@ -48,4 +48,10 @@
     <string name="tutorial_hope">Hope You Enjoy!</string>
     <string name="tutorial_hope_subtitle">If you need help, you can call me on QQ(1095291434) or e-mail me.Thanks!</string>
     <string name="undo">UNDO</string>
+    <string name="overwrite_title">Overwrite?</string>
+    <string name="overwrite_content">A directory that has the same name is already here.Do you want to overwrite it?</string>
+    <string name="overwrite">Overwrite</string>
+    <string name="no">NO</string>
+    <string name="skip">Skip</string>
+    <string name="destination_exists">Destination exists!</string>
 </resources>
