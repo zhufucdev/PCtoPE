@@ -61,6 +61,7 @@
         android:layout_margin="@dimen/text_margin"
         android:layout_gravity="bottom|end"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true" />
+        android:clickable="true"
+        android:visibility="gone"/>
 
 </android.support.v7.widget.CardView>

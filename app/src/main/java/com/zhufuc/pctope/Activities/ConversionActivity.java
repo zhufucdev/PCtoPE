@@ -93,40 +93,7 @@ public class ConversionActivity extends AppCompatActivity {
         }).show();
     }
 
-
-    //==>define
-    String path,packname,packdescription;
-    boolean isPreFinished = false;
-    private TextInputEditText name;
-    private TextInputEditText description;
-
-    private final String fullPC = "Found:full PC pack.";
-    private final String brokenPE = "Found:broken PE pack.";
-    private final String brokenPC = "Found:broken PC pack.";
-
-    private boolean doVersionDecisions(){
-        File root = new File(path);
-        PackVersionDecisions decisions = new PackVersionDecisions(root);
-        String v = decisions.getPackVersion();
-        Log.d("Textures",v);
-        if (v.charAt(0) != 'E'){
-            String fullPE = "Found:full PE pack.";
-            if (v.equals(fullPE) || v.equals(fullPC)){
-                name.setText(decisions.getName());
-                description.setText(decisions.getDescription());
-            }
-            else if (v.equals(brokenPE)){
-                onPEDecisions();
-            }
-            else if (v.equals(brokenPC)){
-                onPcDecisions();
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public boolean CopyFileOnSD(String fileFrom, String fileTo){
+    private boolean CopyFileOnSD(String fileFrom, String fileTo){
         File from = new File(fileFrom);
         File to = new File(fileTo);
         if (from.exists()){
@@ -167,6 +134,29 @@ public class ConversionActivity extends AppCompatActivity {
         }
 
     }
+
+    //==>define
+    String path,packname,packdescription;
+    boolean isPreFinished = false;
+    private TextInputEditText name;
+    private TextInputEditText description;
+
+    private final String fullPC = "Found:full PC pack.";
+    private final String brokenPE = "Found:broken PE pack.";
+    private final String brokenPC = "Found:broken PC pack.";
+    private final String fullPE = "Found:full PE pack.";
+
+    PackVersionDecisions decisions;
+    private String VerStr = null;
+    private void doVersionDecisions(){
+        if (VerStr.equals(brokenPE)||VerStr.equals(fullPE)){
+            onPEDecisions();
+        }
+        else if (VerStr.equals(brokenPC)||VerStr.equals(fullPC)){
+            onPcDecisions();
+        }
+    }
+
 
     //如题，遍历所有子png文件
     static ArrayList<String> filelist = new ArrayList<String>();
@@ -568,82 +558,13 @@ public class ConversionActivity extends AppCompatActivity {
         }
         else path = intent.getStringExtra("filePath");
         final File fileIn = fileT;
+        Log.d("status","Path:"+path);
         //do main
         class UnzippingTask extends AsyncTask<Void, Integer ,Boolean>{
             //==>define
             final LinearLayout unzipping_tip = (LinearLayout) findViewById(R.id.unzipping_tip);
             final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_layout);
             final LinearLayout error_layout = (LinearLayout)findViewById(R.id.error_layout);
-
-            private void doFinishButtonDoes(View v){
-                if (isPreFinished){
-                    packdescription = description.getText().toString();
-                    final ProgressDialog loadingDialog = new ProgressDialog(ConversionActivity.this);
-                    name.setEnabled(false);
-                    description.setEnabled(false);
-
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    loadingDialog.setTitle(R.string.loading);
-                                    loadingDialog.setMessage(getApplicationContext().getString(R.string.do_final_step));
-                                    loadingDialog.setCancelable(false);
-                                    loadingDialog.show();
-                                }
-                            });
-
-                            try {
-                                doJSONWriting();
-                            } catch (FileNotFoundException e) {
-                                ErrorsCollector.putError(e.toString(),1);
-                                e.printStackTrace();
-                            }
-
-                            //For if icon doesn't exist
-                            File iconTest = new File(path+"/pack_icon.png");
-                            if (!iconTest.exists()){
-                                byte[] buffer = new byte[1444];int i;
-                                InputStream inputStream = getResources().openRawResource(R.raw.bug_pack_icon);
-                                try {
-                                    FileOutputStream outputStream = new FileOutputStream(path+"/pack_icon.png");
-                                    while ((i=inputStream.read(buffer))!=-1){
-                                        outputStream.write(buffer,0,i);
-                                    }
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                            
-                            //Move to dest
-                            File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
-                            if (dest.isDirectory()&&dest.exists()) dest.mkdirs();
-                            new File(path).renameTo(dest);
-                            finishIntent.putExtra("Status_return",true);
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    loadingDialog.setMessage(getResources().getString(R.string.completed));
-                                }
-                            });
-                            try {
-                                Thread.sleep(1000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            finish();
-                            //Done
-                        }
-                    }).start();
-
-                    if (ErrorsCollector.getError(1)!=null)
-                        MakeErrorDialog(ErrorsCollector.getError(1));
-                }
-                else
-                    Snackbar.make(v,R.string.unclickable_unzipping,Snackbar.LENGTH_LONG).show();
-            }
 
             @Override
             protected void onPreExecute(){
@@ -676,8 +597,7 @@ public class ConversionActivity extends AppCompatActivity {
                         return false;
                     }
 
-                //Find the true root path
-                return isPathUseful();
+                return isPathUseful();//Find the true root path
             }
 
             @Nullable
@@ -719,8 +639,13 @@ public class ConversionActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(Boolean result){
                 if(result){
-                    Boolean isDecided = doVersionDecisions();
-                    if(isDecided){
+                    decisions = new PackVersionDecisions(new File(path));
+                    VerStr = decisions.getPackVersion();
+                    if(VerStr.charAt(0)!='E'){
+                        if (VerStr.equals(fullPE) && name.getText().toString().equals("") && description.getText().toString().equals("")){
+                            name.setText(decisions.getName());
+                            description.setText(decisions.getDescription());
+                        }
                         doOnSuccesses();
                     }
                     else {
@@ -739,6 +664,7 @@ public class ConversionActivity extends AppCompatActivity {
             }
         }
 
+        //Overwrite dialog
         if (new File(path).exists()&&!skipUnzip){
             AlertDialog.Builder dialog = new AlertDialog.Builder(ConversionActivity.this);
             dialog.setTitle(R.string.overwrite_title);
@@ -763,15 +689,95 @@ public class ConversionActivity extends AppCompatActivity {
         else new UnzippingTask().execute();
     }
 
+    private void doFinishButtonDoes(View v){
+        if (isPreFinished){
+            doVersionDecisions();
+
+            packdescription = description.getText().toString();
+            final ProgressDialog loadingDialog = new ProgressDialog(ConversionActivity.this);
+            name.setEnabled(false);
+            description.setEnabled(false);
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadingDialog.setTitle(R.string.loading);
+                            loadingDialog.setMessage(getApplicationContext().getString(R.string.do_final_step));
+                            loadingDialog.setCancelable(false);
+                            loadingDialog.show();
+                        }
+                    });
+
+                    try {
+                        doJSONWriting();
+                    } catch (FileNotFoundException e) {
+                        ErrorsCollector.putError(e.toString(),1);
+                        e.printStackTrace();
+                    }
+
+                    //For if icon doesn't exist
+                    File iconTest = new File(path+"/pack_icon.png");
+                    if (!iconTest.exists()){
+                        byte[] buffer = new byte[1444];int i;
+                        InputStream inputStream = getResources().openRawResource(R.raw.bug_pack_icon);
+                        try {
+                            FileOutputStream outputStream = new FileOutputStream(path+"/pack_icon.png");
+                            while ((i=inputStream.read(buffer))!=-1){
+                                outputStream.write(buffer,0,i);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    //Move to dest
+                    File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
+                    if (dest.isDirectory()&&dest.exists()) dest.mkdirs();
+                    new File(path).renameTo(dest);
+                    finishIntent.putExtra("Status_return",true);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            loadingDialog.setMessage(getResources().getString(R.string.completed));
+                        }
+                    });
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    finish();
+                    //Done
+                }
+            }).start();
+
+            if (ErrorsCollector.getError(1)!=null)
+                MakeErrorDialog(ErrorsCollector.getError(1));
+        }
+        else
+            Snackbar.make(v,R.string.unclickable_unzipping,Snackbar.LENGTH_LONG).show();
+    }
 
     public void loadIcon(){
         ImageView icon = (ImageView) findViewById(R.id.img_card_icon);
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize=2;
-        File iconTest = new File(path+"/pack_icon.png");
-        if (iconTest.exists()){
-            Bitmap bm = BitmapFactory.decodeFile(iconTest.getPath(),options);
-            icon.setImageBitmap(bm);
+        if (VerStr.equals(fullPE)){
+            File iconTest = new File(path+"/pack_icon.png");
+            if (iconTest.exists()){
+                Bitmap bm = BitmapFactory.decodeFile(iconTest.getPath(),options);
+                icon.setImageBitmap(bm);
+            }
+        }
+        else if (VerStr.equals(fullPC)){
+            File iconTest = new File(path+"/pack.png");
+            if (iconTest.exists()){
+                Bitmap bm = BitmapFactory.decodeFile(iconTest.getPath(),options);
+                icon.setImageBitmap(bm);
+            }
         }
         else{
             FloatingActionButton finishBottom = (FloatingActionButton)findViewById(R.id.finishBottom);
@@ -785,7 +791,6 @@ public class ConversionActivity extends AppCompatActivity {
                             startActivityForResult(choose, 0);
                         }
                     })
-                    .setActionTextColor(getResources().getColor(R.color.colorPrimaryDark))
                     .show();
         }
     }
@@ -832,7 +837,7 @@ public class ConversionActivity extends AppCompatActivity {
         });
     }
 
-    //onResult
+    //on Result
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(resultCode == Activity.RESULT_OK)

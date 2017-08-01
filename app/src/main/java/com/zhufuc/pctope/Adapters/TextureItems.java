@@ -1,5 +1,6 @@
 package com.zhufuc.pctope.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhufuc.pctope.Activities.ConversionActivity;
+import com.zhufuc.pctope.Activities.MainActivity;
 import com.zhufuc.pctope.R;
 import com.zhufuc.pctope.Tools.PackVersionDecisions;
 
@@ -118,12 +120,15 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
             holder.TextureIcon.setImageBitmap(bm);
         }
 
-        String VersionStr = textures.getVersion();
+
         //Alert icon
-        if (Objects.equals(VersionStr, fullPE)){
-            holder.AlertIcon.setVisibility(View.GONE);
+        if (!textures.IfIsResourcePack("PE")){
+            String verStr = textures.getVersion();
+            if (verStr.equals(fullPC)||verStr.equals(brokenPC)){
+                holder.AlertIcon.setVisibility(View.VISIBLE);
+                holder.AlertIcon.setTag(textures.getPath());
+            }
         }
-        else holder.AlertIcon.setTag(textures.getPath());
     }
 
     @Override

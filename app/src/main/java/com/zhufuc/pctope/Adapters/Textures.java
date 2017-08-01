@@ -14,22 +14,19 @@ public class Textures {
 
     private String name,description;
 
-    private Boolean isResourcePack = true;
-
+    private String verStr;
     private PackVersionDecisions version;
 
     public Textures(File path){
         this.path = path;
-
         version = new PackVersionDecisions(path);
-
+        verStr =
         name = version.getName();
         description = version.getDescription();
-        isResourcePack = version.getPackVersion().charAt(0)!='E';
     }
 
-    public Boolean IfIsResourcePack(){
-        return isResourcePack;
+    public Boolean IfIsResourcePack(String testVersion){
+        return version.getIfIsResourcePack(testVersion);
     }
 
     public String getVersion(){

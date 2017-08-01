@@ -54,7 +54,7 @@
     <string name="no">不</string>
     <string name="skip">跳过</string>
     <string name="destination_exists">目标已存在！</string>
-    <string name="broken_pc">不完整的PC纹理包</string>
+    <string name="broken_pc">不可用的PC纹理包</string>
     <string name="broken_pc_subtitle">点击右边的红色图标了解跟多。</string>
-    <string name="broken_pc_dialog_content">正如你所见，这是一个不完整的PC纹理包。这种纹理包是不能被MC PE所加载的。你可以向两侧滑动删除这个包，或是点击这张卡片尝试修复。</string>
+    <string name="broken_pc_dialog_content">正如你所见，这是一个不可用的PC纹理包。这种纹理包是不能被MC PE所加载的。你可以向两侧滑动删除这个包，或是点击这张卡片尝试修复。</string>
 </resources>

@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 0){
             Boolean result = data.getBooleanExtra("Status_return",false);
             if (result)
-                AllInOne();
+                loadList();
         }
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == 1) {
@@ -183,7 +183,59 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(items);
         recyclerView.setHasFixedSize(true);
 
-        AllInOne();
+        loadList();
+
+        ItemTouchHelper.Callback mCallback = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.START|ItemTouchHelper.END) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                final int position = viewHolder.getAdapterPosition();
+                final Textures deleting = items.getItem(position);
+                final File test = new File(deleting.getPath().toString());
+                final TextureItems oldTemp = items;
+                items.remove(position);
+
+                final CardView android_nothing_card = (CardView)findViewById(R.id.android_nothing);
+                if (items.getItemCount() == 0){
+                    recyclerView.setVisibility(View.GONE);
+                    android_nothing_card.setVisibility(View.VISIBLE);
+                    Animation show = AnimationUtils.loadAnimation(MainActivity.this,R.anim.cards_show);
+                    android_nothing_card.startAnimation(show);
+                }
+
+                DiffUtil.Callback callback = new DiffUtilCallback(oldTemp,items);
+                final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
+                diffResult.dispatchUpdatesTo(items);
+                items.notifyItemRemoved(position);
+
+                Snackbar.make(fab,R.string.deleted_completed,Snackbar.LENGTH_LONG)
+                        .setCallback(new DeletingCallback(test))
+                        .setAction(R.string.undo, new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if (test.exists()){
+                                    TextureItems oldTemp1 = items;
+                                    items.addItem(position,deleting);
+                                    DiffUtil.Callback callback1 = new DiffUtilCallback(oldTemp1,items);
+                                    DiffUtil.DiffResult diffResult1 = DiffUtil.calculateDiff(callback1);
+                                    recyclerView.setVisibility(View.VISIBLE);
+                                    android_nothing_card.setVisibility(View.GONE);
+                                    diffResult.dispatchUpdatesTo(items);
+                                    items.notifyItemInserted(position);
+                                }
+                                else {
+                                    Snackbar.make(fab,R.string.failed,Snackbar.LENGTH_SHORT).show();
+                                }
+                            }
+                        }).show();
+            }
+        };
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(mCallback);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
 
         //for swipe refresh layout
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
@@ -236,60 +288,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void AllInOne(){
+    @Override
+    protected void onResume(){
+        super.onResume();
         loadList();
-
-        ItemTouchHelper.Callback mCallback = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.START|ItemTouchHelper.END) {
-            @Override
-            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                final int position = viewHolder.getAdapterPosition();
-                final Textures deleting = items.getItem(position);
-                final File test = new File(deleting.getPath().toString());
-                final TextureItems oldTemp = items;
-                items.remove(position);
-
-                final CardView android_nothing_card = (CardView)findViewById(R.id.android_nothing);
-                if (items.getItemCount() == 0){
-                    recyclerView.setVisibility(View.GONE);
-                    android_nothing_card.setVisibility(View.VISIBLE);
-                    Animation show = AnimationUtils.loadAnimation(MainActivity.this,R.anim.cards_show);
-                    android_nothing_card.startAnimation(show);
-                }
-
-                DiffUtil.Callback callback = new DiffUtilCallback(oldTemp,items);
-                final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
-                diffResult.dispatchUpdatesTo(items);
-                items.notifyItemRemoved(position);
-
-                Snackbar.make(fab,R.string.deleted_completed,Snackbar.LENGTH_SHORT)
-                        .setCallback(new DeletingCallback(test))
-                        .setAction(R.string.undo, new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                if (test.exists()){
-                                    TextureItems oldTemp1 = items;
-                                    items.addItem(position,deleting);
-                                    DiffUtil.Callback callback1 = new DiffUtilCallback(oldTemp1,items);
-                                    DiffUtil.DiffResult diffResult1 = DiffUtil.calculateDiff(callback1);
-                                    recyclerView.setVisibility(View.VISIBLE);
-                                    android_nothing_card.setVisibility(View.GONE);
-                                    diffResult.dispatchUpdatesTo(items);
-                                    items.notifyItemInserted(position);
-                                }
-                                else {
-                                    Snackbar.make(fab,R.string.completed,Snackbar.LENGTH_SHORT).show();
-                                }
-                            }
-                        }).show();
-            }
-        };
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(mCallback);
-        itemTouchHelper.attachToRecyclerView(recyclerView);
     }
 
     private void loadList(){
@@ -318,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
                             android_nothing_card.setVisibility(View.GONE);
                             isLoaded = true;
                         }
-                        if (texture.IfIsResourcePack()) {
+                        if (texture.IfIsResourcePack("ALL")) {
                             items.addItem(texture);
                         }
                     }

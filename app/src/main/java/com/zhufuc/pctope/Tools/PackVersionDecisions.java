@@ -29,13 +29,16 @@ public class PackVersionDecisions {
             String v = "";
             if (manifest.exists()) {
                 if (name!=null && description!=null) {
-                    if (new File(path+"/pack_icon.png").exists() || new File(path+"/pack.png").exists())
+                    if (new File(path+"/pack_icon.png").exists())
                         v = "full";
                     else v = "broken";
                 }
                 else v = "broken";
             }
-            else v = "broken";
+            else{
+                if (new File(path+"/pack.png").exists()) v = "full";
+                else v = "broken";
+            }
 
             if (new File(path+"/textures/blocks").exists()){
                 String[] PEblock = new File(path+"/textures/blocks").list();
@@ -77,6 +80,24 @@ public class PackVersionDecisions {
             return "E:nothing found.";
         }
         else return "E:File isn't a directory.";
+    }
+
+    public boolean getIfIsResourcePack(String testVersion){
+        if (path.isDirectory())
+            if (Objects.equals(testVersion,"PE")||Objects.equals(testVersion,"ALL")){
+                File[] test = new File(path+"/textures").listFiles();
+                if (test != null)
+                    for (File f:test)
+                        if (f.isDirectory()) return true;
+            }
+            if (Objects.equals(testVersion,"PC")||Objects.equals(testVersion,"ALL")){
+                File[] test = new File(path+"/assets/minecraft/textures").listFiles();
+                if (test != null)
+                    for (File f:test)
+                        if (f.isDirectory()) return true;
+            }
+
+        return false;
     }
 
     private void readManifest(){
