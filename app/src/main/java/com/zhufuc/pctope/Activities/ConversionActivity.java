@@ -491,7 +491,7 @@ public class ConversionActivity extends AppCompatActivity {
 
         name = (TextInputEditText) findViewById(R.id.pname);
         description = (TextInputEditText) findViewById(R.id.pdescription);
-        path = this.getExternalCacheDir().getPath();
+        path = this.getExternalCacheDir().toString();
 
         //set back button
         setSupportActionBar(toolbar);
@@ -545,24 +545,29 @@ public class ConversionActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent=getIntent();
-        final String file = intent.getStringExtra("filePath");
-        String fileName="";
-        //==>get file name
-        for(int i=file.length()-1;i>=0;i--){
-            if(file.charAt(i)=='/'){
-                Log.d("files","/ is at "+i);
-                for (int j=i+1;j<file.length();j++){
-                    fileName+=file.charAt(j);
+        Intent intent = getIntent();
+        skipUnzip = intent.getBooleanExtra("willSkipUnzipping",false);
+        File fileT = null;
+        if (!skipUnzip) {
+            final String file = intent.getStringExtra("filePath");
+            String fileName = "";
+            //==>get file name
+            for (int i = file.length() - 1; i >= 0; i--) {
+                if (file.charAt(i) == '/') {
+                    Log.d("files", "/ is at " + i);
+                    for (int j = i + 1; j < file.length(); j++) {
+                        fileName += file.charAt(j);
+                    }
+                    fileName = fileName.substring(0, fileName.lastIndexOf('.'));
+                    break;
                 }
-                fileName=fileName.substring(0,fileName.lastIndexOf('.'));
-                break;
             }
+            path += "/" + fileName;
+            Log.d("unzip", "We will unzip " + file + " to " + path);
+            fileT = new File(file);
         }
-        path+="/"+fileName;
-        Log.d("unzip","We will unzip "+file+" to "+path);
-        final File fileIn = new File(file);
-
+        else path = intent.getStringExtra("filePath");
+        final File fileIn = fileT;
         //do main
         class UnzippingTask extends AsyncTask<Void, Integer ,Boolean>{
             //==>define
@@ -672,11 +677,11 @@ public class ConversionActivity extends AppCompatActivity {
                     }
 
                 //Find the true root path
-                return isPathUseful(path);
+                return isPathUseful();
             }
 
             @Nullable
-            private Boolean isPathUseful(String path){
+            private Boolean isPathUseful(){
                 File pathDecisions = new File(path);
                 if(pathDecisions.exists()&&pathDecisions.isDirectory()){
                     File[] FileListInPath = pathDecisions.listFiles();
@@ -696,7 +701,7 @@ public class ConversionActivity extends AppCompatActivity {
                         Boolean isFoundNext = false;
                         for (int i = 0;i<Dirs.size();i++){
                             path=Dirs.get(i).getPath();
-                            if (isPathUseful(path)){
+                            if (isPathUseful()){
                                 isFoundNext = true;
                                 return true;
                             }
@@ -734,7 +739,7 @@ public class ConversionActivity extends AppCompatActivity {
             }
         }
 
-        if (new File(path).exists()){
+        if (new File(path).exists()&&!skipUnzip){
             AlertDialog.Builder dialog = new AlertDialog.Builder(ConversionActivity.this);
             dialog.setTitle(R.string.overwrite_title);
             dialog.setMessage(R.string.overwrite_content);
@@ -786,7 +791,7 @@ public class ConversionActivity extends AppCompatActivity {
     }
 
 
-    public void doOnSuccesses(){
+    private void doOnSuccesses(){
         //Set layouts
         //==>define
         final LinearLayout unzipping_tip = (LinearLayout) findViewById(R.id.unzipping_tip);

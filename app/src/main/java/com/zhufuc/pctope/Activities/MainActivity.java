@@ -8,11 +8,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
@@ -201,28 +203,7 @@ public class MainActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                final Animation hide = AnimationUtils.loadAnimation(MainActivity.this,R.anim.cards_hide);
-                                final Animation show = AnimationUtils.loadAnimation(MainActivity.this,R.anim.cards_show);
-
-                                recyclerView.startAnimation(hide);
-                                hide.setAnimationListener(new Animation.AnimationListener() {
-                                    @Override
-                                    public void onAnimationStart(Animation animation) {
-
-                                    }
-
-                                    @Override
-                                    public void onAnimationEnd(Animation animation) {
-                                        loadList();
-                                        recyclerView.startAnimation(show);
-                                    }
-
-                                    @Override
-                                    public void onAnimationRepeat(Animation animation) {
-
-                                    }
-                                });
-
+                                loadList();
                                 swipeRefreshLayout.setRefreshing(false);
                             }
                         });
@@ -241,10 +222,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
 
                     }
-
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        AllInOne();
+                        loadList();
                     }
 
                     @Override
@@ -348,9 +328,8 @@ public class MainActivity extends AppCompatActivity {
                 recyclerView.setVisibility(View.GONE);
                 android_nothing_card.setVisibility(View.VISIBLE);
             }
-
             DiffUtil.Callback callback = new DiffUtilCallback(oldTemp,items);
-            final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
+            DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
             diffResult.dispatchUpdatesTo(items);
             items.notifyDataSetChanged();
         }

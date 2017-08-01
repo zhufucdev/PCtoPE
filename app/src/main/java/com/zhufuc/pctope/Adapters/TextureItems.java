@@ -1,6 +1,7 @@
 package com.zhufuc.pctope.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,11 +19,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.zhufuc.pctope.Activities.ConversionActivity;
 import com.zhufuc.pctope.R;
+import com.zhufuc.pctope.Tools.PackVersionDecisions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by zhufu on 7/22/17.
@@ -30,10 +36,16 @@ import java.util.List;
 public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> {
     private ArrayList<Textures> mTextures;
 
+    private final String fullPC = "Found:full PC pack.";
+    private final String fullPE = "Found:full PE pack.";
+    private final String brokenPE = "Found:broken PE pack.";
+    private final String brokenPC = "Found:broken PC pack.";
+
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView TextureName;
         TextView TextureDescription;
         ImageView TextureIcon;
+        ImageView AlertIcon;
         CardView cardView;
 
 
@@ -43,9 +55,7 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
             TextureIcon = (ImageView)v.findViewById(R.id.card_texture_icon);
             TextureName = (TextView)v.findViewById(R.id.card_texture_name);
             TextureDescription = (TextView)v.findViewById(R.id.card_texture_name_subname);
-
-            //for sth else
-
+            AlertIcon = (ImageView)v.findViewById(R.id.card_texture_alert_icon);
         }
     }
 
@@ -57,34 +67,63 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.texture_item,parent,false);
-        ViewHolder holder = new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
 
-        final ViewHolder holder1 = new ViewHolder(view);
-
-        holder1.cardView.setOnClickListener(new View.OnClickListener() {
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Waiting for update
+                if (holder.AlertIcon.getVisibility() == View.VISIBLE){
+                    Intent convert = new Intent(holder.AlertIcon.getContext(), ConversionActivity.class);
+                    convert.putExtra("willSkipUnzipping",true);
+                    convert.putExtra("filePath",holder.AlertIcon.getTag().toString());
+                    holder.AlertIcon.getContext().startActivity(convert);
+                }
             }
         });
+        holder.AlertIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(holder.AlertIcon.getContext());
+                dialog.setTitle(R.string.broken_pc);
+                dialog.setMessage(R.string.broken_pc_dialog_content);
+                dialog.setNegativeButton(R.string.ok,null);
+                dialog.show();
+            }
+        });
+
+
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         Textures textures = mTextures.get(position);
-        holder.TextureName.setText(textures.getName());
-        holder.TextureDescription.setText(textures.getDescription());
+        //Titles
+        String name = textures.getName(),description = textures.getDescription();
+        //Change text if it isn't a PE pack
+        if (name == null){
+            name = holder.TextureName.getResources().getString(R.string.broken_pc);
+            description = holder.TextureDescription.getResources().getString(R.string.broken_pc_subtitle);
+        }
+        holder.TextureName.setText(name);
+        holder.TextureDescription.setText(description);
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize=2;
-
+        //Image view
         if (!(textures.getIcon() == null)){
             String pathIcon = textures.getIcon().getPath();
             Bitmap bm = BitmapFactory.decodeFile(pathIcon,options);
             holder.TextureIcon.setImageBitmap(bm);
         }
 
+        String VersionStr = textures.getVersion();
+        //Alert icon
+        if (Objects.equals(VersionStr, fullPE)){
+            holder.AlertIcon.setVisibility(View.GONE);
+        }
+        else holder.AlertIcon.setTag(textures.getPath());
     }
 
     @Override

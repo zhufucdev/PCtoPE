@@ -54,4 +54,7 @@
     <string name="no">NO</string>
     <string name="skip">Skip</string>
     <string name="destination_exists">Destination exists!</string>
+    <string name="broken_pc">Broken PC Textures Pack</string>
+    <string name="broken_pc_subtitle">Click the red icon on the right to learn more.</string>
+    <string name="broken_pc_dialog_content">As you can see, this is a broken PC texture pack.This kind of packs isn\'t able to be loaded on Minecraft PE.You can delete it by swiping to left or right, or click the Card View to try to fix.</string>
 </resources>

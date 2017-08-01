@@ -75,21 +75,21 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="21d35b42771164c58e1ba015252e57bcc50cd446">
+        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_875c9dc478cfc7286da3bdabd193c4d20f366254/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/zhufu/.android/build-cache/03716753b48c86b8517cb27beb85d364c3928fcd/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="150252b33b00274cc868578ade018fda0d43a3eb">
         <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8b8bdede21455d5f0f767e7466802deeaa26416e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="0989d7df2525cb403d4cc20abc552a1439722868">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_875c9dc478cfc7286da3bdabd193c4d20f366254/classes.dex" />
     </item>
     <item
         is-multidex="false"
