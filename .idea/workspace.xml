@@ -22,23 +22,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3ad24b6-7af1-469c-9d9c-a2b3ff4d4ecf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/card_pack_info.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/card_icon.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/card_icon.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
@@ -78,18 +76,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConversionActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConversionActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="852" column="12" selection-start-line="852" selection-start-column="12" selection-end-line="852" selection-end-column="12" />
+            <state relative-caret-position="484">
+              <caret line="866" column="33" selection-start-line="866" selection-start-column="33" selection-end-line="866" selection-end-column="33" />
               <folding>
-                <element signature="e#34059#34108#0" expanded="true" />
-                <element signature="e#34166#34212#0" expanded="true" />
-                <element signature="e#34251#34297#0" expanded="true" />
-                <element signature="e#34338#34386#0" expanded="true" />
-                <element signature="e#34427#34475#0" expanded="true" />
-                <element signature="e#34586#34640#0" expanded="true" />
+                <element signature="e#34060#34109#0" expanded="true" />
+                <element signature="e#34168#34214#0" expanded="true" />
+                <element signature="e#34254#34300#0" expanded="true" />
+                <element signature="e#34342#34390#0" expanded="true" />
+                <element signature="e#34432#34480#0" expanded="true" />
+                <element signature="e#34667#34722#0" expanded="true" />
+                <element signature="e#34750#34804#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,21 +128,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_conversion.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="124" column="25" selection-start-line="124" selection-start-column="25" selection-end-line="124" selection-end-column="25" />
-              <folding>
-                <element signature="e#3561#3601#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -167,32 +151,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextureItems.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="card_icon.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_icon.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state relative-caret-position="150">
+              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Translations Editor" pinned="false" current-in-tab="false">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Translations Editor" pinned="false" current-in-tab="true">
         <entry file="android-dummy:///home/zhufu/AndroidStudioProjects/PCtoPE/app/Translations Editor">
           <provider selected="true" editor-type-id="string-resource-editor">
             <state />
@@ -202,8 +191,8 @@
       <file leaf-file-name="PackVersionDecisions.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+            <state relative-caret-position="370">
+              <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -221,7 +210,7 @@
     </option>
   </component>
   <component name="GenerateSignedApkSettings">
-    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/../Key/zhufu.jks" />
+    <option name="KEY_STORE_PATH" value="$USER_HOME$/Key/zhufu.jks" />
     <option name="KEY_ALIAS" value="key0" />
     <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
@@ -1724,7 +1713,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4506145262658" />
+        <entry key="$PROJECT_DIR$" value="4506398386691" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2089,7 +2078,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/Textures.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_guide.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/anim/show_swipe.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/raw/flipbook_textures.json" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/ConversionActivity.java" />
@@ -2115,7 +2103,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/texture_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java" />
         <option value="$USER_HOME$/Android/Sdk/platforms/android-25/android.jar!/android/content/res/Resources.class" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java" />
@@ -2125,6 +2112,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/card_pack_info.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/close_circle.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" />
       </list>
     </option>
   </component>
@@ -2166,7 +2155,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="AndroidView" proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -2181,108 +2170,102 @@
     </navigator>
     <panes>
       <pane id="ProjectPane">
-        <subPane />
-      </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+              <option name="myItemId" value="PCtoPE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PCtoPE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PCtoPE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+              <option name="myItemId" value="zip4j_1.3.2.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zip4j" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zip4j_1.3.2.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane />
       </pane>
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="device.picker.selection" value="192.168.1.100:5555" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Key/zhufu.jks" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Key/zhufu.jks" />
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
     <property name="ExportApk.Flavors" value="" />
     <property name="ExportApk.BuildType" value="release" />
@@ -2804,7 +2787,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1018" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32307693" sideWeight="0.49697885" order="12" side_tool="false" content_ui="tabs" />
@@ -2894,7 +2877,8 @@
     <MESSAGE value="Fix a problem that app FC while converting some packs." />
     <MESSAGE value="Add a function that can delete a pack by swipe a card." />
     <MESSAGE value="Too many things I did..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Too many things I did..." />
+    <MESSAGE value="Added a function what shows users the status of the pack." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a function what shows users the status of the pack." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2927,20 +2911,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/design/25.3.1/design-25.3.1-sources.jar!/android/support/design/widget/Snackbar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.3.1/appcompat-v7-25.3.1-sources.jar!/android/support/v7/view/menu/MenuView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-874">
-          <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/recyclerview-v7/25.3.1/recyclerview-v7-25.3.1-sources.jar!/android/support/v7/widget/helper/ItemTouchHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -2951,13 +2921,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/ItemTouchHelperCallback.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Interf/onMoveAndSwipedListener.java" />
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -3099,38 +3062,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Interf/DeletingCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding>
-            <element signature="e#588#768#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
           <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="android-dummy:///home/zhufu/AndroidStudioProjects/PCtoPE/app/Translations Editor">
-      <provider selected="true" editor-type-id="string-resource-editor">
-        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.3.1/appcompat-v7-25.3.1-sources.jar!/android/support/v7/app/AppCompatActivity.java">
@@ -3145,22 +3084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="758">
-          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3205,6 +3128,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Interf/DeletingCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+          <folding>
+            <element signature="e#588#768#0" expanded="true" />
+            <element signature="e#767#768#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_pack_info.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3227,19 +3161,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="138" column="40" selection-start-line="138" selection-start-column="40" selection-end-line="138" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="852" column="12" selection-start-line="852" selection-start-column="12" selection-end-line="852" selection-end-column="12" />
+        <state relative-caret-position="484">
+          <caret line="866" column="33" selection-start-line="866" selection-start-column="33" selection-end-line="866" selection-end-column="33" />
           <folding>
-            <element signature="e#34059#34108#0" expanded="true" />
-            <element signature="e#34166#34212#0" expanded="true" />
-            <element signature="e#34251#34297#0" expanded="true" />
-            <element signature="e#34338#34386#0" expanded="true" />
-            <element signature="e#34427#34475#0" expanded="true" />
-            <element signature="e#34586#34640#0" expanded="true" />
+            <element signature="e#34060#34109#0" expanded="true" />
+            <element signature="e#34168#34214#0" expanded="true" />
+            <element signature="e#34254#34300#0" expanded="true" />
+            <element signature="e#34342#34390#0" expanded="true" />
+            <element signature="e#34432#34480#0" expanded="true" />
+            <element signature="e#34667#34722#0" expanded="true" />
+            <element signature="e#34750#34804#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/libs/zip4j_1.3.2.jar!/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="android-dummy:///home/zhufu/AndroidStudioProjects/PCtoPE/app/Translations Editor">
+      <provider selected="true" editor-type-id="string-resource-editor">
+        <state />
       </provider>
     </entry>
   </component>

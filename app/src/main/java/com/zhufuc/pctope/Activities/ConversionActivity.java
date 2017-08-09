@@ -838,19 +838,26 @@ public class ConversionActivity extends AppCompatActivity {
         //Set PDI CardView layout
         TextView PackType = (TextView)findViewById(R.id.info_pack_type);
         TextView PackInMC = (TextView)findViewById(R.id.info_pack_in_mc_ver);
-        String ver = getResources().getString(R.string.info_pack_type);
+        String type = getResources().getString(R.string.info_pack_type);
         switch (VerStr){
-            case fullPE:ver += getResources().getString(R.string.type_fullPE);break;
-            case fullPC:ver += getResources().getString(R.string.type_fullPC);break;
-            case brokenPE:ver += getResources().getString(R.string.type_brokenPE);break;
-            case brokenPC:ver += getResources().getString(R.string.type_brokenPC);break;
-            default:ver = "Unknown";
+            case fullPE:type += getResources().getString(R.string.type_fullPE);break;
+            case fullPC:type += getResources().getString(R.string.type_fullPC);break;
+            case brokenPE:type += getResources().getString(R.string.type_brokenPE);break;
+            case brokenPC:type += getResources().getString(R.string.type_brokenPC);break;
+            default:type = null;
         }
-        PackType.setText(ver);
-        PackInMC.setText(getResources().getString(R.string.info_pack_in_mc_ver) + decisions.getInMinecraftVer(PackInMC));
+        PackType.setText(type);
+
+        String ver = decisions.getInMinecraftVer(PackInMC);
+        if (ver == null)
+            ver = getResources().getString(R.string.info_file_not_exists);
+
+        PackInMC.setText(getResources().getString(R.string.info_pack_in_mc_ver) + ver);
 
         ImageView supportOrNot = (ImageView)findViewById(R.id.support_or_not_icon);
-        if ()
+        if (ver.equals(getResources().getString(R.string.type_before_1_9))){
+            supportOrNot.setImageResource(R.drawable.close_circle);
+        }
     }
 
     //on Result

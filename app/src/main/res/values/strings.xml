@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">PCtoPE</string>
+    <string name="app_name">PCtoPE</string>
     <string name="preparing_for_firstboot">Preparing for the First Boot…</string>
     <string name="permissions_request">You need to grant the permissions.</string>
     <string name="ok">OK</string>
@@ -67,4 +67,5 @@
     <string name="type_fullPC">Full Minecraft PC textures pack</string>
     <string name="type_brokenPE">Bug Minecraft PE textures pack</string>
     <string name="type_brokenPC">Bug Minecraft PC textures pack</string>
+    <string name="info_file_not_exists">Unknown. File \"pack.meta\" doesn\'t exist or this is a PE pack.</string>
 </resources>

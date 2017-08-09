@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">PCtoPE</string>
     <string name="error">错误…</string>
     <string name="error_dialog">哎呀! 我们遇到了一些问题:</string>
     <string name="close">关闭</string>
@@ -57,7 +58,6 @@
     <string name="broken_pc">不可用的PC纹理包</string>
     <string name="broken_pc_subtitle">点击右边的红色图标了解跟多。</string>
     <string name="broken_pc_dialog_content">正如你所见，这是一个不可用的PC纹理包。这种纹理包是不能被MC PE所加载的。你可以向两侧滑动删除这个包，或是点击这张卡片尝试修复。</string>
-    <string name="app_name" translatable="false"></string>
     <string name="info_card_title">材质包详细信息</string>
     <string name="info_pack_in_mc_ver">适用的MC版本:</string>
     <string name="info_pack_type">材质包类型:</string>
@@ -67,4 +67,5 @@
     <string name="type_fullPC">完整的MCPC材质包</string>
     <string name="type_brokenPE">不完整的MCPE材质包</string>
     <string name="type_brokenPC">不完整的MCPC材质包</string>
+    <string name="info_file_not_exists">未知。\"pack.meta\"不存在，或这是PE材质包。</string>
 </resources>
