@@ -77,7 +77,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="@color/colorAccent"
                 android:text="@string/following_title"
                 android:layout_marginTop="4dp"
@@ -123,10 +123,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:id="@+id/cards_layout">
+                android:orientation="vertical"
+                android:id="@+id/cards_grid">
+
+                <include layout="@layout/card_pack_info" />
 
                 <include layout="@layout/card_icon" />
 

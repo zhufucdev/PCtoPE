@@ -23,6 +23,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -32,6 +33,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -43,6 +45,8 @@ import com.zhufuc.pctope.Tools.GetPathFromUri4kitkat;
 import com.zhufuc.pctope.Tools.PackVersionDecisions;
 
 import net.lingala.zip4j.exception.ZipException;
+
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -176,16 +180,11 @@ public class ConversionActivity extends AppCompatActivity {
                 }
                 fileindir+=strnow.substring(i);
                 String lastStr = fileindir.substring(fileindir.lastIndexOf('.'));
-                if(Objects.equals(lastStr, ".mcmeta")){
-                    f.delete();
-                    Log.d("files","Deleted .mcmeta file:"+f);
-                }
-                else{
+                if(Objects.equals(lastStr, ".png")){
                     fileindir=fileindir.substring(0,fileindir.indexOf('.'));
                     Log.d("files","NO."+filelist.size()+":"+fileindir+' '+lastStr);
                     filelist.add(fileindir);
                 }
-
             }
         }
         return filelist;
@@ -563,7 +562,7 @@ public class ConversionActivity extends AppCompatActivity {
         class UnzippingTask extends AsyncTask<Void, Integer ,Boolean>{
             //==>define
             final LinearLayout unzipping_tip = (LinearLayout) findViewById(R.id.unzipping_tip);
-            final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_layout);
+            final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_grid);
             final LinearLayout error_layout = (LinearLayout)findViewById(R.id.error_layout);
 
             @Override
@@ -646,7 +645,7 @@ public class ConversionActivity extends AppCompatActivity {
                             name.setText(decisions.getName());
                             description.setText(decisions.getDescription());
                         }
-                        doOnSuccesses();
+                        doOnSuccess();
                     }
                     else {
                         doOnFail();
@@ -796,16 +795,17 @@ public class ConversionActivity extends AppCompatActivity {
     }
 
 
-    private void doOnSuccesses(){
+    private void doOnSuccess(){
         //Set layouts
         //==>define
         final LinearLayout unzipping_tip = (LinearLayout) findViewById(R.id.unzipping_tip);
-        final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_layout);
+        final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_grid);
         final LinearLayout error_layout = (LinearLayout)findViewById(R.id.error_layout);
+        final CardView PDI_card = (CardView)findViewById(R.id.pdi_card);
+        //settings
         cards.setVisibility(View.VISIBLE);
         unzipping_tip.setVisibility(View.GONE);
         error_layout.setVisibility(View.GONE);
-        LinearLayout cards_layout = (LinearLayout) findViewById(R.id.cards_layout);
 
         isPreFinished = true;
 
@@ -835,6 +835,22 @@ public class ConversionActivity extends AppCompatActivity {
                 }).show();
             }
         });
+        //Set PDI CardView layout
+        TextView PackType = (TextView)findViewById(R.id.info_pack_type);
+        TextView PackInMC = (TextView)findViewById(R.id.info_pack_in_mc_ver);
+        String ver = getResources().getString(R.string.info_pack_type);
+        switch (VerStr){
+            case fullPE:ver += getResources().getString(R.string.type_fullPE);break;
+            case fullPC:ver += getResources().getString(R.string.type_fullPC);break;
+            case brokenPE:ver += getResources().getString(R.string.type_brokenPE);break;
+            case brokenPC:ver += getResources().getString(R.string.type_brokenPC);break;
+            default:ver = "Unknown";
+        }
+        PackType.setText(ver);
+        PackInMC.setText(getResources().getString(R.string.info_pack_in_mc_ver) + decisions.getInMinecraftVer(PackInMC));
+
+        ImageView supportOrNot = (ImageView)findViewById(R.id.support_or_not_icon);
+        if ()
     }
 
     //on Result
@@ -859,11 +875,13 @@ public class ConversionActivity extends AppCompatActivity {
         //Delete not pack
         //==>define
         final LinearLayout unzipping_tip = (LinearLayout) findViewById(R.id.unzipping_tip);
-        final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_layout);
+        final LinearLayout cards = (LinearLayout) findViewById(R.id.cards_grid);
         final LinearLayout error_layout = (LinearLayout)findViewById(R.id.error_layout);
+        //settings
         cards.setVisibility(View.GONE);
         unzipping_tip.setVisibility(View.GONE);
         error_layout.setVisibility(View.VISIBLE);
+
         final TextView text = (TextView)findViewById(R.id.error_layout_text);
         text.setText(text.getText()+ConversionActivity.this.getString(R.string.not_pack));
         final File notpack = new File(path);

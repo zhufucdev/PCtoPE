@@ -57,4 +57,14 @@
     <string name="broken_pc">Unusable PC Textures Pack</string>
     <string name="broken_pc_subtitle">Click the red icon on the right to learn more.</string>
     <string name="broken_pc_dialog_content">As you can see, this is a unusable PC texture pack.This kind of packs isn\'t able to be loaded on Minecraft PE.You can delete it by swiping to left or right, or click the Card View to try to fix.</string>
+    <string name="info_card_title">Pack Detailed Information.</string>
+    <string name="info_pack_in_mc_ver">Most Correct Version of MC :</string>
+    <string name="info_pack_type">Pack Type :</string>
+    <string name="type_before_1.9">Before 1.9</string>
+    <string name="type_1.9_1.10" translatable="false">1.9-1.10.2</string>
+    <string name="type_after_1.11">1.11 And After</string>
+    <string name="type_fullPE">Full Minecraft PE textures pack</string>
+    <string name="type_fullPC">Full Minecraft PC textures pack</string>
+    <string name="type_brokenPE">Bug Minecraft PE textures pack</string>
+    <string name="type_brokenPC">Bug Minecraft PC textures pack</string>
 </resources>

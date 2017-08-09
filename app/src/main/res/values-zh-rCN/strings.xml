@@ -57,4 +57,14 @@
     <string name="broken_pc">不可用的PC纹理包</string>
     <string name="broken_pc_subtitle">点击右边的红色图标了解跟多。</string>
     <string name="broken_pc_dialog_content">正如你所见，这是一个不可用的PC纹理包。这种纹理包是不能被MC PE所加载的。你可以向两侧滑动删除这个包，或是点击这张卡片尝试修复。</string>
+    <string name="app_name" translatable="false"></string>
+    <string name="info_card_title">材质包详细信息</string>
+    <string name="info_pack_in_mc_ver">适用的MC版本:</string>
+    <string name="info_pack_type">材质包类型:</string>
+    <string name="type_before_1.9">1.9之前</string>
+    <string name="type_after_1.11">1.11及以后</string>
+    <string name="type_fullPE">完整的MCPE材质包</string>
+    <string name="type_fullPC">完整的MCPC材质包</string>
+    <string name="type_brokenPE">不完整的MCPE材质包</string>
+    <string name="type_brokenPC">不完整的MCPC材质包</string>
 </resources>

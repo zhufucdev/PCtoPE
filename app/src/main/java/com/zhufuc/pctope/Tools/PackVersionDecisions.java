@@ -1,5 +1,10 @@
 package com.zhufuc.pctope.Tools;
 
+import android.os.Environment;
+import android.view.View;
+
+import com.zhufuc.pctope.R;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,6 +13,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.StringTokenizer;
 
 /**
  * Created by zhufu on 7/30/17.
@@ -100,6 +106,44 @@ public class PackVersionDecisions {
         return false;
     }
 
+    public String getInMinecraftVer(View v){
+        File metaFile = new File(path+"/pack.mcmeta");
+        if (metaFile.exists()){
+            FileInputStream metaText = null;
+            BufferedReader reader = null;
+            StringBuilder stringBuilder = new StringBuilder();
+
+            try {
+                metaText = new FileInputStream(metaFile);
+                reader = new BufferedReader(new InputStreamReader(metaText));
+                String line = "";
+                while ((line = reader.readLine())!=null)
+                    stringBuilder.append(line);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            String content = stringBuilder.toString();
+
+            //Find version code
+            int posStart = content.indexOf(':',content.indexOf("pack_format"));
+            int posEnd = content.indexOf(',',posStart);
+            String StartToEnd = content.substring(posStart,posEnd);
+            for (int i=0;i<StartToEnd.length();i++){
+                char now = StartToEnd.charAt(i);
+                if (now>=48 && now<=57){
+                    switch (now-48){
+                        case 1:return v.getResources().getString(R.string.type_before_1_9);
+                        case 2:return v.getResources().getString(R.string.type_1_9_1_10);
+                        case 3:return v.getResources().getString(R.string.type_after_1_11);
+                        default:return null;
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
     private void readManifest(){
         File manifest = new File(path+"/manifest.json");
         if (manifest.exists()) {
@@ -112,8 +156,6 @@ public class PackVersionDecisions {
                 String line = "";
                 while ((line = reader.readLine())!=null)
                     stringBuilder.append(line);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }

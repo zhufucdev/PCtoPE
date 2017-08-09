@@ -2,328 +2,202 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/605b4da7eb352667cde16fe139511a787033e339/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_34cec6a2157f1e86e661b993fafa61f79de12903.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/715c9509d7ef4b7074d8da31a60a5935506781b3/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_07763728d6c008525ad2905342e1fbab97d6f318.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/28c90067c7684d264383dd3b6077ca014bd26733/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_92b63aabbe32fb2bd0709a9a2ae64bba486fc39a.jar" />
-    </item>
-    <item
         is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/f41dd91ad7f35a247593cf3ed168f5e5eeaa3fcc/output/jars/classes.jar"
+        jar="/home/zhufu/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_85c9d61025febaae2dddf555202741db6d80dbeb/classes.dex" />
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_f315404a74bcfbe37ed7aa459934a7e195f0ebc2/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/605b4da7eb352667cde16fe139511a787033e339/output/jars/classes.jar"
+        jar="/home/zhufu/.android/build-cache/eea7f489284d934b2707a03c9ba7c0952675ab05/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_34cec6a2157f1e86e661b993fafa61f79de12903/classes.dex" />
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1cfafcbe87b495a5de9457fd0ea4701349c8078b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/28c90067c7684d264383dd3b6077ca014bd26733/output/jars/classes.jar"
+        jar="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_92b63aabbe32fb2bd0709a9a2ae64bba486fc39a/classes.dex" />
+        sha1="58b8da6bb55d8dc8737a763855fb977af22d52d8">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f61090e3467a9fa47da70a9fdbfa45bf9ae916cd/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/715c9509d7ef4b7074d8da31a60a5935506781b3/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_07763728d6c008525ad2905342e1fbab97d6f318/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/f41dd91ad7f35a247593cf3ed168f5e5eeaa3fcc/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_85c9d61025febaae2dddf555202741db6d80dbeb.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="21d35b42771164c58e1ba015252e57bcc50cd446">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_875c9dc478cfc7286da3bdabd193c4d20f366254/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/03716753b48c86b8517cb27beb85d364c3928fcd/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8b8bdede21455d5f0f767e7466802deeaa26416e/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/03716753b48c86b8517cb27beb85d364c3928fcd/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_8b8bdede21455d5f0f767e7466802deeaa26416e.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/5e6fbafbdba2766edfaeee7aec3c0b0285a4c6ec/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3bd8ccde5404f0150ac017d4f83df11357d44a79/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/5e6fbafbdba2766edfaeee7aec3c0b0285a4c6ec/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_3bd8ccde5404f0150ac017d4f83df11357d44a79.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/support-annotations-25.3.1_6ec02d39228d54b917bd973d5bd43231901000e1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/525b21b75c179e1ae3acb723ef25338212bccf07/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_a10b5d84edc6398af5563e8d9f3b399db8ea1be5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/41daad25ab5de24482a328a4b00014ed50494748/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d3ca20a293875bb1819cbc4ea2905fde3b42cf81">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_e3d8012b13df189ac12dbbafa2b0663ebc331145.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/f95d3489011185c8f4c30eb683a9faf0b2142784/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_929217ba156ae83dfd7f30c9ff700b7b631b37ff/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/cee74e6d7b591f174dfb6fff8863d46c27c0e32d/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_9475b5f83fd05ebf5b816f3b71d10e4c7e64731e.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/41daad25ab5de24482a328a4b00014ed50494748/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d3ca20a293875bb1819cbc4ea2905fde3b42cf81">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e3d8012b13df189ac12dbbafa2b0663ebc331145/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/f95d3489011185c8f4c30eb683a9faf0b2142784/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_929217ba156ae83dfd7f30c9ff700b7b631b37ff.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/80ec46a0ffd05b303af8f59da9e4c9c972c859a7/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_cccbe5e64fc013772a81023d31903229b72072b3.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_6ec02d39228d54b917bd973d5bd43231901000e1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/525b21b75c179e1ae3acb723ef25338212bccf07/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a10b5d84edc6398af5563e8d9f3b399db8ea1be5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_f54e4cc3d5e4dc1dd39c2fb333a2120c26883ff4/classes.dex" />
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2686fa136b67542dbb06310870b947440ce2407b/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/80ec46a0ffd05b303af8f59da9e4c9c972c859a7/output/jars/classes.jar"
+        jar="/home/zhufu/.android/build-cache/66a9618a91e5571e9b142ef7f7987bd6be2bfad8/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cccbe5e64fc013772a81023d31903229b72072b3/classes.dex" />
+        sha1="d3ca20a293875bb1819cbc4ea2905fde3b42cf81">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cd6e1c2316c6493c9a59804b6cd809725820331d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/63db9b01e8c8854db55d7c57ac2877e35681a35c/output/jars/classes.jar"
+        jar="/home/zhufu/.android/build-cache/cc451f2103dced99c68ab932c83c5368b42d03d3/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="1fc708e023161b0dd4d6fa6e7c3dee593c920b55">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6627d04ee6eac8303318dd238d21560f2efd4496/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/10cfaf29fc897fcb82ee0d0e7430310907ffb47d/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_efd986b4add63510ca5569e3cf468d3c52ee8743.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/63db9b01e8c8854db55d7c57ac2877e35681a35c/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="1fc708e023161b0dd4d6fa6e7c3dee593c920b55">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_6627d04ee6eac8303318dd238d21560f2efd4496.jar" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_04c767671349059c8208ff866919cf17e35c28fa/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/cee74e6d7b591f174dfb6fff8863d46c27c0e32d/output/jars/classes.jar"
+        jar="/home/zhufu/.android/build-cache/7e584505aaa7c3bd3f730947dd2e8e186a2aa028/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_134b1ba449dcb6c60eedd556a2320d32f960f46e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/aef111095947b915eef3185dcef092ce4b141f3b/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9475b5f83fd05ebf5b816f3b71d10e4c7e64731e/classes.dex" />
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_834dd5a4612cadf048ee874563e759757fedf38d/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/libs/zip4j_1.3.2.jar"
+        jar="/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9bdd3e11bd37b3288aa5b5ae95cb928cf5483f0b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/7238b30b8b68d5164bd09b595c612c89d34b8941/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ed553773c7dbd0bd686d24033da27a9c8a76ff24/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/b1acffa0ba0bdf6c281306c7c3153390ffc9c1a0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1984376b81aa24ea842fccb838e120365c8f2173/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/3c069b892afe864830cecdc6e975f20ee1b088e9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1f484ebb3968582053b2f32501ea6478c297c705/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/899979a5bbfda161d3a636fceab4a797c84677aa/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7c3ff5cea3b99acb0e5ea39c4295de61c044e2cc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/645795ccb87ae2c1dca9c34104aeeb09eeffaae9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_31beb0af832df3d1c6c1230dd8125cd87c32f290/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/276789e601836d7b967f14fb4ec818683621c0ba/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1fc708e023161b0dd4d6fa6e7c3dee593c920b55">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9e2e49cc175eaa9b18fdfaacacd3c28ad8107f45/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_6ec02d39228d54b917bd973d5bd43231901000e1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/AndroidStudioProjects/PCtoPE/app/libs/zip4j_1.3.2.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3e20955923c5b61bfbcd4590a87720643c729695">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/2/zip4j_1.3.2_21a7423b726483ee74cb7001bac4df35ffe02416/classes.dex" />
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/2/zip4j_1.3.2_f1c5c5b787715e065b184a3e1f5c2036c314d451/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/10cfaf29fc897fcb82ee0d0e7430310907ffb47d/output/jars/classes.jar"
+        jar="/home/zhufu/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_e3e4cdf312ae88ed88e154a9371e270e3ff686cf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/7f1aa32c3c8498e17644c97753d9f44356516f46/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_86c92140e7896b0a1d4f3f15f301651ea0e619a4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/c66f18dae985236979c133496209f23fe11f42ee/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cffe0efe52d0d19a720884162917b48d643c3062/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/c008f833f9e81fa6e1604dba18c0d673f43b291e/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_efd986b4add63510ca5569e3cf468d3c52ee8743/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/libs/zip4j_1.3.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="3e20955923c5b61bfbcd4590a87720643c729695">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/zip4j_1.3.2_21a7423b726483ee74cb7001bac4df35ffe02416.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/a335e6d569f4578c1acfdc03224bc8fb2f33c458/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_7888815f87c8c6d18d7e50ac23c58b5da7857392.jar" />
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b39fd3b6a92b72349e2f56424ead4649b64f717f/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/27669bcd65db79eb047484f3a786b86601d83628/output/jars/classes.jar"
+        jar="/home/zhufu/.android/build-cache/7834592b585f78805e7f892f8550fc45acad2a55/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0ab32355e4c42e67a1886024819adb663330e1c2/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/a335e6d569f4578c1acfdc03224bc8fb2f33c458/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7888815f87c8c6d18d7e50ac23c58b5da7857392/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.android/build-cache/27669bcd65db79eb047484f3a786b86601d83628/output/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="/home/zhufu/AndroidStuidoProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_0ab32355e4c42e67a1886024819adb663330e1c2.jar" />
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_165bafdaa56af436ee656cc7585de610647af7b4/classes.dex" />
     </item>
 
 </items>

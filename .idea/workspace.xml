@@ -5,6 +5,11 @@
       <config>
         <devices>
           <device id="Nexus 5" />
+          <device id="tv_1080p" />
+          <device id="Nexus 10" />
+          <device id="Nexus 7" />
+          <device id="Nexus 6" />
+          <device id="pixel" />
           <device id="Nexus S" />
           <device id="Nexus One" />
         </devices>
@@ -17,28 +22,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3ad24b6-7af1-469c-9d9c-a2b3ff4d4ecf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/card_pack_info.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/constraint_layout_1_0_2.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/texture_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/texture_item.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/card_icon.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/card_icon.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="PCtoPE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,16 +78,67 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConversionActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConversionActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="593" column="47" selection-start-line="593" selection-start-column="47" selection-end-line="593" selection-end-column="47" />
+            <state relative-caret-position="582">
+              <caret line="852" column="12" selection-start-line="852" selection-start-column="12" selection-end-line="852" selection-end-column="12" />
               <folding>
-                <element signature="e#27911#27927#0" expanded="true" />
-                <element signature="e#27983#28040#0" expanded="true" />
-                <element signature="e#29777#29821#0" expanded="true" />
-                <element signature="e#30330#30360#0" expanded="true" />
+                <element signature="e#34059#34108#0" expanded="true" />
+                <element signature="e#34166#34212#0" expanded="true" />
+                <element signature="e#34251#34297#0" expanded="true" />
+                <element signature="e#34338#34386#0" expanded="true" />
+                <element signature="e#34427#34475#0" expanded="true" />
+                <element signature="e#34586#34640#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="card_pack_info.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_pack_info.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="e#390#421#0" expanded="true" />
+                <element signature="e#518#550#0" expanded="true" />
+                <element signature="e#690#716#0" expanded="true" />
+                <element signature="e#1518#1544#0" expanded="true" />
+                <element signature="e#1574#1599#0" expanded="true" />
+                <element signature="e#2113#2144#0" expanded="true" />
+                <element signature="e#2192#2218#0" expanded="true" />
+                <element signature="e#2252#2276#0" expanded="true" />
+                <element signature="e#2525#2551#0" expanded="true" />
+                <element signature="e#2585#2614#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="close_circle.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/close_circle.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_conversion.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="124" column="25" selection-start-line="124" selection-start-column="25" selection-end-line="124" selection-end-column="25" />
+              <folding>
+                <element signature="e#3561#3601#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,17 +147,9 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
+            <state relative-caret-position="758">
               <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-              <folding>
-                <element signature="e#8970#8996#0" expanded="true" />
-                <element signature="e#9119#9132#0" expanded="true" />
-                <element signature="e#10090#10105#0" expanded="true" />
-                <element signature="e#11302#11577#0" expanded="true" />
-                <element signature="e#11576#11577#0" expanded="true" />
-                <element signature="e#12258#12259#0" expanded="true" />
-                <element signature="e#12316#12317#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,21 +167,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextureItems.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TextureItems.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="130" column="9" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Textures.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="548">
+              <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -143,30 +179,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding />
-            </state>
+      <file leaf-file-name="card_icon.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_icon.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PackVersionDecisions.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="89" column="37" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+            <state relative-caret-position="214">
+              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Translations Editor" pinned="false" current-in-tab="false">
-        <entry file="android-dummy:///home/zhufu/AndroidStuidoProjects/PCtoPE/app/Translations Editor">
+        <entry file="android-dummy:///home/zhufu/AndroidStudioProjects/PCtoPE/app/Translations Editor">
           <provider selected="true" editor-type-id="string-resource-editor">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PackVersionDecisions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -176,8 +215,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
-        <option value="layoutResourceFile_vertical" />
         <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
       </list>
     </option>
   </component>
@@ -1685,7 +1724,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4503353552399" />
+        <entry key="$PROJECT_DIR$" value="4506145262658" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1884,141 +1923,141 @@
               <option name="name" value="PCtoPE" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/reporting" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugins" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-init" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/tooling-api-builders" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/diagnostics" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/composite-builds" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/installation-beacon" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/antlr" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ear" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/model-core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/base-services-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/signing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-cache-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/launcher" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/messaging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/announce" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-sftp" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugin-development" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-android-performance-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ide-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/base-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/tooling-api" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-java" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-s3" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/cli" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/open-api" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/scala" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugin-use" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ui" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/dependency-management" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/code-quality" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-performance-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/maven" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/workers" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ivy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ide-play" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-integ-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ide-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/code-quality" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugin-use" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/wrapper" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ear" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/announce" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/signing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ui" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/cli" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ivy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/model-core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/base-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ide-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-init" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/logging" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/test-kit" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jacoco" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/process-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/wrapper" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/javascript" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-comparison" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jetty" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jvm-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/publish" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/osgi" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ide" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jvm-services" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-comparison" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/base-services-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/reporting" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/installation-beacon" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-java" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/open-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/antlr" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ide" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/tooling-api-builders" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jetty" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-cache-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/workers" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/composite-builds" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/process-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/tooling-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-scala" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-installation-beacon-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-logging-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-script-kotlin-0.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-launcher-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-resources-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-ui-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-jvm-services-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-tooling-api-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-open-api-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/ant-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-model-core-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-wrapper-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-base-services-groovy-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-model-groovy-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-cli-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-docs-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-process-services-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-base-services-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-version-info-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-core-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-messaging-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-open-api-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/groovy-all-2.4.7.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-dependency-management-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-publish-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-base-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-tooling-api-builders-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-resources-http-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-native-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugin-use-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-osgi-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-play-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-reporting-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ide-native-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-cache-http-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-groovy-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-javascript-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ide-play-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-jvm-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-init-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-jacoco-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugin-development-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-native-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-base-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-maven-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ivy-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-java-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ide-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-jvm-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-jetty-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-comparison-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-resources-sftp-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ear-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-jvm-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugins-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-scala-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-code-quality-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-diagnostics-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-workers-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-native-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-announce-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-signing-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-scala-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-composite-builds-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-antlr-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-resources-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-base-services-groovy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-model-groovy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-model-core-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-version-info-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-wrapper-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-jvm-services-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-launcher-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-docs-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-logging-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-base-services-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-script-kotlin-0.5.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-tooling-api-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-process-services-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-resources-s3-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-signing-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-comparison-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-jacoco-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-workers-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugin-use-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-reporting-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ear-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-groovy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-code-quality-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-test-kit-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-scala-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-jvm-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-base-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-jvm-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugin-development-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ivy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-javascript-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-init-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-jvm-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-resources-http-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ide-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-osgi-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugins-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ide-play-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-java-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-play-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-jetty-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-dependency-management-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-composite-builds-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-tooling-api-builders-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-cache-http-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-diagnostics-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-maven-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-scala-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-publish-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-antlr-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-resources-sftp-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ide-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-announce-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-base-3.3.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -2035,10 +2074,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/chevron_right.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/raw/terrain_texture.json" />
-        <option value="$PROJECT_DIR$/app/src/main/res/raw/item_texture.json" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/anim/cards_hide.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/anim/cards_show.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_first.xml" />
@@ -2052,7 +2087,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/TextureItems.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufu/pctope/Textures.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_guide.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" />
@@ -2077,21 +2111,27 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Interf/DeletingCallback.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/pencil.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/card_icon.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/DiffUtilCallback.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/texture_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java" />
+        <option value="$USER_HOME$/Android/Sdk/platforms/android-25/android.jar!/android/content/res/Resources.class" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/card_icon.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/checkbox_marked_circle.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/card_pack_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/close_circle.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="y" value="28" />
     <option name="width" value="1920" />
-    <option name="height" value="1036" />
+    <option name="height" value="1018" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -2140,6 +2180,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
@@ -2213,8 +2257,12 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2225,151 +2273,11 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pctope" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pctope" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Tools" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pctope" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Interf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pctope" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Collectors" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pctope" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Adapters" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pctope" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PCtoPE" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2388,6 +2296,8 @@
     <property name="DEBUGGER_ID" value="Auto" />
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistoryKey" value="itemV&#9;PSI&#9;JAVA://android.support.v7.view.menu.MenuView.ItemView" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -2893,29 +2803,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1036" extended-state="6" />
+    <frame x="0" y="28" width="1920" height="1018" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32460135" sideWeight="0.49697885" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32307693" sideWeight="0.49697885" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32590052" sideWeight="0.5030211" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5170843" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852563" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48994082" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27540106" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32590052" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32687926" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32933104" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17147435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.171123" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959402" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47038725" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4698225" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3007,7 +2917,7 @@
           <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="143" />
+      <option name="time" value="147" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -3017,23 +2927,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-zh/for_step3.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/for_step3.png" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/item_texture.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/flipbook_textures.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Collectors/ErrorsCollector.java" />
     <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/design/25.3.1/design-25.3.1-sources.jar!/android/support/design/widget/Snackbar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -3057,7 +2950,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/ItemTouchHelperCallback.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Interf/onMoveAndSwipedListener.java" />
-    <entry file="android-dummy:///home/zhufu/AndroidStudioProjects/PCtoPE/app/Translations Editor" />
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3088,11 +2980,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Interf/FinishingCallback.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities.java" />
-    <entry file="file://$PROJECT_DIR$/captures/com.zhufuc.pctope_2017.07.30_13.24.li">
-      <provider selected="true" editor-type-id="capture-editor">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/captures/com.zhufuc.pctope_2017.07.30_13.24.li" />
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest">
         <state />
@@ -3100,7 +2988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3125,104 +3012,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/os/StrictMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="1286" column="0" selection-start-line="1286" selection-start-column="0" selection-end-line="1286" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/os/AsyncTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="571" column="0" selection-start-line="571" selection-start-column="0" selection-end-line="571" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5642" column="0" selection-start-line="5642" selection-start-column="0" selection-end-line="5642" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/widget/TextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="10372" column="0" selection-start-line="10372" selection-start-column="0" selection-end-line="10372" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/text/SpannableStringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="507" column="80" selection-start-line="507" selection-start-column="80" selection-end-line="507" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/view/inputmethod/BaseInputConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="617" column="0" selection-start-line="617" selection-start-column="0" selection-end-line="617" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/com/android/internal/view/IInputConnectionWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="408" column="0" selection-start-line="408" selection-start-column="0" selection-end-line="408" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/os/StrictMode.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/os/AsyncTask.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/view/View.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/widget/TextView.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/text/SpannableStringBuilder.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/view/inputmethod/BaseInputConnection.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/com/android/internal/view/IInputConnectionWrapper.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="54" column="50" selection-start-line="54" selection-start-column="50" selection-end-line="54" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/contect_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_icon.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/FirstActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="728">
           <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3230,26 +3050,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/texture_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
           <caret line="64" column="35" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/recyclerview-v7/25.3.1/recyclerview-v7-25.3.1-sources.jar!/android/support/v7/util/DiffUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="484" column="0" selection-start-line="484" selection-start-column="0" selection-end-line="484" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3257,62 +3075,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
           <caret line="37" column="81" selection-start-line="37" selection-start-column="81" selection-end-line="37" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6684" column="0" selection-start-line="6684" selection-start-column="0" selection-end-line="6684" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/app/Instrumentation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="1119" column="0" selection-start-line="1119" selection-start-column="0" selection-end-line="1119" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/app/ActivityThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="2765" column="0" selection-start-line="2765" selection-start-column="0" selection-end-line="2765" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/os/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/os/Looper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="android-dummy:///home/zhufu/AndroidStuidoProjects/PCtoPE/app/Translations Editor">
-      <provider selected="true" editor-type-id="string-resource-editor">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/app/Activity.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/app/Instrumentation.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/app/ActivityThread.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/os/Handler.java" />
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/os/Looper.java" />
+    <entry file="android-dummy:///home/zhufu/AndroidStuidoProjects/PCtoPE/app/Translations Editor" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="390">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#676#677#0" expanded="false" />
+            <element signature="e#723#724#0" expanded="false" />
+            <element signature="e#807#808#0" expanded="false" />
+            <element signature="e#841#842#0" expanded="false" />
+            <element signature="e#1034#1035#0" expanded="false" />
+            <element signature="e#1061#1062#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3327,56 +3118,127 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+        <state relative-caret-position="548">
+          <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
           <folding>
-            <element signature="e#8970#8996#0" expanded="true" />
-            <element signature="e#9119#9132#0" expanded="true" />
-            <element signature="e#10090#10105#0" expanded="true" />
-            <element signature="e#11302#11577#0" expanded="true" />
-            <element signature="e#11576#11577#0" expanded="true" />
-            <element signature="e#12258#12259#0" expanded="true" />
-            <element signature="e#12316#12317#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+    <entry file="android-dummy:///home/zhufu/AndroidStudioProjects/PCtoPE/app/Translations Editor">
+      <provider selected="true" editor-type-id="string-resource-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.3.1/appcompat-v7-25.3.1-sources.jar!/android/support/v7/app/AppCompatActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="235">
+          <caret line="545" column="0" selection-start-line="545" selection-start-column="0" selection-end-line="545" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-25/android.jar!/android/content/res/Resources.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Tools/PackVersionDecisions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="89" column="37" selection-start-line="89" selection-start-column="37" selection-end-line="89" selection-end-column="37" />
+        <state relative-caret-position="70">
+          <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="758">
+          <caret line="147" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="124" column="25" selection-start-line="124" selection-start-column="25" selection-end-line="124" selection-end-column="25" />
+          <folding>
+            <element signature="e#3561#3601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_icon.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/checkbox_marked_circle.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/close_circle.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_pack_info.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#390#421#0" expanded="true" />
+            <element signature="e#518#550#0" expanded="true" />
+            <element signature="e#690#716#0" expanded="true" />
+            <element signature="e#1518#1544#0" expanded="true" />
+            <element signature="e#1574#1599#0" expanded="true" />
+            <element signature="e#2113#2144#0" expanded="true" />
+            <element signature="e#2192#2218#0" expanded="true" />
+            <element signature="e#2252#2276#0" expanded="true" />
+            <element signature="e#2525#2551#0" expanded="true" />
+            <element signature="e#2585#2614#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="593" column="47" selection-start-line="593" selection-start-column="47" selection-end-line="593" selection-end-column="47" />
+        <state relative-caret-position="582">
+          <caret line="852" column="12" selection-start-line="852" selection-start-column="12" selection-end-line="852" selection-end-column="12" />
           <folding>
-            <element signature="e#27911#27927#0" expanded="true" />
-            <element signature="e#27983#28040#0" expanded="true" />
-            <element signature="e#29777#29821#0" expanded="true" />
-            <element signature="e#30330#30360#0" expanded="true" />
+            <element signature="e#34059#34108#0" expanded="true" />
+            <element signature="e#34166#34212#0" expanded="true" />
+            <element signature="e#34251#34297#0" expanded="true" />
+            <element signature="e#34338#34386#0" expanded="true" />
+            <element signature="e#34427#34475#0" expanded="true" />
+            <element signature="e#34586#34640#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="130" column="9" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>

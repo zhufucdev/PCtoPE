@@ -35,7 +35,7 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:layout_gravity="bottom|start"
-            android:layout_margin="8dp"
+            android:padding="8dp"
             android:layout_below="@id/img_card_icon"/>
 
     </RelativeLayout>
@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/pencil"
         android:background="?attr/selectableItemBackgroundBorderless"
-        android:padding="7dp"
+        android:padding="8dp"
         android:clickable="true"
         android:layout_gravity="bottom|end"/>
 
