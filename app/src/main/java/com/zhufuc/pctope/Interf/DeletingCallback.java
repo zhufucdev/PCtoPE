@@ -2,7 +2,7 @@ package com.zhufuc.pctope.Interf;
 
 import android.support.design.widget.Snackbar;
 
-import com.zhufuc.pctope.Tools.DeleteFolder;
+import com.zhufuc.pctope.Utils.DeleteFolder;
 
 import java.io.File;
 

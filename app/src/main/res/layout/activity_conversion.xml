@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/conversion_root"
     tools:context="com.zhufuc.pctope.Activities.ConversionActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -130,6 +131,8 @@
                 android:id="@+id/cards_grid">
 
                 <include layout="@layout/card_pack_info" />
+
+                <include layout="@layout/card_image_compression"/>
 
                 <include layout="@layout/card_icon" />
 

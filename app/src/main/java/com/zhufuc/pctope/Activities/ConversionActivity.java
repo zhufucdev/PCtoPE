@@ -12,9 +12,9 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -32,23 +32,24 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zhufuc.pctope.Collectors.ErrorsCollector;
 import com.zhufuc.pctope.R;
-import com.zhufuc.pctope.Tools.DeleteFolder;
-import com.zhufuc.pctope.Tools.GetPathFromUri4kitkat;
-import com.zhufuc.pctope.Tools.PackVersionDecisions;
+import com.zhufuc.pctope.Utils.CompressImage;
+import com.zhufuc.pctope.Utils.DeleteFolder;
+import com.zhufuc.pctope.Utils.FindFile;
+import com.zhufuc.pctope.Utils.GetPathFromUri4kitkat;
+import com.zhufuc.pctope.Utils.PackVersionDecisions;
 
 import net.lingala.zip4j.exception.ZipException;
 
-import org.w3c.dom.Text;
-
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -434,6 +435,70 @@ public class ConversionActivity extends AppCompatActivity {
         else MakeErrorDialog("Could not create JSON files.");
 
     }
+
+    public void doMainInCompressing(final File n,final ProgressDialog alertDialog){
+        if (n.isFile()) {
+            //Show progress
+            Log.d("compression","Compressing "+n);
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    alertDialog.setTitle(getResources().getString(R.string.progress_compressing_title));
+                    alertDialog.setMessage(n.getPath());
+                }
+            });
+
+
+            String str = n.getPath();
+            if (!str.substring(str.lastIndexOf("."),str.length()).equals(".png"))
+                return;
+
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 1;
+            Bitmap image = BitmapFactory.decodeFile(n.getPath(),options);
+            //get compressed bitmap
+            int compressHeight = compressFinalSize,compressWidth = compressFinalSize;
+            if (image.getWidth()-image.getHeight()<-5){
+                compressHeight = compressHeight*(image.getWidth()/compressFinalSize);
+            }
+            else if (image.getHeight()-image.getWidth()>5){
+                compressWidth = compressWidth*(image.getHeight()/compressFinalSize);
+            }
+            Bitmap compressed = CompressImage.getBitmap(image,compressHeight,compressWidth);
+
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            compressed.compress(Bitmap.CompressFormat.PNG, 100, baos);//png
+
+            n.delete();
+            try {
+                FileOutputStream outputStream = new FileOutputStream(n);
+                outputStream.write(baos.toByteArray());
+
+                outputStream.flush();
+                outputStream.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                MakeErrorDialog(e.toString());
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void doImageCompressions(ProgressDialog progressDialog){
+        if (compressFinalSize == 0)
+            return;
+        //get images
+        File[] items = new File(path+"/textures/items").listFiles(),blocks = new File(path+"/textures/blocks").listFiles();
+        if (items!=null){
+            for (File n:items)
+                doMainInCompressing(n,progressDialog);
+        }
+        if (blocks!=null){
+            for (File n:blocks)
+                doMainInCompressing(n,progressDialog);
+        }
+    }
     
     public static void unzip(File zipFile, String dest, String passwd) throws ZipException, net.lingala.zip4j.exception.ZipException {
         net.lingala.zip4j.core.ZipFile zFile = new net.lingala.zip4j.core.ZipFile(zipFile); // 首先创建ZipFile指向磁盘上的.zip文件
@@ -463,7 +528,7 @@ public class ConversionActivity extends AppCompatActivity {
         return str;
     }
 
-    Boolean skipUnzip = false;
+    Boolean skipUnzip = false;int compressSize = 0,compressFinalSize = 0;
     protected void onCreate(Bundle savedInstanceState) {
         //Test Area
         //*Code Something for test
@@ -693,23 +758,36 @@ public class ConversionActivity extends AppCompatActivity {
             doVersionDecisions();
 
             packdescription = description.getText().toString();
+
             final ProgressDialog loadingDialog = new ProgressDialog(ConversionActivity.this);
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    loadingDialog.setTitle(R.string.loading);
+                    loadingDialog.setMessage(getResources().getString(R.string.do_final_step));
+                    loadingDialog.setCancelable(false);
+                    loadingDialog.show();
+                }
+            });
+
+
             name.setEnabled(false);
             description.setEnabled(false);
 
             new Thread(new Runnable() {
                 @Override
                 public void run() {
+
+                    doImageCompressions(loadingDialog);
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            loadingDialog.setTitle(R.string.loading);
-                            loadingDialog.setMessage(getApplicationContext().getString(R.string.do_final_step));
-                            loadingDialog.setCancelable(false);
-                            loadingDialog.show();
+                            loadingDialog.setMessage(getResources().getString(R.string.do_final_step));
+                            loadingDialog.setTitle(getResources().getString(R.string.progress_writing_json));
                         }
                     });
-
                     try {
                         doJSONWriting();
                     } catch (FileNotFoundException e) {
@@ -814,25 +892,14 @@ public class ConversionActivity extends AppCompatActivity {
         //Load icon
         loadIcon();
         //Set icon editor
-        ImageView edit = (ImageView) findViewById(R.id.card_icon_edit);
+        final ImageView edit = (ImageView) findViewById(R.id.card_icon_edit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String[] items = new String[]{ConversionActivity.this.getString(R.string.cover),ConversionActivity.this.getString(R.string.edit_converactdialog)};
-                AlertDialog.Builder builder = new AlertDialog.Builder(ConversionActivity.this);
-                builder.setTitle(R.string.conversionact_edit_dialog_title);
-                builder.setItems(items, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        switch (i){
-                            case 0://overwrite
-                                Intent choose = new Intent(Intent.ACTION_GET_CONTENT);
-                                choose.setType("image/*");
-                                choose.addCategory(Intent.CATEGORY_OPENABLE);
-                                startActivityForResult(choose, 0);
-                        }
-                    }
-                }).show();
+                Intent choose = new Intent(Intent.ACTION_GET_CONTENT);
+                choose.setType("image/*");
+                choose.addCategory(Intent.CATEGORY_OPENABLE);
+                startActivityForResult(choose, 0);
             }
         });
         //Set PDI CardView layout
@@ -858,6 +925,135 @@ public class ConversionActivity extends AppCompatActivity {
         if (ver.equals(getResources().getString(R.string.type_before_1_9))){
             supportOrNot.setImageResource(R.drawable.close_circle);
         }
+
+        //Set Compression
+        File image = null;
+        String baseFrom = null;
+        if (VerStr.equals(fullPC)||VerStr.equals(brokenPC)) baseFrom = path+"/assets/minecraft/textures";
+        else baseFrom = path+"/textures";
+        //grass >> sword >> never mind
+        if ((image = FindFile.withKeywordOnce("grass_side.png",baseFrom)) == null) {
+            if ((image = FindFile.withKeywordOnce("iron_sword.png", baseFrom)) == null)
+                image = FindFile.withKeywordOnce(".png", baseFrom);
+        }
+        final String imageLocation = image.getPath();
+
+
+        //set listener
+        final CardView compress = (CardView)findViewById(R.id.compression_card);
+
+
+        compress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final BottomSheetDialog dialog = new BottomSheetDialog(ConversionActivity.this);
+
+
+                final View dialogView = getLayoutInflater().inflate(R.layout.compression_dialog,null);
+
+                dialog.setContentView(dialogView);
+
+
+                BitmapFactory.Options optionsBitmap = new BitmapFactory.Options();
+                optionsBitmap.inSampleSize = 1;
+
+                final Bitmap bitmap = BitmapFactory.decodeFile(imageLocation,optionsBitmap);
+                final Button confirm = (Button)dialogView.findViewById(R.id.compression_button_confirm);
+
+                loadDialogLayout(dialogView,bitmap);
+
+                Spinner spinner = (Spinner)dialogView.findViewById(R.id.compression_spinner);
+                spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        String[] options = getResources().getStringArray(R.array.compression_options);
+
+                        switch (options[i]){
+                            case "8x":compressSize = 8;break;
+                            case "16x":compressSize = 16;break;
+                            case "32x":compressSize = 32;break;
+                            case "64x":compressSize = 64;break;
+                            case "128x":compressSize = 128;break;
+                            case "256x":compressSize = 256;break;
+                            case "512x":compressSize = 512;break;
+                            default:compressSize = 0;break;
+                        }
+                        if (compressSize != 0){
+                            loadDialogLayout(dialogView, CompressImage.getBitmap(bitmap,compressSize,compressSize));
+                        }
+                        else loadDialogLayout(dialogView, bitmap);
+
+                        if (compressSize > bitmap.getWidth() || compressSize > bitmap.getHeight()){
+                            confirm.setEnabled(false);
+                            confirm.setTextColor(getResources().getColor(R.color.grey_primary));
+                            Toast.makeText(ConversionActivity.this,R.string.compression_alert,Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            confirm.setEnabled(true);
+                            confirm.setTextColor(getResources().getColor(R.color.colorAccent));
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+                        compressSize = 0;
+                    }
+                });
+
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialogInterface) {
+                        compressSize = compressFinalSize;
+                    }
+                });
+
+                dialog.show();
+
+
+                confirm.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        compressFinalSize = compressSize;
+                        dialog.dismiss();
+                    }
+                });
+            }
+        });
+    }
+
+
+
+
+    private void loadDialogLayout(final View dialogView,final Bitmap bitmap){
+
+        Spinner spinner = (Spinner)dialogView.findViewById(R.id.compression_spinner);
+        if (compressSize!=0){
+            switch (compressSize){
+                case 8:spinner.setSelection(1);break;
+                case 16:spinner.setSelection(2);break;
+                case 32:spinner.setSelection(3);break;
+                case 64:spinner.setSelection(4);break;
+                case 128:spinner.setSelection(5);break;
+                case 256:spinner.setSelection(6);break;
+                case 512:spinner.setSelection(7);break;
+                default:spinner.setSelection(0);break;
+            }
+        }
+        else spinner.setSelection(0,true);
+
+
+        //set view
+        ImageView preview = (ImageView)dialogView.findViewById(R.id.compression_image);
+
+        preview.setImageBitmap(bitmap);
+
+
+        //set text
+        TextView width_text = (TextView)dialogView.findViewById(R.id.compression_width_text);
+        TextView height_text = (TextView)dialogView.findViewById(R.id.compression_height_text);
+        width_text.setText(String.valueOf(bitmap.getWidth()));
+        height_text.setText(String.valueOf(bitmap.getHeight()));
     }
 
     //on Result
