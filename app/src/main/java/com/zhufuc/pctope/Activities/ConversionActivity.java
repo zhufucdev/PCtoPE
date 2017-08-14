@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -58,6 +60,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.DecimalFormat;
+import java.text.Format;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.UUID;
@@ -191,6 +195,110 @@ public class ConversionActivity extends AppCompatActivity {
         return filelist;
     }
 
+    public void doPCSpecialResourcesDecisions(){
+        //需要特殊处理的贴图包括:
+        //滞留药水 无法解决
+        //怪物蛋手持贴图 无法解决
+        //钟 无法解决
+        //指南针 已解决
+        //船手持贴图 无法解决
+        //北极熊实体 已解决
+        //豹猫 已解决
+        //僵尸贴图错误 已解决
+        //僵尸猪人实体 已解决
+        //剥皮者贴图错误 已解决
+        //卫道士实体
+        //唤魔者实体
+        //威克斯
+        //箱子手持贴图及大箱子实体 无法解决<>已解决
+        //活塞 无法解决
+
+        File[] FROM = {
+                new File(path+"/textures/entity/chest/normal_double.png"),
+                new File(path+"/textures/items/dragon_breath.png"),
+                new File(path+"/textures/entity/bear/polarbear.png"),
+                new File(path+"/textures/entity/cat/black.png"),
+                new File(path+"/textures/entity/zombie_pigman.png")
+        },
+        TO = {
+                new File(path+"/textures/entity/chest/double_normal.png"),
+                new File(path+"/textures/items/dragons_breath.png"),
+                new File(path+"/textures/entity/polarbear.png"),
+                new File(path+"/textures/entity/cat/blackcat.png"),
+                new File(path+"/textures/entity/pig/pigzombie.png")
+        };
+        for (int i = 0;i<TO.length;i++){
+            FROM[i].renameTo(TO[i]);
+        }
+
+
+        //For compasses
+        if (new File(path+"/textures/items/compass_00.png").exists()){
+
+            int imageHeight = 0;
+
+            ArrayList<Bitmap> compasses = new ArrayList<>();
+            for (int i = 0;i <= 31;i++){
+                Format format = new DecimalFormat("00");
+                File image = new File(path+"/textures/items/compass_"+format.format(i)+".png");
+                if (image.exists()) {
+                    Bitmap now = BitmapFactory.decodeFile(image.getPath());
+                    compasses.add(now);
+                    imageHeight += now.getHeight();
+                    image.delete();
+                }
+            }
+
+            Bitmap bitmap = Bitmap.createBitmap(compasses.get(0).getWidth(),imageHeight,compasses.get(0).getConfig());
+            Canvas canvas = new Canvas(bitmap);
+            canvas.drawBitmap(compasses.get(0),new Matrix(),null);
+
+            for (int i=1;i<compasses.size();i++){
+                canvas.drawBitmap(compasses.get(i),0,compasses.get(i-1).getHeight()*i,null);
+            }
+
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG,100,byteArrayOutputStream);
+            try {
+                FileOutputStream outputStream = new FileOutputStream(path+"/textures/items/compass_atlas.png");
+                outputStream.write(byteArrayOutputStream.toByteArray());
+
+                outputStream.flush();
+                outputStream.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        //For zombies
+        File[] images = {new File(path+"/textures/entity/zombie/zombie.png"),new File(path+"/textures/entity/zombie/husk.png"),new File(path+"/textures/entity/pig/pigzombie.png")};
+        for (int i = 0;i < images.length;i++){
+            if (images[i].exists()){
+                Bitmap zombieImage = BitmapFactory.decodeFile(images[i].getPath());
+
+                if (zombieImage.getHeight() == zombieImage.getWidth()){
+                    Bitmap bitmap = Bitmap.createBitmap(zombieImage,0,0,zombieImage.getWidth(),zombieImage.getHeight()/2);
+
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.PNG,100,byteArrayOutputStream);
+                    try {
+                        FileOutputStream outputStream = new FileOutputStream(images[i]);
+                        outputStream.write(byteArrayOutputStream.toByteArray());
+                        outputStream.flush();
+                        outputStream.close();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        }
+    }
+
     public void onPcDecisions() {
         File icon = new File(path + "/pack.png");
         File iconPE = new File(path + "/pack_icon.png");
@@ -202,6 +310,8 @@ public class ConversionActivity extends AppCompatActivity {
         //Delete something that we don't need
         new File(path+"/pack.mcmeta").delete();
         DeleteFolder.Delete(path+"/assets");
+
+        doPCSpecialResourcesDecisions();
 
         ArrayList<String> files = ListFiles(new File(path));
         int fileslength = files.size()-1;
@@ -755,7 +865,6 @@ public class ConversionActivity extends AppCompatActivity {
 
     private void doFinishButtonDoes(View v){
         if (isPreFinished){
-            doVersionDecisions();
 
             packdescription = description.getText().toString();
 
@@ -771,68 +880,71 @@ public class ConversionActivity extends AppCompatActivity {
                 }
             });
 
-
             name.setEnabled(false);
             description.setEnabled(false);
 
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
+             Thread doing = new Thread(new Runnable() {
+                 @Override
+                 public void run() {
 
-                    doImageCompressions(loadingDialog);
+                     doVersionDecisions();
 
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            loadingDialog.setMessage(getResources().getString(R.string.do_final_step));
-                            loadingDialog.setTitle(getResources().getString(R.string.progress_writing_json));
-                        }
-                    });
-                    try {
-                        doJSONWriting();
-                    } catch (FileNotFoundException e) {
-                        ErrorsCollector.putError(e.toString(),1);
-                        e.printStackTrace();
-                    }
+                     doImageCompressions(loadingDialog);
 
-                    //For if icon doesn't exist
-                    File iconTest = new File(path+"/pack_icon.png");
-                    if (!iconTest.exists()){
-                        byte[] buffer = new byte[1444];int i;
-                        InputStream inputStream = getResources().openRawResource(R.raw.bug_pack_icon);
-                        try {
-                            FileOutputStream outputStream = new FileOutputStream(path+"/pack_icon.png");
-                            while ((i=inputStream.read(buffer))!=-1){
-                                outputStream.write(buffer,0,i);
-                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
+                     runOnUiThread(new Runnable() {
+                         @Override
+                         public void run() {
+                             loadingDialog.setMessage(getResources().getString(R.string.do_final_step));
+                             loadingDialog.setTitle(getResources().getString(R.string.progress_writing_json));
+                         }
+                     });
+                     try {
+                         doJSONWriting();
+                     } catch (FileNotFoundException e) {
+                         ErrorsCollector.putError(e.toString(),1);
+                         e.printStackTrace();
+                     }
 
-                    //Move to dest
-                    File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
-                    if (dest.isDirectory()&&dest.exists()) dest.mkdirs();
-                    new File(path).renameTo(dest);
-                    finishIntent.putExtra("Status_return",true);
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            loadingDialog.setMessage(getResources().getString(R.string.completed));
-                        }
-                    });
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    finish();
-                    //Done
-                }
-            }).start();
+                     //For if icon doesn't exist
+                     File iconTest = new File(path+"/pack_icon.png");
+                     if (!iconTest.exists()){
+                         byte[] buffer = new byte[1444];int i;
+                         InputStream inputStream = getResources().openRawResource(R.raw.bug_pack_icon);
+                         try {
+                             FileOutputStream outputStream = new FileOutputStream(path+"/pack_icon.png");
+                             while ((i=inputStream.read(buffer))!=-1){
+                                 outputStream.write(buffer,0,i);
+                             }
+                         } catch (IOException e) {
+                             e.printStackTrace();
+                         }
+                     }
+
+                     //Move to dest
+                     File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
+                     if (dest.isDirectory()&&dest.exists()) dest.mkdirs();
+                     new File(path).renameTo(dest);
+                     finishIntent.putExtra("Status_return",true);
+                     runOnUiThread(new Runnable() {
+                         @Override
+                         public void run() {
+                             loadingDialog.setMessage(getResources().getString(R.string.completed));
+                         }
+                     });
+                     try {
+                         Thread.sleep(1000);
+                     } catch (InterruptedException e) {
+                         e.printStackTrace();
+                     }
+                     //Done
+                     finish();
+                 }
+             });
+            doing.start();
 
             if (ErrorsCollector.getError(1)!=null)
                 MakeErrorDialog(ErrorsCollector.getError(1));
+
         }
         else
             Snackbar.make(v,R.string.unclickable_unzipping,Snackbar.LENGTH_LONG).show();
@@ -841,7 +953,7 @@ public class ConversionActivity extends AppCompatActivity {
     public void loadIcon(){
         ImageView icon = (ImageView) findViewById(R.id.img_card_icon);
         BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize=2;
+        options.inSampleSize=1;
         if (VerStr.equals(fullPE)){
             File iconTest = new File(path+"/pack_icon.png");
             if (iconTest.exists()){
