@@ -75,4 +75,25 @@
     <string name="progress_compressing_title">压缩中…</string>
     <string name="progress_writing_json">写入JSON…</string>
     <string name="compression_alert">你无法将其压缩至更高分辨率</string>
+    <string name="nav_textures_manager">材质包管理</string>
+    <string name="nav_settings">设置</string>
+    <string name="nav_application">应用程序</string>
+    <string name="nav_about">关于</string>
+    <string name="title_activity_settings">设置</string>
+    <string name="pref_force_eng">强制使用英语</string>
+    <string name="rebooting">正在重启应用程序...</string>
+    <string name="pref_force_ch">强制使用中文</string>
+    <string name="pref_language">语言</string>
+    <string name="pref_lang_auto">Auto</string>
+    <string name="about_create_by">由朱拂comcom创建</string>
+    <string name="about_gpl_license">遵循GPL-3开源协议</string>
+    <string name="about_made_in_china">中国制造</string>
+    <string name="about_visit">访问...</string>
+    <string name="pref_drawer_title">侧滑栏头图</string>
+    <string name="pref_drawer_custom">自定义</string>
+    <string name="pref_drawer_clear">清除</string>
+    <string name="nav_textures_packer">材质包打包</string>
+    <string name="compression_tip_title">这是什么操作?</string>
+    <string name="compression_tip_text">这用来打包MC材质包，打包好的.mcpack文件将保存在</string>
+    <string name="compressiom_tip_text2">.mcpack文件可以被MC导入，方便在特殊平台，如IOS,WIN10上使用材质包。当然，如果你的Android设备不使用外部储存空间，此方法也可奏效。</string>
 </resources>

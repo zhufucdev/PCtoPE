@@ -100,7 +100,7 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize=2;
         //Image view
-        if (!(textures.getIcon() == null)){
+        if (textures.getIcon() != null){
             String pathIcon = textures.getIcon().getPath();
             Bitmap bm = BitmapFactory.decodeFile(pathIcon,options);
             holder.TextureIcon.setImageBitmap(bm);
@@ -113,8 +113,10 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
             if (verStr.equals(fullPC)||verStr.equals(brokenPC)){
                 holder.AlertIcon.setVisibility(View.VISIBLE);
                 holder.AlertIcon.setTag(textures.getPath());
+                return;
             }
         }
+        holder.AlertIcon.setVisibility(View.GONE);
     }
 
     @Override

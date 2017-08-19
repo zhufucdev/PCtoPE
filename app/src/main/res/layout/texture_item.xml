@@ -4,9 +4,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/card_texture_card"
-    android:layout_margin="@dimen/main_card_margin_horizontal"
     card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
-    card_view:cardElevation="@dimen/card_recycler_elevation"
+    card_view:cardElevation="@dimen/cardview_default_elevation"
     android:foreground="?attr/selectableItemBackground">
 
     <ImageView

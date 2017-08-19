@@ -69,7 +69,7 @@ import java.util.UUID;
 
 
 
-public class ConversionActivity extends AppCompatActivity {
+public class ConversionActivity extends BaseActivity {
 
     final Intent finishIntent = new Intent();
 

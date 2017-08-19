@@ -22,7 +22,7 @@ import za.co.riggaroo.materialhelptutorial.TutorialItem;
 import za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity;
 
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
     private String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
     Boolean isGranted = true;
 
@@ -66,8 +66,6 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityCollector.addActivity(this);
-        setContentView(R.layout.activity_first);
 
         //request permissions
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
