@@ -14,13 +14,11 @@ public class Textures {
 
     private String name,description;
 
-    private String verStr;
     private PackVersionDecisions version;
 
     public Textures(File path){
         this.path = path;
         version = new PackVersionDecisions(path);
-        verStr =
         name = version.getName();
         description = version.getDescription();
     }

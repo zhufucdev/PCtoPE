@@ -1,5 +1,7 @@
 package com.zhufuc.pctope.Activities;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -14,6 +16,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
@@ -36,26 +39,29 @@ import java.util.Locale;
 
 public class BaseActivity extends AppCompatActivity {
 
+    boolean isGranted;
+
     NavigationView navigationView;
     DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
-        //translate animation
-        Window window = getWindow();
-        window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+        //Translate animation
+        //Window window = getWindow();
+        //window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
 
-        Transition fade = TransitionInflater.from(this).inflateTransition(R.transition.fade);
-        window.setEnterTransition(fade);
-        window.setReenterTransition(fade);
-        window.setExitTransition(fade);
+        //Transition fade = TransitionInflater.from(this).inflateTransition(R.transition.fade);
+        //window.setEnterTransition(fade);
+        //window.setReenterTransition(fade);
+        //window.setExitTransition(fade);
 
-        //collector
+        //Collector
         ActivityCollector.addActivity(this);
-        //language
+        //Language
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
         setLanguage(settings.getString("pref_language","auto"));
+
     }
 
     @Override
@@ -63,14 +69,12 @@ public class BaseActivity extends AppCompatActivity {
         super.onStart();
 
         Class thisClass = getClass();
-        if (thisClass.equals(MainActivity.class) || thisClass.equals(CompressionActivity.class)) {
+        if (thisClass.equals(MainActivity.class)) {
             //if now the context is main or compression
             if (thisClass.equals(MainActivity.class)){
                 navigationView.setCheckedItem(R.id.nav_manager);
             }
-            else if (thisClass.equals(CompressionActivity.class)){
-                navigationView.setCheckedItem(R.id.nav_packer);
-            }
+
             //for header image
             boolean ifImageExists = true;
 
@@ -118,6 +122,8 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy(){
         super.onDestroy();
+
         ActivityCollector.removeActivity(this);
     }
+
 }

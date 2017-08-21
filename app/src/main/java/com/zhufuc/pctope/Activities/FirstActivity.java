@@ -1,6 +1,7 @@
 package com.zhufuc.pctope.Activities;
 
 import android.Manifest;
+import android.app.ApplicationErrorReport;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,10 +10,14 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.netease.nis.bugrpt.CrashHandler;
+import com.netease.nis.bugrpt.user.IExceptionCallback;
+import com.netease.nis.bugrpt.user.UserStrategy;
 import com.zhufuc.pctope.Collectors.ActivityCollector;
 import com.zhufuc.pctope.R;
 
@@ -23,9 +28,8 @@ import za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity;
 
 
 public class FirstActivity extends BaseActivity {
-    private String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
-    Boolean isGranted = true;
 
+    private String[] permission = {Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_PHONE_STATE};
 
     private ArrayList<TutorialItem> getTutorialItems(Context context){
         TutorialItem item1 = new TutorialItem(context.getString(R.string.tutorial_welcome),context.getString(R.string.tutorial_wlcome_subtitle)
@@ -57,24 +61,31 @@ public class FirstActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if (requestCode == 0){
             Intent domain = new Intent(FirstActivity.this, MainActivity.class);
-            domain.putExtra("isgranted",isGranted);
+            domain.putExtra("isGranted",isGranted);
             startActivity(domain);
             finish();
         }
     }
 
+    private boolean needsToDoNext = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setContentView(R.layout.activity_first);
+
+        initBugprt();
+
         //request permissions
+        if (needsToDoNext)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            ActivityCompat.requestPermissions(FirstActivity.this, permissions, 2);
+            ActivityCompat.requestPermissions(FirstActivity.this, permission, 2);
             class Waiting extends AsyncTask<Void ,Integer ,Boolean>{
                 @Override
                 protected Boolean doInBackground(Void... voids) {
                     int j=0;
-                    while(ContextCompat.checkSelfPermission(FirstActivity.this,permissions[0]) == PackageManager.PERMISSION_DENIED){
+                    while(ContextCompat.checkSelfPermission(FirstActivity.this,permission[0]) == PackageManager.PERMISSION_DENIED ||
+                            ContextCompat.checkSelfPermission(FirstActivity.this,permission[1]) == PackageManager.PERMISSION_DENIED){
                         Log.d("status","Now j is "+j);
                         j++;
                         try {
@@ -98,11 +109,13 @@ public class FirstActivity extends BaseActivity {
             new Waiting().execute();
         }
         else InitTutorial();
+
+
     }
 
     private void InitTutorial(){
-        SharedPreferences.Editor editor = getSharedPreferences("data", MODE_PRIVATE).edit();
         SharedPreferences preferences = getSharedPreferences("data", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
         boolean isbooted = preferences.getBoolean("isbooted", false);
         //is first boot
         if (isbooted == false) {
@@ -115,5 +128,27 @@ public class FirstActivity extends BaseActivity {
             editor.apply();
         }
         else onActivityResult(0,0,null);
+    }
+
+    public void initBugprt(){
+        UserStrategy strategy = new UserStrategy(this);
+        SharedPreferences preferences = getSharedPreferences("data",MODE_PRIVATE);
+        final SharedPreferences.Editor editor = preferences.edit();
+        if (preferences.getBoolean("ifHasBrokenDownLastStart",false)){
+            Intent intent = new Intent(FirstActivity.this,UserBugReport.class);
+            needsToDoNext = false;
+            startActivity(intent);
+            finish();
+        }
+        editor.putBoolean("ifHasBrokenDownLastStart",false);
+        editor.apply();
+        strategy.setUserUncaughtExceptionCallback(new IExceptionCallback() {
+            @Override
+            public void uncaughtException(Thread thread, Throwable throwable) {
+                editor.putBoolean("ifHasBrokenDownLastStart",true);
+                editor.apply();
+            }
+        });
+        CrashHandler.init(getApplicationContext(),strategy);
     }
 }

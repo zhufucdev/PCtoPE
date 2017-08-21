@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.zhufuc.pctope.R;
 
-public class AboutActivity extends BaseActivity {
+public class AboutActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,15 +42,10 @@ public class AboutActivity extends BaseActivity {
         }
 
         ImageView visitGithub = (ImageView)findViewById(R.id.visit_github);
-        visitGithub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent github = new Intent(Intent.ACTION_VIEW);
-                Uri uri = Uri.parse("https://github.com/zhufucdev/PCtoPE");
-                github.setData(uri);
-                startActivity(github);
-            }
-        });
+        visitGithub.setOnClickListener(this);
+
+        ImageView visitCoolapk = (ImageView)findViewById(R.id.visit_coolapk);
+        visitCoolapk.setOnClickListener(this);
 
         final Animation show = AnimationUtils.loadAnimation(this,R.anim.cards_show);
         final ImageView icon = (ImageView)findViewById(R.id.about_icon);
@@ -95,5 +90,22 @@ public class AboutActivity extends BaseActivity {
             finish();
         }
         return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+        Uri uri = null;
+        Intent site = new Intent(Intent.ACTION_VIEW);
+        switch (view.getId()){
+            case R.id.visit_github:
+                uri = Uri.parse("https://github.com/zhufucdev/PCtoPE");
+                break;
+            case R.id.visit_coolapk:
+                uri = Uri.parse("https://www.coolapk.com/apk/com.zhufuc.pctope");
+                break;
+            default:
+        }
+        site.setData(uri);
+        startActivity(site);
     }
 }

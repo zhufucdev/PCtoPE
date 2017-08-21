@@ -86,7 +86,7 @@
     <string name="pref_language">Language</string>
     <string name="pref_lang_auto">Auto</string>
     <string name="about_create_by">Create By Zhufucomcom</string>
-    <string name="about_gpl_license">Licensed under the GPL-3 Open Source license.</string>
+    <string name="about_gpl_license">Licensed under the GPL-v3 Open Source license.</string>
     <string name="about_made_in_china">Made In China</string>
     <string name="about_visit">Visit...</string>
     <string name="pref_drawer_title">Header Image of Drawer</string>
@@ -96,5 +96,10 @@
     <string name="compression_tip_title">What\'s this?</string>
     <string name="compression_tip_text">This can help you pack Minecraft Texture Packs into .mcpack files. They will be saved in</string>
     <string name="compressiom_tip_text2">.mcpack files can be open to import texture packs in Minecraft. Is a good way to use texture packs on special devices like IOS and Windows10.You can also use it on your Android device if you don\'t use External Storage.</string>
+    <string name="compression_step_start">Let\'s begin.</string>
+    <string name="understood">I understood.</string>
+    <string name="crashes_toast_text">Whoops! We met some trouble!</string>
+    <string name="user_bug_report_title">Whoooooops! We met some trouble.</string>
+    <string name="user_bug_report_subtitle">Please tell me how this appened to help me fix it.</string>
 
 </resources>

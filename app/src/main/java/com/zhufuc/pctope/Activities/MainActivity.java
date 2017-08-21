@@ -49,6 +49,7 @@ import android.widget.Toast;
 
 import com.zhufuc.pctope.Adapters.TextureItems;
 import com.zhufuc.pctope.Adapters.Textures;
+import com.zhufuc.pctope.Collectors.ActivityCollector;
 import com.zhufuc.pctope.Interf.DeletingCallback;
 import com.zhufuc.pctope.Interf.SpacesItemDecoration;
 import com.zhufuc.pctope.Utils.GetPathFromUri4kitkat;
@@ -56,10 +57,6 @@ import com.zhufuc.pctope.Utils.*;
 import com.zhufuc.pctope.R;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 
 import static android.widget.Toast.makeText;
 
@@ -120,16 +117,12 @@ public class MainActivity extends BaseActivity {
     }
 
     private String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS, Manifest.permission.READ_EXTERNAL_STORAGE};
-    Intent intent = getIntent();
-    boolean isgranted;
 
     FloatingActionButton fab = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //translation animation
-
 
         //defining
         setContentView(R.layout.activity_main);
@@ -137,11 +130,14 @@ public class MainActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Intent intent = getIntent();
-        isgranted = intent.getBooleanExtra("isgranted", true);
+
         fab = (FloatingActionButton) findViewById(R.id.fab);
         final RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycle_view);
-        Log.d("status", isgranted + "");
+
+        Intent intent = getIntent();
+        isGranted = intent.getBooleanExtra("isGranted",true);
+
+        Log.d("status", isGranted + "");
 
         //file choosing
         fab.setOnClickListener(new View.OnClickListener() {
@@ -165,7 +161,7 @@ public class MainActivity extends BaseActivity {
         });
 
 
-        if (isgranted) {
+        if (isGranted) {
             initActivity();
         }
         else{
@@ -178,6 +174,7 @@ public class MainActivity extends BaseActivity {
                                 @Override
                                 public void run() {
                                     while (ContextCompat.checkSelfPermission(MainActivity.this,permissions[0]) == PackageManager.PERMISSION_DENIED){}
+                                    isGranted = true;
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
@@ -205,9 +202,12 @@ public class MainActivity extends BaseActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 drawerLayout.closeDrawer(GravityCompat.START);
                 switch (item.getItemId()){
-                    case R.id.nav_packer:final Intent packer = new Intent(MainActivity.this,CompressionActivity.class);
-                        startActivity(packer, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
-                        break;
+                    //case R.id.nav_packer:
+                    //    ActivityCollector.finishOther(MainActivity.this);
+                    //    final Intent packer = new Intent(MainActivity.this,CompressionActivity.class);
+                    //    startActivity(packer, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
+                        //overridePendingTransition(0,0);
+                    //   break;
                     case R.id.nav_settings:Intent settings = new Intent(MainActivity.this,SettingsActivity.class);
                         startActivity(settings);
                         break;
@@ -218,6 +218,7 @@ public class MainActivity extends BaseActivity {
                 return true;
             }
         });
+
     }
 
     @Override
@@ -230,7 +231,9 @@ public class MainActivity extends BaseActivity {
     }
 
 
-    private RecyclerView recyclerView;private TextureItems items = new TextureItems();
+    private RecyclerView recyclerView;
+    private TextureItems items = new TextureItems();
+
     private void initActivity(){
         final CardView android_nothing_card = (CardView)findViewById(R.id.android_nothing);
         //init for textures list
@@ -350,11 +353,6 @@ public class MainActivity extends BaseActivity {
         });
     }
 
-    @Override
-    protected void onResume(){
-        super.onResume();
-        loadList();
-    }
 
     @Override
     protected void onStart(){
@@ -366,7 +364,7 @@ public class MainActivity extends BaseActivity {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
         }
-        else finish();
+        else ActivityCollector.finishAll();
     }
 
     private void loadList(){
@@ -422,8 +420,9 @@ public class MainActivity extends BaseActivity {
     public void setLayoutManager(){
         LinearLayoutManager linearLayoutManager = null;
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        if (displayMetrics.widthPixels > 1080){
-            int lineCount = Math.round((displayMetrics.widthPixels/1080f));
+        int width = displayMetrics.widthPixels ,height = displayMetrics.heightPixels;
+        if (width >= height){
+            int lineCount = Math.round(width/512f);
 
             if (lineCount >= items.getItemCount() && items.getItemCount()!=0) lineCount = items.getItemCount();
 

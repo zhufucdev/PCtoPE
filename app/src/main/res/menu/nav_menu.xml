@@ -5,9 +5,11 @@
         <item android:title="@string/nav_textures_manager"
             android:icon="@drawable/view_agenda"
             android:id="@+id/nav_manager"/>
+        <!--
         <item android:title="@string/nav_textures_packer"
             android:icon="@drawable/zip_box"
             android:id="@+id/nav_packer"/>
+            -->
     </group>
     <item android:title="@string/nav_application">
         <menu>

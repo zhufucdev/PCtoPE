@@ -21,9 +21,13 @@ public class ActivityCollector {
         Log.d("Activity","Removed "+activity.getClass().getSimpleName());
     }
 
-    public static void finishActivity(Activity activity){
-        if (!activity.isFinishing()){
-            activity.finish();
+    public static void finishOther(Activity activity){
+        for (Activity act : activities){
+            if (!act.equals(activity)){
+                if (!act.isFinishing()){
+                    act.finish();
+                }
+            }
         }
     }
 

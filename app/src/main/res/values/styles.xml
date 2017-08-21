@@ -13,6 +13,11 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowTranslucentStatus">true</item>
+        <!-- Translate Animations -->
+        <item name="android:windowExitAnimation">@transition/fade</item>
+        <item name="android:windowEnterAnimation">@transition/fade</item>
+        <item name="android:windowReenterTransition">@transition/fade</item>
+
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
