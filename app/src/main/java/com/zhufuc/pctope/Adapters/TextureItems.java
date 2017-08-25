@@ -1,18 +1,24 @@
 package com.zhufuc.pctope.Adapters;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zhufuc.pctope.Activities.ConversionActivity;
+import com.zhufuc.pctope.Activities.DetailsActivity;
+import com.zhufuc.pctope.Activities.MainActivity;
+import com.zhufuc.pctope.Collectors.ActivityCollector;
 import com.zhufuc.pctope.R;
 
 import java.util.ArrayList;
@@ -28,6 +34,12 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
     private final String fullPE = "Found:full PE pack.";
     private final String brokenPE = "Found:broken PE pack.";
     private final String brokenPC = "Found:broken PC pack.";
+
+    private OnItemClickListener mOnItemClickListener = null;
+
+    public static interface OnItemClickListener{
+        void onItemClick(View view,int position);
+    }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView TextureName;
@@ -51,9 +63,10 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
         this.mTextures = new ArrayList<>();
     }
 
+
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View view = LayoutInflater.from(parent.getContext())
+    public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType){
+        final View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.texture_item,parent,false);
         final ViewHolder holder = new ViewHolder(view);
 
@@ -67,6 +80,7 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
                     convert.putExtra("filePath",holder.AlertIcon.getTag().toString());
                     holder.AlertIcon.getContext().startActivity(convert);
                 }
+                mOnItemClickListener.onItemClick(view,(int)view.getTag());
             }
         });
         holder.AlertIcon.setOnClickListener(new View.OnClickListener() {
@@ -92,18 +106,18 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
         //Change text if it isn't a PE pack
         if (name == null){
             name = holder.TextureName.getResources().getString(R.string.broken_pc);
-            description = holder.TextureDescription.getResources().getString(R.string.broken_pc_subtitle);
+            description = "";
         }
         holder.TextureName.setText(name);
         holder.TextureDescription.setText(description);
 
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize=2;
+        //Set position Tag
+        holder.cardView.setTag(position);
+
         //Image view
-        if (textures.getIcon() != null){
-            String pathIcon = textures.getIcon().getPath();
-            Bitmap bm = BitmapFactory.decodeFile(pathIcon,options);
-            holder.TextureIcon.setImageBitmap(bm);
+        Bitmap icon = BitmapFactory.decodeFile(textures.getIcon());
+        if (icon != null){
+            holder.TextureIcon.setImageBitmap(icon);
         }
 
 
@@ -113,10 +127,16 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
             if (verStr.equals(fullPC)||verStr.equals(brokenPC)){
                 holder.AlertIcon.setVisibility(View.VISIBLE);
                 holder.AlertIcon.setTag(textures.getPath());
+                holder.TextureDescription.setText(holder.TextureDescription.getResources().getString(R.string.broken_pc_subtitle));
                 return;
             }
         }
         holder.AlertIcon.setVisibility(View.GONE);
+    }
+
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.mOnItemClickListener = listener;
     }
 
     @Override
@@ -133,6 +153,10 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
     public void remove(int position){mTextures.remove(position);}
 
     public Textures getItem(int index){return mTextures.get(index);}
+
+    public boolean getIfIsAlertIconShown(View view){
+        return new ViewHolder(view).AlertIcon.getVisibility()==View.VISIBLE;
+    }
 
     public void clear(){mTextures.clear();}
 }

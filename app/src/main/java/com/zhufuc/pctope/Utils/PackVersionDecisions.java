@@ -50,8 +50,9 @@ public class PackVersionDecisions {
                 String[] PEblock = new File(path+"/textures/blocks").list();
                 int i = 0;
                 for (String n : PEblock){
-                    if (n.substring(n.lastIndexOf('.'),n.length()).equals(".png"))
-                        i++;
+                    if (n.lastIndexOf('.')!=-1)
+                        if (n.substring(n.lastIndexOf('.'),n.length()).equals(".png"))
+                            i++;
                     if (i>=10) return "Found:"+v+" PE pack.";
                 }
             }
@@ -59,8 +60,9 @@ public class PackVersionDecisions {
                 String[] PCblock = new File(path+"/assets/minecraft/textures/blocks").list();
                 int i = 0;
                 for (String n : PCblock){
-                    if (n.substring(n.lastIndexOf('.'),n.length()).equals(".png"))
-                        i++;
+                    if (n.lastIndexOf('.')!=-1)
+                        if (n.substring(n.lastIndexOf('.'),n.length()).equals(".png"))
+                            i++;
                     if (i>=10) return "Found:"+v+" PC pack.";
                 }
             }
@@ -68,8 +70,9 @@ public class PackVersionDecisions {
                 String[] PEitem = new File(path+"/textures/items").list();
                 int i = 0;
                 for (String n : PEitem){
-                    if (n.substring(n.lastIndexOf('.'),n.length()).equals(".png"))
-                        i++;
+                    if (n.lastIndexOf('.')!=-1)
+                        if (n.substring(n.lastIndexOf('.'),n.length()).equals(".png"))
+                            i++;
                     if (i>=10) return "Found:"+v+" PE pack.";
                 }
             }
@@ -77,8 +80,9 @@ public class PackVersionDecisions {
                 String[] PCitem = new File(path + "/assets/minecraft/textures/items").list();
                 int i = 0;
                 for (String n : PCitem) {
-                    if (n.substring(n.lastIndexOf('.'), n.length()).equals(".png"))
-                        i++;
+                    if (n.lastIndexOf('.')!=-1)
+                        if (n.substring(n.lastIndexOf('.'), n.length()).equals(".png"))
+                            i++;
                     if (i >= 10) return "Found:" + v + " PC pack.";
                 }
             }

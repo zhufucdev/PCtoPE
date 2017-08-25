@@ -69,7 +69,7 @@
     <string name="type_brokenPC">Bug Minecraft PC textures pack</string>
     <string name="info_file_not_exists">Unknown. This is PE pack or file doesn\'t exist.</string>
     <string name="resources_compression">Resources Compression</string>
-    <string name="resources_compression_subtitle">This can help you compress image resource files to make runnable on Low Performance Devices.If you need to use, just click the card.</string>
+    <string name="resources_compression_subtitle">This helps you compress image resource files to make runnable on Low Performance Devices.If you need to use, just click the card.</string>
     <string name="compress_to">Compress to…</string>
     <string name="confirm">Confirm</string>
     <string name="progress_compressing_title">Compressing…</string>
@@ -101,5 +101,10 @@
     <string name="crashes_toast_text">Whoops! We met some trouble!</string>
     <string name="user_bug_report_title">Whoooooops! We met some trouble.</string>
     <string name="user_bug_report_subtitle">Please tell me how this appened to help me fix it.</string>
+    <string name="pack_icon_transition" translatable="false">pack_icon_transition</string>
+    <string name="details_card_basic_info_title">Basic Information</string>
+    <string name="details_card_basic_info_size">Textures Size</string>
+    <string name="details_card_basic_info_location">Location</string>
+    <string name="copied">Cpoied</string>
 
 </resources>

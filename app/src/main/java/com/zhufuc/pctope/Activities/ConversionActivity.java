@@ -157,7 +157,9 @@ public class ConversionActivity extends BaseActivity {
 
     PackVersionDecisions decisions;
     private String VerStr = null;
+
     private void doVersionDecisions(){
+        Log.d("Pack Version",VerStr);
         if (VerStr.equals(brokenPE)||VerStr.equals(fullPE)){
             onPEDecisions();
         }
@@ -212,6 +214,7 @@ public class ConversionActivity extends BaseActivity {
         //威克斯
         //箱子手持贴图及大箱子实体 无法解决<>已解决
         //活塞 无法解决
+        //方块破坏崩裂贴图 已解决
 
         File[] FROM = {
                 new File(path+"/textures/entity/chest/normal_double.png"),
@@ -265,8 +268,6 @@ public class ConversionActivity extends BaseActivity {
 
                 outputStream.flush();
                 outputStream.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -288,14 +289,19 @@ public class ConversionActivity extends BaseActivity {
                         outputStream.write(byteArrayOutputStream.toByteArray());
                         outputStream.flush();
                         outputStream.close();
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 }
 
             }
+        }
+
+        //For destroy stages
+        for (int i = 0;i <= 9;i ++){
+            File stage = new File(path+"/textures/blocks/destroy_stage_"+i+".png");
+            if (stage.exists())
+                stage.renameTo(new File(path + "/textures/environment/" + stage.getName()));
         }
     }
 
@@ -598,6 +604,7 @@ public class ConversionActivity extends BaseActivity {
     public void doImageCompressions(ProgressDialog progressDialog){
         if (compressFinalSize == 0)
             return;
+        Log.i("Pack Conversion","Doing image compressions...");
         //get images
         File[] items = new File(path+"/textures/items").listFiles(),blocks = new File(path+"/textures/blocks").listFiles();
         if (items!=null){
@@ -886,7 +893,7 @@ public class ConversionActivity extends BaseActivity {
              Thread doing = new Thread(new Runnable() {
                  @Override
                  public void run() {
-
+                     Log.i("Pack Conversion","Doing version decisions...");
                      doVersionDecisions();
 
                      doImageCompressions(loadingDialog);
@@ -894,11 +901,13 @@ public class ConversionActivity extends BaseActivity {
                      runOnUiThread(new Runnable() {
                          @Override
                          public void run() {
+                             Log.i("Information On UI","Showing json writing dialog...");
                              loadingDialog.setMessage(getResources().getString(R.string.do_final_step));
                              loadingDialog.setTitle(getResources().getString(R.string.progress_writing_json));
                          }
                      });
                      try {
+                         Log.i("Pack Conversion","Doing json Writing");
                          doJSONWriting();
                      } catch (FileNotFoundException e) {
                          ErrorsCollector.putError(e.toString(),1);
@@ -908,6 +917,7 @@ public class ConversionActivity extends BaseActivity {
                      //For if icon doesn't exist
                      File iconTest = new File(path+"/pack_icon.png");
                      if (!iconTest.exists()){
+                         Log.i("Pack Conversion","Writing icon for non-icon-pack...");
                          byte[] buffer = new byte[1444];int i;
                          InputStream inputStream = getResources().openRawResource(R.raw.bug_pack_icon);
                          try {
@@ -921,6 +931,7 @@ public class ConversionActivity extends BaseActivity {
                      }
 
                      //Move to dest
+                     Log.i("Pack Conversion","Moving to dest...");
                      File dest = new File (Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/"+packname);
                      if (dest.isDirectory()&&dest.exists()) dest.mkdirs();
                      new File(path).renameTo(dest);
@@ -959,6 +970,7 @@ public class ConversionActivity extends BaseActivity {
             if (iconTest.exists()){
                 Bitmap bm = BitmapFactory.decodeFile(iconTest.getPath(),options);
                 icon.setImageBitmap(bm);
+                return;
             }
         }
         else if (VerStr.equals(fullPC)){
@@ -966,22 +978,21 @@ public class ConversionActivity extends BaseActivity {
             if (iconTest.exists()){
                 Bitmap bm = BitmapFactory.decodeFile(iconTest.getPath(),options);
                 icon.setImageBitmap(bm);
+                return;
             }
         }
-        else{
-            FloatingActionButton finishBottom = (FloatingActionButton)findViewById(R.id.finishBottom);
-            Snackbar.make(finishBottom,R.string.pack_icon_not_found,5000)
-                    .setAction(R.string.ok, new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent choose = new Intent(Intent.ACTION_GET_CONTENT);
-                            choose.setType("image/*");
-                            choose.addCategory(Intent.CATEGORY_OPENABLE);
-                            startActivityForResult(choose, 0);
-                        }
-                    })
-                    .show();
-        }
+        FloatingActionButton finishBottom = (FloatingActionButton)findViewById(R.id.finishBottom);
+        Snackbar.make(finishBottom,R.string.pack_icon_not_found,5000)
+                .setAction(R.string.ok, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent choose = new Intent(Intent.ACTION_GET_CONTENT);
+                        choose.setType("image/*");
+                        choose.addCategory(Intent.CATEGORY_OPENABLE);
+                        startActivityForResult(choose, 0);
+                    }
+                })
+                .show();
     }
 
 

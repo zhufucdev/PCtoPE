@@ -11,9 +11,12 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <!-- Translate Animations -->
+
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+        <!-- Transition Animations -->
         <item name="android:windowExitAnimation">@transition/fade</item>
         <item name="android:windowEnterAnimation">@transition/fade</item>
         <item name="android:windowReenterTransition">@transition/fade</item>

@@ -34,6 +34,7 @@ import android.widget.Toast;
 
 import com.zhufuc.pctope.Collectors.ActivityCollector;
 import com.zhufuc.pctope.R;
+import com.zhufuc.pctope.Utils.CompressImage;
 import com.zhufuc.pctope.Utils.GetPathFromUri4kitkat;
 
 import java.io.ByteArrayOutputStream;
@@ -125,6 +126,17 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                     return;
                 }
 
+                int width = bitmap.getWidth(),height = bitmap.getHeight();
+                if (width+height>1024) {
+                    int compressWidthPercent = 1 ,compressHeightPercent = 1;
+                    while (!(width/compressWidthPercent<=512))
+                        compressWidthPercent++;
+                    while (!(height/compressHeightPercent<=512))
+                        compressHeightPercent++;
+
+                    bitmap = CompressImage.getBitmap(bitmap,height/compressHeightPercent,width/compressHeightPercent);
+                }
+
                 try {
                     outputStream = openFileOutput("header_image.png",MODE_PRIVATE);
                     bitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream);
@@ -133,7 +145,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                     Toast.makeText(this,"File not found!",Toast.LENGTH_LONG).show();
                     e.printStackTrace();
                 }
-                refreshClearButton();
+                finish();
             }
 
         }

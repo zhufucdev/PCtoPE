@@ -7,8 +7,8 @@ import java.io.File;
  */
 
 public class FindFile {
-    public static File withKeywordOnce(String keyword,String baseForm){
-        File[] listBase = new File(baseForm).listFiles();
+    public static File withKeywordOnce(String keyword,String findFrom){
+        File[] listBase = new File(findFrom).listFiles();
         for (File n : listBase){
             if (n.isFile()){
                 String str = n.getPath();

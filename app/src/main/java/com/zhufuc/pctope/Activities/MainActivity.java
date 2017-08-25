@@ -13,6 +13,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -101,6 +102,12 @@ public class MainActivity extends BaseActivity {
             if (result)
                 loadList();
         }
+        else if (requestCode == 2){
+            if (data.getBooleanExtra("isDataChanged",false)){
+                loadList();
+            }
+
+        }
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == 1) {
                 Uri uri = data.getData();
@@ -117,6 +124,8 @@ public class MainActivity extends BaseActivity {
     }
 
     private String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS, Manifest.permission.READ_EXTERNAL_STORAGE};
+
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     FloatingActionButton fab = null;
 
@@ -303,7 +312,7 @@ public class MainActivity extends BaseActivity {
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
         //for swipe refresh layout
-        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
+        swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent),getResources().getColor(R.color.google_blue)
                 ,getResources().getColor(R.color.google_red),getResources().getColor(R.color.google_green));
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -369,7 +378,7 @@ public class MainActivity extends BaseActivity {
 
     private void loadList(){
 
-        TextureItems oldTemp = items;
+        //TextureItems oldTemp = items;
         items.clear();
 
         File packsListDir = new File(Environment.getExternalStorageDirectory()+"/games/com.mojang/resource_packs/")
@@ -408,28 +417,51 @@ public class MainActivity extends BaseActivity {
                 android_nothing_card.setVisibility(View.GONE);
             }
 
-            DiffUtil.Callback callback = new DiffUtilCallback(oldTemp,items);
-            DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
-            diffResult.dispatchUpdatesTo(items);
+            //DiffUtil.Callback callback = new DiffUtilCallback(oldTemp,items);
+            //DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
+            //diffResult.dispatchUpdatesTo(items);
             items.notifyDataSetChanged();
+
+            items.setOnItemClickListener(new TextureItems.OnItemClickListener() {
+                @Override
+                public void onItemClick(View view,int pos) {
+                    if (!items.getIfIsAlertIconShown(view)){
+                        Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
+
+                        Textures temp = items.getItem(pos);
+                        intent.putExtra("texture_name",temp.getName());
+                        intent.putExtra("texture_description",temp.getDescription());
+                        intent.putExtra("texture_icon",temp.getIcon());
+                        intent.putExtra("texture_version",temp.getVersion());
+                        intent.putExtra("texture_path",temp.getPath());
+
+                        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,view.findViewById(R.id.card_texture_icon),getString(R.string.pack_icon_transition));
+                        ActivityCompat.startActivityForResult(MainActivity.this,intent,2,options.toBundle());
+                    }
+                }
+            });
+
+            setLayoutManager();
         }
         else MakeErrorDialog("Failed to make textures root directory.");
-        setLayoutManager();
     }
 
     public void setLayoutManager(){
-        LinearLayoutManager linearLayoutManager = null;
+        LinearLayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);;
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         int width = displayMetrics.widthPixels ,height = displayMetrics.heightPixels;
-        if (width >= height){
-            int lineCount = Math.round(width/512f);
+        int itemCount = items.getItemCount();
+        if (itemCount != 0){
+            if (width >= height){
+                int lineCount = Math.round(width/512f);
 
-            if (lineCount >= items.getItemCount() && items.getItemCount()!=0) lineCount = items.getItemCount();
-
-                linearLayoutManager = new GridLayoutManager(this,lineCount);
+                if (lineCount >= itemCount && itemCount!=0)
+                    lineCount = items.getItemCount();
+                Log.i("Layout Manager","Layout manager set by Grid Layout Manager. Line count is "+lineCount);
+                layoutManager = new GridLayoutManager(this,lineCount);
+            }
         }
-        else linearLayoutManager = new LinearLayoutManager(MainActivity.this);
 
-        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setLayoutManager(layoutManager);
     }
 }

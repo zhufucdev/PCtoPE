@@ -101,4 +101,8 @@
     <string name="crashes_toast_text">哎哟！我们遇到了一些问题！</string>
     <string name="user_bug_report_title">我累个大去！我们遇到一些问题</string>
     <string name="user_bug_report_subtitle">请告诉我此问题如何发生，以便帮助我尽快解决</string>
+    <string name="details_card_basic_info_title">基础信息</string>
+    <string name="details_card_basic_info_size">材质包大小</string>
+    <string name="details_card_basic_info_location">位置</string>
+    <string name="copied">已复制</string>
 </resources>
