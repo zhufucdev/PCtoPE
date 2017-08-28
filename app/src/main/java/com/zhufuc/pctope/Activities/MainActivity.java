@@ -117,10 +117,6 @@ public class MainActivity extends BaseActivity {
                 startActivityForResult(intent,0);
             }
         }
-        else{
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            Snackbar.make(fab,R.string.choosing_none,Snackbar.LENGTH_LONG).show();
-        }
     }
 
     private String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS, Manifest.permission.READ_EXTERNAL_STORAGE};

@@ -105,4 +105,8 @@
     <string name="details_card_basic_info_size">材质包大小</string>
     <string name="details_card_basic_info_location">位置</string>
     <string name="copied">已复制</string>
+    <string name="icon_edit">编辑图标</string>
+    <string name="icon_edit_high_res_title">高分辨率</string>
+    <string name="icon_edit_high_res_subtitle">高分辨率图标对于MC没有意义。你想要压缩吗？</string>
+    <string name="thanks">谢了</string>
 </resources>

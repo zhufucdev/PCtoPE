@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.zhufuc.pctope.Activities.DetailsActivity"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:background="@color/activity_background">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

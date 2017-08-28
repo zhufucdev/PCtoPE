@@ -55,7 +55,6 @@
             android:name=".Activities.AboutActivity"
             android:label="@string/nav_about" />
         <!-- Net Ease BugRPT -->
-
         <meta-data
             android:name="BUGRPT_APPID"
             android:value="A001298994" />
@@ -64,7 +63,8 @@
             android:name=".Activities.UserBugReport"
             android:theme="@style/AppTheme" />
         <activity android:name=".Activities.DetailsActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/project_unnamed"/>
     </application>
 
 </manifest>

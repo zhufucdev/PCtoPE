@@ -17,4 +17,15 @@ public class CompressImage {
 
         return Bitmap.createBitmap(bitmap,0,0,oldWidth,oldHeight,matrix,false);
     }
+
+    public static Bitmap getBitmap(Bitmap bitmap,float scale){
+        Matrix matrix = new Matrix();
+        int height = bitmap.getHeight(),width = bitmap.getWidth();
+        matrix.postScale(scale,scale);
+        return Bitmap.createBitmap(bitmap,0,0,width,height,matrix,false);
+    }
+
+    public static boolean testBitmap(int testWidth,int testHeight,Bitmap bitmap){
+        return (bitmap.getHeight()>testHeight || bitmap.getWidth()>testWidth);
+    }
 }

@@ -106,5 +106,9 @@
     <string name="details_card_basic_info_size">Textures Size</string>
     <string name="details_card_basic_info_location">Location</string>
     <string name="copied">Cpoied</string>
+    <string name="icon_edit">Icon Edit</string>
+    <string name="icon_edit_high_res_title">High Resolution</string>
+    <string name="icon_edit_high_res_subtitle">It\'s meaningless to give a icon of hight resolution on Minecraft.Would you want to compress it?</string>
+    <string name="thanks">Thanks</string>
 
 </resources>

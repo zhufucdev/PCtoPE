@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.annotation.BoolRes;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -36,9 +37,15 @@ import android.widget.TextView;
 
 import com.zhufuc.pctope.Adapters.Textures;
 import com.zhufuc.pctope.R;
+import com.zhufuc.pctope.Utils.CompressImage;
+import com.zhufuc.pctope.Utils.GetPathFromUri4kitkat;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.channels.FileChannel;
 
 import static android.view.View.GONE;
 
@@ -46,6 +53,7 @@ public class DetailsActivity extends BaseActivity {
 
     private String name,description,version,icon,path;
     private Textures textures = null;
+    private Textures.Edit textureEditor;
     private BigDecimal size;
 
     private NestedScrollView cards;
@@ -55,15 +63,27 @@ public class DetailsActivity extends BaseActivity {
 
     private boolean isDataChanged = false;
 
-    public long getFolderTotalSize(String path){
+    //Utils
+    public long getFolderTotalSize(String path) {
         File[] files = new File(path).listFiles();
         long size = 0;
         for (File f:files)
-            if (f.isFile()){
-                size += f.length();
+            if (f.exists()){
+                if (f.isFile()){
+                    FileChannel fc = null;
+                    FileInputStream inputStream = null;
+                    try {
+                        inputStream = new FileInputStream(f);
+                        fc = inputStream.getChannel();
+                        size += fc.size();
+                        inputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                else size += getFolderTotalSize(f.getPath());
             }
-            else
-                size += getFolderTotalSize(f.getPath());
+
         return size;
     }
 
@@ -82,21 +102,29 @@ public class DetailsActivity extends BaseActivity {
             editName.setText(name);
             editDescription.setText(description);
 
-            dialog.setNegativeButton(R.string.confirm, new DialogInterface.OnClickListener() {
+            dialog.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    Textures.Edit edit = new Textures.Edit(path);
                     String setName = editName.getText().toString(),setDescription = editDescription.getText().toString();
                     if (!setName.equals(name)) {
-                        edit.changeName(setName);
+                        textureEditor.changeName(setName);
                         isDataChanged = true;
                     }
                     if (!setDescription.equals(description)) {
-                        edit.changeDescription(setDescription);
+                        textureEditor.changeDescription(setDescription);
                         isDataChanged = true;
                     }
 
                     loadDetailedInfo();
+                }
+            });
+
+            dialog.setNeutralButton(R.string.icon_edit, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                    intent.setType("image/*");
+                    startActivityForResult(intent,0);
                 }
             });
 
@@ -130,7 +158,14 @@ public class DetailsActivity extends BaseActivity {
     public void updateInformation(){
         if (textures!=null)
             textures = null;
+        if (textureEditor != null)
+            textureEditor = null;
         textures = new Textures(new File(path));
+        textureEditor = new Textures.Edit(path);
+
+        version = textures.getVersion();
+        name = textures.getName();
+        description = textures.getDescription();
 
         BigDecimal totalSize = new BigDecimal(getFolderTotalSize(path));
         BigDecimal BtoMB = new BigDecimal(1024*1024);
@@ -140,7 +175,6 @@ public class DetailsActivity extends BaseActivity {
     public void loadDetailedInfo(){
 
         cards = (NestedScrollView) findViewById(R.id.details_info_layout);
-
 
         class LoadingTask extends AsyncTask<Void, Integer ,Boolean>{
             @Override
@@ -154,14 +188,6 @@ public class DetailsActivity extends BaseActivity {
             public Boolean doInBackground(Void... params){
                 updateInformation();
 
-                version = null;
-                name = null;
-                description = null;
-
-                version = textures.getVersion();
-                name = textures.getName();
-                description = textures.getDescription();
-
                 try {
                     Thread.sleep(600);
                 } catch (InterruptedException e) {
@@ -173,8 +199,8 @@ public class DetailsActivity extends BaseActivity {
 
             @Override
             public void onPostExecute(Boolean result){
-                loadViews();
                 initBasicTitles();
+                loadViews();
                 hideLoading();
             }
         }
@@ -222,11 +248,12 @@ public class DetailsActivity extends BaseActivity {
         toolbarLayout.setExpandedTitleMarginStart(235);
         toolbarLayout.setTitle(name);
         if (!description.equals("")) {
+            packdescription.setVisibility(View.VISIBLE);
             packdescription.setText(description);
             toolbarLayout.setExpandedTitleMarginBottom(140);
         }
         else {
-            packdescription.setVisibility(GONE);
+            packdescription.setVisibility(View.INVISIBLE);
             toolbarLayout.setExpandedTitleMarginBottom(100);
         }
     }
@@ -270,5 +297,56 @@ public class DetailsActivity extends BaseActivity {
         setResult(RESULT_OK,intent);
 
         super.onBackPressed();
+    }
+
+    //Activity Result
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if (resultCode == RESULT_OK)
+            if (requestCode == 0){
+                Uri uri = data.getData();
+                final Bitmap iconMap = BitmapFactory.decodeFile(GetPathFromUri4kitkat.getPath(DetailsActivity.this,uri));
+                if (CompressImage.testBitmap(512,512,iconMap)){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(DetailsActivity.this);
+                    builder.setTitle(R.string.icon_edit_high_res_title);
+                    builder.setMessage(R.string.icon_edit_high_res_subtitle);
+                    builder.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            try {
+                                float scale = 1,scaleHeight = 512f/iconMap.getHeight(),scaleWidth = 512f/iconMap.getWidth();
+                                if (scaleHeight<=scaleWidth) scale = scaleHeight;
+                                else scale = scaleWidth;
+                                textureEditor.iconEdit(CompressImage.getBitmap(iconMap,scale));
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            loadDetailedInfo();
+                        }
+                    });
+                    builder.setNegativeButton(R.string.thanks, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            try {
+                                textureEditor.iconEdit(iconMap);
+                            }catch (IOException e){
+                                e.printStackTrace();
+                            }
+                            loadDetailedInfo();
+                        }
+                    });
+                    builder.show();
+                }
+                else {
+                    try {
+                        textureEditor.iconEdit(iconMap);
+                    }catch (IOException e){
+                        e.printStackTrace();
+                    }
+                    loadDetailedInfo();
+                }
+
+                isDataChanged = true;
+            }
     }
 }

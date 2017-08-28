@@ -9,6 +9,8 @@ import com.zhufuc.pctope.Utils.PackVersionDecisions;
 import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -108,6 +110,28 @@ public class Textures {
             }
 
             writeResult(intro);
+        }
+
+        public void iconEdit(String icon) throws IOException {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            Bitmap bitmap = BitmapFactory.decodeFile(icon);
+
+            bitmap.compress(Bitmap.CompressFormat.PNG,100,baos);
+
+            FileOutputStream output = null;
+            output = new FileOutputStream(path+"/pack_icon.png");
+            output.write(baos.toByteArray());
+            output.close();
+        }
+
+        public void iconEdit(Bitmap bitmap) throws IOException {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG,100,baos);
+
+            FileOutputStream output = null;
+            output = new FileOutputStream(path+"/pack_icon.png");
+            output.write(baos.toByteArray());
+            output.close();
         }
 
         private void writeResult(String result){

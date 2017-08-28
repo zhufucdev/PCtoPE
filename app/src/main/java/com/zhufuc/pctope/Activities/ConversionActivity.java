@@ -1185,13 +1185,53 @@ public class ConversionActivity extends BaseActivity {
         if(resultCode == Activity.RESULT_OK)
             if(requestCode == 0){
                 Uri uri = data.getData();
-                String fileLocation = GetPathFromUri4kitkat.getPath(ConversionActivity.this,uri);
-                Log.d("files","Copying image to "+path+"/pack_icon.png");
-                if(!CopyFileOnSD(fileLocation,path+"/pack_icon.png")) MakeErrorDialog(ErrorsCollector.getError(0));
+                final String fileLocation = GetPathFromUri4kitkat.getPath(ConversionActivity.this,uri);
+                Log.d("files","Copying icon to "+path+"/pack_icon.png");
+
+                final Bitmap iconMap = BitmapFactory.decodeFile(fileLocation);
+                final String iconPath = (VerStr.equals(fullPC))? path+"/pack.png":(VerStr.equals(fullPE))? path+"/pack_icon.png":null;
+                if (CompressImage.testBitmap(512,512,iconMap)){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ConversionActivity.this);
+                    builder.setTitle(R.string.icon_edit_high_res_title);
+                    builder.setMessage(R.string.icon_edit_high_res_subtitle);
+                    builder.setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            float scale = 1,scaleHeight = 512f/iconMap.getHeight(),scaleWidth = 512f/iconMap.getWidth();
+                            if (scaleHeight<=scaleWidth) scale = scaleHeight;
+                            else scale = scaleWidth;
+
+                            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                            CompressImage.getBitmap(iconMap,scale).compress(Bitmap.CompressFormat.PNG,100,baos);
+
+                            if (iconPath!=null){
+                                try {
+                                    FileOutputStream output = new FileOutputStream(iconPath);
+                                    output.write(baos.toByteArray());
+                                    output.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                loadIcon();
+                            }
+                        }
+                    });
+                    builder.setNegativeButton(R.string.thanks, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            if (iconPath!=null){
+                                CopyFileOnSD(fileLocation,iconPath);
+                                loadIcon();
+                            }
+                        }
+                    });
+                    builder.show();
+                }
                 else{
-                    LinearLayout viewC = (LinearLayout)findViewById(R.id.cards);
-                    Snackbar.make(viewC,R.string.completed,Snackbar.LENGTH_SHORT).show();
-                    loadIcon();
+                    if (iconPath!=null){
+                        CopyFileOnSD(fileLocation,iconPath);
+                        loadIcon();
+                    }
                 }
             }
     }
