@@ -31,7 +31,7 @@
         </activity>
         <activity
             android:name="za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar.windowTranslucentNavigation" />
         <activity
             android:name=".Activities.MainActivity"
             android:label="PCtoPE"

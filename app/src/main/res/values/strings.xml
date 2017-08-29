@@ -29,7 +29,7 @@
     <string name="cover">Use a image file to overwrite it.</string>
     <string name="edit_converactdialog">Transfer an installed application to edit.</string>
     <string name="unclickable_unzipping">You can\'t continue while unzipping.</string>
-    <string name="do_final_step">Now we\'re doing final steps.Please wait…</string>
+    <string name="do_final_step">Now we\'re doing final steps.</string>
     <string name="loading">Loading…</string>
     <string name="pack_icon_not_found">This may be a pack without an icon.You can change it.</string>
     <string name="android_nothing">Nothing here! Why not add one?</string>
@@ -110,5 +110,6 @@
     <string name="icon_edit_high_res_title">High Resolution</string>
     <string name="icon_edit_high_res_subtitle">It\'s meaningless to give a icon of hight resolution on Minecraft.Would you want to compress it?</string>
     <string name="thanks">Thanks</string>
+    <string name="please_wait">Please wait…</string>
 
 </resources>

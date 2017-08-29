@@ -23,6 +23,10 @@
 
     </style>
 
+    <style name="AppTheme.NoActionBar.windowTranslucentNavigation" parent="AppTheme.NoActionBar">
+        <item name="android:navigationBarColor">@color/transparent</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

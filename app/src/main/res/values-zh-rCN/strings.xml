@@ -30,7 +30,7 @@
     <string name="cover">使用一个图片文件覆盖</string>
     <string name="edit_converactdialog">调用一个已安装的应用程序编辑</string>
     <string name="unclickable_unzipping">你不能在解压时继续。</string>
-    <string name="do_final_step">我们正在完成最后一步，请稍后…</string>
+    <string name="do_final_step">我们正在完成最后一步</string>
     <string name="loading">加载中…</string>
     <string name="pack_icon_not_found">这或许是个没有图标的包，你可以更改它</string>
     <string name="android_nothing">这里什么都没有！ 为什么不添加一个？</string>
@@ -109,4 +109,5 @@
     <string name="icon_edit_high_res_title">高分辨率</string>
     <string name="icon_edit_high_res_subtitle">高分辨率图标对于MC没有意义。你想要压缩吗？</string>
     <string name="thanks">谢了</string>
+    <string name="please_wait">请稍后…</string>
 </resources>
