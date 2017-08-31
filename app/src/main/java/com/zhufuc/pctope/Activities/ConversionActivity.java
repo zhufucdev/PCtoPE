@@ -166,7 +166,6 @@ public class ConversionActivity extends BaseActivity {
 
             @Override
             public void inDoingVersionDecisions() {
-                //Looper.prepare();
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -176,20 +175,29 @@ public class ConversionActivity extends BaseActivity {
                         alertDialog.show();
                     }
                 });
-
-                //Looper.loop();
             }
 
             @Override
-            public void inDoingImageCompressions(final String whatsBeingCompressing) {
+            public void inDoingImageCompressions(final String whatsBeingCompressed) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        alertDialog.setTitle(getResources().getString(R.string.progress_compressing_title));
-                        alertDialog.setMessage(whatsBeingCompressing);
+                        alertDialog.setTitle(getString(R.string.progress_compressing_title));
+                        alertDialog.setMessage(whatsBeingCompressed);
                     }
                 });
 
+            }
+
+            @Override
+            public void inDoingImageColorTurning() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        alertDialog.setTitle(R.string.turing_image_color_black_into_transparent);
+                        alertDialog.setMessage(getString(R.string.please_wait));
+                    }
+                });
             }
 
             @Override
@@ -340,7 +348,7 @@ public class ConversionActivity extends BaseActivity {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    conversion.doConversions(packname, packdescription);
+                    conversion.doConverting(packname, packdescription);
                 }
             }).start();
 
@@ -487,7 +495,7 @@ public class ConversionActivity extends BaseActivity {
                         if (compressSize > bitmap.getWidth() || compressSize > bitmap.getHeight()){
                             confirm.setEnabled(false);
                             confirm.setTextColor(getResources().getColor(R.color.grey_primary));
-                            Toast.makeText(ConversionActivity.this,R.string.compression_alert,Toast.LENGTH_LONG).show();
+                            Toast.makeText(ConversionActivity.this,R.string.compression_alert,Toast.LENGTH_SHORT).show();
                         }
                         else {
                             confirm.setEnabled(true);

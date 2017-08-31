@@ -37,9 +37,6 @@
             android:label="PCtoPE"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.GuideActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Activities.ConversionActivity"
             android:label="Unnamed"
             android:theme="@style/AppTheme.NoActionBar" />

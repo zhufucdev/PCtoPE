@@ -1,39 +1,33 @@
 package com.zhufuc.pctope.Utils;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
-import android.view.View;
-import android.widget.LinearLayout;
 
-import com.zhufuc.pctope.Activities.ConversionActivity;
 import com.zhufuc.pctope.Collectors.ErrorsCollector;
 import com.zhufuc.pctope.R;
 
 import net.lingala.zip4j.exception.ZipException;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.text.DecimalFormat;
 import java.text.Format;
 import java.util.ArrayList;
@@ -50,48 +44,6 @@ public class TextureConversionUtils {
         String spaces="";
         for (int j=0;j<=i;j++) spaces+=" ";
         return spaces;
-    }
-
-    private boolean CopyFileOnSD(String fileFrom, String fileTo){
-        File from = new File(fileFrom);
-        File to = new File(fileTo);
-        if (from.exists()){
-            if(to.exists()) {
-                to.delete();
-                try {
-                    to.createNewFile();
-                } catch (IOException e) {
-                    ErrorsCollector.putError(e.toString(),0);
-                    e.printStackTrace();
-                    return false;
-                }
-            }
-            try {
-                InputStream inputStream = new FileInputStream(fileFrom);
-                OutputStream outputStream = new FileOutputStream(fileTo);
-                byte[] buffer = new byte[1444];
-                int bytesum = 0, byteread = 0;
-                while ((byteread = inputStream.read(buffer))!=-1){
-                    bytesum += byteread;
-                    outputStream.write(buffer, 0, byteread);
-                }
-                inputStream.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-                ErrorsCollector.putError(e.toString(),0);
-                return false;
-            } catch (IOException e) {
-                e.printStackTrace();
-                ErrorsCollector.putError(e.toString(),0);
-                return false;
-            }
-            return true;
-        }
-        else {
-            ErrorsCollector.putError("File not found.",0);
-            return false;
-        }
-
     }
 
 
@@ -462,25 +414,39 @@ public class TextureConversionUtils {
 
             //for manifest file
             FileOutputStream manifest = new FileOutputStream(path+"/manifest.json");
+
             String intro;
-            intro="{"+System.getProperty("line.separator");
-            intro+=makeSpace(2)+"\"format_version\": 1,"+System.getProperty("line.separator");
-            intro+=makeSpace(2)+"\"header\": {"+System.getProperty("line.separator");
-            intro+=makeSpace(4)+"\"description\": \""+packdescription+"\","+System.getProperty("line.separator");
-            intro+=makeSpace(4)+"\"name\": \""+packname+"\","+System.getProperty("line.separator");
-            String uuid = new UUID(12,4).randomUUID().toString();
-            intro+=makeSpace(4)+"\"uuid\": \""+uuid+"\","+System.getProperty("line.separator");
-            intro+=makeSpace(4)+"\"version\": [0, 0, 1]"+System.getProperty("line.separator");
-            intro+=makeSpace(2)+"},"+System.getProperty("line.separator");
-            intro+=makeSpace(2)+"\"modules\": ["+System.getProperty("line.separator");
-            intro+=makeSpace(4)+"{"+System.getProperty("line.separator");
-            intro+=makeSpace(6)+"\"description\": \""+packdescription+"\","+System.getProperty("line.separator");
-            intro+=makeSpace(6)+"\"type\": \"resources\","+System.getProperty("line.separator");
-            intro+=makeSpace(6)+"\"uuid\": \""+new UUID(12,4).randomUUID().toString()+"\",";
-            intro+=makeSpace(6)+"\"version\" :[0, 0, 1]"+System.getProperty("line.separator");
-            intro+=makeSpace(4)+"}"+System.getProperty("line.separator");
-            intro+=makeSpace(2)+"]"+System.getProperty("line.separator");;
-            intro+="}";
+            JSONObject out = new JSONObject();
+            JSONArray versionArray = new JSONArray();
+            String uuid = UUID.randomUUID().toString();
+            try {
+                versionArray.put(0);
+                versionArray.put(0);
+                versionArray.put(1);
+
+                out.put("format_version",1);
+                JSONObject header = new JSONObject();
+                header.put("description",packdescription);
+                header.put("name",packname);
+                header.put("uuid",uuid);
+                header.put("version",versionArray);
+                out.put("header",header);
+
+                JSONArray modules = new JSONArray();
+                JSONObject modulesObjs = new JSONObject();
+                modulesObjs.put("description",packdescription);
+                modulesObjs.put("type","resources");
+                modulesObjs.put("uuid",uuid);
+                modulesObjs.put("version",versionArray);
+                modules.put(modulesObjs);
+                out.put("modules",modules);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            intro = new JsonFormatTool().formatJson(out.toString());
+
             try {
                 manifest.write(intro.getBytes());
             } catch (IOException e2) {
@@ -551,6 +517,38 @@ public class TextureConversionUtils {
         }
     }
 
+    private void searchAndOverwrite(File n){
+        Bitmap bitmap = BitmapFactory.decodeFile(n.getPath());
+        for (int x=1;x<bitmap.getWidth()-1;x++)
+            for (int y=1;y<bitmap.getHeight()-1;y++){
+
+            }
+        try {
+            FileOutputStream outputStream = new FileOutputStream(n);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG,100,baos);
+
+            outputStream.write(baos.toByteArray());
+            outputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void doImageBlackIntoTransparent(){
+        File[] items = new File(path+"/textures/items").listFiles(),blocks = new File(path+"/textures/blocks").listFiles(),entity = new File(path+"/textures/entity").listFiles();
+        if (items!=null)
+            for (File n:items)
+                searchAndOverwrite(n);
+        if (blocks!=null)
+            for (File n:blocks)
+                searchAndOverwrite(n);
+        if (entity!=null)
+            for (File n:entity)
+                searchAndOverwrite(n);
+
+    }
+
     private static void unzip(File zipFile, String dest, String passwd) throws ZipException, net.lingala.zip4j.exception.ZipException {
         net.lingala.zip4j.core.ZipFile zFile = new net.lingala.zip4j.core.ZipFile(zipFile); // 首先创建ZipFile指向磁盘上的.zip文件
         if (!zFile.isValidZipFile()) {   // 验证.zip文件是否合法，包括文件是否存在、是否为zip文件、是否被损坏等
@@ -616,6 +614,7 @@ public class TextureConversionUtils {
     public static interface ConversionChangeListener{
         void inDoingVersionDecisions();
         void inDoingImageCompressions(String whatsBeingCompressing);
+        void inDoingImageColorTurning();
         void inDoingJSONWriting();
         void onDone();
     }
@@ -701,7 +700,7 @@ public class TextureConversionUtils {
         new UnzippingTask().execute();
     }
 
-    public void doConversions(final String packname, String packdescription){
+    public void doConverting(final String packname, String packdescription){
         this.packname = packname;this.packdescription = packdescription;
 
         Log.i("Pack Conversion","Doing version decisions...");
@@ -709,6 +708,9 @@ public class TextureConversionUtils {
         doVersionDecisions();
 
         doImageCompressions();
+
+        //mConversionChangeListener.inDoingImageColorTurning();
+        //doImageBlackIntoTransparent();
         try {
             Log.i("Pack Conversion","Doing json Writing");
             mConversionChangeListener.inDoingJSONWriting();

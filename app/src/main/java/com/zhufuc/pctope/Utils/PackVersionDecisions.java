@@ -5,6 +5,10 @@ import android.view.View;
 
 import com.zhufuc.pctope.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -165,42 +169,15 @@ public class PackVersionDecisions {
             }
             String intro = stringBuilder.toString();
 
-            for (int i=11;i<intro.length();i++){
-                String sub11 = intro.substring(i-11,i);
-                if (Objects.equals(sub11, "description")){
-                    int Start = 0,Stop = 0,Count = 0;
-                    for (int j=i+1;j<intro.length();j++){
-                        if (intro.charAt(j)=='\"'){
-                            Count++;
-                            if (Count==1) Start = j;
-                            else if (Count==2){
-                                Stop = j;
-                                break;
-                            }
-                        }
-                    }
-                    description = intro.substring(Start+1,Stop);
-                    break;
-                }
+            try {
+                JSONObject jsonObjectOut = new JSONObject(intro);
+                JSONObject jsonObjectIn = jsonObjectOut.getJSONObject("header");
+                name = jsonObjectIn.getString("name");
+                description = jsonObjectIn.getString("description");
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-            for (int i=4;i<intro.length();i++){
-                String sub4 = intro.substring(i-4,i);
-                if (Objects.equals(sub4,"name")){
-                    int Start = 0,Stop = 0,Count = 0;
-                    for (int j=i+1;j<intro.length();j++){
-                        if (intro.charAt(j)=='\"'){
-                            Count++;
-                            if (Count==1) Start = j;
-                            else if (Count==2){
-                                Stop = j;
-                                break;
-                            }
-                        }
-                    }
-                    name = intro.substring(Start+1,Stop);
-                    break;
-                }
-            }
+
         }
     }
 

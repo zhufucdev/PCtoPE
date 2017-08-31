@@ -23,6 +23,8 @@ import com.zhufuc.pctope.R;
 
 import java.util.ArrayList;
 
+import static android.view.View.GONE;
+
 /**
  * Created by zhufu on 7/22/17.
  */
@@ -37,7 +39,7 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
 
     private OnItemClickListener mOnItemClickListener = null;
 
-    public static interface OnItemClickListener{
+    public interface OnItemClickListener{
         void onItemClick(View view,int position);
     }
 
@@ -105,8 +107,12 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
         String name = textures.getName(),description = textures.getDescription();
         //Change text if it isn't a PE pack
         if (name == null){
-            name = holder.TextureName.getResources().getString(R.string.broken_pc);
+            name = holder.TextureName.getResources().getString(R.string.unable_to_get_name);
+            holder.TextureDescription.setVisibility(GONE);
+        }
+        if (description==null||description.equals("")){
             description = "";
+            holder.TextureDescription.setVisibility(GONE);
         }
         holder.TextureName.setText(name);
         holder.TextureDescription.setText(description);
@@ -119,7 +125,7 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
         if (icon != null){
             holder.TextureIcon.setImageBitmap(icon);
         }
-
+        else holder.TextureIcon.setImageResource(R.drawable.bug_pack_icon);
 
         //Alert icon
         if (!textures.IfIsResourcePack("PE")){
@@ -131,7 +137,7 @@ public class TextureItems extends RecyclerView.Adapter<TextureItems.ViewHolder> 
                 return;
             }
         }
-        holder.AlertIcon.setVisibility(View.GONE);
+        holder.AlertIcon.setVisibility(GONE);
     }
 
 

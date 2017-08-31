@@ -111,5 +111,8 @@
     <string name="icon_edit_high_res_subtitle">It\'s meaningless to give a icon of hight resolution on Minecraft.Would you want to compress it?</string>
     <string name="thanks">Thanks</string>
     <string name="please_wait">Please wait…</string>
+    <string name="turing_image_color_black_into_transparent">Turning Color Black in Images Into Transparent...</string>
+    <string name="operations">Operations</string>
+    <string name="unable_to_get_name">Unable To Get Name</string>
 
 </resources>

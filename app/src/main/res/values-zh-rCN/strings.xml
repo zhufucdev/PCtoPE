@@ -110,4 +110,7 @@
     <string name="icon_edit_high_res_subtitle">高分辨率图标对于MC没有意义。你想要压缩吗？</string>
     <string name="thanks">谢了</string>
     <string name="please_wait">请稍后…</string>
+    <string name="turing_image_color_black_into_transparent">正在将贴图中的黑色转化为透明...</string>
+    <string name="operations">操作</string>
+    <string name="unable_to_get_name">无法获取名称</string>
 </resources>

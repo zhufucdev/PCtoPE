@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:id="@+id/details_app_bar"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:elevation="@dimen/cardview_default_elevation">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/details_toolbar_layout"
@@ -50,6 +51,15 @@
 
             </LinearLayout>
 
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_loading_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:indeterminate="true"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="-8dp"/>
+
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
@@ -69,13 +79,6 @@
         app:layout_anchor="@id/details_app_bar"
         app:layout_anchorGravity="bottom|end"/>
 
-    <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/details_loading_progress"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:indeterminate="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -83,46 +86,59 @@
         android:id="@+id/details_info_layout"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v7.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/card_margin_vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="@dimen/text_margin">
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin_vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/details_card_basic_info_title"
-                    android:textSize="20sp"
-                    android:textColor="@color/black" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/text_margin">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/details_texture_size"
-                    android:layout_marginStart="@dimen/text_margin_very_small"
-                    android:textSize="14sp"
-                    android:text="@string/details_card_basic_info_size"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details_card_basic_info_title"
+                        android:textSize="20sp"
+                        android:textColor="@color/black" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/details_texture_location"
-                    android:layout_marginStart="@dimen/text_margin_very_small"
-                    android:textSize="14sp"
-                    android:text="@string/details_card_basic_info_location"
-                    android:clickable="true"
-                    android:background="?android:attr/selectableItemBackground"/>
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/details_texture_size"
+                        android:layout_marginStart="@dimen/text_margin_very_small"
+                        android:textSize="14sp"
+                        android:text="@string/details_card_basic_info_size"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/details_texture_location"
+                        android:layout_marginStart="@dimen/text_margin_very_small"
+                        android:textSize="14sp"
+                        android:text="@string/details_card_basic_info_location"
+                        android:clickable="true"
+                        android:background="?android:attr/selectableItemBackground"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_margin_small"
+                android:text="@string/operations"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"/>
 
-        </android.support.v7.widget.CardView>
+            <include layout="@layout/card_image_compression"/>
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
