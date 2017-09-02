@@ -89,6 +89,7 @@ public class ConversionActivity extends BaseActivity {
         error_dialog.setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                finishIntent.putExtra("Status_return",false);
                 finish();
             }
         });

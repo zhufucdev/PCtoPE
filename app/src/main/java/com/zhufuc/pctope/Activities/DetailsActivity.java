@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -74,7 +75,9 @@ public class DetailsActivity extends BaseActivity {
 
     private boolean isDataChanged = false;
 
-    //Utils
+    /*
+        Some Utils
+     */
     public long getFolderTotalSize(String path) {
         File[] files = new File(path).listFiles();
         long size = 0;
@@ -96,6 +99,23 @@ public class DetailsActivity extends BaseActivity {
             }
 
         return size;
+    }
+
+    private void MakeErrorDialog(final String errorString){
+        //make up a error dialog
+        final AlertDialog.Builder error_dialog = new AlertDialog.Builder(DetailsActivity.this);
+        error_dialog.setTitle(R.string.error);
+        error_dialog.setMessage(DetailsActivity.this.getString(R.string.error_dialog)+errorString);
+        error_dialog.setIcon(R.drawable.alert_octagram);
+        error_dialog.setCancelable(false);
+        error_dialog.setPositiveButton(R.string.close, null);
+        error_dialog.setNegativeButton(R.string.copy, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                ClipboardManager copy = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+                copy.setText(errorString);
+            }
+        }).show();
     }
 
     View.OnClickListener FabListener = new View.OnClickListener() {
@@ -169,6 +189,13 @@ public class DetailsActivity extends BaseActivity {
             textureEditor = null;
         textures = new Textures(new File(path));
         textureEditor = new Textures.Edit(path);
+        //on Crash
+        textureEditor.setOnCrashListener(new Textures.Edit.onCrashListener() {
+            @Override
+            public void onCrash(String e) {
+                MakeErrorDialog(e);
+            }
+        });
 
         version = textures.getVersion();
         name = textures.getName();

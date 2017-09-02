@@ -93,6 +93,14 @@ public class Textures {
             this.compressionProgressChangeListener = listener;
         }
 
+        public interface onCrashListener{
+            void onCrash(String e);
+        }
+        private onCrashListener onCrashListener = null;
+        public void setOnCrashListener(onCrashListener listener){
+            this.onCrashListener = listener;
+        }
+
         public Edit(String path){
             this.path = path;
             textures = new Textures(new File(path));
@@ -100,6 +108,8 @@ public class Textures {
 
         public void changeNameAndDescription(String nameIndex,String descriptionIndex){
             readManifest();
+
+            Log.i("Change Existed Pack","Name Set="+nameIndex+", Description Set="+descriptionIndex+", Manifest Read=\n"+intro);
 
             try {
                 JSONObject object = new JSONObject(intro);
@@ -188,6 +198,10 @@ public class Textures {
                     compressWidth = compressWidth*(image.getHeight()/compressFinalSize);
                 }
                 Bitmap compressed = CompressImage.getBitmap(image,compressHeight,compressWidth);
+
+                if (compressed == null){
+                    onCrashListener.onCrash("Compressing Resources: could not compress "+n.getPath());
+                }
 
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 compressed.compress(Bitmap.CompressFormat.PNG, 100, baos);//png

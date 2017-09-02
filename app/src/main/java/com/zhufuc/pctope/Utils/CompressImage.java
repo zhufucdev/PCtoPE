@@ -11,6 +11,9 @@ public class CompressImage {
     public static Bitmap getBitmap(Bitmap bitmap,int Height,int Width){
         Matrix matrix = new Matrix();
         int oldHeight = bitmap.getHeight(),oldWidth = bitmap.getWidth();
+        if (oldHeight<=0 || oldWidth<=0)
+            return null;
+
         Float scaleHeight = (float) Height/oldHeight,scaleWidth = (float) Width/oldWidth;
 
         matrix.postScale(scaleWidth,scaleHeight);

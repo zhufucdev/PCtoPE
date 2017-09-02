@@ -103,6 +103,8 @@ public class MainActivity extends BaseActivity {
                 loadList();
         }
         else if (requestCode == 2){
+            if (data == null)
+                return;
             if (data.getBooleanExtra("isDataChanged",false)){
                 loadList();
             }
