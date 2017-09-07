@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -46,6 +47,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.zhufuc.pctope.Adapters.TextureItems;
@@ -85,6 +87,14 @@ public class MainActivity extends BaseActivity {
                 finish();
             }
         }).show();
+    }
+
+    private ProgressBar progressBar = null;
+    private void showLoading(){
+        progressBar.setVisibility(View.VISIBLE);
+    }
+    private void hideLoading(){
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     private void Choose(){
@@ -130,12 +140,12 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //defining
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        progressBar = (ProgressBar)findViewById(R.id.progressbar_in_main);
 
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -225,7 +235,7 @@ public class MainActivity extends BaseActivity {
                 return true;
             }
         });
-
+        //throw new RuntimeException("TEST");
     }
 
     @Override
@@ -245,7 +255,24 @@ public class MainActivity extends BaseActivity {
         final CardView android_nothing_card = (CardView)findViewById(R.id.android_nothing);
         //init for textures list
         recyclerView = (RecyclerView)findViewById(R.id.recycle_view);
-        loadList();
+        class firstLoad extends AsyncTask<Void, Integer ,Boolean>{
+            @Override
+            protected void onPreExecute(){
+                showLoading();
+            }
+
+            @Override
+            protected Boolean doInBackground(Void... voids) {
+                loadList();
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Boolean result){
+                hideLoading();
+            }
+        }
+        new firstLoad().execute();
 
         recyclerView.addItemDecoration(new SpacesItemDecoration(16));
         RecyclerView.ItemAnimator swipe = new DefaultItemAnimator();

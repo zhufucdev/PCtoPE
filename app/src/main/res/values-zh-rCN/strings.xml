@@ -113,4 +113,6 @@
     <string name="turing_image_color_black_into_transparent">正在将贴图中的黑色转化为透明...</string>
     <string name="operations">操作</string>
     <string name="unable_to_get_name">无法获取名称</string>
+    <string name="report_restart_app">发送后重启</string>
+    <string name="crash_converstion_input_file_not_found">选择文件不存在！请尝试用另一款文件管理器进行选择</string>
 </resources>

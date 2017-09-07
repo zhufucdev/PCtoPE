@@ -21,6 +21,7 @@ import com.netease.nis.bugrpt.user.UserStrategy;
 import com.zhufuc.pctope.Collectors.ActivityCollector;
 import com.zhufuc.pctope.R;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import za.co.riggaroo.materialhelptutorial.TutorialItem;
@@ -110,7 +111,6 @@ public class FirstActivity extends BaseActivity {
         }
         else InitTutorial();
 
-
     }
 
     private void InitTutorial(){
@@ -118,7 +118,7 @@ public class FirstActivity extends BaseActivity {
         SharedPreferences.Editor editor = preferences.edit();
         boolean isbooted = preferences.getBoolean("isbooted", false);
         //is first boot
-        if (isbooted == false) {
+        if (!isbooted) {
             //for Tutorial Activity
             Intent tutorialActivity = new Intent(FirstActivity.this, MaterialTutorialActivity.class);
             tutorialActivity.putParcelableArrayListExtra(MaterialTutorialActivity.MATERIAL_TUTORIAL_ARG_TUTORIAL_ITEMS,getTutorialItems(this));
@@ -131,6 +131,7 @@ public class FirstActivity extends BaseActivity {
     }
 
     public void initBugprt(){
+
         UserStrategy strategy = new UserStrategy(this);
         SharedPreferences preferences = getSharedPreferences("data",MODE_PRIVATE);
         final SharedPreferences.Editor editor = preferences.edit();

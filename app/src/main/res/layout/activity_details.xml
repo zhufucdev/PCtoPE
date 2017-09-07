@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:id="@+id/details_app_bar"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        android:elevation="@dimen/cardview_default_elevation">
+        android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/details_toolbar_layout"

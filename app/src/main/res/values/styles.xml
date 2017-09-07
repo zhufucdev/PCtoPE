@@ -24,7 +24,8 @@
     </style>
 
     <style name="AppTheme.NoActionBar.windowTranslucentNavigation" parent="AppTheme.NoActionBar">
-        <item name="android:navigationBarColor">@color/transparent</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

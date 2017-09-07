@@ -114,5 +114,7 @@
     <string name="turing_image_color_black_into_transparent">Turning Color Black in Images Into Transparent...</string>
     <string name="operations">Operations</string>
     <string name="unable_to_get_name">Unable To Get Name</string>
+    <string name="report_restart_app">Restart Application After It Is Reported.</string>
+    <string name="crash_converstion_input_file_not_found">Chosen File Not Found! Try to use another File Manager.</string>
 
 </resources>

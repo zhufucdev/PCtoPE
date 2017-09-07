@@ -121,7 +121,12 @@ public class ConversionActivity extends BaseActivity {
         getIntentInfo();
 
         //Main
-        conversion = new TextureConversionUtils(file,this);
+        try {
+            conversion = new TextureConversionUtils(file,this);
+        } catch (FileNotFoundException e) {
+            MakeErrorDialog(e.toString());
+            return;
+        }
         conversion.skipUnzip = skipUnzip;
         conversion.setOnUncompressListener(new TextureConversionUtils.OnUncompressListener() {
             @Override
@@ -147,6 +152,7 @@ public class ConversionActivity extends BaseActivity {
                 else doOnFail();
             }
         });
+
         conversion.setOnCrashListener(new TextureConversionUtils.OnCrashListener() {
             @Override
             public void onCrash(final String errorContent) {
@@ -159,9 +165,9 @@ public class ConversionActivity extends BaseActivity {
                         MakeErrorDialog(errorContent);
                     }
                 });
-
             }
         });
+
         conversion.setConversionChangeListener(new TextureConversionUtils.ConversionChangeListener() {
             ProgressDialog alertDialog = null;
 

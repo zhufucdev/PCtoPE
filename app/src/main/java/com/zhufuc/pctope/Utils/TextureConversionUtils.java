@@ -339,7 +339,7 @@ public class TextureConversionUtils {
         return FinalText;
     }
 
-    public void doJSONWriting() throws FileNotFoundException {
+    private void doJSONWriting() throws FileNotFoundException {
         //==>define
         //for basic information
         Resources raw = context.getResources();
@@ -398,6 +398,7 @@ public class TextureConversionUtils {
             try {
                 itemOut.write(textBefore.getBytes());
                 itemOut.write(doJsonFixing(data[3],5).getBytes());
+                itemOut.close();
             } catch (IOException e) {
                 mOnCrashListener.onCrash(e.toString());
                 e.printStackTrace();
@@ -407,6 +408,7 @@ public class TextureConversionUtils {
             FileOutputStream flipOut = new FileOutputStream(path+"/textures/flipbook_textures.json");
             try {
                 flipOut.write(doJsonFixing(data[2],2).getBytes());
+                flipOut.close();
             } catch (IOException e) {
                 mOnCrashListener.onCrash(e.toString());
                 e.printStackTrace();
@@ -418,7 +420,7 @@ public class TextureConversionUtils {
             String intro;
             JSONObject out = new JSONObject();
             JSONArray versionArray = new JSONArray();
-            String uuid = UUID.randomUUID().toString();
+
             try {
                 versionArray.put(0);
                 versionArray.put(0);
@@ -428,7 +430,7 @@ public class TextureConversionUtils {
                 JSONObject header = new JSONObject();
                 header.put("description",packdescription);
                 header.put("name",packname);
-                header.put("uuid",uuid);
+                header.put("uuid",UUID.randomUUID().toString());
                 header.put("version",versionArray);
                 out.put("header",header);
 
@@ -436,7 +438,7 @@ public class TextureConversionUtils {
                 JSONObject modulesObjs = new JSONObject();
                 modulesObjs.put("description",packdescription);
                 modulesObjs.put("type","resources");
-                modulesObjs.put("uuid",uuid);
+                modulesObjs.put("uuid",UUID.randomUUID().toString());
                 modulesObjs.put("version",versionArray);
                 modules.put(modulesObjs);
                 out.put("modules",modules);
@@ -449,6 +451,7 @@ public class TextureConversionUtils {
 
             try {
                 manifest.write(intro.getBytes());
+                manifest.close();
             } catch (IOException e2) {
                 e2.printStackTrace();
             }
@@ -569,17 +572,17 @@ public class TextureConversionUtils {
     private String FilePath;
     public String path;
     private Context context;
-    private Handler handler;
     private String packname,packdescription;
-    public boolean isPreFinished = false;
     public boolean skipUnzip;
-    public TextureConversionUtils(String FilePath,Context context){
+    public TextureConversionUtils(String FilePath,Context context) throws FileNotFoundException {
         this.FilePath = FilePath;
         this.context = context;
         this.path = context.getExternalCacheDir().getPath();
-        this.handler = handler;
 
         if (!skipUnzip) {
+            if (!new File(FilePath).exists()){
+                throw new FileNotFoundException(context.getString(R.string.crash_converstion_input_file_not_found));
+            }
             String fileName = FilePath.substring(FilePath.lastIndexOf('/')+1,FilePath.lastIndexOf('.'));
             //==>get file name
             path += "/" + fileName;
