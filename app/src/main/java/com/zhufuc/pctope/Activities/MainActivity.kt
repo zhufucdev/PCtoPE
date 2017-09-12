@@ -414,14 +414,14 @@ class MainActivity : BaseActivity() {
             toolbar!!.setTitle(R.string.choosing_alert)
             toolbar!!.subtitle = adapter!!.getPath()
 
-            val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2, fab!!.y.toInt() + fab!!.height / 2, 0f, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat())
+            val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2, fab!!.y.toInt() - fab!!.height / 2, 0f, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat())
             animator.duration = 300
 
             //chooser.addItemDecoration(new SpacesItemDecoration(4));
             chooser_root!!.visibility = View.VISIBLE
             animator.start()
 
-            val first = RotateAnimation(0.0f, 45.0f * 6 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+            val first = RotateAnimation(0.0f, 45.0f * 4 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
             first.duration = 200
             fab!!.startAnimation(first)
             first.setAnimationListener(object : Animation.AnimationListener {
@@ -459,12 +459,12 @@ class MainActivity : BaseActivity() {
             toolbar!!.subtitle = ""
 
             val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2,
-                    fab!!.y.toInt() + fab!!.height / 2, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat(), 0f)
+                    fab!!.y.toInt() - fab!!.height / 2, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat(), 0f)
             animator.duration = 400
             animator.start()
 
             fab!!.rotation = 45.0f
-            val first = RotateAnimation(0.0f, -45.0f * 6 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
+            val first = RotateAnimation(0.0f, -45.0f * 4 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
             first.duration = 200
             first.setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(animation: Animation) {
@@ -522,8 +522,10 @@ class MainActivity : BaseActivity() {
 
         })
         level_up!!.setOnClickListener({
-            adapter!!.upLevel(Environment.getExternalStorageDirectory().path)
-            toolbar!!.subtitle = adapter!!.getPath()
+            if(adapter!!.upLevel(Environment.getExternalStorageDirectory().path))
+                toolbar!!.subtitle = adapter!!.getPath()
+            else
+                Snackbar.make(fab as View,R.string.non_upper_level,Snackbar.LENGTH_SHORT).show()
         })
 
         runOnUiThread { chooser.adapter = adapter }

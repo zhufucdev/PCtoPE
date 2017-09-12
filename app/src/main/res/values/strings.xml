@@ -120,5 +120,6 @@
     <string name="file">File</string>
     <string name="open_string">Open</string>
     <string name="close_string">Close</string>
+    <string name="non_upper_level">You can\'t go bacl to the upper level.</string>
 
 </resources>

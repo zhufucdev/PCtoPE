@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:id="@+id/folder_layout"
         android:layout_margin="@dimen/cardview_default_elevation"
-        android:clickable="true">
+        android:foreground="?android:attr/selectableItemBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,7 +44,7 @@
         android:layout_height="match_parent"
         android:id="@+id/zip_file_layout"
         android:layout_margin="@dimen/cardview_default_elevation"
-        android:clickable="true">
+        android:foreground="?android:attr/selectableItemBackground">
 
         <LinearLayout
             android:layout_width="match_parent"

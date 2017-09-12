@@ -100,11 +100,12 @@ class FileChooserAdapter(private var root: String?) : RecyclerView.Adapter<FileC
 
     override fun getItemCount(): Int = list.size
 
-    fun upLevel(toStop : String){
-        if (root == toStop) return
+    fun upLevel(toStop : String) : Boolean{
+        if (root == toStop) return false
         root = File(root).parent
         initData()
         notifyDataSetChanged()
+        return true
     }
 
     interface OnItemClickListener{

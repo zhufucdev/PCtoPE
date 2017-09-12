@@ -8,8 +8,8 @@ android {
         applicationId "com.zhufuc.pctope"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 31
-        versionName "2.4"
+        versionCode 32
+        versionName "2.4.0.1weekly"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

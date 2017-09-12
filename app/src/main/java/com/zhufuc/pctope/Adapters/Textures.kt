@@ -19,6 +19,7 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.InputStreamReader
+import java.nio.charset.Charset
 import java.util.UUID
 
 /**
@@ -228,23 +229,7 @@ class Textures(path: File) {
                 return
 
             if (manifest.exists()) {
-                var `in`: FileInputStream? = null
-                var reader: BufferedReader? = null
-                val stringBuilder = StringBuilder()
-                try {
-                    `in` = FileInputStream(manifest)
-                    reader = BufferedReader(InputStreamReader(`in`))
-                    var line = ""
-                    do {
-                        line = reader.readLine()
-                        line += "\n"
-                        stringBuilder.append(line)
-                    }while (line!=null)
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-
-                intro = stringBuilder.toString()
+                intro = manifest.readText(Charset.defaultCharset())
             }
         }
 
