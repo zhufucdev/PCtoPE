@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 26
@@ -7,8 +8,8 @@ android {
         applicationId "com.zhufuc.pctope"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 29
-        versionName "2.3.6.2weekly"
+        versionCode 31
+        versionName "2.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -39,5 +40,10 @@ dependencies {
     compile 'za.co.riggaroo:materialhelptutorial:1.0.1'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.netease.nis.plugin:bugrpt:latest.release'
+    compile 'com.github.badoualy:morphy-toolbar:1.0.6'
     testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

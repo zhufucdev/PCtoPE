@@ -3,7 +3,7 @@
     <string name="preparing_for_firstboot">Preparing for the First Boot…</string>
     <string name="permissions_request">You need to grant the permissions.</string>
     <string name="ok">OK</string>
-    <string name="choosing_alert">Please choose a zip file.</string>
+    <string name="choosing_alert">File Choosing</string>
     <string name="choosing_none">You chose nothing.</string>
     <string name="guide_welcome">Welcome to the conversion guide</string>
     <string name="label_guide">conversion guide</string>
@@ -116,5 +116,9 @@
     <string name="unable_to_get_name">Unable To Get Name</string>
     <string name="report_restart_app">Restart Application After It Is Reported.</string>
     <string name="crash_converstion_input_file_not_found">Chosen File Not Found! Try to use another File Manager.</string>
+    <string name="folder">Folder</string>
+    <string name="file">File</string>
+    <string name="open_string">Open</string>
+    <string name="close_string">Close</string>
 
 </resources>

@@ -50,15 +50,6 @@
 
             </LinearLayout>
 
-            <ProgressBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/details_loading_progress"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:indeterminate="true"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="-8dp"/>
-
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
@@ -68,6 +59,15 @@
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/details_loading_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:indeterminate="true"
+        android:layout_marginTop="-7dp"/>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"

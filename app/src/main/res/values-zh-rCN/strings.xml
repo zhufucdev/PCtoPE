@@ -14,7 +14,7 @@
     <string name="preparing_for_firstboot">正在准备首次启动</string>
     <string name="permissions_request">你需要给予应用权限</string>
     <string name="ok">好的</string>
-    <string name="choosing_alert">请选择一个zip文件</string>
+    <string name="choosing_alert">文件选择</string>
     <string name="choosing_none">你什么都没选</string>
     <string name="guide_welcome">欢迎来到转化向导</string>
     <string name="label_guide">转化向导</string>
@@ -115,4 +115,8 @@
     <string name="unable_to_get_name">无法获取名称</string>
     <string name="report_restart_app">发送后重启</string>
     <string name="crash_converstion_input_file_not_found">选择文件不存在！请尝试用另一款文件管理器进行选择</string>
+    <string name="folder">文件夹</string>
+    <string name="file">文件</string>
+    <string name="open_string">打开</string>
+    <string name="close_string">关闭</string>
 </resources>
