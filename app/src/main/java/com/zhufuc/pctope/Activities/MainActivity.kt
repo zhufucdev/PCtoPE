@@ -455,6 +455,7 @@ class MainActivity : BaseActivity() {
             })
         } else {
             level_up!!.hide()
+            toolbar!!.setTitle(getString(R.string.app_name))
             toolbar!!.subtitle = ""
 
             val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2,
