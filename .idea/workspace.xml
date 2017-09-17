@@ -25,6 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3ad24b6-7af1-469c-9d9c-a2b3ff4d4ecf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/myContextWrapper.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
@@ -33,17 +34,17 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/BaseActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/BaseActivity.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/FirstActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/FirstActivity.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/FileChooserAdapter.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/FileChooserAdapter.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/file_chooser.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/file_chooser.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-zh-rCN/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/SettingsActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/SettingsActivity.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/TextureConversionUtils.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/TextureConversionUtils.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_details.xml" />
     </list>
     <ignored path="PCtoPE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,100 +84,10 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="165">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="526" column="16" selection-start-line="526" selection-start-column="16" selection-end-line="526" selection-end-column="16" />
-              <folding>
-                <element signature="e#38#1946#0" expanded="true" />
-                <element signature="e#18150#18178#1" expanded="true" />
-                <element signature="e#21091#21115#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Translations Editor" pinned="false" current-in-tab="false">
-        <entry file="android-dummy:///home/zhufu/AndroidStudioProjects/PCtoPE/app/Translations Editor">
-          <provider selected="true" editor-type-id="string-resource-editor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailsActivity.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/DetailsActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="389" column="25" selection-start-line="389" selection-start-column="25" selection-end-line="389" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Textures.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1295">
-              <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileChooserAdapter.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/FileChooserAdapter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="107" column="19" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="file_chooser.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/file_chooser.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="texture_item.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/texture_item.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
@@ -191,6 +102,7 @@
         <option value="layoutResourceFile_vertical" />
         <option value="layoutResourceFile" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -1808,7 +1720,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4513420534175" />
+        <entry key="$PROJECT_DIR$" value="4513816860218" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2190,9 +2102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/BaseActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/transition/fade.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_compression.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/pencil.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/pencil_white.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/details_texture_basic_info_editor.xml" />
@@ -2225,21 +2134,24 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/TextureItems.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Interf/OnItemClickListener.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/AppCompatPreferenceActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/SettingsActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Collectors/ErrorsCollector.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/PackVersionDecisions.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/DetailsActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Interf/DeletingCallback.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/TextureConversionUtils.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/BaseActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_details.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/file_chooser.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/FileChooserAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/TextureConversionUtils.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/myContextWrapper.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/BaseActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/SettingsActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/FirstActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
       </list>
     </option>
@@ -2295,12 +2207,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane />
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2342,6 +2253,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PCtoPE" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="raw" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2503,10 +2432,11 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="device.picker.selection" value="192.168.1.105:5555" />
+    <property name="device.picker.selection" value="4ee6e865" />
     <property name="last_opened_file_path" value="$USER_HOME$/视频" />
     <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
     <property name="ExportApk.Flavors" value="" />
@@ -3132,11 +3062,11 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26898396" sideWeight="0.49399656" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32418525" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32520324" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32752612" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681242" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19625668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19572192" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27326202" sideWeight="0.50600344" order="3" side_tool="true" content_ui="tabs" />
@@ -3241,7 +3171,7 @@
           <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="300" />
+      <option name="time" value="319" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
@@ -3250,83 +3180,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-25/android.jar!/android/os/Handler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-25/android.jar!/android/os/Looper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/CompressImage.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/GetPathFromUri4kitkat.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/AboutActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="android-dummy:///home/zhufu/AndroidStudioProjects/PCtoPE//Theme Editor">
-      <provider selected="true" editor-type-id="themeEditor">
-        <state module-name="app" proportion="0.67" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/details_texture_basic_info_editor.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/compression_dialog.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="46" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_bug_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="56" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/FileChooser.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/folder.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -3346,13 +3199,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/FirstActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -3419,16 +3265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/JsonFormatTool.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-758">
@@ -3473,13 +3309,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/PackVersionDecisions.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Interf/DeletingCallback.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -3487,102 +3316,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/SettingsActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/BaseActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="103" column="12" selection-start-line="103" selection-start-column="12" selection-end-line="103" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="260" column="56" selection-start-line="260" selection-start-column="56" selection-end-line="260" selection-end-column="56" />
-          <folding>
-            <marker date="1505227224699" expanded="false" signature="1906:1920" ph="&quot;Error…&quot;" />
-            <marker date="1505227224699" expanded="false" signature="1954:2010" ph="&quot;Whoops! We met some trouble:&quot;" />
-            <marker date="1505227224699" expanded="false" signature="2163:2177" ph="&quot;close&quot;" />
-            <marker date="1505227224699" expanded="false" signature="2331:2344" ph="&quot;copy&quot;" />
-            <marker date="1505227224699" expanded="false" signature="5368:5395" ph="&quot;Loading…&quot;" />
-            <marker date="1505227224699" expanded="false" signature="5442:5473" ph="&quot;Please wait…&quot;" />
-            <marker date="1505227224699" expanded="false" signature="5706:5752" ph="&quot;Compressing…&quot;" />
-            <marker date="1505227224699" expanded="false" signature="5984:6034" ph="&quot;Turning Color Black in Images Into Transparent...&quot;" />
-            <marker date="1505227224699" expanded="false" signature="6081:6112" ph="&quot;Please wait…&quot;" />
-            <marker date="1505227224699" expanded="false" signature="6272:6305" ph="&quot;Now we're doing final steps.&quot;" />
-            <marker date="1505227224699" expanded="false" signature="6350:6391" ph="&quot;Writing JSON…&quot;" />
-            <marker date="1505227224699" expanded="false" signature="6662:6701" ph="&quot;Completed!&quot;" />
-            <marker date="1505227224699" expanded="false" signature="7119:7143" ph="&quot;Overwrite?&quot;" />
-            <marker date="1505227224699" expanded="false" signature="7175:7201" ph="&quot;A directory that has the same name is already here.Do y...&quot;" />
-            <marker date="1505227224699" expanded="false" signature="7280:7293" ph="&quot;Skip&quot;" />
-            <marker date="1505227224699" expanded="false" signature="7497:7515" ph="&quot;Overwrite&quot;" />
-            <marker date="1505227224699" expanded="false" signature="8706:8741" ph="&quot;Unnamed&quot;" />
-            <marker date="1505227224699" expanded="false" signature="9364:9409" ph="&quot;Unnamed&quot;" />
-            <marker date="1505227224699" expanded="false" signature="10949:10979" ph="&quot;You can't continue while unzipping.&quot;" />
-            <marker date="1505227224699" expanded="false" signature="11356:11384" ph="&quot;This may be a pack without an icon.You can change it.&quot;" />
-            <marker date="1505227224699" expanded="false" signature="11445:11456" ph="&quot;OK&quot;" />
-            <marker date="1505227224699" expanded="false" signature="13104:13148" ph="&quot;Pack Type :&quot;" />
-            <marker date="1505227224699" expanded="false" signature="13230:13271" ph="&quot;Full Minecraft PE textures pack&quot;" />
-            <marker date="1505227224699" expanded="false" signature="13316:13357" ph="&quot;Full Minecraft PC textures pack&quot;" />
-            <marker date="1505227224699" expanded="false" signature="13404:13447" ph="&quot;Bug Minecraft PE textures pack&quot;" />
-            <marker date="1505227224699" expanded="false" signature="13480:13523" ph="&quot;Bug Minecraft PC textures pack&quot;" />
-            <marker date="1505227224699" expanded="false" signature="13710:13760" ph="&quot;Unknown. This is PE pack or file doesn't exist.&quot;" />
-            <marker date="1505227224699" expanded="false" signature="13786:13835" ph="&quot;Most Correct Version of MC PC :&quot;" />
-            <marker date="1505227224699" expanded="false" signature="13943:13988" ph="..." />
-            <marker date="1505227224699" expanded="false" signature="16814:16840" ph="&quot;You can't compress it to a higher resolution.&quot;" />
-            <marker date="1505227224699" expanded="false" signature="19235:19268" ph="&quot;High Resolution&quot;" />
-            <marker date="1505227224699" expanded="false" signature="19309:19345" ph="&quot;It's meaningless to give a icon of hight resolution on ...&quot;" />
-            <marker date="1505227224699" expanded="false" signature="19393:19409" ph="&quot;Confirm&quot;" />
-            <marker date="1505227224699" expanded="false" signature="20016:20031" ph="&quot;Thanks&quot;" />
-            <marker date="1505227224699" expanded="false" signature="20890:20942" ph="&quot;This is not a PC or PE textures pack.&quot;" />
-            <marker date="1505227224699" expanded="false" signature="21216:21233" ph="&quot;deleting…&quot;" />
-            <marker date="1505227224699" expanded="false" signature="21521:21547" ph="&quot;Deleting is completed!&quot;" />
-            <marker date="1505227224699" expanded="false" signature="21639:21662" ph="&quot;Deleting is failed…&quot;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
-          <folding>
-            <element signature="e#2926#2966#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/TextureConversionUtils.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="246" column="32" selection-start-line="246" selection-start-column="32" selection-end-line="246" selection-end-column="32" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="58" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/texture_item.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -3590,21 +3347,62 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
+        <state relative-caret-position="3120">
+          <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
+          <folding>
+            <element signature="e#36#621#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/FileChooserAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="107" column="19" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
+          <folding>
+            <element signature="e#36#379#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/DetailsActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5190">
+          <caret line="389" column="25" selection-start-line="389" selection-start-column="25" selection-end-line="389" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/texture_item.xml">
+    <entry file="android-dummy:///home/zhufu/AndroidStudioProjects/PCtoPE/app/Translations Editor">
+      <provider selected="true" editor-type-id="string-resource-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/PackVersionDecisions.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        <state relative-caret-position="526">
+          <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/details_texture_basic_info_editor.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/card_image_compression.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="49" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -3623,51 +3421,204 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/Textures.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/flipbook_textures.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1295">
-          <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
+        <state relative-caret-position="30">
+          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Adapters/FileChooserAdapter.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/blocks.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="107" column="19" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
+        <state relative-caret-position="-1160">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/DetailsActivity.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/raw/item_texture.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="389" column="25" selection-start-line="389" selection-start-column="25" selection-end-line="389" selection-end-column="25" />
+        <state relative-caret-position="180">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="android-dummy:///home/zhufu/AndroidStudioProjects/PCtoPE/app/Translations Editor">
-      <provider selected="true" editor-type-id="string-resource-editor">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_details.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="139" column="16" selection-start-line="139" selection-start-column="16" selection-end-line="141" selection-end-column="67" />
+          <folding>
+            <element signature="e#6274#6303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt">
+    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-26/android.jar!/android/content/ContextWrapper.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="526" column="16" selection-start-line="526" selection-start-column="16" selection-end-line="526" selection-end-column="16" />
+        <state relative-caret-position="140">
+          <caret line="474" column="0" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-26/android.jar!/android/preference/PreferenceManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/TextureCompat.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/TextureConversionUtils.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4824">
+          <caret line="248" column="29" selection-start-line="248" selection-start-column="29" selection-end-line="248" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_conversion.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="144" column="54" selection-start-line="144" selection-start-column="54" selection-end-line="144" selection-end-column="54" />
           <folding>
-            <element signature="e#38#1946#0" expanded="true" />
-            <element signature="e#18150#18178#1" expanded="true" />
-            <element signature="e#21091#21115#1" expanded="true" />
+            <element signature="e#6516#6545#0" expanded="true" />
+            <element signature="e#6769#6798#0" expanded="true" />
+            <element signature="e#7009#7038#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="138" column="52" selection-start-line="138" selection-start-column="52" selection-end-line="138" selection-end-column="52" />
+          <folding>
+            <marker date="1505638039296" expanded="false" signature="1906:1920" ph="&quot;Error…&quot;" />
+            <marker date="1505638039296" expanded="false" signature="1954:2010" ph="&quot;Whoops! We met some trouble:&quot;" />
+            <marker date="1505638039296" expanded="false" signature="2163:2177" ph="&quot;close&quot;" />
+            <marker date="1505638039296" expanded="false" signature="2331:2344" ph="&quot;copy&quot;" />
+            <marker date="1505638039296" expanded="false" signature="5368:5395" ph="&quot;Loading…&quot;" />
+            <marker date="1505638039296" expanded="false" signature="5442:5473" ph="&quot;Please wait…&quot;" />
+            <marker date="1505638039296" expanded="false" signature="5761:5807" ph="&quot;Compressing…&quot;" />
+            <marker date="1505638039296" expanded="false" signature="6039:6089" ph="&quot;Turning Color Black in Images Into Transparent...&quot;" />
+            <marker date="1505638039296" expanded="false" signature="6136:6167" ph="&quot;Please wait…&quot;" />
+            <marker date="1505638039296" expanded="false" signature="6327:6360" ph="&quot;Now we're doing final steps.&quot;" />
+            <marker date="1505638039296" expanded="false" signature="6405:6446" ph="&quot;Writing JSON…&quot;" />
+            <marker date="1505638039296" expanded="false" signature="6717:6756" ph="&quot;Completed!&quot;" />
+            <marker date="1505638039296" expanded="false" signature="7174:7198" ph="&quot;Overwrite?&quot;" />
+            <marker date="1505638039296" expanded="false" signature="7230:7256" ph="&quot;A directory that has the same name is already here.Do y...&quot;" />
+            <marker date="1505638039296" expanded="false" signature="7335:7348" ph="&quot;Skip&quot;" />
+            <marker date="1505638039296" expanded="false" signature="7552:7570" ph="&quot;Overwrite&quot;" />
+            <marker date="1505638039296" expanded="false" signature="8761:8796" ph="&quot;Unnamed&quot;" />
+            <marker date="1505638039296" expanded="false" signature="9419:9464" ph="&quot;Unnamed&quot;" />
+            <marker date="1505638039296" expanded="false" signature="11004:11034" ph="&quot;You can't continue while unzipping.&quot;" />
+            <marker date="1505638039296" expanded="false" signature="11411:11439" ph="&quot;This may be a pack without an icon.You can change it.&quot;" />
+            <marker date="1505638039296" expanded="false" signature="11500:11511" ph="&quot;OK&quot;" />
+            <marker date="1505638039296" expanded="false" signature="13159:13203" ph="&quot;Pack Type :&quot;" />
+            <marker date="1505638039296" expanded="false" signature="13285:13326" ph="&quot;Full Minecraft PE textures pack&quot;" />
+            <marker date="1505638039296" expanded="false" signature="13371:13412" ph="&quot;Full Minecraft PC textures pack&quot;" />
+            <marker date="1505638039296" expanded="false" signature="13459:13502" ph="&quot;Bug Minecraft PE textures pack&quot;" />
+            <marker date="1505638039296" expanded="false" signature="13535:13578" ph="&quot;Bug Minecraft PC textures pack&quot;" />
+            <marker date="1505638039296" expanded="false" signature="13765:13815" ph="&quot;Unknown. This is PE pack or file doesn't exist.&quot;" />
+            <marker date="1505638039296" expanded="false" signature="13841:13890" ph="&quot;Most Correct Version of MC PC :&quot;" />
+            <marker date="1505638039296" expanded="false" signature="13998:14043" ph="..." />
+            <marker date="1505638039296" expanded="false" signature="16869:16895" ph="&quot;You can't compress it to a higher resolution.&quot;" />
+            <marker date="1505638039296" expanded="false" signature="19290:19323" ph="&quot;High Resolution&quot;" />
+            <marker date="1505638039296" expanded="false" signature="19364:19400" ph="&quot;It's meaningless to give a icon of hight resolution on ...&quot;" />
+            <marker date="1505638039296" expanded="false" signature="19448:19464" ph="&quot;Confirm&quot;" />
+            <marker date="1505638039296" expanded="false" signature="20071:20086" ph="&quot;Thanks&quot;" />
+            <marker date="1505638039296" expanded="false" signature="20945:20997" ph="&quot;This is not a PC or PE textures pack.&quot;" />
+            <marker date="1505638039296" expanded="false" signature="21271:21288" ph="&quot;deleting…&quot;" />
+            <marker date="1505638039296" expanded="false" signature="21576:21602" ph="&quot;Deleting is completed!&quot;" />
+            <marker date="1505638039296" expanded="false" signature="21694:21717" ph="&quot;Deleting is failed…&quot;" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/myContextWrapper.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+          <folding>
+            <element signature="e#33#188#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/AboutActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/BaseActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="87" column="4" selection-start-line="87" selection-start-column="4" selection-end-line="87" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/SettingsActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="530" column="17" selection-start-line="530" selection-start-column="17" selection-end-line="530" selection-end-column="17" />
+          <folding>
+            <element signature="e#38#1946#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/FirstActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="53" column="18" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="165">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
           <folding />
         </state>
       </provider>

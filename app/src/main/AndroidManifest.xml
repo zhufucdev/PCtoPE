@@ -38,7 +38,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.ConversionActivity"
-            android:label="Unnamed"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.SettingsActivity"
@@ -51,10 +50,10 @@
         <activity
             android:name=".Activities.AboutActivity"
             android:label="@string/nav_about" />
-        <!-- Net Ease BugRPT
+        <!-- Net Ease BugRPT-->
         <meta-data
             android:name="BUGRPT_APPID"
-            android:value="A001298994" />-->
+            android:value="A001298994" />
 
         <activity
             android:name=".Activities.UserBugReport"

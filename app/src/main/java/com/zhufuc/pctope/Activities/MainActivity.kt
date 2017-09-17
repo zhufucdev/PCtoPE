@@ -243,7 +243,6 @@ class MainActivity : BaseActivity() {
         recyclerView!!.addItemDecoration(SpacesItemDecoration(16))
         val swipe = DefaultItemAnimator()
         recyclerView!!.itemAnimator = swipe
-        recyclerView!!.adapter = items
         recyclerView!!.setHasFixedSize(true)
 
         val mCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.START or ItemTouchHelper.END) {
@@ -390,11 +389,13 @@ class MainActivity : BaseActivity() {
                     }
                 }
             })
+
+            recyclerView!!.adapter = items
+
             runOnUiThread({
                 items.notifyDataSetChanged()
                 setLayoutManager()
             })
-
         } else
             MakeErrorDialog("Failed to make textures root directory.")
     }
@@ -417,7 +418,6 @@ class MainActivity : BaseActivity() {
             val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2, fab!!.y.toInt() - fab!!.height / 2, 0f, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat())
             animator.duration = 300
 
-            //chooser.addItemDecoration(new SpacesItemDecoration(4));
             chooser_root!!.visibility = View.VISIBLE
             animator.start()
 
@@ -500,10 +500,10 @@ class MainActivity : BaseActivity() {
             Handler().postDelayed({ chooser_root!!.visibility = View.INVISIBLE }, 400)
         }
     }
-
+    var chooser : RecyclerView? = null
     private fun loadFileChooser() {
-        val chooser = findViewById(R.id.file_chooser_view) as RecyclerView
-        chooser.layoutManager = StaggeredGridLayoutManager(2, OrientationHelper.VERTICAL)
+        chooser = findViewById(R.id.file_chooser_view) as RecyclerView
+        chooser!!.layoutManager = StaggeredGridLayoutManager(2, OrientationHelper.VERTICAL)
 
         adapter = FileChooserAdapter(Environment.getExternalStorageDirectory().path)
 
@@ -528,7 +528,7 @@ class MainActivity : BaseActivity() {
                 Snackbar.make(fab as View,R.string.non_upper_level,Snackbar.LENGTH_SHORT).show()
         })
 
-        runOnUiThread { chooser.adapter = adapter }
+        chooser!!.adapter = adapter
     }
 
     fun setLayoutManager() {

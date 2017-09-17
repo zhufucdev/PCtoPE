@@ -37,6 +37,7 @@ import com.zhufuc.pctope.Collectors.ActivityCollector
 import com.zhufuc.pctope.R
 import com.zhufuc.pctope.Utils.CompressImage
 import com.zhufuc.pctope.Utils.GetPathFromUri4kitkat
+import com.zhufuc.pctope.Utils.myContextWrapper
 
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -142,6 +143,10 @@ class SettingsActivity : AppCompatPreferenceActivity() {
 
         }
 
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(myContextWrapper(newBase).wrap())
     }
 
     fun refreshClearButton() {

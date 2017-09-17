@@ -143,6 +143,7 @@ class ConversionActivity : BaseActivity() {
                     alertDialog = ProgressDialog(this@ConversionActivity)
                     alertDialog!!.setTitle(getString(R.string.loading))
                     alertDialog!!.setMessage(getString(R.string.please_wait))
+                    alertDialog!!.setCancelable(false)
                     alertDialog!!.show()
                 }
             }

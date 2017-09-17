@@ -53,9 +53,10 @@ class FirstActivity : BaseActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == 0) {
-            val domain = Intent(this@FirstActivity, MainActivity::class.java)
-            domain.putExtra("isGranted", isGranted)
-            startActivity(domain)
+            val main = Intent(this@FirstActivity, MainActivity::class.java)
+            main.putExtra("isGranted", isGranted)
+            overridePendingTransition(0,0)
+            startActivity(main)
             finish()
         }
     }

@@ -25,6 +25,7 @@ import java.io.IOException
 import java.nio.charset.Charset
 import java.text.DecimalFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * Created by zhufu on 17-8-28.
@@ -211,39 +212,53 @@ constructor(private val FilePath: String, private val context: Context) {
         }
     }
 
-    private fun doJsonFixing(terrainTxt: String, SearchFrom: Int): String {
-        val terrainText = ArrayList<String>()
-        var j = 0
+    private fun doJsonFixing(text : String): String {
+        val lines = ArrayList<String>()
+        lines.addAll(text.lines())
+        Log.i("JsonFixing","array size=${lines.size}")
+        var i = 0
+        while (i<lines.size){
+            val thisLine = lines[i]
+            if (thisLine.contains("textures/")){
+                val fileTest = File(path+"/"+thisLine.substring(thisLine.indexOf("textures/"),thisLine.lastIndexOf('\"'))+".png")
+                if (!fileTest.exists()){
+                    var first : Int = -1
+                    var last : Int = -1
+                    Log.i("JsonFixing",i.toString()+":"+fileTest.path+" doesn't exist")
 
-        for (i in 0..terrainTxt.length - 1) {
-            if (terrainTxt[i] == '\n') {
-                val line = terrainTxt.substring(j, i + 1)
-                terrainText.add(line)
-                j = i + 1
+                    for (j in i downTo 0){
+                        val line = lines[j]
+                        if (line.endsWith('{')) {
+                            first = j
+                            break
+                        }
+                    }
+
+                    for (j in i until lines.size){
+                        val line = lines[j]
+                        if (line.contains('}')) {
+                            last = j
+                            break
+                        }
+                    }
+
+
+                    if (first == -1 || last == -1)
+                        continue
+
+                    i=first-1
+
+                    for (t in first .. last){
+                        lines.removeAt(first)
+                    }
+
+                }
             }
-        }
-
-        for (i in SearchFrom..terrainText.size - 1) {
-            val str = terrainText[i]
-            if (str.contentEquals("texture/")){
-                var first: Int = -1
-                var last: Int = -1
-
-                for (j in i..0)
-                    if (terrainText[i].contentEquals("{"))
-                        first = j
-
-                for (j in i until terrainText.size)
-                    if (terrainText[j].contentEquals("}"))
-                        last = j
-
-                for (d in first..last)
-                    terrainText.removeAt(d)
-            }
+            i++
         }
         val string = StringBuilder()
-        string.append(terrainText)
-
+        for (i in 0 until lines.size)
+            string.append(lines[i]+"\n")
         return string.toString()
     }
 
@@ -264,7 +279,7 @@ constructor(private val FilePath: String, private val context: Context) {
         val terrainOut = FileOutputStream(path + "/textures/terrain_texture.json")
         try {
             terrainOut.write(textBefore.toByteArray())
-            terrainOut.write(doJsonFixing(data[4].reader(Charset.defaultCharset()).readText(), 77).toByteArray())
+            terrainOut.write(doJsonFixing(data[4].reader(Charset.defaultCharset()).readText()).toByteArray())
         } catch (e: IOException) {
             mOnCrashListener!!.onCrash(e.toString())
             e.printStackTrace()
@@ -290,7 +305,7 @@ constructor(private val FilePath: String, private val context: Context) {
         if (isCreated!!) {
             try {
                 itemOut.write(textBefore.toByteArray())
-                itemOut.write(doJsonFixing(data[3].reader(Charset.defaultCharset()).readText(), 5).toByteArray())
+                itemOut.write(doJsonFixing(data[3].reader(Charset.defaultCharset()).readText()).toByteArray())
                 itemOut.close()
             } catch (e: IOException) {
                 mOnCrashListener!!.onCrash(e.toString())
@@ -300,7 +315,7 @@ constructor(private val FilePath: String, private val context: Context) {
             //for flip book texture
             val flipOut = FileOutputStream(path + "/textures/flipbook_textures.json")
             try {
-                flipOut.write(doJsonFixing(data[2].reader(Charset.defaultCharset()).readText(), 2).toByteArray())
+                flipOut.write(doJsonFixing(data[2].reader(Charset.defaultCharset()).readText()).toByteArray())
                 flipOut.close()
             } catch (e: IOException) {
                 mOnCrashListener!!.onCrash(e.toString())

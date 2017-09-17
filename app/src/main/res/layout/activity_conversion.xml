@@ -131,11 +131,20 @@
                 android:orientation="vertical"
                 android:id="@+id/cards_grid">
 
-                <include layout="@layout/card_pack_info" />
+                <include layout="@layout/card_pack_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/card_margin_vertical"/>
 
-                <include layout="@layout/card_image_compression"/>
+                <include layout="@layout/card_image_compression"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/card_margin_vertical"/>
 
-                <include layout="@layout/card_icon" />
+                <include layout="@layout/card_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/card_margin_vertical"/>
 
             </LinearLayout>
         </LinearLayout>

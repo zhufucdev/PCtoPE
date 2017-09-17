@@ -1,10 +1,6 @@
 package com.zhufuc.pctope.Activities
 
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
-import android.content.SharedPreferences
+import android.content.*
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.Bitmap
@@ -26,6 +22,7 @@ import android.widget.ImageView
 
 import com.zhufuc.pctope.Collectors.ActivityCollector
 import com.zhufuc.pctope.R
+import com.zhufuc.pctope.Utils.myContextWrapper
 
 import java.io.FileInputStream
 import java.io.FileNotFoundException
@@ -44,21 +41,12 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        //Translate animation
-        //Window window = getWindow();
-        //window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-
-        //Transition fade = TransitionInflater.from(this).inflateTransition(R.transition.fade);
-        //window.setEnterTransition(fade);
-        //window.setReenterTransition(fade);
-        //window.setExitTransition(fade);
-
         //Collector
         ActivityCollector.addActivity(this)
-        //Language
-        val settings = PreferenceManager.getDefaultSharedPreferences(this)
-        setLanguage(settings.getString("pref_language", "auto"))
+    }
 
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(myContextWrapper(newBase).wrap())
     }
 
     override fun onStart() {
@@ -97,26 +85,7 @@ open class BaseActivity : AppCompatActivity() {
         }
 
     }
-
-    protected fun setLanguage(language: String?) {
-        var resources = applicationContext.resources
-        var configuration = resources.configuration
-        var metrics = resources.displayMetrics
-        when (language) {
-            "en" -> configuration.setLocale(Locale.ENGLISH)
-            "ch" -> configuration.setLocale(Locale.CHINESE)
-            else -> configuration.setLocale(SystemLanguage())
-        }
-        resources.updateConfiguration(configuration, metrics)
-    }
-
-    fun SystemLanguage(): Locale {
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-            resources.configuration.locales.get(0)
-        else
-            resources.configuration.locale
-    }
-
+    
     override fun onDestroy() {
         super.onDestroy()
 
