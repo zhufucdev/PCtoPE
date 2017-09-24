@@ -1,4 +1,6 @@
- "texture_name": "atlas.items",
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
   "texture_data": {
     "apple": {
       "textures": "textures/items/apple"
@@ -20,22 +22,22 @@
     },
     "bed": {
       "textures": [
-		    "textures/items/bed_white",
-		    "textures/items/bed_orange",
-		    "textures/items/bed_magenta",
-		    "textures/items/bed_light_blue",
-		    "textures/items/bed_yellow",
-		    "textures/items/bed_lime",
-		    "textures/items/bed_pink",
-		    "textures/items/bed_gray",
-		    "textures/items/bed_silver",
-		    "textures/items/bed_cyan",
-		    "textures/items/bed_purple",
-		    "textures/items/bed_blue",
-		    "textures/items/bed_brown",
-		    "textures/items/bed_green",
-		    "textures/items/bed_red",
-		    "textures/items/bed_black"
+        "textures/items/bed_white",
+        "textures/items/bed_orange",
+        "textures/items/bed_magenta",
+        "textures/items/bed_light_blue",
+        "textures/items/bed_yellow",
+        "textures/items/bed_lime",
+        "textures/items/bed_pink",
+        "textures/items/bed_gray",
+        "textures/items/bed_silver",
+        "textures/items/bed_cyan",
+        "textures/items/bed_purple",
+        "textures/items/bed_blue",
+        "textures/items/bed_brown",
+        "textures/items/bed_green",
+        "textures/items/bed_red",
+        "textures/items/bed_black"
       ]
     },
     "beef_cooked": {
@@ -155,7 +157,7 @@
     },
     "chorus_fruit": {
       "textures": "textures/items/chorus_fruit"
-    },   
+    },
     "chorus_fruit_popped": {
       "textures": "textures/items/chorus_fruit_popped"
     },
@@ -254,9 +256,9 @@
     "ender_pearl": {
       "textures": "textures/items/ender_pearl"
     },
-    "end_crystal": { 
-      "textures": "textures/items/end_crystal"  
-    }, 
+    "end_crystal": {
+      "textures": "textures/items/end_crystal"
+    },
     "experience_bottle": {
       "textures": "textures/items/experience_bottle"
     },
@@ -270,10 +272,9 @@
       "textures": "textures/items/fireworks"
     },
     "fireworks_charge": {
-      "textures": "textures/items/fireworks_charge"
-    },
-    "fireworks_charge_overlay": {
-      "textures": "textures/items/fireworks_charge_overlay"
+      "textures": [
+        "textures/items/fireworks_charge"
+      ]
     },
     "fishing_rod": {
       "textures": [
@@ -299,12 +300,12 @@
     "cooked_salmon": {
       "textures": "textures/items/fish_salmon_cooked"
     },
-    "elytra": { 
-      "textures": [ 
-        "textures/items/elytra", 
-        "textures/items/broken_elytra" 
-      ] 
-    }, 
+    "elytra": {
+      "textures": [
+        "textures/items/elytra",
+        "textures/items/broken_elytra"
+      ]
+    },
     "flint": {
       "textures": "textures/items/flint"
     },
@@ -329,7 +330,7 @@
     "gold_nugget": {
       "textures": "textures/items/gold_nugget"
     },
-	"iron_nugget": {
+    "iron_nugget": {
       "textures": "textures/items/iron_nugget"
     },
     "gunpowder": {
@@ -496,7 +497,8 @@
         "textures/items/potion_bottle_healthBoost",
         "textures/items/potion_bottle_absorption",
         "textures/items/potion_bottle_saturation",
-        "textures/items/potion_bottle_levitation"
+        "textures/items/potion_bottle_levitation",
+        "textures/items/potion_bottle_drinkable"
       ]
     },
     "potion_bottle_empty": {
@@ -525,6 +527,7 @@
         "textures/items/potion_bottle_lingering_weakness",
         "textures/items/potion_bottle_lingering_poison",
         "textures/items/potion_bottle_lingering_wither",
+        "textures/items/potion_bottle_lingering_empty",
         "textures/items/potion_bottle_lingering_empty",
         "textures/items/potion_bottle_lingering_empty",
         "textures/items/potion_bottle_lingering_empty",
@@ -557,6 +560,7 @@
         "textures/items/potion_bottle_splash_healthBoost",
         "textures/items/potion_bottle_splash_absorption",
         "textures/items/potion_bottle_splash_saturation",
+        "textures/items/potion_bottle_splash",
         "textures/items/potion_bottle_splash"
       ]
     },
@@ -656,24 +660,6 @@
     "sign": {
       "textures": "textures/items/sign"
     },
-    "skull_creeper": {
-      "textures": "textures/items/skull_creeper"
-    },
-    "skull_dragon": {
-      "textures": "textures/items/skull_dragon"   
-    },
-    "skull_skeleton": {
-      "textures": "textures/items/skull_skeleton"
-    },
-    "skull_steve": {
-      "textures": "textures/items/skull_steve"
-    },
-    "skull_wither": {
-      "textures": "textures/items/skull_wither"
-    },
-    "skull_zombie": {
-      "textures": "textures/items/skull_zombie"
-    },
     "slimeball": {
       "textures": "textures/items/slimeball"
     },
@@ -724,6 +710,8 @@
         "textures/items/egg_vindicator",
         "textures/items/egg_evoker",
         "textures/items/egg_vex",
+        "textures/items/egg_zombievillager",
+        "textures/items/egg_parrot",
         "textures/items/egg_null"
       ]
     },
@@ -814,7 +802,8 @@
         "textures/items/tipped_arrow",
         "textures/items/tipped_arrow",
         "textures/items/tipped_arrow",
-        "textures/items/tipped_arrow_luck"
+        "textures/items/tipped_arrow_luck",
+        "textures/items/tipped_arrow"
       ]
     },
     "shulker_shell": {
@@ -822,6 +811,45 @@
     },
     "totem": {
       "textures": "textures/items/totem"
+    },
+    "armor_stand": {
+      "textures": "textures/items/armor_stand"
+    },
+    "record_13": {
+      "textures": "textures/items/record_13"
+    },
+    "record_cat": {
+      "textures": "textures/items/record_cat"
+    },
+    "record_blocks": {
+      "textures": "textures/items/record_blocks"
+    },
+    "record_chirp": {
+      "textures": "textures/items/record_chirp"
+    },
+    "record_far": {
+      "textures": "textures/items/record_far"
+    },
+    "record_mall": {
+      "textures": "textures/items/record_mall"
+    },
+    "record_mellohi": {
+      "textures": "textures/items/record_mellohi"
+    },
+    "record_stal": {
+      "textures": "textures/items/record_stal"
+    },
+    "record_strad": {
+      "textures": "textures/items/record_strad"
+    },
+    "record_ward": {
+      "textures": "textures/items/record_ward"
+    },
+    "record_11": {
+      "textures": "textures/items/record_11"
+    },
+    "record_wait": {
+      "textures": "textures/items/record_wait"
     }
   }
 }

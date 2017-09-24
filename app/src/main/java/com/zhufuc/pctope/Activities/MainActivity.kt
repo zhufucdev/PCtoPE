@@ -29,7 +29,6 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.support.v7.widget.Toolbar
 import android.support.v7.widget.helper.ItemTouchHelper
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewAnimationUtils
@@ -145,7 +144,7 @@ class MainActivity : BaseActivity() {
         val intent = intent
         isGranted = intent.getBooleanExtra("isGranted", true)
 
-        Log.d("status", isGranted.toString() + "")
+        mLog.d("status", isGranted.toString() + "")
 
         //file choosing
         fab!!.setOnClickListener { Choose() }
@@ -203,6 +202,10 @@ class MainActivity : BaseActivity() {
                 R.id.nav_about -> {
                     val about = Intent(this@MainActivity, AboutActivity::class.java)
                     startActivity(about)
+                }
+                R.id.nav_log -> {
+                    val log = Intent(this@MainActivity, ShowLogActivity::class.java)
+                    startActivity(log)
                 }
             }
             true
@@ -301,7 +304,7 @@ class MainActivity : BaseActivity() {
             Thread(Runnable {
                 try {
                     Thread.sleep(500)
-                } catch (e: InterruptedException) {
+                } catch (e : Throwable) {
                     e.printStackTrace()
                 }
 
@@ -403,13 +406,6 @@ class MainActivity : BaseActivity() {
     private var adapter: FileChooserAdapter? = null
     var level_up : FloatingActionButton? = null
     private fun Choose() {
-        //makeText(MainActivity.this, R.string.choosing_alert, Toast.LENGTH_SHORT).show();
-        //Intent choose = new Intent(Intent.ACTION_GET_CONTENT);
-        //choose.setType("*/*");
-        //choose.addCategory(Intent.CATEGORY_OPENABLE);
-        //startActivityForResult(choose, 1);
-
-
         if (chooser_root!!.visibility == View.INVISIBLE) {
             level_up!!.show()
             toolbar!!.setTitle(R.string.choosing_alert)
@@ -505,7 +501,7 @@ class MainActivity : BaseActivity() {
         chooser = findViewById(R.id.file_chooser_view) as RecyclerView
         chooser!!.layoutManager = StaggeredGridLayoutManager(2, OrientationHelper.VERTICAL)
 
-        adapter = FileChooserAdapter(Environment.getExternalStorageDirectory().path)
+        adapter = FileChooserAdapter(Environment.getExternalStorageDirectory().path, mutableListOf("zip"))
 
         adapter?.setOnItemClickListener(object : FileChooserAdapter.OnItemClickListener{
             override fun onClick(view: View, data: Intent) {
@@ -551,7 +547,7 @@ class MainActivity : BaseActivity() {
 
                 if (lineCount >= itemCount && itemCount != 0)
                     lineCount = items.itemCount
-                Log.i("Layout Manager", "Layout manager set by Grid Layout Manager. Line count is " + lineCount)
+                mLog.i("Layout Manager", "Layout manager set by Grid Layout Manager. Line count is " + lineCount)
                 layoutManager = GridLayoutManager(this, lineCount)
             }
         }

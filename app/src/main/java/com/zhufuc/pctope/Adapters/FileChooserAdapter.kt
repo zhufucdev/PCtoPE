@@ -1,16 +1,23 @@
 package com.zhufuc.pctope.Adapters
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.os.AsyncTask
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.MimeTypeMap
+import android.widget.ImageView
 import android.widget.TextView
 
 import com.zhufuc.pctope.R
+import com.zhufuc.pctope.Utils.FileType
 
 import java.io.File
+import java.io.FileInputStream
 import java.util.ArrayList
 import java.util.Collections
 
@@ -18,7 +25,7 @@ import java.util.Collections
  * Created by zhufu on 17-9-8.
  */
 
-class FileChooserAdapter(private var root: String?) : RecyclerView.Adapter<FileChooserAdapter.ViewHolder>() {
+class FileChooserAdapter(private var root: String?,private var lastFixes : List<String>) : RecyclerView.Adapter<FileChooserAdapter.ViewHolder>() {
     private var list = ArrayList<File>()
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -43,9 +50,9 @@ class FileChooserAdapter(private var root: String?) : RecyclerView.Adapter<FileC
         for (f in files)
             if (f.exists()) {
                 if (f.isFile) {
-                    if (!f.name.contains(".zip"))
-                        continue
-                    fileList.add(f)
+                    (0 until lastFixes.size)
+                            .filter { f.path.contains(lastFixes[it]) }
+                            .forEach { fileList.add(f) }
                 } else
                     folderList.add(f)
             }
@@ -71,6 +78,34 @@ class FileChooserAdapter(private var root: String?) : RecyclerView.Adapter<FileC
             holder.zipFileView.tag = file.path
             name = holder.zipFileView.findViewById(R.id.file_title)
             name.text = file.name
+
+            if (lastFixes.contains("png")||lastFixes.contains("jpg")){
+                val imageView = holder.zipFileView.findViewById<ImageView>(R.id.chooser_zip)
+
+                class loadImage : AsyncTask<Void, Void, Boolean>() {
+                    lateinit var bitmap : Bitmap
+                    override fun doInBackground(vararg p0: Void?): Boolean {
+                        val type = FileType.get(file)
+                        if (!(type == "ffD8ff" || type == "89504e47"))
+                            return false
+
+                        val options = BitmapFactory.Options()
+                        options.inSampleSize = 2
+                        bitmap = BitmapFactory.decodeFile(file.path,options)
+                        return true
+                    }
+
+                    override fun onPostExecute(result: Boolean?) {
+                        if (result!=false)
+                            imageView.setImageBitmap(bitmap)
+                        super.onPostExecute(result)
+                    }
+                }
+                loadImage().execute()
+
+
+
+            }
 
             holder.zipFileView.setOnClickListener(onClickListener)
         } else {

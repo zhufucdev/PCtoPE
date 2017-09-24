@@ -113,8 +113,13 @@
 		"brightness_gamma" : 0.70,
 		"sound": "stone"
 	},
-	"noteblock" : { 
-		"textures" : "noteblock"
+	"noteblock": {
+   		"textures": "noteblock",
+  		"sound": "wood"
+	},
+	"jukebox" : { 
+		"textures" : { "up" : "jukebox_top", "down" : "jukebox_side", "side" : "jukebox_side"}, 
+		"sound": "wood"
 	},
 	"bed": {
 		"blockshape": "bed",
@@ -207,7 +212,6 @@
 		"textures" : "brick"
 	},
 	"tnt" : { 
-		"isotropic" : {"up" : true, "down" : true},
 		"textures" : { "up" : "tnt_top", "down" : "tnt_bottom", "side" : "tnt_side"},
 		"sound": "grass"
 	},
@@ -397,6 +401,11 @@
 		"textures" : "netherrack",
 		"sound": "stone"
 	},
+	 "magma": {
+	   "isotropic": true,
+	   "textures": "magma",
+	   "sound": "stone"
+	 },
 	"soul_sand" : { 
 		"textures" : "soul_sand",
 		"sound": "sand"
@@ -420,12 +429,12 @@
 	},
 	"unpowered_repeater" : { 
 		"blockshape" : "repeater",
-		"textures" : { "up" : "repeater_up", "down" : "repeater_torch", "side" : "repeater_floor"},
+		"textures" : { "up" : "repeater_up", "down" : "repeater_floor", "side" : "repeater_floor"},
 		"sound": "wood"
 	},
 	"powered_repeater" : { 
 		"blockshape" : "repeater",
-		"textures" : { "up" : "repeater_up", "down" : "repeater_torch", "side" : "repeater_floor"},
+		"textures" : { "up" : "repeater_up", "down" : "repeater_floor", "side" : "repeater_floor"},
 		"sound": "wood"
 	},
 	"invisibleBedrock" : { 
@@ -458,7 +467,7 @@
 		"sound": "metal"
 	},
 	"glass_pane" : { 
-		"blockshape" : "iron_fence",
+		"blockshape" : "double_side_fence",
 		"textures" : { "up" : "glass", "down" : "glass", "north" : "glass",  "south" : "glass", "west" : "glass",  "east" : "glass_pane_top"},
 	  "sound": "glass"
   },
@@ -584,14 +593,23 @@
 		"brightness_gamma" : 0.80,
 		"sound": "stone"
 	},
-	"nether_brick_stairs" : { 
-		"blockshape" : "stairs",
-		"textures" : "nether_brick"
-	},
-	"nether_wart" : { 
-		"blockshape" : "rows",
-		"textures" : "nether_wart"
-	},
+  "nether_brick_stairs": {
+    "blockshape": "stairs",
+    "textures": "nether_brick"
+  },
+  "red_nether_brick": {
+    "textures": "red_nether_brick",
+    "brightness_gamma": 0.80,
+    "sound": "stone"
+  },
+  "nether_wart": {
+    "blockshape": "rows",
+    "textures": "nether_wart"
+  },
+  "nether_wart_block": {
+    "textures": "nether_wart_block",
+    "sound": "wood"
+  },
 	"enchanting_table" : { 
 		"blockshape" : "block_half",
 		"textures" : { "up" : "enchanting_table_top", "down" : "enchanting_table_bottom", "side" : "enchanting_table_side"}
@@ -613,7 +631,7 @@
 	},
 	"tripwire_hook" : { 
 		"blockshape" : "tripwire_hook",
-		"textures" : { "up" : "trip_wire_source", "down" : "trip_wire_base", "side" : "trip_wire_source"}
+		"textures" : { "up" : "trip_wire_source", "down" : "trip_wire_base", "north" : "trip_wire_source", "south" : "trip_wire", "east" : "trip_wire", "west" : "trip_wire" }
 	},
 	"tripWire" : { 
 		"blockshape" : "tripwire", 
@@ -662,12 +680,12 @@
 	},
 	"unpowered_comparator" : { 
 		"blockshape" : "comparator", 
-		"textures" : { "up" : "comparator_up", "down" : "comparator_torch", "side" : "comparator_stone_slab"},
+		"textures" : { "up" : "comparator_up", "down" : "comparator_stone_slab", "side" : "comparator_stone_slab"},
 		"sound": "wood"
 	},
 	"powered_comparator" : { 
 		"blockshape" : "comparator", 
-		"textures" : { "up" : "comparator_up", "down" : "comparator_torch", "side" : "comparator_stone_slab"},
+		"textures" : { "up" : "comparator_up", "down" : "comparator_stone_slab", "side" : "comparator_stone_slab"},
 		"sound": "wood"
 	},
 	"daylight_detector" : { 
@@ -693,6 +711,11 @@
 		"blockshape" : "hopper", 
 		"textures" : { "up" : "hopper_top", "down" : "hopper_inside", "north" : "hopper_outside",  "south" : "hopper_outside", "west" : "hopper_outside",  "east" : "hopper_outside"},
 		"sound": "metal"
+	},
+	"bone_block" : {
+		"blockshape" : "tree",
+		"textures" : { "up" : "bone_block_top", "down" : "bone_block_top", "side" : "bone_block_side"},
+		"sound": "stone"
 	},
 	"quartz_block" : { 
 		"blockshape" : "tree", 
@@ -881,8 +904,8 @@
 		"sound": "grass"
 	},
 	"frame" : { 
-		"blockshape" : "invisible", 
-		"textures" : "planks",
+		"blockshape" : "frame", 
+		"textures" : "itemframe_background",
 		"sound": "itemframe"
 	},
 	"podzol" : { 
@@ -942,7 +965,7 @@
     "sound": "stone"
   },
   "seaLantern": {
-     "textures" : "sea_lantern",
+    "textures": "sea_lantern",
     "sound": "glass"
   },
   "ender_chest": {
@@ -954,15 +977,20 @@
 	  "sound": "glass"
   },
   "stained_glass_pane" : {
-	  "blockshape" : "iron_fence",
+	  "blockshape" : "double_side_fence",
 	  "textures" : { "up" : "stained_glass", "down" : "stained_glass", "north" : "stained_glass",  "south" : "stained_glass", "west" : "stained_glass",  "east" : "stained_glass_pane_top"},
 	  "sound": "glass" 
   },
-  "shulker_box" : { 
-    "blockshape" : "chest",
-    "textures" : { "up" : "shulker_box_top", "down" : "shulker_box_top", "north" : "shulker_box_top",  "south" : "shulker_box_top", "west" : "shulker_box_top",  "east" : "shulker_box_top"},
-		"sound": "wood"
-  },
+	"shulker_box" : { 
+		"blockshape": "shulker_box",
+		"textures": "shulker_box_top",
+		"sound": "stone"
+	},
+	"undyed_shulker_box" : { 
+		"blockshape": "shulker_box",
+		"textures": "undyed_shulker_box_top",
+		"sound": "stone"
+	},
 	"command_block": {
 		"blockshape": "command_block",
 		"textures": {
@@ -1090,5 +1118,13 @@
   "frosted_ice": {
     "textures": "frosted_ice",
     "sound": "glass"
+  },
+  "standing_banner": {
+	  "blockshape": "invisible",
+	  "textures":  "planks"
+  },
+  "wall_banner": {
+	  "blockshape": "invisible",
+	  "textures":  "planks"
   }
 }

@@ -34,10 +34,7 @@ import android.widget.Toast
 
 import com.zhufuc.pctope.Adapters.Textures
 import com.zhufuc.pctope.R
-import com.zhufuc.pctope.Utils.CompressImage
-import com.zhufuc.pctope.Utils.FindFile
-import com.zhufuc.pctope.Utils.GetPathFromUri4kitkat
-import com.zhufuc.pctope.Utils.TextureCompat
+import com.zhufuc.pctope.Utils.*
 
 import java.io.File
 import java.io.FileInputStream
@@ -102,7 +99,7 @@ class DetailsActivity : BaseActivity() {
         error_dialog.setPositiveButton(R.string.close, null)
         error_dialog.setNegativeButton(R.string.copy) { dialogInterface, i ->
             val copy = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            copy.text = errorString
+            copy.primaryClip = ClipData.newPlainText("PathCopied",path)
         }.show()
     }
 
@@ -123,6 +120,7 @@ class DetailsActivity : BaseActivity() {
             val setName = editName.text.toString()
             val setDescription = editDescription.text.toString()
             if (setName != name || setDescription != description) {
+                mLog.i("Edit","Change name and description of $name to $setName and $setDescription")
                 textureEditor!!.changeNameAndDescription(setName, setDescription)
                 isDataChanged = true
                 loadDetailedInfo()
@@ -130,8 +128,7 @@ class DetailsActivity : BaseActivity() {
         }
 
         dialog.setNeutralButton(R.string.icon_edit) { dialogInterface, i ->
-            val intent = Intent(Intent.ACTION_GET_CONTENT)
-            intent.type = "image/*"
+            val intent = Intent(DetailsActivity@this,FileChooserActivity::class.java)
             startActivityForResult(intent, 0)
         }
 
@@ -463,8 +460,7 @@ class DetailsActivity : BaseActivity() {
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         if (resultCode == Activity.RESULT_OK)
             if (requestCode == 0) {
-                val uri = data.data
-                val iconMap = BitmapFactory.decodeFile(GetPathFromUri4kitkat.getPath(this@DetailsActivity, uri))
+                val iconMap = BitmapFactory.decodeFile(data.getStringExtra("path"))
                 if (CompressImage.testBitmap(512, 512, iconMap)) {
                     val builder = AlertDialog.Builder(this@DetailsActivity)
                     builder.setTitle(R.string.icon_edit_high_res_title)

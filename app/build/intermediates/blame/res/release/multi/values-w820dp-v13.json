@@ -1,0 +1,121 @@
+[
+    {
+        "outputFile": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 58,
+                    "endOffset": 109
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w820dp/dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 358,
+                        "endColumn": 58,
+                        "endOffset": 412
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 114,
+                    "endColumn": 57,
+                    "endOffset": 167
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w820dp/dimens.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 297,
+                        "endColumn": 57,
+                        "endOffset": 350
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 172,
+                    "endColumn": 54,
+                    "endOffset": 222
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w820dp/dimens.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 420,
+                        "endColumn": 54,
+                        "endOffset": 470
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 227,
+                    "endColumn": 59,
+                    "endOffset": 282
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w820dp/dimens.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 478,
+                        "endColumn": 59,
+                        "endOffset": 533
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 287,
+                    "endColumn": 53,
+                    "endOffset": 336
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w820dp/dimens.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 599,
+                        "endColumn": 53,
+                        "endOffset": 648
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 341,
+                    "endColumn": 54,
+                    "endOffset": 391
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w820dp/dimens.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 541,
+                        "endColumn": 54,
+                        "endOffset": 591
+                    }
+                }
+            }
+        ]
+    }
+]

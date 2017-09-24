@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zhufuc.pctope.Activities.DetailsActivity"
+    android:fitsSystemWindows="true"
+    android:background="@color/activity_background">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/details_app_bar"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/details_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_gravity="bottom"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="pin">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/details_icon"
+                    android:layout_gravity="bottom|start"
+                    android:adjustViewBounds="true"
+                    android:transitionName="@string/pack_icon_transition" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/details_description"
+                    android:layout_marginStart="@dimen/text_margin_small"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="2dp"
+                    android:textSize="17sp"
+                    android:text="description"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:id="@+id/details_toolbar"
+                app:layout_collapseMode="pin" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/details_loading_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:indeterminate="true"
+        android:layout_marginTop="-7dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pencil_white"
+        android:id="@+id/details_fab"
+        android:layout_margin="@dimen/btn_margin"
+        app:layout_anchor="@id/details_app_bar"
+        app:layout_anchorGravity="bottom|end"/>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/details_info_layout"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin_vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/text_margin">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/details_card_basic_info_title"
+                        android:textSize="20sp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/details_texture_size"
+                        android:layout_marginStart="@dimen/text_margin_very_small"
+                        android:textSize="14sp"
+                        android:text="@string/details_card_basic_info_size"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/details_texture_location"
+                        android:layout_marginStart="@dimen/text_margin_very_small"
+                        android:textSize="14sp"
+                        android:text="@string/details_card_basic_info_location"
+                        android:clickable="true"
+                        android:background="?android:attr/selectableItemBackground"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_margin_small"
+                android:text="@string/operations"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"/>
+
+            <include layout="@layout/card_image_compression"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin_vertical"/>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

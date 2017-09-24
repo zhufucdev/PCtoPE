@@ -120,6 +120,9 @@
     <string name="file">File</string>
     <string name="open_string">Open</string>
     <string name="close_string">Close</string>
-    <string name="non_upper_level">You can\'t go bacl to the upper level.</string>
+    <string name="non_upper_level">You can\'t go back to the upper level.</string>
+    <string name="logs">Logs</string>
+    <string name="nothing">Nothing</string>
+    <string name="use_of_log">Logs can help the developer make application better. If you have any problem, please contact me with these logs. Thanks!</string>
 
 </resources>

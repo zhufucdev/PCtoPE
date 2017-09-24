@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"转到主屏幕"</string>
+    <string msgid="1397052879051804371" name="abc_action_bar_home_description_format">"%1$s：%2$s"</string>
+    <string msgid="6623331958280229229" name="abc_action_bar_home_subtitle_description_format">"%1$s - %2$s：%3$s"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"转到上一层级"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"更多选项"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"完成"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"查看全部"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"选择应用"</string>
+    <string msgid="121134116657445385" name="abc_capital_off">"关闭"</string>
+    <string msgid="3405795526292276155" name="abc_capital_on">"开启"</string>
+    <string msgid="7723749260725869598" name="abc_search_hint">"搜索…"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"清除查询"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"搜索查询"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"搜索"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"提交查询"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"语音搜索"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"分享方式"</string>
+    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"通过%s分享"</string>
+    <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"收起"</string>
+    <string name="about_create_by">由朱拂comcom创建</string>
+    <string name="about_gpl_license">遵循GPL-v3开源协议</string>
+    <string name="about_made_in_china">中国制造</string>
+    <string name="about_visit">访问...</string>
+    <string name="android_nothing">这里什么都没有！ 为什么不添加一个？</string>
+    <string name="app_name">PCtoPE</string>
+    <string name="broken_pc">不可用的PC纹理包</string>
+    <string name="broken_pc_dialog_content">正如你所见，这是一个不可用的PC纹理包。这种纹理包是不能被MC PE所加载的。你可以向两侧滑动删除这个包，或是点击这张卡片尝试修复。</string>
+    <string name="broken_pc_subtitle">点击右边的红色图标了解跟多。</string>
+    <string name="choosing_alert">文件选择</string>
+    <string name="choosing_none">你什么都没选</string>
+    <string name="close">关闭</string>
+    <string name="close_string">关闭</string>
+    <string name="completed">完成!</string>
+    <string name="compress_to">压缩到…</string>
+    <string name="compressiom_tip_text2">.mcpack文件可以被MC导入，方便在特殊平台，如IOS,WIN10上使用材质包。当然，如果你的Android设备不使用外部储存空间，此方法也可奏效。</string>
+    <string name="compression_alert">你无法将其压缩至更高分辨率</string>
+    <string name="compression_step_start">我们开始吧</string>
+    <string name="compression_tip_text">这用来打包MC材质包，打包好的.mcpack文件将保存在</string>
+    <string name="compression_tip_title">这是什么操作?</string>
+    <string name="confirm">确认</string>
+    <string name="conversionact_edit_dialog_title">选择一项以继续</string>
+    <string name="copied">已复制</string>
+    <string name="copy">复制</string>
+    <string name="cover">使用一个图片文件覆盖</string>
+    <string name="crash_converstion_input_file_not_found">选择文件不存在！请尝试用另一款文件管理器进行选择</string>
+    <string name="crashes_toast_text">哎哟！我们遇到了一些问题！</string>
+    <string name="deleted_completed">删除完成!</string>
+    <string name="deleting">删除中…</string>
+    <string name="destination_exists">目标已存在！</string>
+    <string name="details_card_basic_info_location">位置</string>
+    <string name="details_card_basic_info_size">材质包大小</string>
+    <string name="details_card_basic_info_title">基础信息</string>
+    <string name="deteted_failed">删除失败…</string>
+    <string name="do_final_step">我们正在完成最后一步</string>
+    <string name="edit_converactdialog">调用一个已安装的应用程序编辑</string>
+    <string name="error">错误…</string>
+    <string name="error_dialog">哎呀! 我们遇到了一些问题:</string>
+    <string name="failed">失败…</string>
+    <string name="file">文件</string>
+    <string name="folder">文件夹</string>
+    <string name="following_title">更多参数</string>
+    <string name="guide_welcome">欢迎来到转化向导</string>
+    <string name="icon_edit">编辑图标</string>
+    <string name="icon_edit_high_res_subtitle">高分辨率图标对于MC没有意义。你想要压缩吗？</string>
+    <string name="icon_edit_high_res_title">高分辨率</string>
+    <string name="info_card_title">材质包详细信息</string>
+    <string name="info_file_not_exists">未知。这是PE材质包或文件不存在</string>
+    <string name="info_pack_in_mc_ver">适用的MCPC版本:</string>
+    <string name="info_pack_type">材质包类型:</string>
+    <string name="label_guide">转化向导</string>
+    <string name="loading">加载中…</string>
+    <string name="logs">日志</string>
+    <string name="nav_about">关于</string>
+    <string name="nav_application">应用程序</string>
+    <string name="nav_settings">设置</string>
+    <string name="nav_textures_manager">材质包管理</string>
+    <string name="nav_textures_packer">材质包打包</string>
+    <string name="no">不</string>
+    <string name="non_upper_level">无法返回上层</string>
+    <string name="not_pack">这不是PE或PC的材质包</string>
+    <string name="nothing">无</string>
+    <string name="ok">好的</string>
+    <string name="open_string">打开</string>
+    <string name="operations">操作</string>
+    <string name="overwrite">覆盖</string>
+    <string name="overwrite_content">已经有一个同名的文件夹了。你想要覆盖它吗？</string>
+    <string name="overwrite_title">覆盖？</string>
+    <string name="pack_icon_not_found">这或许是个没有图标的包，你可以更改它</string>
+    <string name="permissions_request">你需要给予应用权限</string>
+    <string name="please_wait">请稍后…</string>
+    <string name="pref_drawer_clear">清除</string>
+    <string name="pref_drawer_custom">自定义</string>
+    <string name="pref_drawer_title">侧滑栏头图</string>
+    <string name="pref_force_ch">强制使用中文</string>
+    <string name="pref_force_eng">强制使用英语</string>
+    <string name="pref_lang_auto">Auto</string>
+    <string name="pref_language">语言</string>
+    <string name="preparing_for_firstboot">正在准备首次启动</string>
+    <string name="progress_compressing_title">压缩中…</string>
+    <string name="progress_writing_json">写入JSON…</string>
+    <string name="project_description">描述</string>
+    <string name="project_icon_edit">编辑</string>
+    <string name="project_icon_open">打开</string>
+    <string name="project_icon_title">图标</string>
+    <string name="project_name">项目名称</string>
+    <string name="project_unnamed">未命名</string>
+    <string name="rebooting">正在重启应用程序...</string>
+    <string name="report_restart_app">发送后重启</string>
+    <string name="resources_compression">资源压缩</string>
+    <string name="resources_compression_subtitle">这能帮你压缩图片资源文件，以便在低性能设备上运行。如需使用，点击卡片</string>
+    <string msgid="146198913615257606" name="search_menu_title">"搜索"</string>
+    <string name="skip">跳过</string>
+    <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="thanks">谢了</string>
+    <string name="title_activity_settings">设置</string>
+    <string name="turing_image_color_black_into_transparent">正在将贴图中的黑色转化为透明...</string>
+    <string name="tutorial_hope">希望你喜欢！</string>
+    <string name="tutorial_hope_subtitle">如果需要帮助，你可以加我QQ(1095291434)，给我发电子邮件，或是在酷安评论区留言。感谢您的使用！</string>
+    <string name="tutorial_step1">屏幕底部有一个“+”按钮</string>
+    <string name="tutorial_step1_subtitle">点击按钮，然后选择一个MC的资源包(.zip)，并在文件管理器中打开这个资源包。</string>
+    <string name="tutorial_step2">等待，直到解压结束</string>
+    <string name="tutorial_step2_subtitle">随后，输入你想要的信息，点击“>”按钮。</string>
+    <string name="tutorial_step3">最终，你就能看到资源包出现在列表上了</string>
+    <string name="tutorial_step3_subtitle">别急，我们下一步还有事做。</string>
+    <string name="tutorial_step4">是时候打开Minecraft了！</string>
+    <string name="tutorial_step4_subtitle">依次点 设置>全局资源，找到你想要的资源包，点击“+”按钮。</string>
+    <string name="tutorial_step5">随后，你就能看到你选择的资源包在列表首位。重启MC</string>
+    <string name="tutorial_step5_subtitle">不要急着打开存档。通常你需要重启MC以加载材质包。</string>
+    <string name="tutorial_welcome">欢迎来到PCtoPE!</string>
+    <string name="tutorial_wlcome_subtitle">我们将会用一个简单的向导来告诉你如何使用这个APP</string>
+    <string name="type_after_1.11">1.11及以后</string>
+    <string name="type_before_1.9">1.9之前</string>
+    <string name="type_brokenPC">不完整的MCPC材质包</string>
+    <string name="type_brokenPE">不完整的MCPE材质包</string>
+    <string name="type_fullPC">完整的MCPC材质包</string>
+    <string name="type_fullPE">完整的MCPE材质包</string>
+    <string name="unable_to_get_name">无法获取名称</string>
+    <string name="unclickable_unzipping">你不能在解压时继续。</string>
+    <string name="understood">我明白了</string>
+    <string name="undo">撤销</string>
+    <string name="unzipping">正在解压缩…</string>
+    <string name="use_of_log">日志帮助开发者优化软件算法，如有疑惑，请联系我并附上日志。感谢！</string>
+    <string name="user_bug_report_subtitle">请告诉我此问题如何发生，以便帮助我尽快解决</string>
+    <string name="user_bug_report_title">我累个大去！我们遇到一些问题</string>
+</resources>

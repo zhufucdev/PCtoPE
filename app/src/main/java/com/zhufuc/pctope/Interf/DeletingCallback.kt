@@ -3,6 +3,7 @@ package com.zhufuc.pctope.Interf
 import android.support.design.widget.Snackbar
 
 import com.zhufuc.pctope.Utils.DeleteFolder
+import com.zhufuc.pctope.Utils.mLog
 
 import java.io.File
 
@@ -17,6 +18,7 @@ class DeletingCallback(whatWillBeDeleted: File) : Snackbar.Callback() {
     override fun onDismissed(snackbar: Snackbar?, event: Int) {
         super.onDismissed(snackbar, event)
         if (event != Snackbar.Callback.DISMISS_EVENT_ACTION) {
+            mLog.i("Manager","Deleting $WhatWillBeDeleted")
             Thread(Runnable { DeleteFolder.Delete(WhatWillBeDeleted.path) }).start()
         }
     }

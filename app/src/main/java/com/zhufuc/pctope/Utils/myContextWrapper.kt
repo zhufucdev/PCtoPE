@@ -23,7 +23,7 @@ class myContextWrapper(base: Context?) : ContextWrapper(base) {
         val metrics = resources.displayMetrics
         when (language) {
             "en" -> configuration.setLocale(Locale.ENGLISH)
-            "ch" -> configuration.setLocale(Locale.CHINESE)
+            "ch" -> configuration.setLocale(Locale.SIMPLIFIED_CHINESE)
             else -> configuration.setLocale(SystemLanguage())
         }
         if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.N) {
@@ -31,7 +31,7 @@ class myContextWrapper(base: Context?) : ContextWrapper(base) {
         }
         else
             resources.updateConfiguration(configuration, metrics)
-        return ContextWrapper(base)
+        return base
     }
 
     private fun SystemLanguage(): Locale {

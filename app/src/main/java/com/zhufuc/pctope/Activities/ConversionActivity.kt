@@ -21,7 +21,7 @@ import android.support.v7.widget.CardView
 import android.support.v7.widget.Toolbar
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
+import com.zhufuc.pctope.Utils.mLog
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.AnimationUtils
@@ -34,12 +34,7 @@ import android.widget.TextView
 import android.widget.Toast
 
 import com.zhufuc.pctope.R
-import com.zhufuc.pctope.Utils.CompressImage
-import com.zhufuc.pctope.Utils.DeleteFolder
-import com.zhufuc.pctope.Utils.FindFile
-import com.zhufuc.pctope.Utils.GetPathFromUri4kitkat
-import com.zhufuc.pctope.Utils.TextureCompat
-import com.zhufuc.pctope.Utils.TextureConversionUtils
+import com.zhufuc.pctope.Utils.*
 
 import java.io.File
 import java.io.FileNotFoundException
@@ -167,7 +162,7 @@ class ConversionActivity : BaseActivity() {
                 runOnUiThread {
                     alertDialog!!.setMessage(getString(R.string.do_final_step))
                     alertDialog!!.setTitle(getString(R.string.progress_writing_json))
-                    Log.i("Information On UI", "Showing json writing dialog...")
+                    mLog.i("Information On UI", "Showing json writing dialog...")
                 }
 
             }
@@ -297,9 +292,7 @@ class ConversionActivity : BaseActivity() {
             val finishBottom = findViewById(R.id.finishBottom) as FloatingActionButton
             Snackbar.make(finishBottom, R.string.pack_icon_not_found, Snackbar.LENGTH_INDEFINITE)
                     .setAction(R.string.ok) {
-                        val choose = Intent(Intent.ACTION_GET_CONTENT)
-                        choose.type = "image/*"
-                        choose.addCategory(Intent.CATEGORY_OPENABLE)
+                        val choose = Intent(ConversionActivity@this,FileChooserActivity::class.java)
                         startActivityForResult(choose, 0)
                     }
                     .show()
@@ -330,9 +323,7 @@ class ConversionActivity : BaseActivity() {
         //Set icon editor
         val edit = findViewById(R.id.card_icon_edit) as ImageView
         edit.setOnClickListener {
-            val choose = Intent(Intent.ACTION_GET_CONTENT)
-            choose.type = "image/*"
-            choose.addCategory(Intent.CATEGORY_OPENABLE)
+            val choose = Intent(ConversionActivity@this,FileChooserActivity::class.java)
             startActivityForResult(choose, 0)
         }
         //Set PDI CardView layout
@@ -483,8 +474,7 @@ class ConversionActivity : BaseActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         if (resultCode == Activity.RESULT_OK)
             if (requestCode == 0) {
-                val uri = data.data
-                val fileLocation = GetPathFromUri4kitkat.getPath(this@ConversionActivity, uri)
+                val fileLocation = data.getStringExtra("path")
 
                 iconMap = BitmapFactory.decodeFile(fileLocation)
                 if (CompressImage.testBitmap(512, 512, iconMap!!)) {
@@ -532,7 +522,7 @@ class ConversionActivity : BaseActivity() {
         val text = findViewById(R.id.error_layout_text) as TextView
         text.text = text.text.toString() + this@ConversionActivity.getString(R.string.not_pack)
         val notpack = File(conversion!!.path)
-        Log.d("status", "Deleting " + notpack.toString())
+        mLog.d("status", "Deleting " + notpack.toString())
         class deleteTask : AsyncTask<Void, Int, Boolean>() {
             override fun doInBackground(vararg voids: Void): Boolean? {
                 Snackbar.make(text, R.string.deleting, Snackbar.LENGTH_LONG).show()

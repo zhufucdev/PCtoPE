@@ -34,7 +34,7 @@ import java.util.Locale
 
 open class BaseActivity : AppCompatActivity() {
 
-    internal var isGranted: Boolean = false
+    internal var isGranted: Boolean = true
 
     internal var navigationView: NavigationView? = null
     internal var drawerLayout: DrawerLayout? = null

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="bugrpt-4.2.9">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/c84e58fdd71825a5010d065d37a3e200bebfed01/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/c84e58fdd71825a5010d065d37a3e200bebfed01/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.netease.nis.plugin/bugrpt/4.2.9/1803bdec1702218dd6849c1abc56d9111216aaa5/bugrpt-4.2.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

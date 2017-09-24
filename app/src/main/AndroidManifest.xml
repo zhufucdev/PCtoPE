@@ -50,17 +50,21 @@
         <activity
             android:name=".Activities.AboutActivity"
             android:label="@string/nav_about" />
-        <!-- Net Ease BugRPT-->
+        <!--Net Ease BugRPT-->
         <meta-data
             android:name="BUGRPT_APPID"
             android:value="A001298994" />
 
+
         <activity
             android:name=".Activities.UserBugReport"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Activities.DetailsActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/project_unnamed"/>
+        <activity
+            android:name=".Activities.DetailsActivity"
+            android:label="@string/project_unnamed"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activities.FileChooserActivity" />
+        <activity android:name=".Activities.ShowLogActivity"></activity>
     </application>
 
 </manifest>

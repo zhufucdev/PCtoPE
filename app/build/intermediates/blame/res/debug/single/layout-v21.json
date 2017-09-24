@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/res/layout-v21/notification_action_tombstone.xml"
+    }
+]

@@ -7,7 +7,6 @@ import android.graphics.Canvas
 import android.graphics.Matrix
 import android.os.AsyncTask
 import android.os.Environment
-import android.util.Log
 
 import com.zhufuc.pctope.R
 
@@ -44,7 +43,7 @@ constructor(private val FilePath: String, private val context: Context) {
     var VerStr: String? = null
 
     private fun doVersionDecisions() {
-        Log.d("Pack Version", VerStr)
+        mLog.d("Pack Version", VerStr!!)
         if (VerStr == TextureCompat.brokenPE || VerStr == TextureCompat.fullPE) {
             onPEDecisions()
         } else if (VerStr == TextureCompat.brokenPC || VerStr == TextureCompat.fullPC) {
@@ -70,9 +69,12 @@ constructor(private val FilePath: String, private val context: Context) {
         //箱子手持贴图及大箱子实体 无法解决<>已解决
         //活塞 无法解决
         //方块破坏崩裂贴图 已解决
+        //背景 已解决
+        //画 已解决
+        //护甲
 
-        val FROM = arrayOf(File(path + "/textures/entity/chest/normal_double.png"), File(path + "/textures/items/dragon_breath.png"), File(path + "/textures/entity/bear/polarbear.png"), File(path + "/textures/entity/cat/black.png"), File(path + "/textures/entity/zombie_pigman.png"))
-        val TO = arrayOf(File(path + "/textures/entity/chest/double_normal.png"), File(path + "/textures/items/dragons_breath.png"), File(path + "/textures/entity/polarbear.png"), File(path + "/textures/entity/cat/blackcat.png"), File(path + "/textures/entity/pig/pigzombie.png"))
+        val FROM = arrayOf(File(path + "/textures/entity/chest/normal_double.png"), File(path + "/textures/items/dragon_breath.png"), File(path + "/textures/entity/bear/polarbear.png"), File(path + "/textures/entity/cat/black.png"), File(path + "/textures/entity/zombie_pigman.png"), File(path+"/textures/gui/options_background.png"), File(path+"/textures/painting/paintings_kristoffer_zetterstrand.png"))
+        val TO = arrayOf(File(path + "/textures/entity/chest/double_normal.png"), File(path + "/textures/items/dragons_breath.png"), File(path + "/textures/entity/polarbear.png"), File(path + "/textures/entity/cat/blackcat.png"), File(path + "/textures/entity/pig/pigzombie.png"), File(path+"/textures/gui/background.png"), File(path+"/textures/painting/kz.png"))
         for (i in TO.indices) {
             FROM[i].renameTo(TO[i])
         }
@@ -127,10 +129,33 @@ constructor(private val FilePath: String, private val context: Context) {
         }
 
         //For destroy stages
-        for (i in 0..9) {
-            val stage = File("$path/textures/blocks/destroy_stage_$i.png")
-            if (stage.exists())
-                stage.renameTo(File(path + "/textures/environment/" + stage.name))
+        (0..9)
+                .map { File("$path/textures/blocks/destroy_stage_$it.png") }
+                .filter { it.exists() }
+                .forEach { it.renameTo(File(path + "/textures/environment/" + it.name)) }
+
+        //For armors
+        val armor_folder = File(path+"/textures/models/armor")
+        if (armor_folder.exists() && armor_folder.isDirectory){
+            val armors_list = armor_folder.listFiles()
+            for (i in 0 until armors_list.size){
+                if (armors_list[i].name.contains("_layer")){
+                    var newPath : String
+                    val oldName = armors_list[i].name
+                    var newName = StringBuilder(oldName)
+                    val index = oldName.indexOf("_layer")
+
+                    if (oldName.contains("chainmail"))
+                        when(oldName){
+                            "chainmail_layer_1.png" -> newName = StringBuilder("chain_1.png")
+                            "chainmail_layer_2.png" -> newName = StringBuilder("chain_2.png")
+                        }
+                    else newName.delete(index,index+6)
+
+                    newPath = "${armor_folder.path}/${newName.toString()}"
+                    armors_list[i].renameTo(File(newPath))
+                }
+            }
         }
     }
 
@@ -150,9 +175,9 @@ constructor(private val FilePath: String, private val context: Context) {
 
         val files = ListFiles(File(path))
         val fileslength = files!!.size - 1
-        Log.d("files", "Now we have $fileslength files...Writing to textures_list.json...")
-        Log.d("files", "The first(0) one is " + files[0])
-        Log.d("files", "The final(" + fileslength + ") one is " + files[fileslength])
+        mLog.d("files", "Now we have $fileslength files...Writing to textures_list.json...")
+        mLog.d("files", "The first(0) one is " + files[0])
+        mLog.d("files", "The final(" + fileslength + ") one is " + files[fileslength])
         val textures_list = File(path + "/textures/textures_list.json")
         if (fileslength != 0) {
             var out: FileOutputStream? = null
@@ -179,7 +204,6 @@ constructor(private val FilePath: String, private val context: Context) {
                 try {
                     val fileNow = files[i]
                     out!!.write(("\"" + fileNow + "\"" + "," + System.getProperty("line.separator")).toByteArray())
-                    Log.d("files", "Now i is " + i)
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
@@ -215,7 +239,7 @@ constructor(private val FilePath: String, private val context: Context) {
     private fun doJsonFixing(text : String): String {
         val lines = ArrayList<String>()
         lines.addAll(text.lines())
-        Log.i("JsonFixing","array size=${lines.size}")
+        mLog.i("JsonFixing","array size=${lines.size}")
         var i = 0
         while (i<lines.size){
             val thisLine = lines[i]
@@ -224,7 +248,7 @@ constructor(private val FilePath: String, private val context: Context) {
                 if (!fileTest.exists()){
                     var first : Int = -1
                     var last : Int = -1
-                    Log.i("JsonFixing",i.toString()+":"+fileTest.path+" doesn't exist")
+                    mLog.i("JsonFixing",i.toString()+":"+fileTest.path+" doesn't exist")
 
                     for (j in i downTo 0){
                         val line = lines[j]
@@ -367,7 +391,7 @@ constructor(private val FilePath: String, private val context: Context) {
     private fun doMainInCompressing(n: File) {
         if (n.isFile) {
             //Show progress
-            Log.d("compression", "Compressing " + n)
+            mLog.d("compression", "Compressing " + n)
             mConversionChangeListener!!.inDoingImageCompressions(n.path)
 
 
@@ -400,7 +424,7 @@ constructor(private val FilePath: String, private val context: Context) {
     private fun doImageCompressions() {
         if (compressFinalSize == 0)
             return
-        Log.i("Pack Conversion", "Doing image compressions...")
+        mLog.i("Pack Conversion", "Doing image compressions...")
         //get images
         val items = File(path + "/textures/items").listFiles()
         val blocks = File(path + "/textures/blocks").listFiles()
@@ -462,10 +486,10 @@ constructor(private val FilePath: String, private val context: Context) {
             val fileName = FilePath.substring(FilePath.lastIndexOf('/') + 1, FilePath.lastIndexOf('.'))
             //==>get file name
             path += "/" + fileName
-            Log.d("unzip", "We will unzip $FilePath to $path")
+            mLog.d("unzip", "We will unzip $FilePath to $path")
         } else
             path = FilePath
-        Log.i("status", "Path:" + path)
+        mLog.i("status", "Path:" + path)
     }
 
     /*
@@ -518,7 +542,7 @@ constructor(private val FilePath: String, private val context: Context) {
                 if (!skipUnzip) {
                     mOnUncompressListener!!.inUncompressing()
                     try {
-                        Log.d("unzip", "Unzipping to " + path)
+                        mLog.d("unzip", "Unzipping to " + path)
                         unzip(File(FilePath), path, "0")
                     } catch (e: Exception) {
                         return false
@@ -586,7 +610,7 @@ constructor(private val FilePath: String, private val context: Context) {
         this.packname = packname
         this.packdescription = packdescription
 
-        Log.i("Pack Conversion", "Doing version decisions...")
+        mLog.i("Pack Conversion", "Doing version decisions...")
         mConversionChangeListener!!.inDoingVersionDecisions()
         doVersionDecisions()
 
@@ -595,7 +619,7 @@ constructor(private val FilePath: String, private val context: Context) {
         //mConversionChangeListener.inDoingImageColorTurning();
         //doImageBlackIntoTransparent();
         try {
-            Log.i("Pack Conversion", "Doing json Writing")
+            mLog.i("Pack Conversion", "Doing json Writing")
             mConversionChangeListener!!.inDoingJSONWriting()
             doJSONWriting()
         } catch (e: FileNotFoundException) {
@@ -606,7 +630,7 @@ constructor(private val FilePath: String, private val context: Context) {
         //For if icon doesn't exist
         val iconTest = File(path + "/pack_icon.png")
         if (!iconTest.exists()) {
-            Log.i("Pack Conversion", "Writing icon for non-icon-pack...")
+            mLog.i("Pack Conversion", "Writing icon for non-icon-pack...")
             val buffer = ByteArray(1444)
             var i: Int
             val inputStream = context.resources.openRawResource(R.raw.bug_pack_icon)
@@ -615,7 +639,7 @@ constructor(private val FilePath: String, private val context: Context) {
         }
 
         //Move to dest
-        Log.i("Pack Conversion", "Moving to dest...")
+        mLog.i("Pack Conversion", "Moving to dest...")
         val dest = File(Environment.getExternalStorageDirectory().toString() + "/games/com.mojang/resource_packs/" + packname)
         if (dest.isDirectory && dest.exists()) dest.mkdirs()
         File(path).renameTo(dest)
@@ -666,7 +690,7 @@ constructor(private val FilePath: String, private val context: Context) {
                     val lastStr = fileindir.substring(fileindir.lastIndexOf('.'))
                     if (lastStr == ".png") {
                         fileindir = fileindir.substring(0, fileindir.indexOf('.'))
-                        Log.d("files", "NO." + filelist.size + ":" + fileindir + ' ' + lastStr)
+                        mLog.d("files", "NO." + filelist.size + ":" + fileindir + ' ' + lastStr)
                         filelist.add(fileindir)
                     }
                 }

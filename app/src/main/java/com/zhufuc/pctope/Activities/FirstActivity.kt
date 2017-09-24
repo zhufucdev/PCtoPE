@@ -1,27 +1,20 @@
 package com.zhufuc.pctope.Activities
 
 import android.Manifest
-import android.app.ApplicationErrorReport
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.AsyncTask
 import android.os.Build
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import com.zhufuc.pctope.Utils.mLog
 
 import com.netease.nis.bugrpt.CrashHandler
-import com.netease.nis.bugrpt.user.IExceptionCallback
 import com.netease.nis.bugrpt.user.UserStrategy
-import com.zhufuc.pctope.Collectors.ActivityCollector
 import com.zhufuc.pctope.R
 
-import java.io.IOException
 import java.util.ArrayList
 
 import za.co.riggaroo.materialhelptutorial.TutorialItem
@@ -55,7 +48,6 @@ class FirstActivity : BaseActivity() {
         if (requestCode == 0) {
             val main = Intent(this@FirstActivity, MainActivity::class.java)
             main.putExtra("isGranted", isGranted)
-            overridePendingTransition(0,0)
             startActivity(main)
             finish()
         }
@@ -77,7 +69,7 @@ class FirstActivity : BaseActivity() {
                     override fun doInBackground(vararg voids: Void): Boolean? {
                         var j = 0
                         while (ContextCompat.checkSelfPermission(this@FirstActivity, permission[0]) == PackageManager.PERMISSION_DENIED || ContextCompat.checkSelfPermission(this@FirstActivity, permission[1]) == PackageManager.PERMISSION_DENIED) {
-                            Log.d("status", "Now j is " + j)
+                            mLog.d("status", "Now j is " + j)
                             j++
                             try {
                                 Thread.sleep(100)
@@ -89,7 +81,7 @@ class FirstActivity : BaseActivity() {
                                 return false
                             }
                         }
-                        Log.d("status", "Now break.")
+                        mLog.d("status", "Now break.")
                         return true
                     }
 

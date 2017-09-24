@@ -1,0 +1,121 @@
+[
+    {
+        "outputFile": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w600dp-v13/values-w600dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 57,
+                    "endOffset": 108
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w600dp/dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 76,
+                        "endColumn": 57,
+                        "endOffset": 129
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 113,
+                    "endColumn": 57,
+                    "endOffset": 166
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w600dp/dimens.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endColumn": 57,
+                        "endOffset": 70
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 171,
+                    "endColumn": 53,
+                    "endOffset": 220
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w600dp/dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 135,
+                        "endColumn": 53,
+                        "endOffset": 184
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 225,
+                    "endColumn": 58,
+                    "endOffset": 279
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w600dp/dimens.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 190,
+                        "endColumn": 58,
+                        "endOffset": 244
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 284,
+                    "endColumn": 53,
+                    "endOffset": 333
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w600dp/dimens.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 305,
+                        "endColumn": 53,
+                        "endOffset": 354
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 338,
+                    "endColumn": 53,
+                    "endOffset": 387
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-w600dp/dimens.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 250,
+                        "endColumn": 53,
+                        "endOffset": 299
+                    }
+                }
+            }
+        ]
+    }
+]

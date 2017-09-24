@@ -1,7 +1,7 @@
 package com.zhufuc.pctope.Collectors
 
 import android.app.Activity
-import android.util.Log
+import com.zhufuc.pctope.Utils.mLog
 
 import java.util.ArrayList
 
@@ -13,12 +13,12 @@ object ActivityCollector {
     private val activities = ArrayList<Activity>()
     fun addActivity(activity: Activity) {
         activities.add(activity)
-        Log.d("Activity", "Added " + activity.javaClass.getSimpleName())
+        mLog.d("Activity", "Added " + activity.javaClass.simpleName)
     }
 
     fun removeActivity(activity: Activity) {
         activities.remove(activity)
-        Log.d("Activity", "Removed " + activity.javaClass.getSimpleName())
+        mLog.d("Activity", "Removed " + activity.javaClass.simpleName)
     }
 
     fun finishOther(activity: Activity) {

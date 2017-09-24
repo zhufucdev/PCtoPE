@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.netease.nis.bugrpt.CrashHandler
 import com.zhufuc.pctope.Collectors.ActivityCollector
 import com.zhufuc.pctope.R
+import com.zhufuc.pctope.Utils.mLog
 
 class UserBugReport : AppCompatActivity() {
 
@@ -32,6 +33,7 @@ class UserBugReport : AppCompatActivity() {
             if (content.text.toString() != "") {
                 val tm = applicationContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 CrashHandler.uploadUserDefineLog("用户反馈", Build.MODEL + ">" + tm.deviceId + ":" + content.text.toString())
+                mLog.i("Report","User's Report is committed.")
             }
             if (sc.isChecked) {
                 val intent = Intent(this@UserBugReport, FirstActivity::class.java)

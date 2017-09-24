@@ -120,4 +120,7 @@
     <string name="open_string">打开</string>
     <string name="close_string">关闭</string>
     <string name="non_upper_level">无法返回上层</string>
+    <string name="logs">日志</string>
+    <string name="nothing">无</string>
+    <string name="use_of_log">日志帮助开发者优化软件算法，如有疑惑，请联系我并附上日志。感谢！</string>
 </resources>
