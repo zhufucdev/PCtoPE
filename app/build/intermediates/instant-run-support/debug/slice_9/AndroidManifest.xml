@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.zhufuc.pctope"
-      android:versionCode="34"
-      android:versionName="2.4.0.3weekly"
+      android:versionCode="35"
+      android:versionName="2.4.1"
       split="lib_slice_9_apk">
 </manifest>

@@ -16,8 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/log_textview"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"/>
+            android:background="?attr/selectableItemBackground" />
 
     </ScrollView>
 

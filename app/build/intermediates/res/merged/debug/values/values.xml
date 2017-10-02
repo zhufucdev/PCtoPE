@@ -231,8 +231,6 @@
     <color name="material_grey_800">#ff424242</color>
     <color name="material_grey_850">#ff303030</color>
     <color name="material_grey_900">#ff212121</color>
-    <color name="mt_subtitle_color">#f2f2f2</color>
-    <color name="mt_title_color">#FFFFFF</color>
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
     <color name="notification_material_background_media_default_color">#ff424242</color>
@@ -335,7 +333,6 @@
         </attr><attr format="boolean" name="behavior_hideable"/><attr format="boolean" name="behavior_skipCollapsed"/></declare-styleable>
     <declare-styleable name="ButtonBarLayout"><attr format="boolean" name="allowStacking"/></declare-styleable>
     <declare-styleable name="CardView"><attr format="color" name="cardBackgroundColor"/><attr format="dimension" name="cardCornerRadius"/><attr format="dimension" name="cardElevation"/><attr format="dimension" name="cardMaxElevation"/><attr format="boolean" name="cardUseCompatPadding"/><attr format="boolean" name="cardPreventCornerOverlap"/><attr format="dimension" name="contentPadding"/><attr format="dimension" name="contentPaddingLeft"/><attr format="dimension" name="contentPaddingRight"/><attr format="dimension" name="contentPaddingTop"/><attr format="dimension" name="contentPaddingBottom"/><attr name="android:minWidth"/><attr name="android:minHeight"/></declare-styleable>
-    <declare-styleable name="CircleImageView"><attr format="dimension" name="civ_border_width"/><attr format="color" name="civ_border_color"/><attr format="boolean" name="civ_border_overlay"/><attr format="color" name="civ_fill_color"/></declare-styleable>
     <declare-styleable name="CirclePageIndicator"><attr name="centered"/><attr format="color" name="fillColor"/><attr format="color" name="pageColor"/><attr name="android:orientation"/><attr format="dimension" name="radius"/><attr format="boolean" name="snap"/><attr format="color" name="strokeColor"/><attr name="strokeWidth"/><attr name="android:background"/><attr name="pageImg"/><attr name="fillImg"/></declare-styleable>
     <declare-styleable name="CollapsingToolbarLayout"><attr format="dimension" name="expandedTitleMargin"/><attr format="dimension" name="expandedTitleMarginStart"/><attr format="dimension" name="expandedTitleMarginTop"/><attr format="dimension" name="expandedTitleMarginEnd"/><attr format="dimension" name="expandedTitleMarginBottom"/><attr format="reference" name="expandedTitleTextAppearance"/><attr format="reference" name="collapsedTitleTextAppearance"/><attr format="color" name="contentScrim"/><attr format="color" name="statusBarScrim"/><attr format="reference" name="toolbarId"/><attr format="dimension" name="scrimVisibleHeightTrigger"/><attr format="integer" name="scrimAnimationDuration"/><attr name="collapsedTitleGravity">
             
@@ -728,21 +725,6 @@
     <dimen name="main_card_margin_horizontal">8dp</dimen>
     <dimen name="main_card_margin_vertical">8dp</dimen>
     <dimen name="max_width">640dp</dimen>
-    <dimen name="mt_toolbar_content_margin_bottom_collapsed">0dp</dimen>
-    <dimen name="mt_toolbar_content_margin_bottom_expanded">16dp</dimen>
-    <dimen name="mt_toolbar_content_margin_end_collapsed">0dp</dimen>
-    <dimen name="mt_toolbar_content_margin_end_expanded">0dp</dimen>
-    <dimen name="mt_toolbar_content_margin_start_collapsed">56dp</dimen>
-    <dimen name="mt_toolbar_content_margin_start_expanded">16dp</dimen>
-    <dimen name="mt_toolbar_content_margin_top_collapsed">0dp</dimen>
-    <dimen name="mt_toolbar_content_margin_top_expanded">0dp</dimen>
-    <dimen name="mt_toolbar_height">56dp</dimen>
-    <dimen name="mt_toolbar_padding_end">16dp</dimen>
-    <dimen name="mt_toolbar_padding_start">0dp</dimen>
-    <dimen name="mt_toolbar_picture_margin_start">0dp</dimen>
-    <dimen name="mt_toolbar_picture_size_collapsed">42dp</dimen>
-    <dimen name="mt_toolbar_picture_size_expanded">62dp</dimen>
-    <dimen name="mt_toolbar_title_margin_start">12dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
@@ -773,7 +755,6 @@
     <item name="action_menu_presenter" type="id"/>
     <item name="home" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
-    <item name="mt_morphy_toolbar" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <item name="split_action_bar" type="id"/>
@@ -835,9 +816,11 @@
     <string name="broken_pc">Unusable PC Textures Pack</string>
     <string name="broken_pc_dialog_content">As you can see, this is a unusable PC texture pack.This kind of packs isn\'t able to be loaded on Minecraft PE.You can delete it by swiping to left or right, or click the Card View to try to fix.</string>
     <string name="broken_pc_subtitle">Click the red icon on the right to learn more.</string>
+    <string name="calculating">Calculating...</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="choosing_alert">File Choosing</string>
     <string name="choosing_none">You chose nothing.</string>
+    <string name="clear_cache">Clear Cache</string>
     <string name="close">close</string>
     <string name="close_string">Close</string>
     <string name="completed">Completed!</string>

@@ -21,21 +21,18 @@ import com.zhufuc.pctope.Activities.MainActivity
 import com.zhufuc.pctope.Collectors.ActivityCollector
 import com.zhufuc.pctope.R
 
-import java.util.ArrayList
-
 import android.view.View.GONE
+import com.zhufuc.pctope.Utils.TextureCompat
+import com.zhufuc.pctope.Utils.TextureCompat.brokenPC
+import com.zhufuc.pctope.Utils.TextureCompat.fullPC
+import kotlin.collections.ArrayList
 
 /**
  * Created by zhufu on 7/22/17.
  */
 
-class TextureItems : RecyclerView.Adapter<TextureItems.ViewHolder>() {
+class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<TextureItems.ViewHolder>() {
     private val mTextures: ArrayList<Textures>
-
-    private val fullPC = "Found:full PC pack."
-    private val fullPE = "Found:full PE pack."
-    private val brokenPE = "Found:broken PE pack."
-    private val brokenPC = "Found:broken PC pack."
 
     private var mOnItemClickListener: OnItemClickListener? = null
 
@@ -52,44 +49,24 @@ class TextureItems : RecyclerView.Adapter<TextureItems.ViewHolder>() {
 
 
         init {
-            cardView = v.findViewById<View>(R.id.card_texture_card) as CardView
             TextureIcon = v.findViewById<View>(R.id.card_texture_icon) as ImageView
             TextureName = v.findViewById<View>(R.id.card_texture_name) as TextView
             TextureDescription = v.findViewById<View>(R.id.card_texture_name_subname) as TextView
             AlertIcon = v.findViewById<View>(R.id.card_texture_alert_icon) as ImageView
+            cardView = v.findViewById<View>(R.id.card_texture_card) as CardView
         }
     }
 
     init {
-        this.mTextures = ArrayList()
+        this.mTextures = textures
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.texture_item, parent, false)
-        val holder = ViewHolder(view)
 
-        holder.cardView.setOnClickListener {
-            //Waiting for update
-            if (holder.AlertIcon.visibility == View.VISIBLE) {
-                val convert = Intent(holder.AlertIcon.context, ConversionActivity::class.java)
-                convert.putExtra("willSkipUnzipping", true)
-                convert.putExtra("filePath", holder.AlertIcon.tag.toString())
-                holder.AlertIcon.context.startActivity(convert)
-            }
-            mOnItemClickListener!!.onItemClick(view, view.tag as Int)
-        }
-        holder.AlertIcon.setOnClickListener {
-            val dialog = AlertDialog.Builder(holder.AlertIcon.context)
-            dialog.setTitle(R.string.broken_pc)
-            dialog.setMessage(R.string.broken_pc_dialog_content)
-            dialog.setNegativeButton(R.string.ok, null)
-            dialog.show()
-        }
-
-
-        return holder
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -119,6 +96,24 @@ class TextureItems : RecyclerView.Adapter<TextureItems.ViewHolder>() {
         } else
             holder.TextureIcon.setImageResource(R.drawable.bug_pack_icon)
 
+        holder.cardView.setOnClickListener {
+            if (holder.AlertIcon.visibility == View.VISIBLE) {
+                val convert = Intent(holder.AlertIcon.context, ConversionActivity::class.java)
+                convert.putExtra("willSkipUnzipping", true)
+                convert.putExtra("filePath", holder.AlertIcon.tag.toString())
+                holder.AlertIcon.context.startActivity(convert)
+                return@setOnClickListener
+            }
+            mOnItemClickListener!!.onItemClick(it, it.tag as Int)
+        }
+        holder.AlertIcon.setOnClickListener {
+            val dialog = AlertDialog.Builder(holder.AlertIcon.context)
+            dialog.setTitle(R.string.broken_pc)
+            dialog.setMessage(R.string.broken_pc_dialog_content)
+            dialog.setNegativeButton(R.string.ok, null)
+            dialog.show()
+        }
+
         //Alert icon
         if (!textures.IfIsResourcePack("PE")!!) {
             val verStr = textures.getVersion()
@@ -137,29 +132,15 @@ class TextureItems : RecyclerView.Adapter<TextureItems.ViewHolder>() {
         this.mOnItemClickListener = listener
     }
 
-    override fun getItemCount(): Int {
-        return mTextures.size
-    }
-
-    fun addItem(index: Int, texture: Textures) {
-        mTextures.add(index, texture)
-    }
-
-    fun addItem(texture: Textures) {
-        mTextures.add(texture)
-    }
+    override fun getItemCount(): Int = mTextures.size
 
     fun remove(position: Int) {
         mTextures.removeAt(position)
     }
 
-    fun getItem(index: Int): Textures {
-        return mTextures[index]
-    }
+    fun getItem(index: Int): Textures = mTextures[index]
 
-    fun getIfIsAlertIconShown(view: View): Boolean {
-        return ViewHolder(view).AlertIcon.visibility == View.VISIBLE
-    }
+    fun getIfIsAlertIconShown(view: View): Boolean = ViewHolder(view).AlertIcon.visibility == View.VISIBLE
 
     fun clear() {
         mTextures.clear()

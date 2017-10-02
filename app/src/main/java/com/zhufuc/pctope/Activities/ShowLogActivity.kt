@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.view.Gravity
+import android.view.MenuItem
 import android.widget.ScrollView
 import android.widget.TextView
 
@@ -58,21 +59,27 @@ class ShowLogActivity : BaseActivity() {
             textView.gravity = Gravity.CENTER
             textView.textSize = 25f
             textView.setText(R.string.nothing)
+            textView.setOnClickListener(null)
         }
         else{
             textView.gravity = Gravity.START
             textView.textSize = 16f
             textView.text = logString
-        }
 
-        textView.setOnClickListener{
-            val clipBoard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            clipBoard.primaryClip = ClipData.newPlainText("LogCopied",logString)
-            Snackbar.make(textView,R.string.copied,Snackbar.LENGTH_SHORT).show()
+            textView.setOnClickListener{
+                val clipBoard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                clipBoard.primaryClip = ClipData.newPlainText("LogCopied",logString)
+                Snackbar.make(textView,R.string.copied,Snackbar.LENGTH_SHORT).show()
+            }
         }
 
         val scroll = findViewById(R.id.log_scroll) as ScrollView
         scroll.post({ scroll.fullScroll(ScrollView.FOCUS_DOWN) })
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        onBackPressed()
+        return super.onOptionsItemSelected(item)
     }
 }

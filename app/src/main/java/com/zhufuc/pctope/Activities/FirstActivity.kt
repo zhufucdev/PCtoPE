@@ -9,6 +9,7 @@ import android.os.Build
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.os.Bundle
+import android.os.Handler
 import com.zhufuc.pctope.Utils.mLog
 
 import com.netease.nis.bugrpt.CrashHandler
@@ -67,19 +68,8 @@ class FirstActivity : BaseActivity() {
                 ActivityCompat.requestPermissions(this@FirstActivity, permission, 2)
                 class Waiting : AsyncTask<Void, Int, Boolean>() {
                     override fun doInBackground(vararg voids: Void): Boolean? {
-                        var j = 0
                         while (ContextCompat.checkSelfPermission(this@FirstActivity, permission[0]) == PackageManager.PERMISSION_DENIED || ContextCompat.checkSelfPermission(this@FirstActivity, permission[1]) == PackageManager.PERMISSION_DENIED) {
-                            mLog.d("status", "Now j is " + j)
-                            j++
-                            try {
-                                Thread.sleep(100)
-                            } catch (e: InterruptedException) {
-                                e.printStackTrace()
-                            }
 
-                            if (j > 250) {
-                                return false
-                            }
                         }
                         mLog.d("status", "Now break.")
                         return true

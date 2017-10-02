@@ -52,7 +52,7 @@ import java.io.File
 
 class MainActivity : BaseActivity() {
 
-    fun MakeErrorDialog(errorString: String) {
+    private fun MakeErrorDialog(errorString: String) {
         //make up a error dialog
         val error_dialog = AlertDialog.Builder(this@MainActivity)
         error_dialog.setTitle(R.string.error)
@@ -125,7 +125,6 @@ class MainActivity : BaseActivity() {
     private var toolbar: Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         progressBar = findViewById(R.id.progressbar_in_main) as ProgressBar
@@ -171,7 +170,7 @@ class MainActivity : BaseActivity() {
                             while (ContextCompat.checkSelfPermission(this@MainActivity, permissions[0]) == PackageManager.PERMISSION_DENIED) {
                             }
                             isGranted = true
-                            runOnUiThread { initActivity() }
+                            initActivity()
                         }).start()
                     }.show()
         }
@@ -182,7 +181,6 @@ class MainActivity : BaseActivity() {
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.setHomeAsUpIndicator(R.drawable.menu)
         }
-
         navigationView = findViewById(R.id.nav_view) as NavigationView
         drawerLayout = findViewById(R.id.drawer_main) as DrawerLayout
 
@@ -210,8 +208,11 @@ class MainActivity : BaseActivity() {
             }
             true
         }
-        //throw new RuntimeException("TEST");
+
         initToolbar()
+
+        super.onCreate(savedInstanceState)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -220,8 +221,6 @@ class MainActivity : BaseActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-    private val items = TextureItems()
 
     private fun initActivity() {
         //init for textures list
@@ -256,7 +255,7 @@ class MainActivity : BaseActivity() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
                 val deleting = items.getItem(position)
-                val test = File(deleting.path.toString())
+                val test = File(deleting.path)
                 val oldTemp = items
                 items.remove(position)
 
@@ -278,14 +277,12 @@ class MainActivity : BaseActivity() {
                         .setCallback(DeletingCallback(test))
                         .setAction(R.string.undo) {
                             if (test.exists()) {
-                                val oldTemp1 = items
-                                items.addItem(position, deleting)
-                                val callback1 = DiffUtilCallback(oldTemp1, items)
-                                val diffResult1 = DiffUtil.calculateDiff(callback1)
+
+                                mTextures.add(position, deleting)
                                 recyclerView!!.visibility = View.VISIBLE
                                 android_nothing_card!!.visibility = View.GONE
-                                diffResult.dispatchUpdatesTo(items)
-                                items.notifyItemInserted(position)
+                                items = TextureItems(mTextures)
+                                recyclerView!!.adapter = items
 
                                 setLayoutManager()
                             } else {
@@ -346,10 +343,14 @@ class MainActivity : BaseActivity() {
             ActivityCollector.finishAll()
     }
 
+    lateinit var mTextures : ArrayList<Textures>
+    lateinit var items : TextureItems
+
     private fun loadList() {
 
+        mTextures = ArrayList()
+
         //TextureItems oldTemp = items;
-        items.clear()
 
         val packsListDir = File(Environment.getExternalStorageDirectory().toString() + "/games/com.mojang/resource_packs/")
         var packsList: Array<File>
@@ -365,7 +366,7 @@ class MainActivity : BaseActivity() {
                     if (aPacksList.isDirectory) {
                         val texture = Textures(aPacksList)
                         if (texture.IfIsResourcePack("ALL")!!) {
-                            items.addItem(texture)
+                            mTextures.add(texture)
                         }
                     }
             }
@@ -373,6 +374,8 @@ class MainActivity : BaseActivity() {
             //DiffUtil.Callback callback = new DiffUtilCallback(oldTemp,items);
             //DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
             //diffResult.dispatchUpdatesTo(items);
+
+            items = TextureItems(mTextures)
 
             items.setOnItemClickListener(object : TextureItems.OnItemClickListener {
                 override fun onItemClick(view: View, position: Int) {
@@ -393,9 +396,8 @@ class MainActivity : BaseActivity() {
                 }
             })
 
-            recyclerView!!.adapter = items
-
             runOnUiThread({
+                recyclerView!!.adapter = items
                 items.notifyDataSetChanged()
                 setLayoutManager()
             })
@@ -407,6 +409,7 @@ class MainActivity : BaseActivity() {
     var level_up : FloatingActionButton? = null
     private fun Choose() {
         if (chooser_root!!.visibility == View.INVISIBLE) {
+            fab!!.isEnabled = false
             level_up!!.show()
             toolbar!!.setTitle(R.string.choosing_alert)
             toolbar!!.subtitle = adapter!!.getPath()
@@ -437,6 +440,7 @@ class MainActivity : BaseActivity() {
 
                         override fun onAnimationEnd(animation: Animation) {
                             fab!!.rotation = 45.0f
+                            fab!!.isEnabled = true
                         }
 
                         override fun onAnimationRepeat(animation: Animation) {
@@ -450,6 +454,7 @@ class MainActivity : BaseActivity() {
                 }
             })
         } else {
+            fab!!.isEnabled = false
             level_up!!.hide()
             toolbar!!.setTitle(getString(R.string.app_name))
             toolbar!!.subtitle = ""
@@ -479,6 +484,7 @@ class MainActivity : BaseActivity() {
 
                         override fun onAnimationEnd(animation: Animation) {
                             fab!!.rotation = 0.0f
+                            fab!!.isEnabled = true
                         }
 
                         override fun onAnimationRepeat(animation: Animation) {
@@ -524,7 +530,7 @@ class MainActivity : BaseActivity() {
                 Snackbar.make(fab as View,R.string.non_upper_level,Snackbar.LENGTH_SHORT).show()
         })
 
-        chooser!!.adapter = adapter
+        runOnUiThread { chooser!!.adapter = adapter }
     }
 
     fun setLayoutManager() {

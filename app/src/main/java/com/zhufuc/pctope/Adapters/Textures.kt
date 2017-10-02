@@ -28,27 +28,21 @@ import java.util.UUID
 
 class Textures(path: File) {
 
-    val path: String
+    val path: String = path.path
 
     val name: String?
     val description: String?
 
-    private val version: PackVersionDecisions
+    private val version: PackVersionDecisions = PackVersionDecisions(path)
 
     init {
-        this.path = path.path
-        version = PackVersionDecisions(path)
         name = version.name
         description = version.description
     }
 
-    fun IfIsResourcePack(testVersion: String): Boolean? {
-        return version.getIfIsResourcePack(testVersion)
-    }
+    fun IfIsResourcePack(testVersion: String): Boolean? = version.getIfIsResourcePack(testVersion)
 
-    fun getVersion(): String {
-        return version.packVersion
-    }
+    fun getVersion(): String = version.packVersion
 
     val icon: String?
         get() {
@@ -59,18 +53,11 @@ class Textures(path: File) {
                 null
         }
 
-    //EDITING
     class Edit(private val path: String) {
 
         private var intro: String? = null
 
         private val textures: Textures
-
-        private fun makeSpace(i: Int): String {
-            var spaces = ""
-            for (j in 0..i) spaces += " "
-            return spaces
-        }
 
         interface CompressionProgressChangeListener {
             fun OnProgressChangeListener(whatsBeingCompressed: String?, isDone: Boolean)

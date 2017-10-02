@@ -124,5 +124,7 @@
     <string name="logs">Logs</string>
     <string name="nothing">Nothing</string>
     <string name="use_of_log">Logs can help the developer make application better. If you have any problem, please contact me with these logs. Thanks!</string>
+    <string name="clear_cache">Clear Cache</string>
+    <string name="calculating">Calculating...</string>
 
 </resources>

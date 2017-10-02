@@ -7,19 +7,22 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Environment
 import android.preference.ListPreference
 import android.preference.Preference
+import android.preference.PreferenceFragment
 import android.view.MenuItem
 import android.widget.Toast
 
 import com.zhufuc.pctope.Collectors.ActivityCollector
 import com.zhufuc.pctope.R
 import com.zhufuc.pctope.Utils.CompressImage
+import com.zhufuc.pctope.Utils.DeleteFolder
+import com.zhufuc.pctope.Utils.mLog
 import com.zhufuc.pctope.Utils.myContextWrapper
+import java.io.*
 
-import java.io.File
-import java.io.FileNotFoundException
-import java.io.FileOutputStream
+import java.nio.channels.FileChannel
 
 class SettingsActivity : AppCompatPreferenceActivity() {
 
@@ -36,6 +39,7 @@ class SettingsActivity : AppCompatPreferenceActivity() {
     private var listPreference: ListPreference? = null
     private var customDrawer: Preference? = null
     private var clearDrawer: Preference? = null
+    private var clearCache: Preference? = null
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
 
@@ -61,6 +65,20 @@ class SettingsActivity : AppCompatPreferenceActivity() {
             deleteFile("header_image.png")
             refreshClearButton()
             false
+        }
+
+
+        clearCache = findPreference("pref_clear_cache")
+        Thread(Runnable { refreshCacheClear() } ).start()
+
+        clearCache!!.onPreferenceClickListener = Preference.OnPreferenceClickListener{
+            Thread( Runnable {
+                DeleteFolder.Delete(externalCacheDir.path)
+                refreshCacheClear()
+            }).start()
+
+            clearCache!!.isEnabled = false
+            true
         }
     }
 
@@ -123,6 +141,15 @@ class SettingsActivity : AppCompatPreferenceActivity() {
         clearDrawer!!.isEnabled = image.exists()
     }
 
+    private fun refreshCacheClear(){
+        runOnUiThread({clearCache!!.setSummary(R.string.calculating)})
+        val size = getFolderTotalSize(externalCacheDir.path) != 0L
+        runOnUiThread( {
+            clearCache!!.isEnabled = size
+            clearCache!!.summary = ""
+        } )
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         ActivityCollector.removeActivity(this)
@@ -133,5 +160,29 @@ class SettingsActivity : AppCompatPreferenceActivity() {
             finish()
         }
         return true
+    }
+
+    fun getFolderTotalSize(path: String): Long {
+        val files = File(path).listFiles()
+        var size: Long = 0
+        for (f in files)
+            if (f.exists()) {
+                if (f.isFile) {
+                    var fc: FileChannel? = null
+                    var inputStream: FileInputStream? = null
+                    try {
+                        inputStream = FileInputStream(f)
+                        fc = inputStream.channel
+                        size += fc!!.size()
+                        inputStream.close()
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+
+                } else
+                    size += getFolderTotalSize(f.path)
+            }
+
+        return size
     }
 }
