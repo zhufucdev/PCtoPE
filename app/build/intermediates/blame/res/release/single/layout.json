@@ -236,10 +236,6 @@
         "source": "/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/res/layout/abc_activity_chooser_view.xml"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/layout/mt_morphy_toolbar.xml",
-        "source": "/home/zhufu/.android/build-cache/8e61265a22f3722ca96142e74dbf82b9fcdddb70/output/res/layout/mt_morphy_toolbar.xml"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/layout/activity_about.xml",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/layout/activity_about.xml"
     },

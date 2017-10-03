@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:shortcutId="add"
+        android:icon="@drawable/plus_p"
+        android:shortcutLongLabel="@string/add"
+        android:shortcutShortLabel="@string/add">
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.zhufuc.pctope"
+            android:targetClass="com.zhufuc.pctope.Activities.MainActivity" />
+        <categories
+            android:name="android.shortcut.conversation"/>
+
+    </shortcut>
+</shortcuts>

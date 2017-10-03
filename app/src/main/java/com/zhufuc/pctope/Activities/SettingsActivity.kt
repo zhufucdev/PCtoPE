@@ -143,10 +143,10 @@ class SettingsActivity : AppCompatPreferenceActivity() {
 
     private fun refreshCacheClear(){
         runOnUiThread({clearCache!!.setSummary(R.string.calculating)})
-        val size = getFolderTotalSize(externalCacheDir.path) != 0L
+        val size = getFolderTotalSize(externalCacheDir.path)
         runOnUiThread( {
-            clearCache!!.isEnabled = size
-            clearCache!!.summary = ""
+            clearCache!!.isEnabled = size != 0L
+            clearCache!!.summary = (if(size==0L) "0B" else "${Math.round(size/(1024*1024f))}MB")
         } )
     }
 

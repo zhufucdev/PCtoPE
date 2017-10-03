@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-70:12
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-73:12
 	package
 		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:3:5-32
 		INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
@@ -51,7 +51,7 @@ MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.android/build-cac
 	android:name
 		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:12:22-65
 application
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:16:5-68:19
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:14:5-71:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zhufu/.android/build-cache/899979a5bbfda161d3a636fceab4a797c84677aa/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.1] /home/zhufu/.android/build-cache/aef111095947b915eef3185dcef092ce4b141f3b/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.1] /home/zhufu/.android/build-cache/c66f18dae985236979c133496209f23fe11f42ee/output/AndroidManifest.xml:26:5-20
@@ -69,101 +69,107 @@ MERGED from [com.android.support:support-core-utils:25.3.1] /home/zhufu/.android
 MERGED from [com.android.support:support-compat:25.3.1] /home/zhufu/.android/build-cache/645795ccb87ae2c1dca9c34104aeeb09eeffaae9/output/AndroidManifest.xml:29:5-20
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.android/build-cache/c84e58fdd71825a5010d065d37a3e200bebfed01/output/AndroidManifest.xml:16:5-17:19
 	android:label
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:20:9-41
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:18:9-41
 	android:supportsRtl
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:21:9-35
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:19:9-35
 	android:configChanges
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:18:9-39
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:16:9-39
 	android:allowBackup
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:17:9-35
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:15:9-35
 	android:icon
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:19:9-43
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:17:9-43
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:22:9-40
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:20:9-40
 activity#com.zhufuc.pctope.Activities.FirstActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:23:9-31:20
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:21:9-33:20
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:25:13-56
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:23:13-56
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:24:13-53
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:22:13-53
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:26:13-30:29
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:27:17-69
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:27:25-66
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:29:17-77
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:29:27-74
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:27:27-74
+meta-data#android.app.shortcuts
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:29:13-31:52
+	android:resource
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:31:17-50
+	android:name
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:30:17-53
 activity#za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:32:9-34:87
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:34:9-36:87
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:34:13-84
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:36:13-84
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:33:13-97
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:35:13-97
 activity#com.zhufuc.pctope.Activities.MainActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:35:9-38:59
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:37:9-41:20
 	android:label
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:37:13-35
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:39:13-35
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:38:13-56
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:40:13-56
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:36:13-52
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:38:13-52
 activity#com.zhufuc.pctope.Activities.ConversionActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:39:9-41:59
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:42:9-44:59
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:41:13-56
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:44:13-56
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:40:13-58
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:43:13-58
 activity#com.zhufuc.pctope.Activities.SettingsActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:42:9-49:20
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:45:9-52:20
 	android:label
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:44:13-60
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:47:13-60
 	android:parentActivityName
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:45:13-66
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:48:13-66
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:43:13-56
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:46:13-56
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:46:13-48:77
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:49:13-51:77
 	android:value
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:48:17-74
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:51:17-74
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:47:17-63
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:50:17-63
 activity#com.zhufuc.pctope.Activities.AboutActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:50:9-52:49
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:53:9-55:49
 	android:label
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:52:13-46
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:55:13-46
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:51:13-53
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:54:13-53
 meta-data#BUGRPT_APPID
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:54:9-56:42
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:57:9-59:42
 	android:value
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:56:13-39
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:59:13-39
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:55:13-40
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:58:13-40
 activity#com.zhufuc.pctope.Activities.UserBugReport
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:59:9-61:47
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:62:9-64:47
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:61:13-44
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:64:13-44
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:60:13-53
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:63:13-53
 activity#com.zhufuc.pctope.Activities.DetailsActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:62:9-65:59
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:65:9-68:59
 	android:label
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:64:13-52
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:67:13-52
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:65:13-56
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:68:13-56
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:63:13-55
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:66:13-55
 activity#com.zhufuc.pctope.Activities.FileChooserActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:66:9-68
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:69:9-68
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:66:19-65
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:69:19-65
 activity#com.zhufuc.pctope.Activities.ShowLogActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:67:9-73
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:70:9-73
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:67:19-61
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:70:19-61
 uses-sdk
 INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zhufu/.android/build-cache/899979a5bbfda161d3a636fceab4a797c84677aa/output/AndroidManifest.xml:5:5-7:41

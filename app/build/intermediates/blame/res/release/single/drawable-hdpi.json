@@ -720,12 +720,12 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-hdpi/ic_checkbox_marked_circle_grey600_24dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-hdpi/ic_plus_grey600_48dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-hdpi/ic_plus_grey600_48dp.png"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-hdpi/ic_alert_circle_white_36dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-hdpi/ic_alert_circle_white_36dp.png"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-hdpi/ic_plus_grey600_48dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-hdpi/ic_plus_grey600_48dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-hdpi/ic_alert_octagram_white_36dp.png",

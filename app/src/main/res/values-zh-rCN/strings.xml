@@ -125,4 +125,5 @@
     <string name="use_of_log">日志帮助开发者优化软件算法，如有疑惑，请联系我并附上日志。感谢！</string>
     <string name="clear_cache">清除缓存</string>
     <string name="calculating">计算中...</string>
+    <string name="add">添加</string>
 </resources>

@@ -112,12 +112,12 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable/ic_notifications_black_24dp.xml"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable/design_fab_background.xml",
-        "source": "/home/zhufu/.android/build-cache/aef111095947b915eef3185dcef092ce4b141f3b/output/res/drawable/design_fab_background.xml"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable/android_debug_bridge.xml",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable/android_debug_bridge.xml"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable/design_fab_background.xml",
+        "source": "/home/zhufu/.android/build-cache/aef111095947b915eef3185dcef092ce4b141f3b/output/res/drawable/design_fab_background.xml"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable/happy_face.png",
@@ -274,6 +274,10 @@
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable/coolblack.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable/coolblack.png"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable/plus_p.xml",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable/plus_p.xml"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable/resize_bottom_right.xml",

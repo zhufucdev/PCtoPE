@@ -4,12 +4,12 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-hdpi/ic_arrow_left_grey600_24dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_navigate_next.png",
-        "source": "/home/zhufu/.android/build-cache/66a9618a91e5571e9b142ef7f7987bd6be2bfad8/output/res/drawable-hdpi/ic_navigate_next.png"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_view_agenda_white_24dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-hdpi/ic_view_agenda_white_24dp.png"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_navigate_next.png",
+        "source": "/home/zhufu/.android/build-cache/66a9618a91e5571e9b142ef7f7987bd6be2bfad8/output/res/drawable-hdpi/ic_navigate_next.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_resize_bottom_right_black_48dp.png",
@@ -116,12 +116,12 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-hdpi/ic_menu_black_18dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_zip_box_grey600_36dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-hdpi/ic_zip_box_grey600_36dp.png"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_chevron_right_black_36dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-hdpi/ic_chevron_right_black_36dp.png"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_zip_box_grey600_36dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-hdpi/ic_zip_box_grey600_36dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_file_grey600_18dp.png",

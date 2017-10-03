@@ -126,5 +126,6 @@
     <string name="use_of_log">Logs can help the developer make application better. If you have any problem, please contact me with these logs. Thanks!</string>
     <string name="clear_cache">Clear Cache</string>
     <string name="calculating">Calculating...</string>
+    <string name="add">Add</string>
 
 </resources>

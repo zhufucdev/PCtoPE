@@ -11,8 +11,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取MAC地址 -->
     <uses-permission android:name="android.permission.READ_LOGS" />
 
-    <!-- 获取日志 -->
-    <!-- application main -->
     <application
         android:allowBackup="true"
         android:configChanges="locale"
@@ -28,6 +26,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts"/>
+
         </activity>
         <activity
             android:name="za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity"
@@ -35,7 +37,8 @@
         <activity
             android:name=".Activities.MainActivity"
             android:label="PCtoPE"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".Activities.ConversionActivity"
             android:theme="@style/AppTheme.NoActionBar" />

@@ -6,11 +6,14 @@ import android.app.ActivityOptions
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.content.Intent.ACTION_VIEW
 import android.content.pm.PackageManager
-import android.os.AsyncTask
-import android.os.Bundle
-import android.os.Environment
-import android.os.Handler
+import android.content.pm.ShortcutInfo
+import android.content.pm.ShortcutManager
+import android.graphics.BitmapFactory
+import android.graphics.drawable.Icon
+import android.os.*
+import android.support.annotation.RequiresApi
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
@@ -48,6 +51,7 @@ import com.zhufuc.pctope.Utils.*
 import com.zhufuc.pctope.R
 
 import java.io.File
+import java.util.*
 
 
 class MainActivity : BaseActivity() {
@@ -82,6 +86,8 @@ class MainActivity : BaseActivity() {
             val result = data!!.getBooleanExtra("Status_return", false)
             if (result) {
                 loadList()
+                updatePinnedShortcut()
+                initShortcuts()
                 if (chooser_root!!.visibility == View.VISIBLE)
                     Handler().postDelayed({ Choose() }, 1000)
             }
@@ -90,17 +96,11 @@ class MainActivity : BaseActivity() {
                 return
             if (data.getBooleanExtra("isDataChanged", false)) {
                 loadList()
+                updatePinnedShortcut()
+                initShortcuts()
+
             }
 
-        }
-        if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == 1) {
-                val uri = data!!.data
-                val realPath = GetPathFromUri4kitkat.getPath(this@MainActivity, uri)
-                val intent = Intent(this@MainActivity, ConversionActivity::class.java)
-                intent.putExtra("filePath", realPath)
-                startActivityForResult(intent, 0)
-            }
         }
     }
 
@@ -123,6 +123,7 @@ class MainActivity : BaseActivity() {
     private var android_nothing_card: LinearLayout? = null
     private var chooser_root: FrameLayout? = null
     private var toolbar: Toolbar? = null
+    private var isFromShortcut : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_main)
@@ -142,6 +143,7 @@ class MainActivity : BaseActivity() {
 
         val intent = intent
         isGranted = intent.getBooleanExtra("isGranted", true)
+        isFromShortcut = intent.getBooleanExtra("isFromShortcut",true)
 
         mLog.d("status", isGranted.toString() + "")
 
@@ -166,12 +168,6 @@ class MainActivity : BaseActivity() {
             Snackbar.make(fab!!, R.string.permissions_request, Snackbar.LENGTH_INDEFINITE)
                     .setAction(R.string.ok) {
                         ActivityCompat.requestPermissions(this@MainActivity, permissions, 1)
-                        Thread(Runnable {
-                            while (ContextCompat.checkSelfPermission(this@MainActivity, permissions[0]) == PackageManager.PERMISSION_DENIED) {
-                            }
-                            isGranted = true
-                            initActivity()
-                        }).start()
                     }.show()
         }
 
@@ -215,11 +211,66 @@ class MainActivity : BaseActivity() {
 
     }
 
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        if (requestCode == 1){
+            isGranted = ContextCompat.checkSelfPermission(this@MainActivity, permissions[0]) == PackageManager.PERMISSION_GRANTED
+            if (isGranted)
+                initActivity()
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> drawerLayout!!.openDrawer(GravityCompat.START)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun initShortcuts(){
+        if (Build.VERSION.SDK_INT<Build.VERSION_CODES.N_MR1)
+            return
+        val manager = getSystemService(ShortcutManager::class.java)
+        val max = manager.maxShortcutCountPerActivity
+        val infos = ArrayList<ShortcutInfo>()
+        for (i in 0 until mTextures.size){
+            if (i>=max) break
+
+            val temp = mTextures[i]
+            val intent = Intent(ACTION_VIEW,null,this@MainActivity,DetailsActivity::class.java)
+            intent.putExtra("texture_name", temp.name)
+            intent.putExtra("texture_description", temp.description)
+            intent.putExtra("texture_icon", temp.icon)
+            intent.putExtra("texture_version", temp.getVersion())
+            intent.putExtra("texture_path", temp.path)
+            val info = ShortcutInfo.Builder(this,"pack $i")
+                    .setShortLabel(temp.name)
+                    .setIcon(Icon.createWithBitmap(BitmapFactory.decodeFile(temp.icon)))
+                    .setIntent(intent)
+                    .build()
+            infos.add(info)
+        }
+        manager.dynamicShortcuts = infos
+    }
+
+    private fun updatePinnedShortcut(){
+        if (Build.VERSION.SDK_INT<Build.VERSION_CODES.N_MR1)
+            return
+        val manager = getSystemService(ShortcutManager::class.java)
+        val pinned = manager.pinnedShortcuts
+        for (i in 0 until pinned.size){
+            var isFound = false
+            if(pinned[i].id=="add") continue
+            for (j in 0 until mTextures.size){
+                if (pinned[i].intent.getStringExtra("texture_path")==mTextures[j].path){
+                    isFound = true
+                    break
+                }
+            }
+            if (isFound==false){
+                manager.disableShortcuts(Arrays.asList(pinned[i].id))
+            }
+        }
     }
 
     private fun initActivity() {
@@ -238,6 +289,10 @@ class MainActivity : BaseActivity() {
 
             override fun onPostExecute(result: Boolean?) {
                 hideLoading()
+                if (isFromShortcut)
+                    Choose()
+                initShortcuts()
+                updatePinnedShortcut()
             }
         }
         firstLoad().execute()
@@ -272,6 +327,8 @@ class MainActivity : BaseActivity() {
                 items.notifyItemRemoved(position)
 
                 setLayoutManager()
+                initShortcuts()
+                updatePinnedShortcut()
 
                 Snackbar.make(fab!!, R.string.deleted_completed, Snackbar.LENGTH_LONG)
                         .setCallback(DeletingCallback(test))
@@ -285,6 +342,8 @@ class MainActivity : BaseActivity() {
                                 recyclerView!!.adapter = items
 
                                 setLayoutManager()
+                                initShortcuts()
+                                updatePinnedShortcut()
                             } else {
                                 Snackbar.make(fab!!, R.string.failed, Snackbar.LENGTH_SHORT).show()
                             }
@@ -414,12 +473,12 @@ class MainActivity : BaseActivity() {
             toolbar!!.setTitle(R.string.choosing_alert)
             toolbar!!.subtitle = adapter!!.getPath()
 
-            val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2, fab!!.y.toInt() - fab!!.height / 2, 0f, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat())
-            animator.duration = 300
-
             chooser_root!!.visibility = View.VISIBLE
-            animator.start()
-
+            if (!isFromShortcut) {
+                val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2, fab!!.y.toInt() - fab!!.height / 2, 0f, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat())
+                animator.duration = 300
+                animator.start()
+            }
             val first = RotateAnimation(0.0f, 45.0f * 4 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
             first.duration = 200
             fab!!.startAnimation(first)
@@ -499,8 +558,9 @@ class MainActivity : BaseActivity() {
             })
             fab!!.startAnimation(first)
 
-            Handler().postDelayed({ chooser_root!!.visibility = View.INVISIBLE }, 400)
+            Handler().postDelayed({ chooser_root!!.visibility = View.INVISIBLE }, 390)
         }
+        isFromShortcut = false
     }
     var chooser : RecyclerView? = null
     private fun loadFileChooser() {

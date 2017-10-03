@@ -88,6 +88,10 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable/for_step5.png"
     },
     {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable/plus_p.xml",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable/plus_p.xml"
+    },
+    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
         "source": "/home/zhufu/.android/build-cache/aef111095947b915eef3185dcef092ce4b141f3b/output/res/drawable/design_snackbar_background.xml"
     },

@@ -809,6 +809,7 @@
     <string name="about_gpl_license">Licensed under the GPL-v3 Open Source license.</string>
     <string name="about_made_in_china">Made In China</string>
     <string name="about_visit">Visit...</string>
+    <string name="add">Add</string>
     <string name="android_nothing">Nothing here! Why not add one?</string>
     <string name="app_name">PCtoPE</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>

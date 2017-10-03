@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/xml/shortcuts.xml",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/xml/shortcuts.xml"
+    },
+    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/xml/perf_main.xml",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/xml/perf_main.xml"
     }

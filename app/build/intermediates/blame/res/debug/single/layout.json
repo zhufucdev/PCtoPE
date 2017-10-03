@@ -24,12 +24,12 @@
         "source": "/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/res/layout/abc_screen_toolbar.xml"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
-        "source": "/home/zhufu/.android/build-cache/aef111095947b915eef3185dcef092ce4b141f3b/output/res/layout/design_navigation_item_separator.xml"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
         "source": "/home/zhufu/.android/build-cache/aef111095947b915eef3185dcef092ce4b141f3b/output/res/layout/design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
+        "source": "/home/zhufu/.android/build-cache/aef111095947b915eef3185dcef092ce4b141f3b/output/res/layout/design_navigation_item_separator.xml"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
@@ -278,10 +278,6 @@
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/res/layout/abc_screen_content_include.xml"
-    },
-    {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout/mt_morphy_toolbar.xml",
-        "source": "/home/zhufu/.android/build-cache/8e61265a22f3722ca96142e74dbf82b9fcdddb70/output/res/layout/mt_morphy_toolbar.xml"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout/card_pack_info.xml",

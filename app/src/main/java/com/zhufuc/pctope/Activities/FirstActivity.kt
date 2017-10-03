@@ -49,9 +49,18 @@ class FirstActivity : BaseActivity() {
         if (requestCode == 0) {
             val main = Intent(this@FirstActivity, MainActivity::class.java)
             main.putExtra("isGranted", isGranted)
+            main.putExtra("isFromShortcut",false)
             startActivity(main)
             finish()
         }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        if (requestCode == 1){
+            isGranted = (ContextCompat.checkSelfPermission(this@FirstActivity, permission[0]) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this@FirstActivity, permission[1]) == PackageManager.PERMISSION_GRANTED)
+            InitTutorial()
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
     private var needsToDoNext = true
@@ -64,26 +73,10 @@ class FirstActivity : BaseActivity() {
 
         //request permissions
         if (needsToDoNext)
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                ActivityCompat.requestPermissions(this@FirstActivity, permission, 2)
-                class Waiting : AsyncTask<Void, Int, Boolean>() {
-                    override fun doInBackground(vararg voids: Void): Boolean? {
-                        while (ContextCompat.checkSelfPermission(this@FirstActivity, permission[0]) == PackageManager.PERMISSION_DENIED || ContextCompat.checkSelfPermission(this@FirstActivity, permission[1]) == PackageManager.PERMISSION_DENIED) {
-
-                        }
-                        mLog.d("status", "Now break.")
-                        return true
-                    }
-
-                    override fun onPostExecute(result: Boolean?) {
-                        isGranted = result!!
-                        InitTutorial()
-                    }
-                }
-                Waiting().execute()
-            } else
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+                ActivityCompat.requestPermissions(this@FirstActivity, permission, 1)
+            else
                 InitTutorial()
-
     }
 
     private fun InitTutorial() {
