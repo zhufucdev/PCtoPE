@@ -32,12 +32,12 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-xxhdpi/ic_chevron_right_black_48dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-xxhdpi/ic_settings_grey600_36dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-xxhdpi/ic_settings_grey600_36dp.png"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-xxhdpi/ic_plus_black_48dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-xxhdpi/ic_plus_black_48dp.png"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-xxhdpi/ic_settings_grey600_36dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-xxhdpi/ic_settings_grey600_36dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-xxhdpi/ic_alert_circle_grey600_24dp.png",

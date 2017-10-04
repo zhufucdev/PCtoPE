@@ -2,10 +2,7 @@ package com.zhufuc.pctope.Activities
 
 import android.app.Activity
 import android.app.ProgressDialog
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
-import android.content.Intent
+import android.content.*
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.AsyncTask
@@ -16,6 +13,7 @@ import android.support.design.widget.Snackbar
 import android.support.v4.widget.NestedScrollView
 import android.support.v7.app.AlertDialog
 import android.os.Bundle
+import android.os.Environment
 import android.support.v7.widget.CardView
 import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
@@ -32,7 +30,7 @@ import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 
-import com.zhufuc.pctope.Adapters.Textures
+import com.zhufuc.pctope.Utils.Textures
 import com.zhufuc.pctope.R
 import com.zhufuc.pctope.Utils.*
 
@@ -394,6 +392,65 @@ class DetailsActivity : BaseActivity() {
                 Thread(Runnable { textureEditor!!.compressImages(compressFinalSize) }).start()
             })
         })
+
+        //For mcpack compress card
+        val mcpackCard = findViewById(R.id.card_mcpack_compress) as CardView
+        val mcpackSubtitle = findViewById(R.id.card_mcpack_compress_subtitle) as TextView
+        val mcpackChe = findViewById(R.id.card_mcpack_compress_chevron) as ImageView
+        val mcpackPath = File("${Environment.getExternalStorageDirectory()}/games/com.mojang/mcpacks/${name}.mcpack")
+        val isMcpackExisted = mcpackPath.exists() && mcpackPath.isFile
+
+
+        if (!isMcpackExisted){
+            mcpackSubtitle.text = "${getString(R.string.mcpack_compress_subtitle)} $mcpackPath"
+            mcpackChe.visibility = View.VISIBLE
+        }
+        else{
+            mcpackSubtitle.text = "${getString(R.string.mcpack_exists)} $mcpackPath"
+            mcpackChe.visibility = View.GONE
+        }
+
+        mcpackCard.setOnClickListener({
+            if (!isMcpackExisted) {
+                class compressingTask : AsyncTask<Void,Void,Int>(){
+                    lateinit var progressDialog : ProgressDialog
+                    override fun onPreExecute() {
+                        progressDialog = ProgressDialog(this@DetailsActivity)
+                        progressDialog.setTitle(R.string.compressing_mcpack)
+                        progressDialog.setMessage(mcpackPath.path)
+                        progressDialog.show()
+                        super.onPreExecute()
+                    }
+
+                    override fun doInBackground(vararg p0: Void?): Int {
+                        textureEditor!!.setMcpack(mcpackPath.path)
+                        return 0
+                    }
+
+                    override fun onPostExecute(result: Int?) {
+                        progressDialog.hide()
+                        initOperationalCards()
+                        super.onPostExecute(result)
+                    }
+                }
+                compressingTask().execute()
+            }
+        })
+
+        mcpackCard.setOnLongClickListener {
+            if (isMcpackExisted){
+                val alertDialog = AlertDialog.Builder(this@DetailsActivity)
+                        .setMessage(R.string.mcpack_delete)
+                        .setPositiveButton(R.string.confirm,{ dialogInterface: DialogInterface, i: Int ->
+                            mcpackPath.delete()
+                            initOperationalCards()
+                        })
+                        .setNegativeButton(R.string.no,null)
+                        .create()
+                alertDialog.show()
+            }
+            isMcpackExisted
+        }
     }
 
     private fun loadDialogLayout(dialogView: View, bitmap: Bitmap?) {

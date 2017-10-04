@@ -11,7 +11,7 @@
     <string name="failed">失败…</string>
     <string name="deleted_completed">删除完成!</string>
     <string name="deteted_failed">删除失败…</string>
-    <string name="preparing_for_firstboot">正在准备首次启动</string>
+    <string name="preparing_for_firstboot">正在准备...</string>
     <string name="permissions_request">你需要给予应用权限</string>
     <string name="ok">好的</string>
     <string name="choosing_alert">文件选择</string>
@@ -126,4 +126,12 @@
     <string name="clear_cache">清除缓存</string>
     <string name="calculating">计算中...</string>
     <string name="add">添加</string>
+    <string name="disable_msg">已禁用</string>
+    <string name="convert_into_resources_folder">转化到资源文件夹</string>
+    <string name="convert_into_mcpack">转化到mcpack</string>
+    <string name="compressing_mcpack">正在压缩到mcpack</string>
+    <string name="mcpack_compress">压缩到Mcpack</string>
+    <string name="mcpack_compress_subtitle">这帮助你兼容其他平台，如Windows10和IOS。\".mcpack\"文件将会被压缩在</string>
+    <string name="mcpack_exists">mcpack文件已经位于</string>
+    <string name="mcpack_delete">删除mcpack?</string>
 </resources>

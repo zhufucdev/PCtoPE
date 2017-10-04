@@ -153,18 +153,15 @@
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/finish"
-        android:src="@drawable/chevron_right"
-        android:layout_margin="@dimen/btn_margin"
-        app:layout_anchor="@id/appBar"
-        app:layout_anchorGravity="bottom|end" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/finishBottom"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/chevron_right"/>
+    
+    <com.github.rubensousa.floatingtoolbar.FloatingToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/ftb_conversion"
+        android:layout_gravity="bottom"/>
 
 </android.support.design.widget.CoordinatorLayout>

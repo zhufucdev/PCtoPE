@@ -140,6 +140,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/card_margin_vertical"/>
+
+            <include layout="@layout/card_mcpack_compress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/card_margin_vertical"/>
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>

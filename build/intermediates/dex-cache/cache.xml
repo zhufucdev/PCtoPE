@@ -2,6 +2,15 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="/home/zhufu/.android/build-cache/25d7403e4cc095627b056e8cf996fc2d97ae2c32/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="284281f7958e47c58b8974f9afd9bb75aab80f70">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_8957520af289527d4a444c47d6e423c229a540da.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
@@ -25,8 +34,17 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="697f690f87dc84f1a259752c3e45b91689ff6d7f">
+        sha1="a7a4bbb4263815e7b99ee1251316c9c59d0b5d20">
         <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f61090e3467a9fa47da70a9fdbfa45bf9ae916cd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/zhufu/.android/build-cache/25d7403e4cc095627b056e8cf996fc2d97ae2c32/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="284281f7958e47c58b8974f9afd9bb75aab80f70">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8957520af289527d4a444c47d6e423c229a540da/classes.dex" />
     </item>
     <item
         is-multidex="false"

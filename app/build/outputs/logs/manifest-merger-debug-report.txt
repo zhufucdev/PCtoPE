@@ -189,6 +189,7 @@ MERGED from [com.android.support:support-core-ui:25.3.1] /home/zhufu/.android/bu
 MERGED from [com.android.support:support-core-utils:25.3.1] /home/zhufu/.android/build-cache/7238b30b8b68d5164bd09b595c612c89d34b8941/output/AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:25.3.1] /home/zhufu/.android/build-cache/645795ccb87ae2c1dca9c34104aeeb09eeffaae9/output/AndroidManifest.xml:21:5-23:58
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.android/build-cache/c84e58fdd71825a5010d065d37a3e200bebfed01/output/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.rubensousa:floatingtoolbar:1.5.1] /home/zhufu/.android/build-cache/25d7403e4cc095627b056e8cf996fc2d97ae2c32/output/AndroidManifest.xml:8:5-10:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.1] /home/zhufu/.android/build-cache/aef111095947b915eef3185dcef092ce4b141f3b/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion

@@ -3,6 +3,7 @@
     <shortcut
         android:enabled="true"
         android:shortcutId="add"
+        android:shortcutDisabledMessage="@string/disable_msg"
         android:icon="@drawable/plus_p"
         android:shortcutLongLabel="@string/add"
         android:shortcutShortLabel="@string/add">

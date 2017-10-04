@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PCtoPE</string>
-    <string name="preparing_for_firstboot">Preparing for the First Boot…</string>
+    <string name="preparing_for_firstboot">Preparing...</string>
     <string name="permissions_request">You need to grant the permissions.</string>
     <string name="ok">OK</string>
     <string name="choosing_alert">File Choosing</string>
@@ -127,5 +127,13 @@
     <string name="clear_cache">Clear Cache</string>
     <string name="calculating">Calculating...</string>
     <string name="add">Add</string>
+    <string name="disable_msg">Disabled.</string>
+    <string name="convert_into_resources_folder">Convert into resources folder.</string>
+    <string name="convert_into_mcpack">Convert into Mcpack.</string>
+    <string name="compressing_mcpack">Compressing into mcpack...</string>
+    <string name="mcpack_compress">Compress to Mcpack</string>
+    <string name="mcpack_compress_subtitle">This helps you adapt for other platforms like Windows10 and IOS. The \".mcpack\" file will be compressed in</string>
+    <string name="mcpack_exists">The mcpack file is already found in</string>
+    <string name="mcpack_delete">Delete the mcpack?</string>
 
 </resources>

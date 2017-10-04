@@ -20,12 +20,12 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_android_debug_bridge_grey600_24dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_pencil_white_18dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_pencil_white_18dp.png"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_plus_white_24dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_plus_white_24dp.png"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_pencil_white_18dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_pencil_white_18dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_menu_grey600_24dp.png",
@@ -40,12 +40,12 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_folder_black_18dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_close_circle_black_18dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_close_circle_black_18dp.png"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_arrow_left_white_48dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_arrow_left_white_48dp.png"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_close_circle_black_18dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_close_circle_black_18dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_pencil_black_24dp.png",
@@ -72,12 +72,12 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_pencil_grey600_18dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_chevron_right_grey600_24dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_chevron_right_grey600_24dp.png"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_github_circle_white_24dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_github_circle_white_24dp.png"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_chevron_right_grey600_24dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_chevron_right_grey600_24dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_resize_bottom_right_grey600_36dp.png",
@@ -112,12 +112,12 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_menu_white_18dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_alert_octagram_black_18dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_alert_octagram_black_18dp.png"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_android_debug_bridge_white_48dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_android_debug_bridge_white_48dp.png"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_alert_octagram_black_18dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_alert_octagram_black_18dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_pencil_white_48dp.png",
@@ -168,16 +168,16 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_settings_grey600_36dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_pencil_grey600_48dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_pencil_grey600_48dp.png"
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_folder_grey600_48dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_folder_grey600_48dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_github_circle_black_36dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_github_circle_black_36dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_folder_grey600_48dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_folder_grey600_48dp.png"
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_pencil_grey600_48dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_pencil_grey600_48dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_alert_circle_black_48dp.png",
@@ -268,20 +268,20 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_checkbox_marked_circle_white_36dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_alert_octagram_grey600_36dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_alert_octagram_grey600_36dp.png"
-    },
-    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_resize_bottom_right_black_36dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_resize_bottom_right_black_36dp.png"
     },
     {
-        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_alert_circle_white_24dp.png",
-        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_alert_circle_white_24dp.png"
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_alert_octagram_grey600_36dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_alert_octagram_grey600_36dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_pencil_white_36dp.png",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_pencil_white_36dp.png"
+    },
+    {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_alert_circle_white_24dp.png",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable-mdpi/ic_alert_circle_white_24dp.png"
     },
     {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/release/drawable-mdpi/ic_arrow_left_black_48dp.png",

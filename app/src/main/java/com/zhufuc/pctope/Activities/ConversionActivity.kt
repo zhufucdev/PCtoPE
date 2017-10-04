@@ -32,6 +32,8 @@ import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import com.github.rubensousa.floatingtoolbar.FloatingToolbar
+import com.github.rubensousa.floatingtoolbar.FloatingToolbarMenuBuilder
 
 import com.zhufuc.pctope.R
 import com.zhufuc.pctope.Utils.*
@@ -125,12 +127,12 @@ class ConversionActivity : BaseActivity() {
                     error_layout!!.visibility = View.VISIBLE
                     MakeErrorDialog(errorContent)
                 }
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
         })
 
         conversion!!.setConversionChangeListener(object : TextureConversionUtils.ConversionChangeListener {
+
             internal var alertDialog: ProgressDialog? = null
 
             override fun inDoingVersionDecisions() {
@@ -165,6 +167,14 @@ class ConversionActivity : BaseActivity() {
                     mLog.i("Information On UI", "Showing json writing dialog...")
                 }
 
+            }
+
+            override fun inDoingMcpackCompressing(path : String) {
+                runOnUiThread {
+                    alertDialog!!.setTitle(getString(R.string.compressing_mcpack))
+                    alertDialog!!.setMessage(path)
+                    mLog.i("Information On UI", "Showing compressing dialog...")
+                }
             }
 
             override fun onDone() {
@@ -208,6 +218,7 @@ class ConversionActivity : BaseActivity() {
         file = intent.getStringExtra("filePath")
     }
 
+    private var format = 0
     private fun initViews() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         val collapsingbar = findViewById(R.id.collapsing_bar) as CollapsingToolbarLayout
@@ -251,21 +262,36 @@ class ConversionActivity : BaseActivity() {
             }
         })
 
+        //for Floating Toolbar
+        val ftb = findViewById(R.id.ftb_conversion) as FloatingToolbar
+        ftb.menu = FloatingToolbarMenuBuilder(this)
+                .addItem(0,R.drawable.folder_white,R.string.convert_into_resources_folder)
+                .addItem(1,R.drawable.zip_box,R.string.convert_into_mcpack)
+                .build()
+
         //for FAB
-        val button_finish = findViewById(R.id.finish) as FloatingActionButton
-        val button_finish_bottom = findViewById(R.id.finishBottom) as FloatingActionButton
-        button_finish_bottom.visibility = View.INVISIBLE
+        val button_finish = findViewById(R.id.finishBottom) as FloatingActionButton
         val appBarLayout = findViewById(R.id.appBar) as AppBarLayout
+
+        ftb.attachAppBarLayout(appBarLayout)
+        ftb.attachFab(button_finish)
+
         appBarLayout.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
-            if (button_finish.isShown)
-                button_finish_bottom.hide()
-            else
-                button_finish_bottom.show()
-            if (Math.abs(verticalOffset) >= appBarLayout.totalScrollRange - toolbar.scrollBarSize) button_finish_bottom.show()
+            if (ftb.isShowing) ftb.hide()
         }
-        val FABListener = View.OnClickListener { view -> doFinishButtonDoes(view) }
-        button_finish.setOnClickListener(FABListener)
-        button_finish_bottom.setOnClickListener(FABListener)
+        ftb.setClickListener(object : FloatingToolbar.ItemClickListener{
+            override fun onItemClick(item: MenuItem?) {
+                format = item!!.itemId
+                when (item.itemId){
+                    0 -> doFinishButtonDoes(button_finish)
+                    1 -> doFinishButtonDoes(button_finish)
+                }
+            }
+
+            override fun onItemLongClick(item: MenuItem?) {
+
+            }
+        })
     }
 
     private fun doFinishButtonDoes(v: View) {
@@ -277,8 +303,20 @@ class ConversionActivity : BaseActivity() {
             description!!.isEnabled = false
 
             conversion!!.compressFinalSize = compressFinalSize
-            Thread(Runnable { conversion!!.doConverting(packname!!, packdescription!!) }).start()
 
+            var mcpackDest = ""
+            if (format == 1){
+                val dest = File("${Environment.getExternalStorageDirectory().path}/games/com.mojang/mcpacks")
+                if (!dest.isDirectory){
+                    dest.delete()
+                }
+                if (!dest.exists()){
+                    dest.mkdir()
+                }
+                mcpackDest = "${dest.path}/${packname}.mcpack"
+            }
+
+            Thread(Runnable { conversion!!.doConverting(packname!!, packdescription!!,mcpackDest) }).start()
         } else
             Snackbar.make(v, R.string.unclickable_unzipping, Snackbar.LENGTH_LONG).show()
     }

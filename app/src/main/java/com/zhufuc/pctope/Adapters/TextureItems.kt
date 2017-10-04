@@ -1,30 +1,23 @@
 package com.zhufuc.pctope.Adapters
 
-import android.app.ActivityOptions
 import android.content.Intent
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.support.v4.app.ActivityOptionsCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.TextView
 
 import com.zhufuc.pctope.Activities.ConversionActivity
-import com.zhufuc.pctope.Activities.DetailsActivity
-import com.zhufuc.pctope.Activities.MainActivity
-import com.zhufuc.pctope.Collectors.ActivityCollector
 import com.zhufuc.pctope.R
 
 import android.view.View.GONE
-import com.zhufuc.pctope.Utils.TextureCompat
 import com.zhufuc.pctope.Utils.TextureCompat.brokenPC
 import com.zhufuc.pctope.Utils.TextureCompat.fullPC
+import com.zhufuc.pctope.Utils.Textures
 import kotlin.collections.ArrayList
 
 /**

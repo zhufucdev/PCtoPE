@@ -1,24 +1,19 @@
-package com.zhufuc.pctope.Adapters
+package com.zhufuc.pctope.Utils
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Log
-
-import com.zhufuc.pctope.Utils.CompressImage
-import com.zhufuc.pctope.Utils.JsonFormatTool
-import com.zhufuc.pctope.Utils.PackVersionDecisions
+import net.lingala.zip4j.model.ZipParameters
+import net.lingala.zip4j.util.Zip4jConstants
 
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
-import java.io.BufferedReader
 import java.io.ByteArrayOutputStream
 import java.io.File
-import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
-import java.io.InputStreamReader
 import java.nio.charset.Charset
 import java.util.UUID
 
@@ -163,7 +158,7 @@ class Textures(path: File) {
                 Log.d("compression", "Compressing " + n)
 
                 val str = n.path
-                if (str.substring(str.lastIndexOf("."), str.length) != ".png")
+                if (str.substring(str.lastIndexOf(""), str.length) != ".png")
                     return
 
                 val image = BitmapFactory.decodeFile(n.path)
@@ -253,6 +248,19 @@ class Textures(path: File) {
 
             return JsonFormatTool().formatJson(out.toString())
 
+        }
+
+        fun setMcpack(dest : String){
+            val src = File(dest)
+            if (src.exists())
+                src.delete()
+
+            val par = ZipParameters()
+            par.compressionMethod = Zip4jConstants.COMP_DEFLATE
+            par.compressionLevel = Zip4jConstants.DEFLATE_LEVEL_NORMAL
+
+            val zipFile = net.lingala.zip4j.core.ZipFile(dest)
+            zipFile.addFolder(path,par)
         }
     }
 

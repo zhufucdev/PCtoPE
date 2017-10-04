@@ -8,8 +8,8 @@ android {
         applicationId "com.zhufuc.pctope"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 37
-        versionName "2.4.2"
+        versionCode 38
+        versionName "2.4.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -41,6 +41,7 @@ dependencies {
     compile 'za.co.riggaroo:materialhelptutorial:1.0.1'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.netease.nis.plugin:bugrpt:latest.release'
+    compile 'com.github.rubensousa:floatingtoolbar:1.5.1'
     testCompile 'junit:junit:4.12'
 }
 repositories {

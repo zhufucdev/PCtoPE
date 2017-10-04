@@ -184,6 +184,10 @@
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable/view_agenda.xml"
     },
     {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable/folder_white.xml",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/drawable/folder_white.xml"
+    },
+    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
         "source": "/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },

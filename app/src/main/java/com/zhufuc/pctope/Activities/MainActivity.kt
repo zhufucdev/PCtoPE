@@ -1,7 +1,6 @@
 package com.zhufuc.pctope.Activities
 
 import android.Manifest
-import android.app.Activity
 import android.app.ActivityOptions
 import android.content.ClipboardManager
 import android.content.Context
@@ -13,7 +12,6 @@ import android.content.pm.ShortcutManager
 import android.graphics.BitmapFactory
 import android.graphics.drawable.Icon
 import android.os.*
-import android.support.annotation.RequiresApi
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
@@ -42,11 +40,10 @@ import android.widget.ProgressBar
 
 import com.zhufuc.pctope.Adapters.FileChooserAdapter
 import com.zhufuc.pctope.Adapters.TextureItems
-import com.zhufuc.pctope.Adapters.Textures
+import com.zhufuc.pctope.Utils.Textures
 import com.zhufuc.pctope.Collectors.ActivityCollector
 import com.zhufuc.pctope.Interf.DeletingCallback
 import com.zhufuc.pctope.Interf.SpacesItemDecoration
-import com.zhufuc.pctope.Utils.GetPathFromUri4kitkat
 import com.zhufuc.pctope.Utils.*
 import com.zhufuc.pctope.R
 

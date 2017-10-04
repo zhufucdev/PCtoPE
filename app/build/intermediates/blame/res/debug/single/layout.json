@@ -88,6 +88,10 @@
         "source": "/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
+        "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout/card_mcpack_compress.xml",
+        "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/layout/card_mcpack_compress.xml"
+    },
+    {
         "merged": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/res/merged/debug/layout/content_main.xml",
         "source": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/layout/content_main.xml"
     },

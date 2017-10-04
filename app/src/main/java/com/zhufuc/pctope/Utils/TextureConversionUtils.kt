@@ -11,6 +11,8 @@ import android.os.Environment
 import com.zhufuc.pctope.R
 
 import net.lingala.zip4j.exception.ZipException
+import net.lingala.zip4j.model.ZipParameters
+import net.lingala.zip4j.util.Zip4jConstants
 
 import org.json.JSONArray
 import org.json.JSONException
@@ -24,6 +26,7 @@ import java.io.IOException
 import java.nio.charset.Charset
 import java.text.DecimalFormat
 import java.util.*
+import java.util.zip.ZipFile
 import kotlin.collections.ArrayList
 
 /**
@@ -524,6 +527,7 @@ constructor(private val FilePath: String, private val context: Context) {
         fun inDoingImageCompressions(whatsBeingCompressing: String)
         fun inDoingImageColorTurning()
         fun inDoingJSONWriting()
+        fun inDoingMcpackCompressing(file : String)
         fun onDone()
     }
 
@@ -606,7 +610,7 @@ constructor(private val FilePath: String, private val context: Context) {
         UnzippingTask().execute()
     }
 
-    fun doConverting(packname: String, packdescription: String) {
+    fun doConverting(packname: String, packdescription: String, mcpackCompressDest : String) {
         this.packname = packname
         this.packdescription = packdescription
 
@@ -644,6 +648,11 @@ constructor(private val FilePath: String, private val context: Context) {
         if (dest.isDirectory && dest.exists()) dest.mkdirs()
         File(path).renameTo(dest)
 
+        if (mcpackCompressDest!="") {
+            mConversionChangeListener!!.inDoingMcpackCompressing(mcpackCompressDest)
+            compress(dest.path, mcpackCompressDest)
+        }
+
         mConversionChangeListener!!.onDone()
         //Done
     }
@@ -665,9 +674,6 @@ constructor(private val FilePath: String, private val context: Context) {
         }
 
     companion object {
-
-
-        //如题，遍历所有子png文件
         private val filelist = ArrayList<String>()
 
         private fun ListFiles(path: File): ArrayList<String>? {
@@ -700,8 +706,8 @@ constructor(private val FilePath: String, private val context: Context) {
 
         @Throws(ZipException::class, net.lingala.zip4j.exception.ZipException::class)
         private fun unzip(zipFile: File, dest: String, passwd: String) {
-            val zFile = net.lingala.zip4j.core.ZipFile(zipFile) // 首先创建ZipFile指向磁盘上的.zip文件
-            if (!zFile.isValidZipFile) {   // 验证.zip文件是否合法，包括文件是否存在、是否为zip文件、是否被损坏等
+            val zFile = net.lingala.zip4j.core.ZipFile(zipFile)
+            if (!zFile.isValidZipFile) {
                 throw ZipException("压缩文件不合法,可能被损坏.")
             }
             val destDir = File(dest)// 解压目录
@@ -710,9 +716,22 @@ constructor(private val FilePath: String, private val context: Context) {
             }
             destDir.mkdirs()
             if (zFile.isEncrypted) {
-                zFile.setPassword(passwd.toCharArray())  // 设置密码
+                zFile.setPassword(passwd.toCharArray())
             }
-            zFile.extractAll(dest)      // 将文件抽出到解压目录(解压)
+            zFile.extractAll(dest)
+        }
+
+        private fun compress(baseIndex : String,toIndex : String){
+            val src = File(toIndex)
+            if (src.exists())
+                src.delete()
+
+            val par = ZipParameters()
+            par.compressionMethod = Zip4jConstants.COMP_DEFLATE
+            par.compressionLevel = Zip4jConstants.DEFLATE_LEVEL_NORMAL
+
+            val zipFile = net.lingala.zip4j.core.ZipFile(toIndex)
+            zipFile.addFolder(baseIndex,par)
         }
     }
 
