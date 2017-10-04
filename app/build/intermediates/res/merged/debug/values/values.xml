@@ -874,7 +874,7 @@
     <string name="mcpack_compress">Compress to Mcpack</string>
     <string name="mcpack_compress_subtitle">This helps you adapt for other platforms like Windows10 and IOS. The \".mcpack\" file will be compressed in</string>
     <string name="mcpack_delete">Delete the mcpack?</string>
-    <string name="mcpack_exists">The mcpack file is already found in</string>
+    <string name="mcpack_exists">The file is already found in</string>
     <string name="nav_about">About</string>
     <string name="nav_application">Application</string>
     <string name="nav_settings">Settings</string>

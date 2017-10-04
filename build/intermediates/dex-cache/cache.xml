@@ -11,42 +11,6 @@
         <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/pre-dexed/release/classes_8957520af289527d4a444c47d6e423c229a540da.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2686fa136b67542dbb06310870b947440ce2407b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/AndroidStudioProjects/PCtoPE/app/libs/zip4j_1.3.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="3e20955923c5b61bfbcd4590a87720643c729695">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/2/zip4j_1.3.2_f1c5c5b787715e065b184a3e1f5c2036c314d451/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="a7a4bbb4263815e7b99ee1251316c9c59d0b5d20">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f61090e3467a9fa47da70a9fdbfa45bf9ae916cd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/zhufu/.android/build-cache/25d7403e4cc095627b056e8cf996fc2d97ae2c32/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="284281f7958e47c58b8974f9afd9bb75aab80f70">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8957520af289527d4a444c47d6e423c229a540da/classes.dex" />
-    </item>
-    <item
         is-multidex="false"
         jar="/home/zhufu/AndroidStudioProjects/PCtoPE/app/libs/zip4j_1.3.2.jar"
         jumboMode="false"

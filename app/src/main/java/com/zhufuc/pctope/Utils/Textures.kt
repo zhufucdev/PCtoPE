@@ -216,8 +216,6 @@ class Textures(path: File) {
         }
 
         fun overwriteManifest(name: String, description: String): String {
-
-            val intro: String
             val out = JSONObject()
             val versionArray = JSONArray()
             try {
@@ -254,6 +252,7 @@ class Textures(path: File) {
             val src = File(dest)
             if (src.exists())
                 src.delete()
+            if (!src.parentFile.exists()) src.parentFile.mkdirs()
 
             val par = ZipParameters()
             par.compressionMethod = Zip4jConstants.COMP_DEFLATE
