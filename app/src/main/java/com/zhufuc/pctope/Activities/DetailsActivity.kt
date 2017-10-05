@@ -5,7 +5,9 @@ import android.app.ProgressDialog
 import android.content.*
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.AsyncTask
+import android.os.Build
 import android.support.design.widget.BottomSheetDialog
 import android.support.design.widget.CollapsingToolbarLayout
 import android.support.design.widget.FloatingActionButton
@@ -403,11 +405,27 @@ class DetailsActivity : BaseActivity() {
 
         if (!isMcpackExisted){
             mcpackSubtitle.text = "${getString(R.string.mcpack_compress_subtitle)} $mcpackPath"
-            mcpackChe.visibility = View.VISIBLE
+            mcpackChe.setImageResource(R.drawable.chevron_right_overlay)
+            mcpackChe.setOnClickListener(null)
+            mcpackChe.background = null
         }
         else{
             mcpackSubtitle.text = "${getString(R.string.mcpack_exists)} $mcpackPath"
-            mcpackChe.visibility = View.GONE
+            mcpackChe.setImageResource(R.drawable.ic_delete_black_24dp)
+            mcpackChe.setOnClickListener({
+                if (isMcpackExisted){
+                    val alertDialog = AlertDialog.Builder(this@DetailsActivity)
+                            .setMessage(R.string.mcpack_delete)
+                            .setPositiveButton(R.string.confirm,{ dialogInterface: DialogInterface, i: Int ->
+                                mcpackPath.delete()
+                                initOperationalCards()
+                            })
+                            .setNegativeButton(R.string.no,null)
+                            .create()
+                    alertDialog.show()
+                }
+            })
+            mcpackChe.background = getDrawable(R.drawable.nomaskripple)
         }
 
         mcpackCard.setOnClickListener({
@@ -435,22 +453,15 @@ class DetailsActivity : BaseActivity() {
                 }
                 compressingTask().execute()
             }
+            else{
+                val intent = Intent(Intent.ACTION_SEND)
+                val uri = Uri.parse(mcpackPath.path)
+                intent.putExtra(Intent.EXTRA_STREAM,uri)
+                intent.type = "*/*"
+                startActivity(Intent.createChooser(intent,getString(R.string.share)))
+            }
         })
 
-        mcpackCard.setOnLongClickListener {
-            if (isMcpackExisted){
-                val alertDialog = AlertDialog.Builder(this@DetailsActivity)
-                        .setMessage(R.string.mcpack_delete)
-                        .setPositiveButton(R.string.confirm,{ dialogInterface: DialogInterface, i: Int ->
-                            mcpackPath.delete()
-                            initOperationalCards()
-                        })
-                        .setNegativeButton(R.string.no,null)
-                        .create()
-                alertDialog.show()
-            }
-            isMcpackExisted
-        }
     }
 
     private fun loadDialogLayout(dialogView: View, bitmap: Bitmap?) {

@@ -664,6 +664,7 @@ constructor(private val FilePath: String, private val context: Context) {
             if (iconPath != null) {
                 try {
                     val baos = ByteArrayOutputStream()
+                    icon!!.compress(Bitmap.CompressFormat.PNG,100,baos)
                     File(iconPath).writeBytes(baos.toByteArray())
                 } catch (e: IOException) {
                     e.printStackTrace()

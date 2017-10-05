@@ -920,6 +920,7 @@
     <string name="resources_compression">Resources Compression</string>
     <string name="resources_compression_subtitle">This helps you compress image resource files to make runnable on Low Performance Devices.If you need to use, just click the card.</string>
     <string name="search_menu_title">Search</string>
+    <string name="share">Share</string>
     <string name="skip">Skip</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="thanks">Thanks</string>

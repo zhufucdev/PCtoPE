@@ -7,6 +7,7 @@ import android.net.Uri
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.Animation
@@ -47,15 +48,7 @@ class AboutActivity : BaseActivity(), View.OnClickListener {
         val show = AnimationUtils.loadAnimation(this, R.anim.cards_show)
         val icon = findViewById(R.id.about_icon) as ImageView
         icon.visibility = View.INVISIBLE
-        Thread(Runnable {
-            try {
-                Thread.sleep(500)
-            } catch (e: InterruptedException) {
-                e.printStackTrace()
-            }
-
-            runOnUiThread { icon.startAnimation(show) }
-        }).start()
+        Handler().postDelayed({icon.startAnimation(show)},500)
         show.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation) {
                 icon.visibility = View.VISIBLE
@@ -69,6 +62,8 @@ class AboutActivity : BaseActivity(), View.OnClickListener {
 
             }
         })
+
+        supportActionBar!!.setTitle(R.string.nav_about)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

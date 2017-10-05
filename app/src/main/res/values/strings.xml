@@ -135,5 +135,6 @@
     <string name="mcpack_compress_subtitle">This helps you adapt for other platforms like Windows10 and IOS. The \".mcpack\" file will be compressed in</string>
     <string name="mcpack_exists">The file is already found in</string>
     <string name="mcpack_delete">Delete the mcpack?</string>
+    <string name="share">Share</string>
 
 </resources>

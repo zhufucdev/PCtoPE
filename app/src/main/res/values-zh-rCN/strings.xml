@@ -134,4 +134,5 @@
     <string name="mcpack_compress_subtitle">这帮助你兼容其他平台，如Windows10和IOS。\".mcpack\"文件将会被压缩在</string>
     <string name="mcpack_exists">文件已经位于</string>
     <string name="mcpack_delete">删除mcpack?</string>
+    <string name="share">分享</string>
 </resources>

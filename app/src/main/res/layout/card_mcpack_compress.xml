@@ -39,7 +39,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/card_mcpack_compress_chevron"
             android:layout_gravity="center_vertical|end"
-            android:src="@drawable/chevron_right_overlay"/>
+            android:src="@drawable/chevron_right_overlay"
+            android:background="?attr/selectableItemBackgroundBorderless" />
 
     </LinearLayout>
 
