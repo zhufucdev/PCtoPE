@@ -18,10 +18,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.support.v7.widget.CardView
 import android.support.v7.widget.Toolbar
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewAnimationUtils
+import android.view.*
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.AdapterView
 import android.widget.Button
@@ -246,16 +243,22 @@ class DetailsActivity : BaseActivity() {
     fun initBasicTitles() {
 
         val iconView = findViewById(R.id.details_icon) as ImageView
+        val packdescription = findViewById(R.id.details_description) as TextView
+        val toolbarLayout = findViewById(R.id.details_toolbar_layout) as CollapsingToolbarLayout
+
+        val vto = iconView.viewTreeObserver
+        vto.addOnPreDrawListener (ViewTreeObserver.OnPreDrawListener {
+            toolbarLayout.expandedTitleMarginStart = Math.round(iconView.measuredWidth*1.3).toInt()
+            true
+        })
+
         if (icon != null)
             iconView.setImageBitmap(BitmapFactory.decodeFile(icon))
         else
             iconView.setImageResource(R.drawable.bug_pack_icon)
 
-        val packdescription = findViewById(R.id.details_description) as TextView
-        val toolbarLayout = findViewById(R.id.details_toolbar_layout) as CollapsingToolbarLayout
 
 
-        toolbarLayout.expandedTitleMarginStart = 235
         if (name != null)
             toolbarLayout.title = name
         else

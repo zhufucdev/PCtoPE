@@ -86,7 +86,7 @@ class FileChooserAdapter(private var root: String?,private var lastFixes : List<
                     lateinit var bitmap : Bitmap
                     override fun doInBackground(vararg p0: Void?): Boolean {
                         val type = FileType.get(file)
-                        if (!(type == "ffD8ff" || type == "89504e47"))
+                        if (!(type == "ffd8ffe1" || type == "89504e47"))
                             return false
 
                         val options = BitmapFactory.Options()
@@ -124,11 +124,13 @@ class FileChooserAdapter(private var root: String?,private var lastFixes : List<
         val fileClicked = view.tag as String
         val data: Intent = Intent().putExtra("path",fileClicked)
 
-        onItemClickListener?.onClick(view,data)
-
-        if (File(fileClicked).isFile) return@OnClickListener
+        if (File(fileClicked).isFile) {
+            onItemClickListener?.onClick(view,data)
+            return@OnClickListener
+        }
 
         root = fileClicked
+        onItemClickListener?.onClick(view,data)
         initData()
         notifyDataSetChanged()
     }

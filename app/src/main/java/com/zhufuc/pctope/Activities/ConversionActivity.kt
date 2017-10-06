@@ -560,7 +560,7 @@ class ConversionActivity : BaseActivity() {
         val text = findViewById(R.id.error_layout_text) as TextView
         text.text = text.text.toString() + this@ConversionActivity.getString(R.string.not_pack)
         val notpack = File(conversion!!.path)
-        mLog.d("status", "Deleting " + notpack.toString())
+        mLog.i("PackConversion", "Deleting " + notpack.toString())
         class deleteTask : AsyncTask<Void, Int, Boolean>() {
             override fun doInBackground(vararg voids: Void): Boolean? {
                 Snackbar.make(text, R.string.deleting, Snackbar.LENGTH_LONG).show()

@@ -46,7 +46,6 @@ constructor(private val FilePath: String, private val context: Context) {
     var VerStr: String? = null
 
     private fun doVersionDecisions() {
-        mLog.d("Pack Version", VerStr!!)
         if (VerStr == TextureCompat.brokenPE || VerStr == TextureCompat.fullPE) {
             onPEDecisions()
         } else if (VerStr == TextureCompat.brokenPC || VerStr == TextureCompat.fullPC) {
@@ -178,9 +177,6 @@ constructor(private val FilePath: String, private val context: Context) {
 
         val files = ListFiles(File(path))
         val fileslength = files!!.size - 1
-        mLog.d("files", "Now we have $fileslength files...Writing to textures_list.json...")
-        mLog.d("files", "The first(0) one is " + files[0])
-        mLog.d("files", "The final(" + fileslength + ") one is " + files[fileslength])
         val textures_list = File(path + "/textures/textures_list.json")
         if (fileslength != 0) {
             var out: FileOutputStream? = null
@@ -492,7 +488,6 @@ constructor(private val FilePath: String, private val context: Context) {
             mLog.d("unzip", "We will unzip $FilePath to $path")
         } else
             path = FilePath
-        mLog.i("status", "Path:" + path)
     }
 
     /*

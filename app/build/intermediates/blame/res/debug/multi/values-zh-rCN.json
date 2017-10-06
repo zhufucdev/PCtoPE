@@ -995,14 +995,7 @@
                     "endOffset": 5395
                 },
                 "from": {
-                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml",
-                    "position": {
-                        "startLine": 134,
-                        "startColumn": 4,
-                        "startOffset": 7372,
-                        "endColumn": 48,
-                        "endOffset": 7416
-                    }
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
                 }
             },
             {
@@ -1478,8 +1471,27 @@
                     "startLine": 124,
                     "startColumn": 4,
                     "startOffset": 7406,
+                    "endColumn": 36,
+                    "endOffset": 7438
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml",
+                    "position": {
+                        "startLine": 136,
+                        "startColumn": 4,
+                        "startOffset": 7473,
+                        "endColumn": 36,
+                        "endOffset": 7505
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 125,
+                    "startColumn": 4,
+                    "startOffset": 7443,
                     "endColumn": 35,
-                    "endOffset": 7437
+                    "endOffset": 7474
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1487,11 +1499,11 @@
             },
             {
                 "to": {
-                    "startLine": 125,
+                    "startLine": 126,
                     "startColumn": 4,
-                    "startOffset": 7442,
+                    "startOffset": 7479,
                     "endColumn": 100,
-                    "endOffset": 7538
+                    "endOffset": 7575
                 },
                 "from": {
                     "file": "/home/zhufu/.android/build-cache/386d1e00fd0f2d81506e0840c4fd5116f0eea243/output/res/values-zh-rCN/values-zh-rCN.xml"
@@ -1499,23 +1511,11 @@
             },
             {
                 "to": {
-                    "startLine": 126,
-                    "startColumn": 4,
-                    "startOffset": 7543,
-                    "endColumn": 37,
-                    "endOffset": 7576
-                },
-                "from": {
-                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
-                }
-            },
-            {
-                "to": {
                     "startLine": 127,
                     "startColumn": 4,
-                    "startOffset": 7581,
-                    "endColumn": 54,
-                    "endOffset": 7631
+                    "startOffset": 7580,
+                    "endColumn": 37,
+                    "endOffset": 7613
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1525,9 +1525,9 @@
                 "to": {
                     "startLine": 128,
                     "startColumn": 4,
-                    "startOffset": 7636,
-                    "endColumn": 87,
-                    "endOffset": 7719
+                    "startOffset": 7618,
+                    "endColumn": 54,
+                    "endOffset": 7668
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1537,9 +1537,9 @@
                 "to": {
                     "startLine": 129,
                     "startColumn": 4,
-                    "startOffset": 7724,
-                    "endColumn": 48,
-                    "endOffset": 7768
+                    "startOffset": 7673,
+                    "endColumn": 87,
+                    "endOffset": 7756
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1549,9 +1549,9 @@
                 "to": {
                     "startLine": 130,
                     "startColumn": 4,
-                    "startOffset": 7773,
-                    "endColumn": 104,
-                    "endOffset": 7873
+                    "startOffset": 7761,
+                    "endColumn": 48,
+                    "endOffset": 7805
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1561,9 +1561,9 @@
                 "to": {
                     "startLine": 131,
                     "startColumn": 4,
-                    "startOffset": 7878,
-                    "endColumn": 55,
-                    "endOffset": 7929
+                    "startOffset": 7810,
+                    "endColumn": 104,
+                    "endOffset": 7910
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1573,9 +1573,9 @@
                 "to": {
                     "startLine": 132,
                     "startColumn": 4,
-                    "startOffset": 7934,
-                    "endColumn": 92,
-                    "endOffset": 8022
+                    "startOffset": 7915,
+                    "endColumn": 55,
+                    "endOffset": 7966
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1585,9 +1585,9 @@
                 "to": {
                     "startLine": 133,
                     "startColumn": 4,
-                    "startOffset": 8027,
-                    "endColumn": 52,
-                    "endOffset": 8075
+                    "startOffset": 7971,
+                    "endColumn": 92,
+                    "endOffset": 8059
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1597,9 +1597,9 @@
                 "to": {
                     "startLine": 134,
                     "startColumn": 4,
-                    "startOffset": 8080,
-                    "endColumn": 72,
-                    "endOffset": 8148
+                    "startOffset": 8064,
+                    "endColumn": 52,
+                    "endOffset": 8112
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1609,9 +1609,9 @@
                 "to": {
                     "startLine": 135,
                     "startColumn": 4,
-                    "startOffset": 8153,
-                    "endColumn": 61,
-                    "endOffset": 8210
+                    "startOffset": 8117,
+                    "endColumn": 72,
+                    "endOffset": 8185
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1621,9 +1621,9 @@
                 "to": {
                     "startLine": 136,
                     "startColumn": 4,
-                    "startOffset": 8215,
-                    "endColumn": 65,
-                    "endOffset": 8276
+                    "startOffset": 8190,
+                    "endColumn": 61,
+                    "endOffset": 8247
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1633,9 +1633,9 @@
                 "to": {
                     "startLine": 137,
                     "startColumn": 4,
-                    "startOffset": 8281,
-                    "endColumn": 59,
-                    "endOffset": 8336
+                    "startOffset": 8252,
+                    "endColumn": 65,
+                    "endOffset": 8313
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1645,9 +1645,9 @@
                 "to": {
                     "startLine": 138,
                     "startColumn": 4,
-                    "startOffset": 8341,
-                    "endColumn": 82,
-                    "endOffset": 8419
+                    "startOffset": 8318,
+                    "endColumn": 59,
+                    "endOffset": 8373
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1657,9 +1657,9 @@
                 "to": {
                     "startLine": 139,
                     "startColumn": 4,
-                    "startOffset": 8424,
-                    "endColumn": 68,
-                    "endOffset": 8488
+                    "startOffset": 8378,
+                    "endColumn": 82,
+                    "endOffset": 8456
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1669,9 +1669,9 @@
                 "to": {
                     "startLine": 140,
                     "startColumn": 4,
-                    "startOffset": 8493,
-                    "endColumn": 77,
-                    "endOffset": 8566
+                    "startOffset": 8461,
+                    "endColumn": 68,
+                    "endOffset": 8525
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1681,9 +1681,9 @@
                 "to": {
                     "startLine": 141,
                     "startColumn": 4,
-                    "startOffset": 8571,
-                    "endColumn": 56,
-                    "endOffset": 8623
+                    "startOffset": 8530,
+                    "endColumn": 77,
+                    "endOffset": 8603
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1693,9 +1693,9 @@
                 "to": {
                     "startLine": 142,
                     "startColumn": 4,
-                    "startOffset": 8628,
-                    "endColumn": 78,
-                    "endOffset": 8702
+                    "startOffset": 8608,
+                    "endColumn": 56,
+                    "endOffset": 8660
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1705,9 +1705,9 @@
                 "to": {
                     "startLine": 143,
                     "startColumn": 4,
-                    "startOffset": 8707,
-                    "endColumn": 51,
-                    "endOffset": 8754
+                    "startOffset": 8665,
+                    "endColumn": 78,
+                    "endOffset": 8739
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1717,9 +1717,9 @@
                 "to": {
                     "startLine": 144,
                     "startColumn": 4,
-                    "startOffset": 8759,
-                    "endColumn": 49,
-                    "endOffset": 8804
+                    "startOffset": 8744,
+                    "endColumn": 51,
+                    "endOffset": 8791
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1729,9 +1729,9 @@
                 "to": {
                     "startLine": 145,
                     "startColumn": 4,
-                    "startOffset": 8809,
-                    "endColumn": 53,
-                    "endOffset": 8858
+                    "startOffset": 8796,
+                    "endColumn": 49,
+                    "endOffset": 8841
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1741,9 +1741,9 @@
                 "to": {
                     "startLine": 146,
                     "startColumn": 4,
-                    "startOffset": 8863,
+                    "startOffset": 8846,
                     "endColumn": 53,
-                    "endOffset": 8912
+                    "endOffset": 8895
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1753,9 +1753,9 @@
                 "to": {
                     "startLine": 147,
                     "startColumn": 4,
-                    "startOffset": 8917,
-                    "endColumn": 50,
-                    "endOffset": 8963
+                    "startOffset": 8900,
+                    "endColumn": 53,
+                    "endOffset": 8949
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1765,9 +1765,9 @@
                 "to": {
                     "startLine": 148,
                     "startColumn": 4,
-                    "startOffset": 8968,
+                    "startOffset": 8954,
                     "endColumn": 50,
-                    "endOffset": 9014
+                    "endOffset": 9000
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1777,9 +1777,9 @@
                 "to": {
                     "startLine": 149,
                     "startColumn": 4,
-                    "startOffset": 9019,
-                    "endColumn": 53,
-                    "endOffset": 9068
+                    "startOffset": 9005,
+                    "endColumn": 50,
+                    "endOffset": 9051
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1789,9 +1789,9 @@
                 "to": {
                     "startLine": 150,
                     "startColumn": 4,
-                    "startOffset": 9073,
-                    "endColumn": 60,
-                    "endOffset": 9129
+                    "startOffset": 9056,
+                    "endColumn": 53,
+                    "endOffset": 9105
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1801,9 +1801,9 @@
                 "to": {
                     "startLine": 151,
                     "startColumn": 4,
-                    "startOffset": 9134,
-                    "endColumn": 43,
-                    "endOffset": 9173
+                    "startOffset": 9110,
+                    "endColumn": 60,
+                    "endOffset": 9166
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1813,9 +1813,9 @@
                 "to": {
                     "startLine": 152,
                     "startColumn": 4,
-                    "startOffset": 9178,
-                    "endColumn": 35,
-                    "endOffset": 9209
+                    "startOffset": 9171,
+                    "endColumn": 43,
+                    "endOffset": 9210
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1825,9 +1825,9 @@
                 "to": {
                     "startLine": 153,
                     "startColumn": 4,
-                    "startOffset": 9214,
-                    "endColumn": 44,
-                    "endOffset": 9254
+                    "startOffset": 9215,
+                    "endColumn": 35,
+                    "endOffset": 9246
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1837,9 +1837,9 @@
                 "to": {
                     "startLine": 154,
                     "startColumn": 4,
-                    "startOffset": 9259,
-                    "endColumn": 71,
-                    "endOffset": 9326
+                    "startOffset": 9251,
+                    "endColumn": 44,
+                    "endOffset": 9291
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1849,9 +1849,9 @@
                 "to": {
                     "startLine": 155,
                     "startColumn": 4,
-                    "startOffset": 9331,
-                    "endColumn": 74,
-                    "endOffset": 9401
+                    "startOffset": 9296,
+                    "endColumn": 71,
+                    "endOffset": 9363
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
@@ -1861,9 +1861,21 @@
                 "to": {
                     "startLine": 156,
                     "startColumn": 4,
-                    "startOffset": 9406,
+                    "startOffset": 9368,
+                    "endColumn": 74,
+                    "endOffset": 9438
+                },
+                "from": {
+                    "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 157,
+                    "startColumn": 4,
+                    "startOffset": 9443,
                     "endColumn": 64,
-                    "endOffset": 9466
+                    "endOffset": 9503
                 },
                 "from": {
                     "file": "/home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/res/values-zh-rCN/strings.xml"

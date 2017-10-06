@@ -234,6 +234,8 @@ class MainActivity : BaseActivity() {
             if (i>=max) break
 
             val temp = mTextures[i]
+            if (!temp.IfIsResourcePack("PE")!!) continue
+
             val intent = Intent(ACTION_VIEW,null,this@MainActivity,DetailsActivity::class.java)
             intent.putExtra("texture_name", temp.name)
             intent.putExtra("texture_description", temp.description)

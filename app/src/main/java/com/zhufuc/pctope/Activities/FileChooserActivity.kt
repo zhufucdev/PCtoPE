@@ -40,6 +40,7 @@ class FileChooserActivity : BaseActivity() {
                     setResult(Activity.RESULT_OK,data)
                     finish()
                 }
+                supportActionBar!!.subtitle = adapter.getPath()
             }
 
         })
@@ -48,9 +49,11 @@ class FileChooserActivity : BaseActivity() {
         recyclerView.layoutManager = StaggeredGridLayoutManager(2,OrientationHelper.VERTICAL)
 
         val fab = findViewById(R.id.chooser_act_upper) as FloatingActionButton
+        supportActionBar!!.subtitle = adapter.getPath()
         fab.setOnClickListener({
             if (!adapter.upLevel(externalRoot))
                 Snackbar.make(it,R.string.non_upper_level,Snackbar.LENGTH_SHORT).show()
+            supportActionBar!!.subtitle = adapter.getPath()
         })
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

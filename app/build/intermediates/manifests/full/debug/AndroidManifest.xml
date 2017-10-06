@@ -73,13 +73,10 @@
         <activity android:name="com.zhufuc.pctope.Activities.FileChooserActivity" />
         <activity android:name="com.zhufuc.pctope.Activities.ShowLogActivity" />
 
-        <!--
-        Net Ease BugRPT
+        <!-- Net Ease BugRPT -->
         <meta-data
             android:name="BUGRPT_APPID"
             android:value="A001298994" />
-        -->
-
     </application>
 
 </manifest>

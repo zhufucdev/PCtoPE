@@ -164,6 +164,12 @@ activity#com.zhufuc.pctope.Activities.ShowLogActivity
 ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:64:9-63
 	android:name
 		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:64:19-61
+meta-data#BUGRPT_APPID
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:68:9-70:42
+	android:value
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:70:13-39
+	android:name
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:69:13-40
 uses-sdk
 INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zhufu/.android/build-cache/899979a5bbfda161d3a636fceab4a797c84677aa/output/AndroidManifest.xml:5:5-7:41
