@@ -444,9 +444,13 @@ class MainActivity : BaseActivity() {
                         intent.putExtra("texture_version", temp.getVersion())
                         intent.putExtra("texture_path", temp.path)
 
-                        val options = ActivityOptions.makeSceneTransitionAnimation(this@MainActivity, view.findViewById(R.id.card_texture_icon), getString(R.string.pack_icon_transition))
-                        ActivityCompat.startActivityForResult(this@MainActivity, intent, 2, options.toBundle())
-
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            val options = ActivityOptions.makeSceneTransitionAnimation(this@MainActivity, view.findViewById(R.id.card_texture_icon), getString(R.string.pack_icon_transition))
+                            ActivityCompat.startActivityForResult(this@MainActivity, intent, 2, options.toBundle())
+                        }
+                        else {
+                            startActivityForResult(intent,2)
+                        }
                     }
                 }
             })
@@ -471,9 +475,11 @@ class MainActivity : BaseActivity() {
 
             chooser_root!!.visibility = View.VISIBLE
             if (!isFromShortcut) {
-                val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2, fab!!.y.toInt() - fab!!.height / 2, 0f, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat())
-                animator.duration = 300
-                animator.start()
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2, fab!!.y.toInt() - fab!!.height / 2, 0f, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat())
+                    animator.duration = 300
+                    animator.start()
+                }
             }
             val first = RotateAnimation(0.0f, 45.0f * 4 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
             first.duration = 200
@@ -514,10 +520,12 @@ class MainActivity : BaseActivity() {
             toolbar!!.setTitle(getString(R.string.app_name))
             toolbar!!.subtitle = ""
 
-            val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2,
-                    fab!!.y.toInt() - fab!!.height / 2, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat(), 0f)
-            animator.duration = 400
-            animator.start()
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2,
+                        fab!!.y.toInt() - fab!!.height / 2, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat(), 0f)
+                animator.duration = 400
+                animator.start()
+            }
 
             fab!!.rotation = 45.0f
             val first = RotateAnimation(0.0f, -45.0f * 4 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)

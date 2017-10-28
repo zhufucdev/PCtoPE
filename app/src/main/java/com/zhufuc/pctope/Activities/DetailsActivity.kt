@@ -233,11 +233,16 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
             Snackbar.make(view, R.string.copied, Snackbar.LENGTH_SHORT).show()
         }
 
-        val anim = ViewAnimationUtils.createCircularReveal(cards, cards!!.width / 2, 0, 0f, Math.hypot(cards!!.width.toDouble(), cards!!.height.toDouble()).toFloat())
-        cards!!.visibility = View.VISIBLE
-        anim.duration = 500
-        anim.interpolator = AccelerateDecelerateInterpolator()
-        anim.start()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val anim = ViewAnimationUtils.createCircularReveal(cards, cards!!.width / 2, 0, 0f, Math.hypot(cards!!.width.toDouble(), cards!!.height.toDouble()).toFloat())
+            cards!!.visibility = View.VISIBLE
+            anim.duration = 500
+            anim.interpolator = AccelerateDecelerateInterpolator()
+            anim.start()
+        }
+        else{
+            cards!!.visibility = View.VISIBLE
+        }
     }
 
     lateinit var iconView : ImageView
@@ -434,7 +439,9 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
                     alertDialog.show()
                 }
             })
-            mcpackChe.background = getDrawable(R.drawable.nomaskripple)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                mcpackChe.background = getDrawable(R.drawable.nomaskripple)
+            }
         }
 
         mcpackCard.setOnClickListener({

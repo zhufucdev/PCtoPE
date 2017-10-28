@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/card_texture_card"
@@ -27,41 +29,43 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/item_linear_layout">
-            <ImageView
+            <android.support.v7.widget.AppCompatImageView
                 android:layout_marginStart="10dp"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:id="@+id/card_texture_icon"
                 android:transitionName="@string/pack_icon_transition"
-                android:adjustViewBounds="true" />
+                android:adjustViewBounds="true"
+                tools:targetApi="lollipop" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/card_texture_name"
                 android:textColor="#2c3e50"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:text="Title"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/card_texture_name_subname"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:text="subtitle"
                 android:textColor="#34495e"
                 android:maxLines="1"/>
         </LinearLayout>
     </LinearLayout>
 
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/card_texture_alert_icon"
         android:adjustViewBounds="true"
-        android:src="@drawable/alert_octagram"
+        app:srcCompat="@drawable/alert_octagram"
         android:layout_margin="@dimen/text_margin"
         android:layout_gravity="bottom|end"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        android:focusable="true" />
 
 </android.support.v7.widget.CardView>

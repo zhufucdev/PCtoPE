@@ -3,29 +3,19 @@
 
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.3.1.aar/8d0369ee5e2e62591a98a63be15123f3/jars/classes.jar"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/eb6cadf1ad08bcbdf67ba72bc5ffb2f6/jars/classes.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
-        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.3.1.aar/3d6408451098f28c9057a68fc5ee99ab/jars/classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/19.jar" />
+        sha1="b1e0cd070d7cf659ece90e919bff76e7ddc32532">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/16.jar" />
     </item>
     <item
         is-multidex="false"
         jar="/opt/android-studio/gradle/m2repository/org/jetbrains/kotlin/kotlin-stdlib-jre7/1.1.51/kotlin-stdlib-jre7-1.1.51.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
         sha1="8b5933578dc55f32cfc1a25f1db6371e4161fb8f">
@@ -33,89 +23,9 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.3.1.aar/458b5703d048754b9ee2a00b008b45fe/jars/classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/20.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.3.1.aar/cc12b2062387efe6689f3338f12e4730/jars/classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/22.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-25.3.1.aar/8b0084e104832b9ebf625c14d78dd93e/jars/classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/23.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/opt/android-studio/gradle/m2repository/org/jetbrains/annotations/13.0/annotations-13.0.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="919f0dfe192fb4e063e7dacadee7f8bb9a2672a9">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/28.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/27.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/24.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/AndroidStudioProjects/PCtoPE/app/libs/zip4j_1.3.2.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="3e20955923c5b61bfbcd4590a87720643c729695">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-25.3.1.aar/c59bbd0e72970bb1e09cd53d1afc550c/jars/classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="1fc708e023161b0dd4d6fa6e7c3dee593c920b55">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/8.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/opt/android-studio/gradle/m2repository/org/jetbrains/kotlin/kotlin-stdlib/1.1.51/kotlin-stdlib-1.1.51.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
         sha1="e34fe80c9714240525f665113dd3749415515655">
@@ -123,39 +33,129 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.3.1.aar/0fefc27581b2780a8ef5dd1c5fef8b7f/jars/classes.jar"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/a96c612d15af60fca18a2eaca35aa036/jars/classes.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
-        sha1="95519720620b553f63afc789beba9ad582807f7c">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/16.jar" />
+        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/23.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/3a4fa1d41c133b1186d43e930405619c/jars/classes.jar"
+        jar="/opt/android-studio/gradle/m2repository/org/jetbrains/annotations/13.0/annotations-13.0.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/7.jar" />
+        sha1="919f0dfe192fb4e063e7dacadee7f8bb9a2672a9">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/28.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.3.1.aar/a16a93e7033f996785afee26a6450786/jars/classes.jar"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-25.4.0.aar/6b91f72895f05330ee8ce0502dbd54b5/jars/classes.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
-        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/18.jar" />
+        sha1="3cf9b397641400da0e89c6515ceaffaf98999ad0">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/80233e9c2fa9ddaebc5c8742353b1f8c/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c2deeac83ffa1304264bc755c2ddb84e7a7fa239">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/6952c59f0e0db4f9116fd993cd7aefe3/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="4961be1437163ab598620a3c907c0f3432936f51">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/android-shapeLoadingView-1.0.3.2.aar/81cda7e0d333cac8408d1dbec0344da7/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0cc1eadbbbd59d1ac49015550ce8e11e2dff5eff">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/48b1b7332e15908e1556eb50091e8e40/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/7933b3647171916c34500b44d9810396/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="40a6b8f05124eb9e6012e18b80a6dbd13440e283">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/10.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/714e1a3f021973a6db368ba75ae14094/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="a7a0aa678c3bbadb67fb41df9e107f7ee9087902">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/AndroidStudioProjects/PCtoPE/app/libs/zip4j_1.3.2.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3e20955923c5b61bfbcd4590a87720643c729695">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/a450fc7e3eebcf53b485e1b96937ea7a/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b77e50b3c31d0fc64148530f7077f79ec114b5b9">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/22.jar" />
     </item>
     <item
         is-multidex="false"
         jar="/home/zhufu/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.0/a7537446a030da8eb0da4c71424d16c2589f6c4a/glide-3.6.0.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
         sha1="a7537446a030da8eb0da4c71424d16c2589f6c4a">
@@ -165,7 +165,7 @@
         is-multidex="false"
         jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/materialhelptutorial-1.0.1.aar/6d57a3d3c3e9b620239041ad48877b32/jars/classes.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
         sha1="d3ca20a293875bb1819cbc4ea2905fde3b42cf81">
@@ -173,69 +173,39 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-25.3.1.aar/b442054049aa9026c73e955108bdc9bd/jars/classes.jar"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/551a1b314d71bd4c9aa89f67e0c0e5b3/jars/classes.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
-        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        sha1="d29e451fd5bcc265989bf80afd4f149d95d72e7d">
         <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/17.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.3.1.aar/02a987f0840f6084f2bbb26bd9922a74/jars/classes.jar"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/599dcd3ee666675a0ed817722b89226a/jars/classes.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
-        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/6.jar" />
+        sha1="c879101226d1b2aaf6edae3d7491de6fd56d2659">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/9.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.3.1.aar/7d34bf18c9f20b0589be93ea39283087/jars/classes.jar"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/3a4fa1d41c133b1186d43e930405619c/jars/classes.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
-        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/21.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/android-shapeLoadingView-1.0.3.2.aar/81cda7e0d333cac8408d1dbec0344da7/jars/classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="0cc1eadbbbd59d1ac49015550ce8e11e2dff5eff">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/14.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/jars/classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="c228e881810735b13a4b09b4eb187134682f649f">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/12.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/floatingtoolbar-1.5.1.aar/cda54389872322e93e3041ce1fa0acdb/jars/classes.jar"
-        jumboMode="false"
-        min-sdk-version="21"
-        optimize="true"
-        revision="26.0.2"
-        sha1="284281f7958e47c58b8974f9afd9bb75aab80f70">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/13.jar" />
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/7.jar" />
     </item>
     <item
         is-multidex="false"
         jar="/home/zhufu/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
         sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
@@ -243,33 +213,63 @@
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.3.1.aar/1ff02a0e98585fb80020548a7e063b26/jars/classes.jar"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/6b9e6a748e5f4b27b7ebf452e42c391a/jars/classes.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
-        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/9.jar" />
+        sha1="cad1364721fc716a39bdc351d3637edb634c9aa5">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/4.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-25.3.1.aar/c13f298a32eb31b1073c2a2cdd9f3c84/jars/classes.jar"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/floatingtoolbar-1.5.1.aar/cda54389872322e93e3041ce1fa0acdb/jars/classes.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/11.jar" />
+        sha1="284281f7958e47c58b8974f9afd9bb75aab80f70">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/13.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-25.3.1.aar/e72400fe89fdec3c06ef9bd0827760f1/jars/classes.jar"
+        jar="/home/zhufu/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/25.4.0/f6a2fc748ae3769633dea050563e1613e93c135e/support-annotations-25.4.0.jar"
         jumboMode="false"
-        min-sdk-version="21"
+        min-sdk-version="18"
         optimize="true"
         revision="26.0.2"
-        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
-        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/10.jar" />
+        sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/24.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/40ffa5425d5655eea75c5b395a9a8bfc/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/19.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c228e881810735b13a4b09b4eb187134682f649f">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/572500e1c53a9bba90134e96681b9d31/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="18"
+        optimize="true"
+        revision="26.0.2"
+        sha1="05e3d15c623cd98f0eb43c8249fb6151fae0786c">
+        <dex dex="/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/preDex/release/18.jar" />
     </item>
 
 </items>

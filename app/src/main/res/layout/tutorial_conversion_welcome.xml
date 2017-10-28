@@ -16,11 +16,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/tutorial_welcome_title_layout">
-            <ImageView
+            <android.support.v7.widget.AppCompatImageView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/ic_launcher_foreground"
+                app:srcCompat="@drawable/ic_launcher_foreground"
                 android:layout_gravity="start" />
 
             <LinearLayout
@@ -73,11 +73,11 @@
             android:layout_marginTop="100dp"
             android:id="@+id/tutorial_welcome_error_layout"
             android:visibility="invisible">
-            <ImageView
+            <android.support.v7.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_horizontal_margin"
-                android:src="@drawable/alert_octagram"
+                app:srcCompat="@drawable/alert_octagram"
                 android:layout_gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
@@ -91,7 +91,7 @@
         <android.support.design.widget.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/chevron_right"
+            app:srcCompat="@drawable/chevron_right"
             android:layout_below="@id/tutorial_welcome_title_layout"
             android:layout_marginTop="100dp"
             android:layout_centerHorizontal="true"

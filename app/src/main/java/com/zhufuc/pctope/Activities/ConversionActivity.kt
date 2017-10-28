@@ -185,10 +185,18 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
                 val next = findViewById(R.id.tutorial_next) as Button
                 next.setOnClickListener({
-                    val animate = ViewAnimationUtils.createCircularReveal(blocker,blocker.width/2,blocker.height/2,0f,Math.hypot(blocker.width.toDouble(), blocker.height.toDouble()).toFloat())
-                    animate.duration = 200
-                    blocker.visibility = View.VISIBLE
-                    animate.start()
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        val animate = ViewAnimationUtils.createCircularReveal(blocker,blocker.width/2,blocker.height/2,0f,Math.hypot(blocker.width.toDouble(), blocker.height.toDouble()).toFloat())
+                        animate.duration = 200
+                        blocker.visibility = View.VISIBLE
+                        animate.start()
+                    } else {
+                        val animate = AnimationUtils.loadAnimation(this,R.anim.cards_show)
+                        blocker.startAnimation(animate)
+                        blocker.visibility = View.VISIBLE
+                    }
+
 
                     val loadingText = findViewById(R.id.tutorial_loading_msg) as TextView
                     conversion.setConversionChangeListener(object : TextureConversionUtils.ConversionChangeListener{

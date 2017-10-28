@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/cardview_default_elevation"
     android:orientation="vertical"
-    android:clickable="true">
+    android:clickable="true"
+    android:focusable="true">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -19,14 +20,14 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <ImageView
+            <android.support.v7.widget.AppCompatImageView
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:layout_margin="@dimen/text_margin_small"
-                android:src="@drawable/folder"
-                android:id="@+id/chooser_folder"/>
+                app:srcCompat="@drawable/folder"
+                android:id="@+id/chooser_folder" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -52,13 +53,13 @@
             android:orientation="vertical"
             android:padding="@dimen/text_margin_small">
 
-            <ImageView
+            <android.support.v7.widget.AppCompatImageView
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                android:src="@drawable/file"
-                android:id="@+id/chooser_zip"/>
+                app:srcCompat="@drawable/file"
+                android:id="@+id/chooser_zip" />
 
             <TextView
                 android:layout_width="match_parent"

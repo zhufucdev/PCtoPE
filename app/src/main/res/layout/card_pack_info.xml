@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:foreground="?attr/selectableItemBackground"
     android:id="@+id/pdi_card"
     android:layout_margin="@dimen/card_margin_horizontal"
@@ -14,11 +15,11 @@
         android:layout_height="match_parent"
         android:layout_margin="@dimen/text_margin_small">
 
-        <ImageView
+        <android.support.v7.widget.AppCompatImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
             android:id="@+id/support_or_not_icon"
-            android:src="@drawable/checkbox_marked_circle"
+            app:srcCompat="@drawable/checkbox_marked_circle"
             android:layout_gravity="center_vertical"
             android:adjustViewBounds="true"/>
 

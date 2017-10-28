@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/compression_dialog_root"
     android:layout_marginTop="6dp"
     android:background="@color/google_assistant_background"
@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/text_margin_small">
 
-        <ImageView
+        <android.support.v7.widget.AppCompatImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:id="@+id/compression_image"/>
@@ -51,10 +51,10 @@
             android:textSize="10sp"
             android:textColor="@color/black"/>
 
-        <ImageView
+        <android.support.v7.widget.AppCompatImageView
             android:layout_width="15dp"
             android:layout_height="15dp"
-            android:src="@drawable/resize_bottom_right"
+            app:srcCompat="@drawable/resize_bottom_right"
             android:layout_alignBottom="@+id/compression_width_text"
             android:layout_alignEnd="@+id/compression_height_text" />
 

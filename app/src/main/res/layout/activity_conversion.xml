@@ -110,11 +110,11 @@
                 android:orientation="vertical"
                 android:id="@+id/error_layout"
                 android:visibility="gone">
-                <ImageView
+                <android.support.v7.widget.AppCompatImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_horizontal_margin"
-                    android:src="@drawable/alert_octagram"
+                    app:srcCompat="@drawable/alert_octagram"
                     android:layout_gravity="center"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -157,7 +157,7 @@
         android:id="@+id/finishBottom"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/chevron_right"/>
+        app:srcCompat="@drawable/chevron_right"/>
     
     <com.github.rubensousa.floatingtoolbar.FloatingToolbar
         android:layout_width="match_parent"

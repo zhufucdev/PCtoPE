@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhufuc.pctope"
-    android:versionCode="42"
-    android:versionName="2.5" >
+    android:versionCode="43"
+    android:versionName="2.5.1" >
 
     <uses-sdk
-        android:minSdkVersion="21"
+        android:minSdkVersion="19"
         android:targetSdkVersion="25" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -16,10 +16,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取网络状态 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取MAC地址 -->
     <uses-permission android:name="android.permission.READ_LOGS" />
-
-    <meta-data
-        android:name="android.support.VERSION"
-        android:value="25.3.1" />
 
     <application
         android:allowBackup="true"
@@ -77,12 +73,13 @@
         <activity android:name="com.zhufuc.pctope.Activities.FileChooserActivity" />
         <activity android:name="com.zhufuc.pctope.Activities.ShowLogActivity" />
 
-        <!--
-        Net Ease BugRPT
+        <!-- Net Ease BugRPT -->
         <meta-data
             android:name="BUGRPT_APPID"
             android:value="A001298994" />
-        -->
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="25.4.0" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
