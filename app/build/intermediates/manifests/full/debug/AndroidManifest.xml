@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhufuc.pctope"
-    android:versionCode="40"
-    android:versionName="2.4.4" >
+    android:versionCode="42"
+    android:versionName="2.5" >
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="26" />
+        android:targetSdkVersion="25" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -24,13 +24,14 @@
     <application
         android:allowBackup="true"
         android:configChanges="locale"
+        android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.zhufuc.pctope.Activities.FirstActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar.FullScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,10 +48,12 @@
         <activity
             android:name="com.zhufuc.pctope.Activities.MainActivity"
             android:label="PCtoPE"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.zhufuc.pctope.Activities.ConversionActivity"
+            android:theme="@style/AppTheme.NoActionBar.windowTranslucentStatus" />
+        <activity
+            android:name="com.zhufuc.pctope.Activities.ConversionActivityOld"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.zhufuc.pctope.Activities.SettingsActivity"
@@ -73,10 +76,13 @@
         <activity android:name="com.zhufuc.pctope.Activities.FileChooserActivity" />
         <activity android:name="com.zhufuc.pctope.Activities.ShowLogActivity" />
 
-        <!-- Net Ease BugRPT -->
+        <!--
+        Net Ease BugRPT
         <meta-data
             android:name="BUGRPT_APPID"
             android:value="A001298994" />
+        -->
+
     </application>
 
 </manifest>

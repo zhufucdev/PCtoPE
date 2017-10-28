@@ -11,6 +11,7 @@ import android.os.Environment
 import android.preference.ListPreference
 import android.preference.Preference
 import android.preference.PreferenceFragment
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 
@@ -33,6 +34,9 @@ class SettingsActivity : AppCompatPreferenceActivity() {
             ActivityCollector.finishAll()
             startActivity(Intent().setClass(this@SettingsActivity, FirstActivity::class.java))
         }
+        else if (key == "pref_conversion_style"){
+            Log.i("Settings","Conversion UI Styles have been changed.")
+        }
         true
     }
 
@@ -40,6 +44,7 @@ class SettingsActivity : AppCompatPreferenceActivity() {
     private var customDrawer: Preference? = null
     private var clearDrawer: Preference? = null
     private var clearCache: Preference? = null
+    lateinit var conversionStyle : ListPreference
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
 
@@ -50,6 +55,8 @@ class SettingsActivity : AppCompatPreferenceActivity() {
         bar!!.setDisplayHomeAsUpEnabled(true)
         listPreference = findPreference("pref_language") as ListPreference
         listPreference!!.onPreferenceChangeListener = changeListener
+        conversionStyle = findPreference("pref_conversion_style") as ListPreference
+        conversionStyle.onPreferenceChangeListener = changeListener
 
         customDrawer = findPreference("pref_drawer_button")
         customDrawer!!.onPreferenceClickListener = Preference.OnPreferenceClickListener {

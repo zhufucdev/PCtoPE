@@ -10,4 +10,9 @@
         <item>256x</item>
         <item>512x</item>
     </string-array>
+
+    <string-array name="pref_conversion_styles">
+        <item>老版本</item>
+        <item>向导</item>
+    </string-array>
 </resources>

@@ -12,10 +12,12 @@ import android.content.pm.ShortcutManager
 import android.graphics.BitmapFactory
 import android.graphics.drawable.Icon
 import android.os.*
+import android.preference.PreferenceManager
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
 import android.support.v4.app.ActivityCompat
+import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
@@ -30,6 +32,7 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.support.v7.widget.Toolbar
 import android.support.v7.widget.helper.ItemTouchHelper
+import android.transition.TransitionInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewAnimationUtils
@@ -142,7 +145,7 @@ class MainActivity : BaseActivity() {
         isGranted = intent.getBooleanExtra("isGranted", true)
         isFromShortcut = intent.getBooleanExtra("isFromShortcut",true)
 
-        mLog.d("status", isGranted.toString() + "")
+        mLog.d("Permissions", isGranted.toString())
 
         //file choosing
         fab!!.setOnClickListener { Choose() }
@@ -180,12 +183,6 @@ class MainActivity : BaseActivity() {
         navigationView!!.setNavigationItemSelectedListener { item ->
             drawerLayout!!.closeDrawer(GravityCompat.START)
             when (item.itemId) {
-            //case R.id.nav_packer:
-            //    ActivityCollector.finishOther(MainActivity.this);
-            //    final Intent packer = new Intent(MainActivity.this,CompressionActivity.class);
-            //    startActivity(packer, ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle());
-            //overridePendingTransition(0,0);
-            //   break;
                 R.id.nav_settings -> {
                     val settings = Intent(this@MainActivity, SettingsActivity::class.java)
                     startActivity(settings)
@@ -572,7 +569,9 @@ class MainActivity : BaseActivity() {
             override fun onClick(view: View, data: Intent) {
                 val path = data.getStringExtra("path")
                 if (File(path).isFile){
-                    val intent = Intent(this@MainActivity, ConversionActivity::class.java)
+                    val pref = PreferenceManager.getDefaultSharedPreferences(this@MainActivity)
+                    val intent = if(pref.getString("pref_conversion_style","new") == "new") Intent(this@MainActivity, ConversionActivity::class.java)
+                                else Intent(this@MainActivity,ConversionActivityOld::class.java)
                     intent.putExtra("filePath",path)
                     startActivityForResult(intent, 0)
                 }

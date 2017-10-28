@@ -1,50 +1,36 @@
 package com.zhufuc.pctope.Activities
 
 import android.app.Activity
-import android.app.ProgressDialog
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.os.AsyncTask
-import android.os.Environment
-import android.support.design.widget.AppBarLayout
+import android.os.*
 import android.support.design.widget.BottomSheetDialog
-import android.support.design.widget.CollapsingToolbarLayout
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
-import android.support.design.widget.TextInputEditText
 import android.support.v7.app.AlertDialog
-import android.os.Bundle
 import android.support.v7.widget.CardView
-import android.support.v7.widget.Toolbar
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.*
 import com.zhufuc.pctope.Utils.mLog
-import android.view.MenuItem
-import android.view.View
 import android.view.animation.AnimationUtils
-import android.widget.AdapterView
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Spinner
-import android.widget.TextView
-import android.widget.Toast
-import com.github.rubensousa.floatingtoolbar.FloatingToolbar
-import com.github.rubensousa.floatingtoolbar.FloatingToolbarMenuBuilder
+import android.widget.*
+import com.zhufuc.pctope.Adapters.TutorialActivity
+import com.zhufuc.pctope.Collectors.ActivityCollector
 
 import com.zhufuc.pctope.R
 import com.zhufuc.pctope.Utils.*
 
 import java.io.File
-import java.io.FileNotFoundException
 
 import com.zhufuc.pctope.Utils.TextureCompat.brokenPC
 
+val layoutList = arrayOf(R.layout.tutorial_conversion_welcome,R.layout.tutorial_conversion_step1,R.layout.tutorial_conversion_step2)
 
-class ConversionActivity : BaseActivity() {
+class ConversionActivity : TutorialActivity(layoutList) {
     internal val finishIntent = Intent()
 
     private fun MakeErrorDialog(errorString: String) {
@@ -65,151 +51,289 @@ class ConversionActivity : BaseActivity() {
         }.show()
     }
 
-    internal var skipUnzip: Boolean? = false
-    internal var isPreFinished: Boolean? = false
-    private var name: TextInputEditText? = null
-    private var description: TextInputEditText? = null
-    private var packname: String? = null
-    private var packdescription: String? = null
-    private var file: String? = null
-    private var unzipping_tip: LinearLayout? = null
-    private var cards: LinearLayout? = null
-    private var error_layout: LinearLayout? = null
+    internal var skipUnzip: Boolean = false
+    internal var isPreFinished: Boolean = false
+    private lateinit var name: EditText
+    private lateinit var description: EditText
+    private var packname: String = ""
+    private var packdescription: String = ""
+    private var file: String = ""
 
-    private var conversion: TextureConversionUtils? = null
+    private var hasStep2BeenShown : Boolean = false
+    private var hasIconBeenOverwritten : Boolean = false
+    private var areAdvencedOptionsShown : Boolean = false
+
+    private lateinit var conversion: TextureConversionUtils
+
+    override fun onPageSwitched(){
+        when (showingPostition){
+            0 -> {
+                //Views
+                val fab_next = findViewById(R.id.tutorial_next) as FloatingActionButton
+                val loading = findViewById(R.id.tutorial_welcome_loading) as LinearLayout
+                getIntentInfo()
+
+                if (!isPreFinished)
+                    conversion = TextureConversionUtils(file,this)
+
+                conversion.setOnUncompressListener(object : TextureConversionUtils.OnUncompressListener{
+                    override fun onPreUncompress() {
+                        fab_next.visibility = View.INVISIBLE
+                        loading.visibility = View.VISIBLE
+                    }
+
+                    override fun inUncompressing() {}
+
+                    override fun onPostUncompress(result: Boolean, version: String?) {
+                        if (result) {
+                            fab_next.show()
+                            fab_next.setOnClickListener({
+                                next()
+                            })
+                            isPreFinished = true
+                        }
+                        else{
+                            val error = findViewById(R.id.tutorial_welcome_error_layout) as LinearLayout
+                            error.visibility = View.VISIBLE
+                            doOnFail()
+                        }
+                        loading.visibility = View.INVISIBLE
+
+                    }
+
+                })
+
+                conversion.setOnCrashListener(object : TextureConversionUtils.OnCrashListener{
+                    override fun onCrash(errorContent: String) {
+                        MakeErrorDialog(errorContent)
+                    }
+
+                })
+
+
+                if (File(conversion.path).exists() && (!skipUnzip || !isPreFinished)) {
+                    val dialog = AlertDialog.Builder(this@ConversionActivity)
+                    dialog.setTitle(R.string.overwrite_title)
+                    dialog.setMessage(R.string.overwrite_content)
+                    dialog.setCancelable(false)
+                    dialog.setNegativeButton(R.string.skip) { dialog, which ->
+                        skipUnzip = true
+                        conversion.skipUnzip = skipUnzip
+                        conversion.UncompressPack()
+                    }
+                    dialog.setPositiveButton(R.string.overwrite) { dialog, which ->
+                        skipUnzip = false
+                        conversion.skipUnzip = skipUnzip
+                        conversion.UncompressPack()
+                    }
+                    dialog.show()
+                } else if (!isPreFinished)
+                    conversion.UncompressPack()
+            }
+
+            1 -> {
+                //Init and add Watchers
+                name = findViewById(R.id.conversion_name) as EditText
+                description = findViewById(R.id.conversion_description) as EditText
+                val next = findViewById(R.id.tutorial_next) as Button
+                name.addTextChangedListener(object : TextWatcher{
+                    override fun afterTextChanged(s: Editable?) {
+
+                    }
+
+                    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+                    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                        packname = doDestFixing(s.toString())
+
+                    }
+
+                })
+                description.addTextChangedListener(object : TextWatcher{
+                    override fun afterTextChanged(s: Editable?) {
+
+                    }
+
+                    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+                    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                        packdescription = s.toString()
+                    }
+
+                })
+
+                next.setOnClickListener({next()})
+            }
+
+            2 -> {
+                val icon = findViewById(R.id.tutorial_icon_shower) as ImageView
+                val mcpackSwitcher = findViewById(R.id.tutorial_mcpack_switcher) as Switch
+                val blocker = findViewById(R.id.tutorial_loading_blocker) as LinearLayout
+                blocker.visibility = View.INVISIBLE
+                loadIcon()
+                val show = AnimationUtils.loadAnimation(this,R.anim.cards_show)
+                if (!hasStep2BeenShown)
+                    icon.startAnimation(show)
+                hasStep2BeenShown = true
+
+                icon.setOnClickListener({
+                    val intent = Intent(ConversionActivity@this,FileChooserActivity::class.java)
+                    intent.putStringArrayListExtra("format", arrayListOf("png","jpg"))
+                    startActivityForResult(intent,0)
+                })
+
+                val next = findViewById(R.id.tutorial_next) as Button
+                next.setOnClickListener({
+                    val animate = ViewAnimationUtils.createCircularReveal(blocker,blocker.width/2,blocker.height/2,0f,Math.hypot(blocker.width.toDouble(), blocker.height.toDouble()).toFloat())
+                    animate.duration = 200
+                    blocker.visibility = View.VISIBLE
+                    animate.start()
+
+                    val loadingText = findViewById(R.id.tutorial_loading_msg) as TextView
+                    conversion.setConversionChangeListener(object : TextureConversionUtils.ConversionChangeListener{
+                        override fun inDoingVersionDecisions() {
+                            runOnUiThread({
+                                loadingText.setText(R.string.please_wait)
+                            })
+                        }
+
+                        override fun inDoingImageCompressions(whatsBeingCompressing: String) {
+                            runOnUiThread({
+                                loadingText.text = "${getString(R.string.compressing_mcpack)}\n $whatsBeingCompressing"
+                            })
+                        }
+
+                        override fun inDoingJSONWriting() {
+                            runOnUiThread({
+                                loadingText.setText(R.string.progress_writing_json)
+                            })
+                        }
+
+                        override fun inDoingMcpackCompressing(file: String) {
+                            runOnUiThread({
+                                loadingText.text = "${getString(R.string.compressing_mcpack)}\n $file"
+                            })
+                        }
+
+                        override fun onDone() {
+                            finishIntent.putExtra("Status_return",true)
+                            runOnUiThread({
+                                loadingText.setText(R.string.done)
+                            })
+                            Looper.prepare()
+                            Handler().postDelayed({ finish() },500)
+                            Looper.loop()
+                        }
+
+                    })
+                    if (packname=="") packname = getString(R.string.project_unnamed)
+
+                    val mcpackPath : String = if(mcpackSwitcher.isChecked) "${Environment.getExternalStorageDirectory().path}/games/com.mojang/mcpacks/$packname.mcpack" else ""
+                    conversion.compressFinalSize = compressFinalSize
+                    Thread(Runnable { conversion.doConverting(packname,packdescription,mcpackPath) }).start()
+
+
+                })
+
+                val show_advenced = findViewById(R.id.tutorial_advenced_options_button) as Button
+                val advenced_layout = findViewById(R.id.tutorial_advenced_options_layout) as LinearLayout
+                val resource_compress = findViewById(R.id.tutorial_resource_compress) as LinearLayout
+                show_advenced.setOnClickListener({
+                    if (areAdvencedOptionsShown){
+                        advenced_layout.visibility = View.INVISIBLE
+                        areAdvencedOptionsShown = false
+                    }
+                    else{
+                        advenced_layout.visibility = View.VISIBLE
+                        areAdvencedOptionsShown = true
+                    }
+                })
+                resource_compress.setOnClickListener({
+                    val dialog = BottomSheetDialog(this@ConversionActivity)
+                    val dialogView = layoutInflater.inflate(R.layout.compression_dialog, null)
+
+                    dialog.setContentView(dialogView)
+
+
+                    val optionsBitmap = BitmapFactory.Options()
+                    optionsBitmap.inSampleSize = 1
+
+                    val bitmap = BitmapFactory.decodeFile(getIconOFResourceCompression(), optionsBitmap)
+                    val confirm = dialogView.findViewById(R.id.compression_button_confirm) as Button
+
+                    loadDialogLayout(dialogView, bitmap)
+
+                    val spinner = dialogView.findViewById(R.id.compression_spinner) as Spinner
+                    spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+
+                        override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
+                            val options = resources.getStringArray(R.array.compression_options)
+
+                            when (options[i]) {
+                                "8x" -> compressSize = 8
+                                "16x" -> compressSize = 16
+                                "32x" -> compressSize = 32
+                                "64x" -> compressSize = 64
+                                "128x" -> compressSize = 128
+                                "256x" -> compressSize = 256
+                                "512x" -> compressSize = 512
+                                else -> compressSize = 0
+                            }
+                            if (compressSize != 0) {
+                                loadDialogLayout(dialogView, CompressImage.getBitmap(bitmap, compressSize, compressSize))
+                            } else
+                                loadDialogLayout(dialogView, bitmap)
+
+                            if (compressSize > bitmap.width || compressSize > bitmap.height) {
+                                confirm.isEnabled = false
+                                confirm.setTextColor(resources.getColor(R.color.grey_primary))
+                                Toast.makeText(this@ConversionActivity, R.string.compression_alert, Toast.LENGTH_SHORT).show()
+                            } else {
+                                confirm.isEnabled = true
+                                confirm.setTextColor(resources.getColor(R.color.colorAccent))
+                            }
+                        }
+
+                        override fun onNothingSelected(adapterView: AdapterView<*>) {
+                            compressSize = 0
+                        }
+                    }
+
+                    dialog.setOnCancelListener { compressSize = compressFinalSize }
+
+                    dialog.show()
+
+                    confirm.setOnClickListener {
+                        compressFinalSize = compressSize
+                        dialog.dismiss()
+                    }
+                })
+
+            }
+        }
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
+        if (showingPostition > 0 && showingPostition != 2)
+            back()
+        else
+            super.onBackPressed()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //Preload
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_conversion)
-        setResult(Activity.RESULT_OK, finishIntent)//I don't need to use it
-        initViews()
-        getIntentInfo()
+        ActivityCollector.addActivity(this)
 
-        //Main
-        try {
-            conversion = TextureConversionUtils(file!!, this)
-        } catch (e: FileNotFoundException) {
-            MakeErrorDialog(e.toString())
-            return
-        }
+        show(0)
+        setResult(Activity.RESULT_OK, finishIntent)//We don't need to use it
+        finishIntent.putExtra("Status_return",false)
+    }
 
-        conversion!!.skipUnzip = skipUnzip!!
-        conversion!!.setOnUncompressListener(object : TextureConversionUtils.OnUncompressListener {
-            override fun onPreUncompress() {
-                unzipping_tip!!.visibility = View.VISIBLE
-                cards!!.visibility = View.GONE
-                error_layout!!.visibility = View.GONE
-            }
-
-            override fun inUncompressing() {
-
-            }
-
-            override fun onPostUncompress(result: Boolean, version: String?) {
-                unzipping_tip!!.visibility = View.GONE
-                cards!!.visibility = View.VISIBLE
-                error_layout!!.visibility = View.GONE
-                loadIcon()
-                isPreFinished = true
-                if (result)
-                    doOnSuccess()
-                else
-                    doOnFail()
-            }
-        })
-
-        conversion!!.setOnCrashListener(object : TextureConversionUtils.OnCrashListener{
-            override fun onCrash(errorContent: String) {
-                runOnUiThread {
-                    unzipping_tip!!.visibility = View.GONE
-                    cards!!.visibility = View.GONE
-                    error_layout!!.visibility = View.VISIBLE
-                    MakeErrorDialog(errorContent)
-                }
-            }
-
-        })
-
-        conversion!!.setConversionChangeListener(object : TextureConversionUtils.ConversionChangeListener {
-
-            internal var alertDialog: ProgressDialog? = null
-
-            override fun inDoingVersionDecisions() {
-                runOnUiThread {
-                    alertDialog = ProgressDialog(this@ConversionActivity)
-                    alertDialog!!.setTitle(getString(R.string.loading))
-                    alertDialog!!.setMessage(getString(R.string.please_wait))
-                    alertDialog!!.setCancelable(false)
-                    alertDialog!!.show()
-                }
-            }
-
-            override fun inDoingImageCompressions(whatsBeingCompressed: String) {
-                runOnUiThread {
-                    alertDialog!!.setTitle(getString(R.string.progress_compressing_title))
-                    alertDialog!!.setMessage(whatsBeingCompressed)
-                }
-
-            }
-
-            override fun inDoingImageColorTurning() {
-                runOnUiThread {
-                    alertDialog!!.setTitle(R.string.turing_image_color_black_into_transparent)
-                    alertDialog!!.setMessage(getString(R.string.please_wait))
-                }
-            }
-
-            override fun inDoingJSONWriting() {
-                runOnUiThread {
-                    alertDialog!!.setMessage(getString(R.string.do_final_step))
-                    alertDialog!!.setTitle(getString(R.string.progress_writing_json))
-                    mLog.i("Information On UI", "Showing json writing dialog...")
-                }
-
-            }
-
-            override fun inDoingMcpackCompressing(path : String) {
-                runOnUiThread {
-                    alertDialog!!.setTitle(getString(R.string.compressing_mcpack))
-                    alertDialog!!.setMessage(path)
-                    mLog.i("Information On UI", "Showing compressing dialog...")
-                }
-            }
-
-            override fun onDone() {
-                finishIntent.putExtra("Status_return", true)
-                runOnUiThread { alertDialog!!.setMessage(resources.getString(R.string.completed)) }
-                try {
-                    Thread.sleep(1000)
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-
-                finish()
-            }
-        })
-
-        //Overwrite dialog
-        if (File(conversion!!.path).exists() && (!skipUnzip!!)) {
-            val dialog = AlertDialog.Builder(this@ConversionActivity)
-            dialog.setTitle(R.string.overwrite_title)
-            dialog.setMessage(R.string.overwrite_content)
-            dialog.setCancelable(false)
-            dialog.setNegativeButton(R.string.skip) { dialog, which ->
-                skipUnzip = true
-                conversion!!.skipUnzip = skipUnzip!!
-                conversion!!.UncompressPack()
-            }
-            dialog.setPositiveButton(R.string.overwrite) { dialog, which ->
-                skipUnzip = false
-                conversion!!.skipUnzip = skipUnzip!!
-                conversion!!.UncompressPack()
-            }
-            dialog.show()
-        } else
-            conversion!!.UncompressPack()
-
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityCollector.removeActivity(this)
     }
 
     private fun getIntentInfo() {
@@ -218,114 +342,14 @@ class ConversionActivity : BaseActivity() {
         file = intent.getStringExtra("filePath")
     }
 
-    private var format = 0
-    private fun initViews() {
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
-        val collapsingbar = findViewById(R.id.collapsing_bar) as CollapsingToolbarLayout
-        unzipping_tip = findViewById(R.id.unzipping_tip) as LinearLayout
-        cards = findViewById(R.id.cards_grid) as LinearLayout
-        error_layout = findViewById(R.id.error_layout) as LinearLayout
-        name = findViewById(R.id.pname) as TextInputEditText
-        description = findViewById(R.id.pdescription) as TextInputEditText
-
-
-        //set back icon
-        setSupportActionBar(toolbar)
-        val actionbar = supportActionBar
-        actionbar?.setDisplayHomeAsUpEnabled(true)
-
-        //set project name on changed listener
-        packname = getString(R.string.project_unnamed)
-        packname = doDestFixing(packname)
-        collapsingbar.title = packname
-
-        name!!.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-
-            }
-
-            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-                if (charSequence.toString() != "") {
-                    packname = charSequence.toString()
-                    packname = doDestFixing(packname)
-                    collapsingbar.title = packname
-                } else {
-                    packname = resources.getString(R.string.project_unnamed)
-                    packname = doDestFixing(packname)
-                    collapsingbar.title = packname
-                }
-
-            }
-
-            override fun afterTextChanged(editable: Editable) {
-
-            }
-        })
-
-        //for Floating Toolbar
-        val ftb = findViewById(R.id.ftb_conversion) as FloatingToolbar
-        ftb.menu = FloatingToolbarMenuBuilder(this)
-                .addItem(0,R.drawable.folder_white,R.string.convert_into_resources_folder)
-                .addItem(1,R.drawable.zip_box,R.string.convert_into_mcpack)
-                .build()
-
-        //for FAB
-        val button_finish = findViewById(R.id.finishBottom) as FloatingActionButton
-        val appBarLayout = findViewById(R.id.appBar) as AppBarLayout
-
-        ftb.attachAppBarLayout(appBarLayout)
-        ftb.attachFab(button_finish)
-
-        appBarLayout.addOnOffsetChangedListener { appBarLayout, verticalOffset ->
-            if (ftb.isShowing) ftb.hide()
-        }
-        ftb.setClickListener(object : FloatingToolbar.ItemClickListener{
-            override fun onItemClick(item: MenuItem?) {
-                format = item!!.itemId
-                when (item.itemId){
-                    0 -> doFinishButtonDoes(button_finish)
-                    1 -> doFinishButtonDoes(button_finish)
-                }
-            }
-
-            override fun onItemLongClick(item: MenuItem?) {
-
-            }
-        })
-    }
-
-    private fun doFinishButtonDoes(v: View) {
-        if (isPreFinished!!) {
-
-            packdescription = description!!.text.toString()
-
-            name!!.isEnabled = false
-            description!!.isEnabled = false
-
-            conversion!!.compressFinalSize = compressFinalSize
-
-            var mcpackDest = ""
-            if (format == 1){
-                val dest = File("${Environment.getExternalStorageDirectory().path}/games/com.mojang/mcpacks")
-                if (!dest.isDirectory){
-                    dest.delete()
-                }
-                if (!dest.exists()){
-                    dest.mkdir()
-                }
-                mcpackDest = "${dest.path}/${packname}.mcpack"
-            }
-
-            Thread(Runnable { conversion!!.doConverting(packname!!, packdescription!!,mcpackDest) }).start()
-        } else
-            Snackbar.make(v, R.string.unclickable_unzipping, Snackbar.LENGTH_LONG).show()
-    }
-
     fun loadIcon() {
-        val icon = findViewById(R.id.img_card_icon) as ImageView
-        val bitmap = conversion!!.icon
+        val icon = findViewById(R.id.tutorial_icon_shower) as ImageView
+        val bitmap = conversion.icon
         if (bitmap != null) {
             icon.setImageBitmap(bitmap)
+            //Make a JOKE
+            val text = findViewById(R.id.conversion_icon_text) as TextView
+            if (hasIconBeenOverwritten) text.text = "${text.text}?"
         } else {
             val finishBottom = findViewById(R.id.finishBottom) as FloatingActionButton
             Snackbar.make(finishBottom, R.string.pack_icon_not_found, Snackbar.LENGTH_INDEFINITE)
@@ -340,61 +364,19 @@ class ConversionActivity : BaseActivity() {
 
     private var compressSize: Int = 0
     private var compressFinalSize: Int = 0
-    private fun doOnSuccess() {
-        //Set layouts
-        //==>define
-        val unzipping_tip = findViewById(R.id.unzipping_tip) as LinearLayout
-        val cards = findViewById(R.id.cards_grid) as LinearLayout
-        val error_layout = findViewById(R.id.error_layout) as LinearLayout
-        val PDI_card = findViewById(R.id.pdi_card) as CardView
-        //settings
-        cards.visibility = View.VISIBLE
-        unzipping_tip.visibility = View.GONE
-        error_layout.visibility = View.GONE
 
-        isPreFinished = true
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(myContextWrapper(newBase).wrap())
+    }
 
-        val animation = AnimationUtils.loadAnimation(this@ConversionActivity, R.anim.cards_show)
-        cards.startAnimation(animation)
-        //Load icon
-        loadIcon()
-        //Set icon editor
-        val edit = findViewById(R.id.card_icon_edit) as ImageView
-        edit.setOnClickListener {
-            val choose = Intent(ConversionActivity@this,FileChooserActivity::class.java)
-            startActivityForResult(choose, 0)
-        }
-        //Set PDI CardView layout
-        val PackType = findViewById(R.id.info_pack_type) as TextView
-        val PackInMC = findViewById(R.id.info_pack_in_mc_ver) as TextView
-        var type: String? = resources.getString(R.string.info_pack_type)
-        when (conversion!!.VerStr) {
-            TextureCompat.fullPE -> type += resources.getString(R.string.type_fullPE)
-            TextureCompat.fullPC -> type += resources.getString(R.string.type_fullPC)
-            TextureCompat.brokenPE -> type += resources.getString(R.string.type_brokenPE)
-            brokenPC -> type += resources.getString(R.string.type_brokenPC)
-            else -> type = null
-        }
-        PackType.text = type
-
-        var ver = conversion!!.decisions!!.getInMinecraftVer(PackInMC)
-        if (ver == null)
-            ver = resources.getString(R.string.info_file_not_exists)
-
-        PackInMC.text = resources.getString(R.string.info_pack_in_mc_ver) + ver!!
-
-        val supportOrNot = findViewById(R.id.support_or_not_icon) as ImageView
-        if (ver == resources.getString(R.string.type_before_1_9)) {
-            supportOrNot.setImageResource(R.drawable.close_circle)
-        }
-
+    fun getIconOFResourceCompression() : String{
         //Set Compression
         var image: File? = null
         var baseFrom: String? = null
-        if (conversion!!.VerStr == TextureCompat.fullPC || conversion!!.VerStr == brokenPC)
-            baseFrom = conversion!!.path + "/assets/minecraft/textures"
+        if (conversion.VerStr == TextureCompat.fullPC || conversion.VerStr == brokenPC)
+            baseFrom = conversion.path + "/assets/minecraft/textures"
         else
-            baseFrom = conversion!!.path + "/textures"
+            baseFrom = conversion.path + "/textures"
         //grass >> sword >> never mind
         image = FindFile.withKeywordOnce("grass_side.png", baseFrom)
         if (image == null) {
@@ -402,82 +384,13 @@ class ConversionActivity : BaseActivity() {
             if (image == null)
                 image = FindFile.withKeywordOnce(".png", baseFrom)
         }
-        val imageLocation = image!!.path
-
-
-        //set listener
-        val compress = findViewById(R.id.compression_card) as CardView
-
-
-        compress.setOnClickListener {
-            val dialog = BottomSheetDialog(this@ConversionActivity)
-
-
-            val dialogView = layoutInflater.inflate(R.layout.compression_dialog, null)
-
-            dialog.setContentView(dialogView)
-
-
-            val optionsBitmap = BitmapFactory.Options()
-            optionsBitmap.inSampleSize = 1
-
-            val bitmap = BitmapFactory.decodeFile(imageLocation, optionsBitmap)
-            val confirm = dialogView.findViewById<View>(R.id.compression_button_confirm) as Button
-
-            loadDialogLayout(dialogView, bitmap)
-
-            val spinner = dialogView.findViewById<View>(R.id.compression_spinner) as Spinner
-            spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-
-                override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
-                    val options = resources.getStringArray(R.array.compression_options)
-
-                    when (options[i]) {
-                        "8x" -> compressSize = 8
-                        "16x" -> compressSize = 16
-                        "32x" -> compressSize = 32
-                        "64x" -> compressSize = 64
-                        "128x" -> compressSize = 128
-                        "256x" -> compressSize = 256
-                        "512x" -> compressSize = 512
-                        else -> compressSize = 0
-                    }
-                    if (compressSize != 0) {
-                        loadDialogLayout(dialogView, CompressImage.getBitmap(bitmap, compressSize, compressSize))
-                    } else
-                        loadDialogLayout(dialogView, bitmap)
-
-                    if (compressSize > bitmap.width || compressSize > bitmap.height) {
-                        confirm.isEnabled = false
-                        confirm.setTextColor(resources.getColor(R.color.grey_primary))
-                        Toast.makeText(this@ConversionActivity, R.string.compression_alert, Toast.LENGTH_SHORT).show()
-                    } else {
-                        confirm.isEnabled = true
-                        confirm.setTextColor(resources.getColor(R.color.colorAccent))
-                    }
-                }
-
-                override fun onNothingSelected(adapterView: AdapterView<*>) {
-                    compressSize = 0
-                }
-            }
-
-            dialog.setOnCancelListener { compressSize = compressFinalSize }
-
-            dialog.show()
-
-
-            confirm.setOnClickListener {
-                compressFinalSize = compressSize
-                dialog.dismiss()
-            }
-        }
+        return image!!.path
     }
 
 
     private fun loadDialogLayout(dialogView: View, bitmap: Bitmap?) {
 
-        val spinner = dialogView.findViewById<View>(R.id.compression_spinner) as Spinner
+        val spinner = dialogView.findViewById(R.id.compression_spinner) as Spinner
         if (compressSize != 0) {
             when (compressSize) {
                 8 -> spinner.setSelection(1)
@@ -494,14 +407,14 @@ class ConversionActivity : BaseActivity() {
 
 
         //set view
-        val preview = dialogView.findViewById<View>(R.id.compression_image) as ImageView
+        val preview = dialogView.findViewById(R.id.compression_image) as ImageView
 
         preview.setImageBitmap(bitmap)
 
 
         //set text
-        val width_text = dialogView.findViewById<View>(R.id.compression_width_text) as TextView
-        val height_text = dialogView.findViewById<View>(R.id.compression_height_text) as TextView
+        val width_text = dialogView.findViewById(R.id.compression_width_text) as TextView
+        val height_text = dialogView.findViewById(R.id.compression_height_text) as TextView
         width_text.text = bitmap!!.width.toString()
         height_text.text = bitmap.height.toString()
     }
@@ -530,16 +443,19 @@ class ConversionActivity : BaseActivity() {
 
                         iconMap = CompressImage.getBitmap(iconMap!!, scale)
 
-                        conversion!!.icon = iconMap
+                        conversion.icon = iconMap
                         loadIcon()
                     }
                     builder.setNegativeButton(R.string.thanks) { dialogInterface, i ->
-                        conversion!!.icon = iconMap
+                        conversion.icon = iconMap
                         loadIcon()
                     }
                     builder.show()
+
+                    hasIconBeenOverwritten = true
+
                 } else {
-                    conversion!!.icon = iconMap
+                    conversion.icon = iconMap
                     loadIcon()
                 }
             }
@@ -548,18 +464,8 @@ class ConversionActivity : BaseActivity() {
 
     fun doOnFail() {
         //Delete not pack
-        //==>define
-        val unzipping_tip = findViewById(R.id.unzipping_tip) as LinearLayout
-        val cards = findViewById(R.id.cards_grid) as LinearLayout
-        val error_layout = findViewById(R.id.error_layout) as LinearLayout
-        //settings
-        cards.visibility = View.GONE
-        unzipping_tip.visibility = View.GONE
-        error_layout.visibility = View.VISIBLE
-
-        val text = findViewById(R.id.error_layout_text) as TextView
-        text.text = text.text.toString() + this@ConversionActivity.getString(R.string.not_pack)
-        val notpack = File(conversion!!.path)
+        val text = findViewById(R.id.tutorial_welcome_error_layout) as LinearLayout
+        val notpack = File(conversion.path)
         mLog.i("PackConversion", "Deleting " + notpack.toString())
         class deleteTask : AsyncTask<Void, Int, Boolean>() {
             override fun doInBackground(vararg voids: Void): Boolean? {
@@ -570,19 +476,24 @@ class ConversionActivity : BaseActivity() {
                 else
                     r = true
 
-
-                if (r)
-                    Snackbar.make(text, R.string.deleted_completed, Snackbar.LENGTH_LONG).show()
-                else
-                    Snackbar.make(text, R.string.deteted_failed, Snackbar.LENGTH_LONG).show()
-                try {
-                    Thread.sleep(1400)
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
+                val callback : Snackbar.Callback = object : Snackbar.Callback() {
+                    override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+                        super.onDismissed(transientBottomBar, event)
+                        finish()
+                    }
                 }
 
+                if (r)
+                    Snackbar.make(text, R.string.deleted_completed, Snackbar.LENGTH_SHORT)
+                            .setCallback(callback)
+                            .show()
+                else
+                    Snackbar.make(text, R.string.deteted_failed, Snackbar.LENGTH_SHORT)
+                            .setCallback(callback)
+                            .show()
+
+
                 finishIntent.putExtra("Status_return", false)
-                finish()
                 return r
             }
         }

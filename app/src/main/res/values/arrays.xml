@@ -20,4 +20,13 @@
         <item>ch</item>
         <item>en</item>
     </string-array>
+
+    <string-array name="pref_conversion_styles">
+        <item>Old</item>
+        <item>Tutorial</item>
+    </string-array>
+    <string-array name="pref_conversion_styles_values">
+        <item>old</item>
+        <item>new</item>
+    </string-array>
 </resources>

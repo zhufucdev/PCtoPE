@@ -5,24 +5,23 @@
         <item android:title="@string/nav_textures_manager"
             android:icon="@drawable/view_agenda"
             android:id="@+id/nav_manager"/>
-        <!--
-        <item android:title="@string/nav_textures_packer"
-            android:icon="@drawable/zip_box"
-            android:id="@+id/nav_packer"/>
-            -->
+
     </group>
     <item android:title="@string/nav_application">
         <menu>
             <group android:checkableBehavior="single">
-                <item android:title="@string/nav_settings"
+                <item
+                    android:id="@+id/nav_settings"
                     android:icon="@drawable/settings"
-                    android:id="@+id/nav_settings"/>
-                <item android:title="@string/nav_about"
+                    android:title="@string/nav_settings" />
+                <item
+                    android:id="@+id/nav_about"
                     android:icon="@drawable/alert_circle"
-                    android:id="@+id/nav_about"/>
-                <item android:title="@string/logs"
+                    android:title="@string/nav_about" />
+                <item
+                    android:id="@+id/nav_log"
                     android:icon="@drawable/android_debug_bridge"
-                    android:id="@+id/nav_log"/>
+                    android:title="@string/logs" />
             </group>
 
         </menu>

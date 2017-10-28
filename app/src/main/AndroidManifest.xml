@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Activities.FirstActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,20 +28,21 @@
             </intent-filter>
             <meta-data
                 android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts"/>
-
+                android:resource="@xml/shortcuts" />
         </activity>
+
         <activity
             android:name="za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity"
             android:theme="@style/AppTheme.NoActionBar.windowTranslucentNavigation" />
         <activity
             android:name=".Activities.MainActivity"
             android:label="PCtoPE"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.ConversionActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar.windowTranslucentStatus" />
+        <activity android:name=".Activities.ConversionActivityOld"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Activities.SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -52,7 +53,7 @@
         </activity>
         <activity
             android:name=".Activities.AboutActivity"
-            android:parentActivityName=".Activities.MainActivity"/>
+            android:parentActivityName=".Activities.MainActivity" />
         <activity
             android:name=".Activities.UserBugReport"
             android:theme="@style/AppTheme" />
@@ -61,13 +62,14 @@
             android:label="@string/project_unnamed"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.FileChooserActivity" />
-        <activity android:name=".Activities.ShowLogActivity"/>
+        <activity android:name=".Activities.ShowLogActivity" />
 
-
-        <!--Net Ease BugRPT-->
+        <!--
+        Net Ease BugRPT
         <meta-data
             android:name="BUGRPT_APPID"
             android:value="A001298994" />
+        -->
 
     </application>
 

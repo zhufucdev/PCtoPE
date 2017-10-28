@@ -30,8 +30,11 @@ class FileChooserActivity : BaseActivity() {
     private fun init(){
         val externalRoot = Environment.getExternalStorageDirectory().path
         val recyclerView = findViewById(R.id.chooser_act_recycler) as RecyclerView
+        val intent = intent
+        val dataCommit = intent.getStringArrayExtra("format")
+        val list : List<String> = if (dataCommit==null){ mutableListOf("png","jpg") } else{ dataCommit.toList() }
 
-        adapter = FileChooserAdapter(externalRoot, mutableListOf("png","jpg"))
+        adapter = FileChooserAdapter(externalRoot,list)
         adapter.setOnItemClickListener(object : FileChooserAdapter.OnItemClickListener{
             override fun onClick(view: View, data: Intent) {
                 val file = File(data.getStringExtra("path"))

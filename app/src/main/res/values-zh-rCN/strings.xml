@@ -18,7 +18,7 @@
     <string name="choosing_none">你什么都没选</string>
     <string name="guide_welcome">欢迎来到转化向导</string>
     <string name="label_guide">转化向导</string>
-    <string name="project_name">项目名称</string>
+    <string name="project_name">名称</string>
     <string name="project_description">描述</string>
     <string name="project_unnamed">未命名</string>
     <string name="project_icon_edit">编辑</string>
@@ -80,9 +80,7 @@
     <string name="nav_application">应用程序</string>
     <string name="nav_about">关于</string>
     <string name="title_activity_settings">设置</string>
-    <string name="pref_force_eng">强制使用英语</string>
     <string name="rebooting">正在重启应用程序...</string>
-    <string name="pref_force_ch">强制使用中文</string>
     <string name="pref_language">语言</string>
     <string name="pref_lang_auto">Auto</string>
     <string name="about_create_by">由朱拂comcom创建</string>
@@ -92,7 +90,6 @@
     <string name="pref_drawer_title">侧滑栏头图</string>
     <string name="pref_drawer_custom">自定义</string>
     <string name="pref_drawer_clear">清除</string>
-    <string name="nav_textures_packer">材质包打包</string>
     <string name="compression_tip_title">这是什么操作?</string>
     <string name="compression_tip_text">这用来打包MC材质包，打包好的.mcpack文件将保存在</string>
     <string name="compressiom_tip_text2">.mcpack文件可以被MC导入，方便在特殊平台，如IOS,WIN10上使用材质包。当然，如果你的Android设备不使用外部储存空间，此方法也可奏效。</string>
@@ -129,10 +126,21 @@
     <string name="disable_msg">已禁用</string>
     <string name="convert_into_resources_folder">转化到资源文件夹</string>
     <string name="convert_into_mcpack">转化到mcpack</string>
-    <string name="compressing_mcpack">正在压缩到mcpack</string>
+    <string name="compressing_mcpack">正在压缩到mcpack...</string>
     <string name="mcpack_compress">压缩到Mcpack</string>
     <string name="mcpack_compress_subtitle">这帮助你兼容其他平台，如Windows10和IOS。\".mcpack\"文件将会被压缩在</string>
     <string name="mcpack_exists">文件已经位于</string>
     <string name="mcpack_delete">删除mcpack?</string>
     <string name="share">分享</string>
+    <string name="json_editor">JSON编辑器</string>
+    <string name="guide_welcome_subtitle">跟着向导，把PC材质包转化成PE。</string>
+    <string name="input_name_descrption">请输入你想要的名称和简介</string>
+    <string name="input_name_descrption_subtitle">他们都会展示在MC中。</string>
+    <string name="next">下一步</string>
+    <string name="conversion_icon_text">这是自带图标</string>
+    <string name="conversion_icon_text_subtitle">点击以覆盖。</string>
+    <string name="tutorial_show_advenced_options">高级选项</string>
+    <string name="compress_into_mcpack_at_the_same_time">同时压缩到mcpack</string>
+    <string name="done">完成！</string>
+    <string name="pref_conversion_style">转化界面风格</string>
 </resources>

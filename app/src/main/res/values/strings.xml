@@ -5,12 +5,12 @@
     <string name="ok">OK</string>
     <string name="choosing_alert">File Choosing</string>
     <string name="choosing_none">You chose nothing.</string>
-    <string name="guide_welcome">Welcome to the conversion guide</string>
+    <string name="guide_welcome">Welcome to The Conversion Tutorial</string>
     <string name="label_guide">conversion guide</string>
     <string name="project_name">name</string>
     <string name="project_description">description</string>
     <string name="project_unnamed">Unnamed</string>
-    <string name="project_icon_edit">edit</string>
+    <string name="project_icon_edit">Edit</string>
     <string name="project_icon_open">open</string>
     <string name="project_icon_title">icon</string>
     <string name="following_title">More Options</string>
@@ -80,9 +80,7 @@
     <string name="nav_application">Application</string>
     <string name="nav_about">About</string>
     <string name="title_activity_settings">Settings</string>
-    <string name="pref_force_eng">Force English</string>
     <string name="rebooting">Restarting application...</string>
-    <string name="pref_force_ch">Force Chinese</string>
     <string name="pref_language">Language</string>
     <string name="pref_lang_auto">Auto</string>
     <string name="about_create_by">Create By Zhufucomcom</string>
@@ -92,7 +90,6 @@
     <string name="pref_drawer_title">Header Image of Drawer</string>
     <string name="pref_drawer_custom">Custom</string>
     <string name="pref_drawer_clear">Clear</string>
-    <string name="nav_textures_packer">Textures Packer</string>
     <string name="compression_tip_title">What\'s this?</string>
     <string name="compression_tip_text">This can help you pack Minecraft Texture Packs into .mcpack files. They will be saved in</string>
     <string name="compressiom_tip_text2">.mcpack files can be open to import texture packs in Minecraft. Is a good way to use texture packs on special devices like IOS and Windows10.You can also use it on your Android device if you don\'t use External Storage.</string>
@@ -136,5 +133,16 @@
     <string name="mcpack_exists">The file is already found in</string>
     <string name="mcpack_delete">Delete the mcpack?</string>
     <string name="share">Share</string>
+    <string name="json_editor">JSON Editor</string>
+    <string name="guide_welcome_subtitle">Follow this and finish converting into PE.</string>
+    <string name="input_name_descrption">Please Input The Name and Descritption You Want</string>
+    <string name="input_name_descrption_subtitle">They both will be shown in Minecraft.</string>
+    <string name="next">next</string>
+    <string name="conversion_icon_text">This Is the Icon of the Pack</string>
+    <string name="conversion_icon_text_subtitle">Click to overwrite.</string>
+    <string name="tutorial_show_advenced_options">Advenced Options</string>
+    <string name="compress_into_mcpack_at_the_same_time">Compress into Mcpack at the Same Time</string>
+    <string name="done">Done!</string>
+    <string name="pref_conversion_style">Conversion UI Style</string>
 
 </resources>

@@ -39,7 +39,7 @@ import java.io.IOException
 import java.math.BigDecimal
 import java.nio.channels.FileChannel
 
-class DetailsActivity : BaseActivity() {
+class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
 
     private var name: String? = null
     private var description: String? = null
@@ -107,8 +107,8 @@ class DetailsActivity : BaseActivity() {
         dialog.setTitle(R.string.project_icon_edit)
         dialog.setView(dialogView)
 
-        val editName = dialogView.findViewById<View>(R.id.details_edit_name) as EditText
-        val editDescription = dialogView.findViewById<View>(R.id.details_edit_description) as EditText
+        val editName = dialogView.findViewById(R.id.details_edit_name) as EditText
+        val editDescription = dialogView.findViewById(R.id.details_edit_description) as EditText
 
         editName.setText(name)
         editDescription.setText(description)
@@ -240,17 +240,16 @@ class DetailsActivity : BaseActivity() {
         anim.start()
     }
 
+    lateinit var iconView : ImageView
+    lateinit var toolbarLayout : CollapsingToolbarLayout
     fun initBasicTitles() {
 
-        val iconView = findViewById(R.id.details_icon) as ImageView
+        iconView = findViewById(R.id.details_icon) as ImageView
         val packdescription = findViewById(R.id.details_description) as TextView
-        val toolbarLayout = findViewById(R.id.details_toolbar_layout) as CollapsingToolbarLayout
+        toolbarLayout = findViewById(R.id.details_toolbar_layout) as CollapsingToolbarLayout
 
         val vto = iconView.viewTreeObserver
-        vto.addOnPreDrawListener (ViewTreeObserver.OnPreDrawListener {
-            toolbarLayout.expandedTitleMarginStart = Math.round(iconView.measuredWidth*1.3).toInt()
-            true
-        })
+        vto.addOnPreDrawListener (this)
 
         if (icon != null)
             iconView.setImageBitmap(BitmapFactory.decodeFile(icon))
@@ -273,6 +272,13 @@ class DetailsActivity : BaseActivity() {
             packdescription.visibility = View.INVISIBLE
             toolbarLayout.expandedTitleMarginBottom = 100
         }
+    }
+
+    override fun onPreDraw(): Boolean {
+        toolbarLayout.expandedTitleMarginStart = Math.round(iconView.measuredWidth*1.3).toInt()
+        mLog.d("Titles","Margin set.")
+        iconView.viewTreeObserver.removeOnPreDrawListener(this)
+        return true
     }
 
     fun initToolbar() {
@@ -316,11 +322,11 @@ class DetailsActivity : BaseActivity() {
             dialog.setContentView(dialogView)
 
             val bitmap = BitmapFactory.decodeFile(imageLocation)
-            val confirm = dialogView.findViewById<View>(R.id.compression_button_confirm) as Button
+            val confirm = dialogView.findViewById(R.id.compression_button_confirm) as Button
 
             loadDialogLayout(dialogView, bitmap)
 
-            val spinner = dialogView.findViewById<View>(R.id.compression_spinner) as Spinner
+            val spinner = dialogView.findViewById(R.id.compression_spinner) as Spinner
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
                 override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
@@ -469,7 +475,7 @@ class DetailsActivity : BaseActivity() {
 
     private fun loadDialogLayout(dialogView: View, bitmap: Bitmap?) {
 
-        val spinner = dialogView.findViewById<View>(R.id.compression_spinner) as Spinner
+        val spinner = dialogView.findViewById(R.id.compression_spinner) as Spinner
         if (compressSize != 0) {
             when (compressSize) {
                 8 -> spinner.setSelection(1)
@@ -486,14 +492,14 @@ class DetailsActivity : BaseActivity() {
 
 
         //set view
-        val preview = dialogView.findViewById<View>(R.id.compression_image) as ImageView
+        val preview = dialogView.findViewById(R.id.compression_image) as ImageView
 
         preview.setImageBitmap(bitmap)
 
 
         //set text
-        val width_text = dialogView.findViewById<View>(R.id.compression_width_text) as TextView
-        val height_text = dialogView.findViewById<View>(R.id.compression_height_text) as TextView
+        val width_text = dialogView.findViewById(R.id.compression_width_text) as TextView
+        val height_text = dialogView.findViewById(R.id.compression_height_text) as TextView
         width_text.text = bitmap!!.width.toString()
         height_text.text = bitmap.height.toString()
     }

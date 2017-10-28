@@ -304,7 +304,7 @@ constructor(private val FilePath: String, private val context: Context) {
             terrainOut.write(textBefore.toByteArray())
             terrainOut.write(doJsonFixing(data[4].reader(Charset.defaultCharset()).readText()).toByteArray())
         } catch (e: IOException) {
-            mOnCrashListener!!.onCrash(e.toString())
+            mOnCrashListener.onCrash(e.toString())
             e.printStackTrace()
         }
 
@@ -320,7 +320,7 @@ constructor(private val FilePath: String, private val context: Context) {
                     if (!t.createNewFile())
                         isCreated = false
                 } catch (e: IOException) {
-                    mOnCrashListener!!.onCrash(e.toString())
+                    mOnCrashListener.onCrash(e.toString())
                     e.printStackTrace()
                 }
 
@@ -331,7 +331,7 @@ constructor(private val FilePath: String, private val context: Context) {
                 itemOut.write(doJsonFixing(data[3].reader(Charset.defaultCharset()).readText()).toByteArray())
                 itemOut.close()
             } catch (e: IOException) {
-                mOnCrashListener!!.onCrash(e.toString())
+                mOnCrashListener.onCrash(e.toString())
                 e.printStackTrace()
             }
 
@@ -341,7 +341,7 @@ constructor(private val FilePath: String, private val context: Context) {
                 flipOut.write(doJsonFixing(data[2].reader(Charset.defaultCharset()).readText()).toByteArray())
                 flipOut.close()
             } catch (e: IOException) {
-                mOnCrashListener!!.onCrash(e.toString())
+                mOnCrashListener.onCrash(e.toString())
                 e.printStackTrace()
             }
 
@@ -382,7 +382,7 @@ constructor(private val FilePath: String, private val context: Context) {
             File(path + "/manifest.json").writeText(intro, Charset.defaultCharset())
 
         } else
-            mOnCrashListener!!.onCrash("Could not create JSON files.")
+            mOnCrashListener.onCrash("Could not create JSON files.")
 
     }
 
@@ -391,7 +391,7 @@ constructor(private val FilePath: String, private val context: Context) {
         if (n.isFile) {
             //Show progress
             mLog.d("compression", "Compressing " + n)
-            mConversionChangeListener!!.inDoingImageCompressions(n.path)
+            mConversionChangeListener.inDoingImageCompressions(n.path)
 
 
             val str = n.path
@@ -493,7 +493,11 @@ constructor(private val FilePath: String, private val context: Context) {
     /*
         Some Listeners...
      */
-    private var mOnUncompressListener: OnUncompressListener? = null
+    private var mOnUncompressListener: OnUncompressListener = object : OnUncompressListener {
+        override fun onPreUncompress() {}
+        override fun inUncompressing() {}
+        override fun onPostUncompress(result: Boolean, version: String?) {}
+    }
 
     interface OnUncompressListener {
         fun onPreUncompress()
@@ -501,7 +505,9 @@ constructor(private val FilePath: String, private val context: Context) {
         fun onPostUncompress(result: Boolean, version: String?)
     }
 
-    private var mOnCrashListener: OnCrashListener? = null
+    private var mOnCrashListener: OnCrashListener = object : OnCrashListener {
+        override fun onCrash(errorContent: String) {}
+    }
 
     interface OnCrashListener {
         fun onCrash(errorContent: String)
@@ -515,12 +521,17 @@ constructor(private val FilePath: String, private val context: Context) {
         this.mOnCrashListener = listener
     }
 
-    private var mConversionChangeListener: ConversionChangeListener? = null
+    private var mConversionChangeListener: ConversionChangeListener = object : ConversionChangeListener{
+        override fun inDoingVersionDecisions() {}
+        override fun inDoingImageCompressions(whatsBeingCompressing: String) {}
+        override fun inDoingJSONWriting() {}
+        override fun inDoingMcpackCompressing(file: String) {}
+        override fun onDone() {}
+    }
 
     interface ConversionChangeListener {
         fun inDoingVersionDecisions()
         fun inDoingImageCompressions(whatsBeingCompressing: String)
-        fun inDoingImageColorTurning()
         fun inDoingJSONWriting()
         fun inDoingMcpackCompressing(file : String)
         fun onDone()
@@ -534,12 +545,12 @@ constructor(private val FilePath: String, private val context: Context) {
         class UnzippingTask : AsyncTask<Void, Int, Boolean>() {
 
             override fun onPreExecute() {
-                mOnUncompressListener!!.onPreUncompress()
+                mOnUncompressListener.onPreUncompress()
             }
 
             override fun doInBackground(vararg params: Void): Boolean? {
                 if (!skipUnzip) {
-                    mOnUncompressListener!!.inUncompressing()
+                    mOnUncompressListener.inUncompressing()
                     try {
                         mLog.d("unzip", "Unzipping to " + path)
                         unzip(File(FilePath), path, "0")
@@ -593,12 +604,12 @@ constructor(private val FilePath: String, private val context: Context) {
                     VerStr = decisions!!.packVersion
                     if (VerStr!![0] != 'E') {
                         iconPath = if (VerStr == TextureCompat.fullPC) path + "/pack.png" else if (VerStr == TextureCompat.fullPE) path + "/pack_icon.png" else null
-                        mOnUncompressListener!!.onPostUncompress(true, VerStr)
+                        mOnUncompressListener.onPostUncompress(true, VerStr)
                     } else {
-                        mOnUncompressListener!!.onPostUncompress(false, null)
+                        mOnUncompressListener.onPostUncompress(false, null)
                     }
                 } else
-                    mOnUncompressListener!!.onPostUncompress(false, null)
+                    mOnUncompressListener.onPostUncompress(false, null)
             }
         }
 
@@ -610,7 +621,7 @@ constructor(private val FilePath: String, private val context: Context) {
         this.packdescription = packdescription
 
         mLog.i("Pack Conversion", "Doing version decisions...")
-        mConversionChangeListener!!.inDoingVersionDecisions()
+        mConversionChangeListener.inDoingVersionDecisions()
         doVersionDecisions()
 
         doImageCompressions()
@@ -619,10 +630,10 @@ constructor(private val FilePath: String, private val context: Context) {
         //doImageBlackIntoTransparent();
         try {
             mLog.i("Pack Conversion", "Doing json Writing")
-            mConversionChangeListener!!.inDoingJSONWriting()
+            mConversionChangeListener.inDoingJSONWriting()
             doJSONWriting()
         } catch (e: FileNotFoundException) {
-            mOnCrashListener?.onCrash(e.toString())
+            mOnCrashListener.onCrash(e.toString())
             e.printStackTrace()
         }
 
@@ -644,11 +655,11 @@ constructor(private val FilePath: String, private val context: Context) {
         File(path).renameTo(dest)
 
         if (mcpackCompressDest!="") {
-            mConversionChangeListener!!.inDoingMcpackCompressing(mcpackCompressDest)
+            mConversionChangeListener.inDoingMcpackCompressing(mcpackCompressDest)
             compress(dest.path, mcpackCompressDest)
         }
 
-        mConversionChangeListener!!.onDone()
+        mConversionChangeListener.onDone()
         //Done
     }
 
@@ -663,7 +674,7 @@ constructor(private val FilePath: String, private val context: Context) {
                     File(iconPath).writeBytes(baos.toByteArray())
                 } catch (e: IOException) {
                     e.printStackTrace()
-                    mOnCrashListener!!.onCrash(e.toString())
+                    mOnCrashListener.onCrash(e.toString())
                 }
 
             }
@@ -718,9 +729,16 @@ constructor(private val FilePath: String, private val context: Context) {
         }
 
         private fun compress(baseIndex : String,toIndex : String){
+            mLog.i("Compressions","Compressing $baseIndex to $toIndex")
+
             val src = File(toIndex)
             if (src.exists())
                 src.delete()
+            val result = File(toIndex)
+            if (!result.parentFile.isDirectory){
+                result.parentFile.delete()
+                result.parentFile.mkdirs()
+            }
 
             val par = ZipParameters()
             par.compressionMethod = Zip4jConstants.COMP_DEFLATE

@@ -1,7 +1,0 @@
-#Fri Oct 06 08:31:55 UTC 2017
-base.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2686fa136b67542dbb06310870b947440ce2407b
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f61090e3467a9fa47da70a9fdbfa45bf9ae916cd/classes.dex
-base.1=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f61090e3467a9fa47da70a9fdbfa45bf9ae916cd
-file.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2686fa136b67542dbb06310870b947440ce2407b/classes.dex

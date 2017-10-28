@@ -15,6 +15,7 @@ import android.widget.TextView
 
 import com.zhufuc.pctope.R
 import com.zhufuc.pctope.Utils.FileType
+import org.w3c.dom.Text
 
 import java.io.File
 import java.io.FileInputStream
@@ -33,8 +34,8 @@ class FileChooserAdapter(private var root: String?,private var lastFixes : List<
         var zipFileView: CardView
 
         init {
-            folderView = itemView.findViewById(R.id.folder_layout)
-            zipFileView = itemView.findViewById(R.id.zip_file_layout)
+            folderView = itemView.findViewById(R.id.folder_layout) as CardView
+            zipFileView = itemView.findViewById(R.id.zip_file_layout) as CardView
         }
     }
 
@@ -76,11 +77,11 @@ class FileChooserAdapter(private var root: String?,private var lastFixes : List<
             holder.zipFileView.visibility = View.VISIBLE
             holder.folderView.visibility = View.GONE
             holder.zipFileView.tag = file.path
-            name = holder.zipFileView.findViewById(R.id.file_title)
+            name = holder.zipFileView.findViewById(R.id.file_title) as TextView
             name.text = file.name
 
             if (lastFixes.contains("png")||lastFixes.contains("jpg")){
-                val imageView = holder.zipFileView.findViewById<ImageView>(R.id.chooser_zip)
+                val imageView = holder.zipFileView.findViewById(R.id.chooser_zip) as ImageView
 
                 class loadImage : AsyncTask<Void, Void, Boolean>() {
                     lateinit var bitmap : Bitmap
@@ -112,7 +113,7 @@ class FileChooserAdapter(private var root: String?,private var lastFixes : List<
             holder.zipFileView.visibility = View.GONE
             holder.folderView.visibility = View.VISIBLE
             holder.folderView.tag = file.path
-            name = holder.folderView.findViewById(R.id.folder_title)
+            name = holder.folderView.findViewById(R.id.folder_title) as TextView
             name.text = file.name
 
             holder.folderView.setOnClickListener(onClickListener)

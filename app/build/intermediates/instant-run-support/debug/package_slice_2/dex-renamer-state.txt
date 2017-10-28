@@ -1,4 +1,4 @@
-#Thu Oct 05 09:19:30 UTC 2017
-base.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2
+#Fri Oct 27 18:03:15 UTC 2017
+base.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dexMerger/debug/3
 renamed.0=classes.dex
-file.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex
+file.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex

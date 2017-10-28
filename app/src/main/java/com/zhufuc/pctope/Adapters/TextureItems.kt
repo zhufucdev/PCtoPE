@@ -42,11 +42,11 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
 
 
         init {
-            TextureIcon = v.findViewById<View>(R.id.card_texture_icon) as ImageView
-            TextureName = v.findViewById<View>(R.id.card_texture_name) as TextView
-            TextureDescription = v.findViewById<View>(R.id.card_texture_name_subname) as TextView
-            AlertIcon = v.findViewById<View>(R.id.card_texture_alert_icon) as ImageView
-            cardView = v.findViewById<View>(R.id.card_texture_card) as CardView
+            TextureIcon = v.findViewById(R.id.card_texture_icon) as ImageView
+            TextureName = v.findViewById(R.id.card_texture_name) as TextView
+            TextureDescription = v.findViewById(R.id.card_texture_name_subname) as TextView
+            AlertIcon = v.findViewById(R.id.card_texture_alert_icon) as ImageView
+            cardView = v.findViewById(R.id.card_texture_card) as CardView
         }
     }
 
