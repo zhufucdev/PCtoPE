@@ -19,6 +19,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/btn_margin"
         app:srcCompat="@drawable/chevron_right"
-        android:rotation="-90"/>
+        android:rotation="-90"
+        app:fabSize="normal"/>
 
 </android.support.design.widget.CoordinatorLayout>

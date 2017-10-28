@@ -62,6 +62,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
     private var hasStep2BeenShown : Boolean = false
     private var hasIconBeenOverwritten : Boolean = false
     private var areAdvencedOptionsShown : Boolean = false
+    private var isDoingConverting : Boolean = false
 
     private lateinit var conversion: TextureConversionUtils
 
@@ -199,7 +200,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
                         override fun inDoingImageCompressions(whatsBeingCompressing: String) {
                             runOnUiThread({
-                                loadingText.text = "${getString(R.string.compressing_mcpack)}\n $whatsBeingCompressing"
+                                loadingText.text = "${getString(R.string.resources_compression)}\n $whatsBeingCompressing"
                             })
                         }
 
@@ -231,8 +232,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
                     val mcpackPath : String = if(mcpackSwitcher.isChecked) "${Environment.getExternalStorageDirectory().path}/games/com.mojang/mcpacks/$packname.mcpack" else ""
                     conversion.compressFinalSize = compressFinalSize
                     Thread(Runnable { conversion.doConverting(packname,packdescription,mcpackPath) }).start()
-
-
+                    isDoingConverting = true
                 })
 
                 val show_advenced = findViewById(R.id.tutorial_advenced_options_button) as Button
@@ -315,7 +315,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
     override fun onBackPressed() {
         //super.onBackPressed()
-        if (showingPostition > 0 && showingPostition != 2)
+        if (showingPostition > 0 && !isDoingConverting)
             back()
         else
             super.onBackPressed()
