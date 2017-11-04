@@ -76,7 +76,8 @@
             android:layout_alignParentEnd="true"
             app:srcCompat="@drawable/plus"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:fabSize="normal"/>
+            app:fabSize="normal"
+            app:rippleColor="@color/colorAccentPrimary"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab_level_up"

@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true">
 
     <ScrollView
@@ -30,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
-                <EditText
+                <android.support.v7.widget.AppCompatEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/conversion_name"
@@ -42,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <EditText
+                <android.support.v7.widget.AppCompatEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/conversion_description"
@@ -50,12 +51,13 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tutorial_next"
                 android:layout_gravity="end"
-                android:backgroundTint="@color/colorAccent"
+                app:backgroundTint="@color/colorAccent"
+                app:rippleColor="@color/colorAccentPrimary"
                 android:text="@string/next"
                 android:textColor="@color/brown_primary"/>
 

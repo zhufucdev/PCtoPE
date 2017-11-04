@@ -24,9 +24,10 @@ import java.util.UUID
 class Textures(path: File) {
 
     val path: String = path.path
-
     val name: String?
     val description: String?
+
+    var position : Int = -1
 
     private val version: PackVersionDecisions = PackVersionDecisions(path)
 

@@ -23,7 +23,7 @@ class AboutActivity : BaseActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
 
-        val version = findViewById(R.id.about_version_text) as TextView
+        val version = findViewById<TextView>(R.id.about_version_text)
         val packageManager = packageManager
         var info: PackageInfo? = null
         try {
@@ -39,14 +39,14 @@ class AboutActivity : BaseActivity(), View.OnClickListener {
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val visitGithub = findViewById(R.id.visit_github) as ImageView
+        val visitGithub = findViewById<ImageView>(R.id.visit_github)
         visitGithub.setOnClickListener(this)
 
-        val visitCoolapk = findViewById(R.id.visit_coolapk) as ImageView
+        val visitCoolapk = findViewById<ImageView>(R.id.visit_coolapk)
         visitCoolapk.setOnClickListener(this)
 
         val show = AnimationUtils.loadAnimation(this, R.anim.cards_show)
-        val icon = findViewById(R.id.about_icon) as ImageView
+        val icon = findViewById<ImageView>(R.id.about_icon)
         icon.visibility = View.INVISIBLE
         Handler().postDelayed({icon.startAnimation(show)},500)
         show.setAnimationListener(object : Animation.AnimationListener {

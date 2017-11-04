@@ -27,7 +27,7 @@ class FirstActivity : BaseActivity() {
     private val permission = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE)
 
     private fun getTutorialItems(context: Context): ArrayList<TutorialItem> {
-        val item1 = TutorialItem(context.getString(R.string.tutorial_welcome), context.getString(R.string.tutorial_wlcome_subtitle), R.color.amber_primary, 0, R.drawable.ic_launcher_foreground)
+        val item1 = TutorialItem(context.getString(R.string.tutorial_welcome), context.getString(R.string.tutorial_wlcome_subtitle), R.color.amber_primary, 0, R.drawable.ic_launcher)
         val item2 = TutorialItem(context.getString(R.string.tutorial_step1), context.getString(R.string.tutorial_step1_subtitle), R.color.app_blue_dark, R.drawable.for_step2_fab, R.drawable.for_step2_background)
         val item3 = TutorialItem(context.getString(R.string.tutorial_step2), context.getString(R.string.tutorial_step2_subtitle), R.color.app_green, R.drawable.for_step3)
         val item4 = TutorialItem(context.getString(R.string.tutorial_step3), context.getString(R.string.tutorial_step3_subtitle), R.color.app_red, R.drawable.for_step4)

@@ -117,7 +117,9 @@ abstract class TutorialActivity(LayoutRes : Array<Int>) : AppCompatActivity(){
         show(showingPostition-1)
     }
 
-    override fun findViewById(id: Int): View = Layouts[showingPostition].view.findViewById(id)
+    override fun <T : View?> findViewById(id: Int): T  = Layouts[showingPostition].view.findViewById<T>(id)
+
+
 
     abstract fun onPageSwitched()
 }

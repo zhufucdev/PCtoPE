@@ -20,11 +20,11 @@
             android:orientation="vertical"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:gravity="center_horizontal">
-            <ImageView
+            <android.support.v7.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/about_icon"
-                android:src="@mipmap/ic_launcher"
+                app:srcCompat="@drawable/ic_launcher"
                 android:adjustViewBounds="true"
                 android:layout_marginStart="70dp"
                 android:layout_marginEnd="70dp"
@@ -79,11 +79,11 @@
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:id="@+id/about_visit_github">
-                <ImageView
+                <android.support.v7.widget.AppCompatImageView
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/github_circle"
+                    app:srcCompat="@drawable/github_circle"
                     android:foreground="?attr/selectableItemBackground"
                     android:clickable="true"
                     android:id="@+id/visit_github"/>
@@ -99,11 +99,11 @@
                 android:layout_toEndOf="@id/about_visit_github"
                 android:gravity="center_horizontal"
                 android:id="@+id/about_visit_coolapk">
-                <ImageView
+                <android.support.v7.widget.AppCompatImageView
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/coolblack"
+                    app:srcCompat="@drawable/coolblack"
                     android:foreground="?attr/selectableItemBackground"
                     android:clickable="true"
                     android:id="@+id/visit_coolapk"

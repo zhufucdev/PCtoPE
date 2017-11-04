@@ -107,8 +107,8 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
         dialog.setTitle(R.string.project_icon_edit)
         dialog.setView(dialogView)
 
-        val editName = dialogView.findViewById(R.id.details_edit_name) as EditText
-        val editDescription = dialogView.findViewById(R.id.details_edit_description) as EditText
+        val editName = dialogView.findViewById<EditText>(R.id.details_edit_name)
+        val editDescription = dialogView.findViewById<EditText>(R.id.details_edit_description)
 
         editName.setText(name)
         editDescription.setText(description)
@@ -136,8 +136,8 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
-        progress = findViewById(R.id.details_loading_progress) as ProgressBar
-        fab = findViewById(R.id.details_fab) as FloatingActionButton
+        progress = findViewById(R.id.details_loading_progress)
+        fab = findViewById(R.id.details_fab)
         fab!!.setOnClickListener(FabListener)
 
         val intent = intent
@@ -181,7 +181,7 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
 
     fun loadDetailedInfo() {
 
-        cards = findViewById(R.id.details_info_layout) as NestedScrollView
+        cards = findViewById(R.id.details_info_layout)
 
         class LoadingTask : AsyncTask<Void, Int, Boolean>() {
             public override fun onPreExecute() {
@@ -221,10 +221,10 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
         fab!!.isEnabled = true
 
         //-----CARD------
-        val size = findViewById(R.id.details_texture_size) as TextView
-        size.text = (getString(R.string.details_card_basic_info_size) + ": " + this.size + "MB").toString()
+        val size = findViewById<TextView>(R.id.details_texture_size)
+        size.text = "${getString(R.string.details_card_basic_info_size)} : ${this.size} MB"
 
-        val location = findViewById(R.id.details_texture_location) as TextView
+        val location = findViewById<TextView>(R.id.details_texture_location)
         location.text = (getString(R.string.details_card_basic_info_location) + ": " + path).toString()
         location.setOnClickListener { view ->
             val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -249,9 +249,9 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
     lateinit var toolbarLayout : CollapsingToolbarLayout
     fun initBasicTitles() {
 
-        iconView = findViewById(R.id.details_icon) as ImageView
-        val packdescription = findViewById(R.id.details_description) as TextView
-        toolbarLayout = findViewById(R.id.details_toolbar_layout) as CollapsingToolbarLayout
+        iconView = findViewById(R.id.details_icon)
+        val packdescription = findViewById<TextView>(R.id.details_description)
+        toolbarLayout = findViewById(R.id.details_toolbar_layout)
 
         val vto = iconView.viewTreeObserver
         vto.addOnPreDrawListener (this)
@@ -287,7 +287,7 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
     }
 
     fun initToolbar() {
-        val toolbar = findViewById(R.id.details_toolbar) as Toolbar
+        val toolbar = findViewById<Toolbar>(R.id.details_toolbar)
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar
@@ -315,7 +315,7 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
 
 
         //set listener
-        val compress = findViewById(R.id.compression_card) as CardView
+        val compress = findViewById<CardView>(R.id.compression_card)
 
 
         compress.setOnClickListener(View.OnClickListener {
@@ -327,11 +327,11 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
             dialog.setContentView(dialogView)
 
             val bitmap = BitmapFactory.decodeFile(imageLocation)
-            val confirm = dialogView.findViewById(R.id.compression_button_confirm) as Button
+            val confirm = dialogView.findViewById<Button>(R.id.compression_button_confirm)
 
             loadDialogLayout(dialogView, bitmap)
 
-            val spinner = dialogView.findViewById(R.id.compression_spinner) as Spinner
+            val spinner = dialogView.findViewById<Spinner>(R.id.compression_spinner)
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
                 override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
@@ -410,9 +410,9 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
         })
 
         //For mcpack compress card
-        val mcpackCard = findViewById(R.id.card_mcpack_compress) as CardView
-        val mcpackSubtitle = findViewById(R.id.card_mcpack_compress_subtitle) as TextView
-        val mcpackChe = findViewById(R.id.card_mcpack_compress_chevron) as ImageView
+        val mcpackCard = findViewById<CardView>(R.id.card_mcpack_compress)
+        val mcpackSubtitle = findViewById<TextView>(R.id.card_mcpack_compress_subtitle)
+        val mcpackChe = findViewById<ImageView>(R.id.card_mcpack_compress_chevron)
         val mcpackPath = File("${Environment.getExternalStorageDirectory()}/games/com.mojang/mcpacks/${name}.mcpack")
         val isMcpackExisted = mcpackPath.exists() && mcpackPath.isFile
 
@@ -482,7 +482,7 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
 
     private fun loadDialogLayout(dialogView: View, bitmap: Bitmap?) {
 
-        val spinner = dialogView.findViewById(R.id.compression_spinner) as Spinner
+        val spinner = dialogView.findViewById<Spinner>(R.id.compression_spinner)
         if (compressSize != 0) {
             when (compressSize) {
                 8 -> spinner.setSelection(1)
@@ -499,14 +499,14 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
 
 
         //set view
-        val preview = dialogView.findViewById(R.id.compression_image) as ImageView
+        val preview = dialogView.findViewById<ImageView>(R.id.compression_image)
 
         preview.setImageBitmap(bitmap)
 
 
         //set text
-        val width_text = dialogView.findViewById(R.id.compression_width_text) as TextView
-        val height_text = dialogView.findViewById(R.id.compression_height_text) as TextView
+        val width_text = dialogView.findViewById<TextView>(R.id.compression_width_text)
+        val height_text = dialogView.findViewById<TextView>(R.id.compression_height_text)
         width_text.text = bitmap!!.width.toString()
         height_text.text = bitmap.height.toString()
     }

@@ -12,28 +12,24 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
-        <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:windowTranslucentNavigation">false</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-
         <!-- Transition Animations -->
         <item name="android:windowExitAnimation">@transition/fade</item>
         <item name="android:windowEnterAnimation">@transition/fade</item>
-        <item name="android:windowReenterTransition">@transition/fade</item>
 
     </style>
 
-    <style name="AppTheme.NoActionBar.windowTranslucentNavigation" parent="AppTheme.NoActionBar">
-        <item name="android:windowTranslucentNavigation">true</item>
-        <item name="android:fitsSystemWindows">true</item>
-    </style>
+    <style name="AppTheme.TranslucentNavigation" parent="AppTheme"/>
 
-    <style name="AppTheme.NoActionBar.windowTranslucentStatus" parent="AppTheme.NoActionBar">
-        <item name="android:statusBarColor">@color/google_blue</item>
-    </style>
+    <style name="AppTheme.NoActionBar.windowTranslucentNavigation" parent="AppTheme.NoActionBar"/>
+
+    <style name="AppTheme.NoActionBar.windowTranslucentStatus" parent="AppTheme.NoActionBar"/>
 
     <style name="AppTheme.NoActionBar.FullScreen" parent="AppTheme.NoActionBar">
         <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.FullScreen.TranslucentNavigation" parent="AppTheme.NoActionBar.FullScreen">
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

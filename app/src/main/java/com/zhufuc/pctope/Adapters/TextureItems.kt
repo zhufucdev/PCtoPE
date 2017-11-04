@@ -42,11 +42,11 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
 
 
         init {
-            TextureIcon = v.findViewById(R.id.card_texture_icon) as ImageView
-            TextureName = v.findViewById(R.id.card_texture_name) as TextView
-            TextureDescription = v.findViewById(R.id.card_texture_name_subname) as TextView
-            AlertIcon = v.findViewById(R.id.card_texture_alert_icon) as ImageView
-            cardView = v.findViewById(R.id.card_texture_card) as CardView
+            TextureIcon = v.findViewById(R.id.card_texture_icon)
+            TextureName = v.findViewById(R.id.card_texture_name)
+            TextureDescription = v.findViewById(R.id.card_texture_name_subname)
+            AlertIcon = v.findViewById(R.id.card_texture_alert_icon)
+            cardView = v.findViewById(R.id.card_texture_card)
         }
     }
 
@@ -80,7 +80,7 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
         holder.TextureDescription.text = description
 
         //Set position Tag
-        holder.cardView.tag = position
+        textures.position = position
 
         //Image view
         val icon = BitmapFactory.decodeFile(textures.icon)
@@ -93,11 +93,11 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
             if (holder.AlertIcon.visibility == View.VISIBLE) {
                 val convert = Intent(holder.AlertIcon.context, ConversionActivity::class.java)
                 convert.putExtra("willSkipUnzipping", true)
-                convert.putExtra("filePath", holder.AlertIcon.tag.toString())
+                convert.putExtra("filePath", textures.position)
                 holder.AlertIcon.context.startActivity(convert)
                 return@setOnClickListener
             }
-            mOnItemClickListener!!.onItemClick(it, it.tag as Int)
+            mOnItemClickListener!!.onItemClick(it, textures.position)
         }
         holder.AlertIcon.setOnClickListener {
             val dialog = AlertDialog.Builder(holder.AlertIcon.context)
@@ -112,7 +112,6 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
             val verStr = textures.getVersion()
             if (verStr.equals(fullPC) || verStr.equals(brokenPC)) {
                 holder.AlertIcon.visibility = View.VISIBLE
-                holder.AlertIcon.tag = textures.path
                 holder.TextureDescription.text = holder.TextureDescription.resources.getString(R.string.broken_pc_subtitle)
                 return
             }

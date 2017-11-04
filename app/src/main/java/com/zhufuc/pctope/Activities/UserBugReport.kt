@@ -22,9 +22,9 @@ class UserBugReport : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_bug_report)
-        val content = findViewById(R.id.user_report) as TextView
-        val confirm = findViewById(R.id.user_report_confirm) as Button
-        val sc = findViewById(R.id.user_report_restart) as Switch
+        val content = findViewById<TextView>(R.id.user_report)
+        val confirm = findViewById<Button>(R.id.user_report_confirm)
+        val sc = findViewById<Switch>(R.id.user_report_restart)
         sc.isChecked = true
 
         confirm.setOnClickListener {
@@ -32,7 +32,9 @@ class UserBugReport : AppCompatActivity() {
 
             if (content.text.toString() != "") {
                 val tm = applicationContext.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-                CrashHandler.uploadUserDefineLog("用户反馈", Build.MODEL + ">" + tm.deviceId + ":" + content.text.toString())
+                try {
+                    CrashHandler.uploadUserDefineLog("用户反馈", Build.MODEL + ">" + android.os.Build.SERIAL + ":" + content.text.toString())
+                }catch (SecurityException :  SecurityException){}
                 mLog.i("Report","User's Report is committed.")
             }
             if (sc.isChecked) {

@@ -12,6 +12,7 @@ import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.CardView
+import android.support.v7.widget.SwitchCompat
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.*
@@ -70,8 +71,8 @@ class ConversionActivity : TutorialActivity(layoutList) {
         when (showingPostition){
             0 -> {
                 //Views
-                val fab_next = findViewById(R.id.tutorial_next) as FloatingActionButton
-                val loading = findViewById(R.id.tutorial_welcome_loading) as LinearLayout
+                val fab_next = findViewById<FloatingActionButton>(R.id.tutorial_next)
+                val loading = findViewById<LinearLayout>(R.id.tutorial_welcome_loading)
                 getIntentInfo()
 
                 if (!isPreFinished)
@@ -94,7 +95,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
                             isPreFinished = true
                         }
                         else{
-                            val error = findViewById(R.id.tutorial_welcome_error_layout) as LinearLayout
+                            val error = findViewById<LinearLayout>(R.id.tutorial_welcome_error_layout)
                             error.visibility = View.VISIBLE
                             doOnFail()
                         }
@@ -108,11 +109,10 @@ class ConversionActivity : TutorialActivity(layoutList) {
                     override fun onCrash(errorContent: String) {
                         MakeErrorDialog(errorContent)
                     }
-
                 })
 
 
-                if (File(conversion.path).exists() && (!skipUnzip || !isPreFinished)) {
+                if (File(conversion.path).exists() && !(skipUnzip || isPreFinished)) {
                     val dialog = AlertDialog.Builder(this@ConversionActivity)
                     dialog.setTitle(R.string.overwrite_title)
                     dialog.setMessage(R.string.overwrite_content)
@@ -134,9 +134,9 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
             1 -> {
                 //Init and add Watchers
-                name = findViewById(R.id.conversion_name) as EditText
-                description = findViewById(R.id.conversion_description) as EditText
-                val next = findViewById(R.id.tutorial_next) as Button
+                name = findViewById(R.id.conversion_name)
+                description = findViewById(R.id.conversion_description)
+                val next = findViewById<Button>(R.id.tutorial_next)
                 name.addTextChangedListener(object : TextWatcher{
                     override fun afterTextChanged(s: Editable?) {
 
@@ -167,9 +167,9 @@ class ConversionActivity : TutorialActivity(layoutList) {
             }
 
             2 -> {
-                val icon = findViewById(R.id.tutorial_icon_shower) as ImageView
-                val mcpackSwitcher = findViewById(R.id.tutorial_mcpack_switcher) as Switch
-                val blocker = findViewById(R.id.tutorial_loading_blocker) as LinearLayout
+                val icon = findViewById<ImageView>(R.id.tutorial_icon_shower)
+                val mcpackSwitcher = findViewById<SwitchCompat>(R.id.tutorial_mcpack_switcher)
+                val blocker = findViewById<LinearLayout>(R.id.tutorial_loading_blocker)
                 blocker.visibility = View.INVISIBLE
                 loadIcon()
                 val show = AnimationUtils.loadAnimation(this,R.anim.cards_show)
@@ -183,7 +183,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
                     startActivityForResult(intent,0)
                 })
 
-                val next = findViewById(R.id.tutorial_next) as Button
+                val next = findViewById<Button>(R.id.tutorial_next)
                 next.setOnClickListener({
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -198,7 +198,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
                     }
 
 
-                    val loadingText = findViewById(R.id.tutorial_loading_msg) as TextView
+                    val loadingText = findViewById<TextView>(R.id.tutorial_loading_msg)
                     conversion.setConversionChangeListener(object : TextureConversionUtils.ConversionChangeListener{
                         override fun inDoingVersionDecisions() {
                             runOnUiThread({
@@ -243,9 +243,9 @@ class ConversionActivity : TutorialActivity(layoutList) {
                     isDoingConverting = true
                 })
 
-                val show_advenced = findViewById(R.id.tutorial_advenced_options_button) as Button
-                val advenced_layout = findViewById(R.id.tutorial_advenced_options_layout) as LinearLayout
-                val resource_compress = findViewById(R.id.tutorial_resource_compress) as LinearLayout
+                val show_advenced = findViewById<Button>(R.id.tutorial_advenced_options_button)
+                val advenced_layout = findViewById<LinearLayout>(R.id.tutorial_advenced_options_layout)
+                val resource_compress = findViewById<LinearLayout>(R.id.tutorial_resource_compress)
                 show_advenced.setOnClickListener({
                     if (areAdvencedOptionsShown){
                         advenced_layout.visibility = View.INVISIBLE
@@ -267,11 +267,11 @@ class ConversionActivity : TutorialActivity(layoutList) {
                     optionsBitmap.inSampleSize = 1
 
                     val bitmap = BitmapFactory.decodeFile(getIconOFResourceCompression(), optionsBitmap)
-                    val confirm = dialogView.findViewById(R.id.compression_button_confirm) as Button
+                    val confirm = dialogView.findViewById<Button>(R.id.compression_button_confirm) as Button
 
                     loadDialogLayout(dialogView, bitmap)
 
-                    val spinner = dialogView.findViewById(R.id.compression_spinner) as Spinner
+                    val spinner = dialogView.findViewById<Spinner>(R.id.compression_spinner)
                     spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
                         override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
@@ -351,15 +351,15 @@ class ConversionActivity : TutorialActivity(layoutList) {
     }
 
     fun loadIcon() {
-        val icon = findViewById(R.id.tutorial_icon_shower) as ImageView
+        val icon = findViewById<ImageView>(R.id.tutorial_icon_shower)
         val bitmap = conversion.icon
         if (bitmap != null) {
             icon.setImageBitmap(bitmap)
             //Make a JOKE
-            val text = findViewById(R.id.conversion_icon_text) as TextView
+            val text = findViewById<TextView>(R.id.conversion_icon_text)
             if (hasIconBeenOverwritten) text.text = "${text.text}?"
         } else {
-            val finishBottom = findViewById(R.id.finishBottom) as FloatingActionButton
+            val finishBottom = findViewById<FloatingActionButton>(R.id.finishBottom)
             Snackbar.make(finishBottom, R.string.pack_icon_not_found, Snackbar.LENGTH_INDEFINITE)
                     .setAction(R.string.ok) {
                         val choose = Intent(ConversionActivity@this,FileChooserActivity::class.java)
@@ -398,7 +398,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
     private fun loadDialogLayout(dialogView: View, bitmap: Bitmap?) {
 
-        val spinner = dialogView.findViewById(R.id.compression_spinner) as Spinner
+        val spinner = dialogView.findViewById<Spinner>(R.id.compression_spinner)
         if (compressSize != 0) {
             when (compressSize) {
                 8 -> spinner.setSelection(1)
@@ -415,14 +415,14 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
 
         //set view
-        val preview = dialogView.findViewById(R.id.compression_image) as ImageView
+        val preview = dialogView.findViewById<ImageView>(R.id.compression_image)
 
         preview.setImageBitmap(bitmap)
 
 
         //set text
-        val width_text = dialogView.findViewById(R.id.compression_width_text) as TextView
-        val height_text = dialogView.findViewById(R.id.compression_height_text) as TextView
+        val width_text = dialogView.findViewById<TextView>(R.id.compression_width_text)
+        val height_text = dialogView.findViewById<TextView>(R.id.compression_height_text)
         width_text.text = bitmap!!.width.toString()
         height_text.text = bitmap.height.toString()
     }
@@ -472,7 +472,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
     fun doOnFail() {
         //Delete not pack
-        val text = findViewById(R.id.tutorial_welcome_error_layout) as LinearLayout
+        val text = findViewById<LinearLayout>(R.id.tutorial_welcome_error_layout)
         val notpack = File(conversion.path)
         mLog.i("PackConversion", "Deleting " + notpack.toString())
         class deleteTask : AsyncTask<Void, Int, Boolean>() {

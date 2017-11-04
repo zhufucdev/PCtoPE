@@ -213,13 +213,13 @@ class ConversionActivityOld : BaseActivity() {
 
     private var format = 0
     private fun initViews() {
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
-        val collapsingbar = findViewById(R.id.collapsing_bar) as CollapsingToolbarLayout
-        unzipping_tip = findViewById(R.id.unzipping_tip) as LinearLayout
-        cards = findViewById(R.id.cards_grid) as LinearLayout
-        error_layout = findViewById(R.id.error_layout) as LinearLayout
-        name = findViewById(R.id.pname) as TextInputEditText
-        description = findViewById(R.id.pdescription) as TextInputEditText
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val collapsingbar = findViewById<CollapsingToolbarLayout>(R.id.collapsing_bar)
+        unzipping_tip = findViewById(R.id.unzipping_tip)
+        cards = findViewById(R.id.cards_grid)
+        error_layout = findViewById(R.id.error_layout)
+        name = findViewById(R.id.pname)
+        description = findViewById(R.id.pdescription)
 
 
         //set back icon
@@ -256,15 +256,15 @@ class ConversionActivityOld : BaseActivity() {
         })
 
         //for Floating Toolbar
-        val ftb = findViewById(R.id.ftb_conversion) as FloatingToolbar
+        val ftb = findViewById<FloatingToolbar>(R.id.ftb_conversion)
         ftb.menu = FloatingToolbarMenuBuilder(this)
                 .addItem(0,R.drawable.folder_white,R.string.convert_into_resources_folder)
                 .addItem(1,R.drawable.zip_box,R.string.convert_into_mcpack)
                 .build()
 
         //for FAB
-        val button_finish = findViewById(R.id.finishBottom) as FloatingActionButton
-        val appBarLayout = findViewById(R.id.appBar) as AppBarLayout
+        val button_finish = findViewById<FloatingActionButton>(R.id.finishBottom)
+        val appBarLayout = findViewById<AppBarLayout>(R.id.appBar)
 
         ftb.attachAppBarLayout(appBarLayout)
         ftb.attachFab(button_finish)
@@ -315,12 +315,12 @@ class ConversionActivityOld : BaseActivity() {
     }
 
     fun loadIcon() {
-        val icon = findViewById(R.id.img_card_icon) as ImageView
+        val icon = findViewById<ImageView>(R.id.img_card_icon)
         val bitmap = conversion!!.icon
         if (bitmap != null) {
             icon.setImageBitmap(bitmap)
         } else {
-            val finishBottom = findViewById(R.id.finishBottom) as FloatingActionButton
+            val finishBottom = findViewById<FloatingActionButton>(R.id.finishBottom)
             Snackbar.make(finishBottom, R.string.pack_icon_not_found, Snackbar.LENGTH_INDEFINITE)
                     .setAction(R.string.ok) {
                         val choose = Intent(ConversionActivity@this,FileChooserActivity::class.java)
@@ -336,10 +336,10 @@ class ConversionActivityOld : BaseActivity() {
     private fun doOnSuccess() {
         //Set layouts
         //==>define
-        val unzipping_tip = findViewById(R.id.unzipping_tip) as LinearLayout
-        val cards = findViewById(R.id.cards_grid) as LinearLayout
-        val error_layout = findViewById(R.id.error_layout) as LinearLayout
-        val PDI_card = findViewById(R.id.pdi_card) as CardView
+        val unzipping_tip = findViewById<LinearLayout>(R.id.unzipping_tip)
+        val cards = findViewById<LinearLayout>(R.id.cards_grid)
+        val error_layout = findViewById<LinearLayout>(R.id.error_layout)
+        val PDI_card = findViewById<CardView>(R.id.pdi_card)
         //settings
         cards.visibility = View.VISIBLE
         unzipping_tip.visibility = View.GONE
@@ -352,14 +352,14 @@ class ConversionActivityOld : BaseActivity() {
         //Load icon
         loadIcon()
         //Set icon editor
-        val edit = findViewById(R.id.card_icon_edit) as ImageView
+        val edit = findViewById<ImageView>(R.id.card_icon_edit)
         edit.setOnClickListener {
             val choose = Intent(ConversionActivity@this,FileChooserActivity::class.java)
             startActivityForResult(choose, 0)
         }
         //Set PDI CardView layout
-        val PackType = findViewById(R.id.info_pack_type) as TextView
-        val PackInMC = findViewById(R.id.info_pack_in_mc_ver) as TextView
+        val PackType = findViewById<TextView>(R.id.info_pack_type)
+        val PackInMC = findViewById<TextView>(R.id.info_pack_in_mc_ver)
         var type: String? = resources.getString(R.string.info_pack_type)
         when (conversion!!.VerStr) {
             TextureCompat.fullPE -> type += resources.getString(R.string.type_fullPE)
@@ -376,7 +376,7 @@ class ConversionActivityOld : BaseActivity() {
 
         PackInMC.text = resources.getString(R.string.info_pack_in_mc_ver) + ver!!
 
-        val supportOrNot = findViewById(R.id.support_or_not_icon) as ImageView
+        val supportOrNot = findViewById<ImageView>(R.id.support_or_not_icon)
         if (ver == resources.getString(R.string.type_before_1_9)) {
             supportOrNot.setImageResource(R.drawable.close_circle)
         }
@@ -399,7 +399,7 @@ class ConversionActivityOld : BaseActivity() {
 
 
         //set listener
-        val compress = findViewById(R.id.compression_card) as CardView
+        val compress = findViewById<CardView>(R.id.compression_card)
 
 
         compress.setOnClickListener {
@@ -415,11 +415,11 @@ class ConversionActivityOld : BaseActivity() {
             optionsBitmap.inSampleSize = 1
 
             val bitmap = BitmapFactory.decodeFile(imageLocation, optionsBitmap)
-            val confirm = dialogView.findViewById(R.id.compression_button_confirm) as Button
+            val confirm = dialogView.findViewById<Button>(R.id.compression_button_confirm)
 
             loadDialogLayout(dialogView, bitmap)
 
-            val spinner = dialogView.findViewById(R.id.compression_spinner) as Spinner
+            val spinner = dialogView.findViewById<Spinner>(R.id.compression_spinner)
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 
                 override fun onItemSelected(adapterView: AdapterView<*>, view: View, i: Int, l: Long) {
@@ -470,7 +470,7 @@ class ConversionActivityOld : BaseActivity() {
 
     private fun loadDialogLayout(dialogView: View, bitmap: Bitmap?) {
 
-        val spinner = dialogView.findViewById(R.id.compression_spinner) as Spinner
+        val spinner = dialogView.findViewById<Spinner>(R.id.compression_spinner)
         if (compressSize != 0) {
             when (compressSize) {
                 8 -> spinner.setSelection(1)
@@ -487,14 +487,14 @@ class ConversionActivityOld : BaseActivity() {
 
 
         //set view
-        val preview = dialogView.findViewById(R.id.compression_image) as ImageView
+        val preview = dialogView.findViewById<ImageView>(R.id.compression_image)
 
         preview.setImageBitmap(bitmap)
 
 
         //set text
-        val width_text = dialogView.findViewById(R.id.compression_width_text) as TextView
-        val height_text = dialogView.findViewById(R.id.compression_height_text) as TextView
+        val width_text = dialogView.findViewById<TextView>(R.id.compression_width_text)
+        val height_text = dialogView.findViewById<TextView>(R.id.compression_height_text)
         width_text.text = bitmap!!.width.toString()
         height_text.text = bitmap.height.toString()
     }
@@ -542,15 +542,15 @@ class ConversionActivityOld : BaseActivity() {
     fun doOnFail() {
         //Delete not pack
         //==>define
-        val unzipping_tip = findViewById(R.id.unzipping_tip) as LinearLayout
-        val cards = findViewById(R.id.cards_grid) as LinearLayout
-        val error_layout = findViewById(R.id.error_layout) as LinearLayout
+        val unzipping_tip = findViewById<LinearLayout>(R.id.unzipping_tip)
+        val cards = findViewById<LinearLayout>(R.id.cards_grid)
+        val error_layout = findViewById<LinearLayout>(R.id.error_layout)
         //settings
         cards.visibility = View.GONE
         unzipping_tip.visibility = View.GONE
         error_layout.visibility = View.VISIBLE
 
-        val text = findViewById(R.id.error_layout_text) as TextView
+        val text = findViewById<TextView>(R.id.error_layout_text)
         text.text = text.text.toString() + this@ConversionActivityOld.getString(R.string.not_pack)
         val notpack = File(conversion!!.path)
         mLog.i("PackConversion", "Deleting " + notpack.toString())

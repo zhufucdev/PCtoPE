@@ -52,6 +52,7 @@ import com.zhufuc.pctope.R
 
 import java.io.File
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class MainActivity : BaseActivity() {
@@ -105,7 +106,7 @@ class MainActivity : BaseActivity() {
     }
 
     fun initToolbar() {
-        toolbar = findViewById(R.id.toolbar) as Toolbar
+        toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar ?: return
@@ -128,16 +129,16 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_main)
 
-        progressBar = findViewById(R.id.progressbar_in_main) as ProgressBar
+        progressBar = findViewById(R.id.progressbar_in_main)
 
-        fab = findViewById(R.id.fab) as FloatingActionButton
-        level_up = findViewById(R.id.fab_level_up) as FloatingActionButton
+        fab = findViewById(R.id.fab)
+        level_up = findViewById(R.id.fab_level_up)
         level_up!!.visibility = View.INVISIBLE
         level_up!!.rotation = -90f
 
-        recyclerView = findViewById(R.id.recycle_view) as RecyclerView
-        android_nothing_card = findViewById(R.id.android_nothing) as LinearLayout
-        chooser_root = findViewById(R.id.chooser_in_main) as FrameLayout
+        recyclerView = findViewById(R.id.recycle_view)
+        android_nothing_card = findViewById(R.id.android_nothing)
+        chooser_root = findViewById(R.id.chooser_in_main)
 
         chooser_root!!.visibility = View.INVISIBLE
 
@@ -177,8 +178,8 @@ class MainActivity : BaseActivity() {
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.setHomeAsUpIndicator(R.drawable.menu)
         }
-        navigationView = findViewById(R.id.nav_view) as NavigationView
-        drawerLayout = findViewById(R.id.drawer_main) as DrawerLayout
+        navigationView = findViewById(R.id.nav_view)
+        drawerLayout = findViewById(R.id.drawer_main)
 
         navigationView!!.setNavigationItemSelectedListener { item ->
             drawerLayout!!.closeDrawer(GravityCompat.START)
@@ -271,7 +272,7 @@ class MainActivity : BaseActivity() {
 
     private fun initActivity() {
         //init for textures list
-        recyclerView = findViewById(R.id.recycle_view) as RecyclerView
+        recyclerView = findViewById(R.id.recycle_view)
         class firstLoad : AsyncTask<Void, Int, Boolean>() {
             override fun onPreExecute() {
                 showLoading()
@@ -294,8 +295,6 @@ class MainActivity : BaseActivity() {
         firstLoad().execute()
 
         recyclerView!!.addItemDecoration(SpacesItemDecoration(16))
-        val swipe = DefaultItemAnimator()
-        recyclerView!!.itemAnimator = swipe
         recyclerView!!.setHasFixedSize(true)
 
         val mCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.START or ItemTouchHelper.END) {
@@ -305,10 +304,9 @@ class MainActivity : BaseActivity() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.adapterPosition
-                val deleting = items.getItem(position)
+                val deleting = mTextures[position]
                 val test = File(deleting.path)
-                val oldTemp = items
-                items.remove(position)
+                mTextures.removeAt(position)
 
                 if (items.itemCount == 0) {
                     recyclerView!!.visibility = View.GONE
@@ -316,10 +314,6 @@ class MainActivity : BaseActivity() {
                     val show = AnimationUtils.loadAnimation(this@MainActivity, R.anim.cards_show)
                     android_nothing_card!!.startAnimation(show)
                 }
-
-                val callback = DiffUtilCallback(oldTemp, items)
-                val diffResult = DiffUtil.calculateDiff(callback)
-                diffResult.dispatchUpdatesTo(items)
                 items.notifyItemRemoved(position)
 
                 setLayoutManager()
@@ -334,8 +328,8 @@ class MainActivity : BaseActivity() {
                                 mTextures.add(position, deleting)
                                 recyclerView!!.visibility = View.VISIBLE
                                 android_nothing_card!!.visibility = View.GONE
-                                items = TextureItems(mTextures)
-                                recyclerView!!.adapter = items
+                                //items = TextureItems(mTextures)
+                                //recyclerView!!.adapter = items
 
                                 setLayoutManager()
                                 initShortcuts()
@@ -350,7 +344,7 @@ class MainActivity : BaseActivity() {
         itemTouchHelper.attachToRecyclerView(recyclerView)
 
         //for swipe refresh layout
-        swipeRefreshLayout = findViewById(R.id.swipe_refresh) as SwipeRefreshLayout
+        swipeRefreshLayout = findViewById(R.id.swipe_refresh)
         swipeRefreshLayout!!.setColorSchemeColors(resources.getColor(R.color.colorAccent), resources.getColor(R.color.google_blue), resources.getColor(R.color.google_red), resources.getColor(R.color.google_green))
         swipeRefreshLayout!!.setOnRefreshListener {
             Thread(Runnable {
@@ -398,17 +392,16 @@ class MainActivity : BaseActivity() {
             ActivityCollector.finishAll()
     }
 
-    lateinit var mTextures : ArrayList<Textures>
+    var mTextures : ArrayList<Textures> = ArrayList()
     lateinit var items : TextureItems
 
     private fun loadList() {
 
+
         mTextures = ArrayList()
 
-        //TextureItems oldTemp = items;
-
         val packsListDir = File(Environment.getExternalStorageDirectory().toString() + "/games/com.mojang/resource_packs/")
-        var packsList: Array<File>
+        val packsList: Array<File>
         var make: Boolean? = true
 
         if (!packsListDir.exists()) make = packsListDir.mkdirs()
@@ -425,13 +418,7 @@ class MainActivity : BaseActivity() {
                         }
                     }
             }
-
-            //DiffUtil.Callback callback = new DiffUtilCallback(oldTemp,items);
-            //DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
-            //diffResult.dispatchUpdatesTo(items);
-
             items = TextureItems(mTextures)
-
             items.setOnItemClickListener(object : TextureItems.OnItemClickListener {
                 override fun onItemClick(view: View, position: Int) {
                     if (!items.getIfIsAlertIconShown(view)) {
@@ -568,7 +555,7 @@ class MainActivity : BaseActivity() {
     }
     var chooser : RecyclerView? = null
     private fun loadFileChooser() {
-        chooser = findViewById(R.id.file_chooser_view) as RecyclerView
+        chooser = findViewById(R.id.file_chooser_view)
         chooser!!.layoutManager = StaggeredGridLayoutManager(2, OrientationHelper.VERTICAL)
 
         adapter = FileChooserAdapter(Environment.getExternalStorageDirectory().path, mutableListOf("zip"))

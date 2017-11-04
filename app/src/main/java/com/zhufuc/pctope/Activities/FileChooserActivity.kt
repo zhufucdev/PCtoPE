@@ -29,7 +29,7 @@ class FileChooserActivity : BaseActivity() {
     val data = Intent()
     private fun init(){
         val externalRoot = Environment.getExternalStorageDirectory().path
-        val recyclerView = findViewById(R.id.chooser_act_recycler) as RecyclerView
+        val recyclerView = findViewById<RecyclerView>(R.id.chooser_act_recycler)
         val intent = intent
         val dataCommit = intent.getStringArrayExtra("format")
         val list : List<String> = if (dataCommit==null){ mutableListOf("png","jpg") } else{ dataCommit.toList() }
@@ -51,7 +51,7 @@ class FileChooserActivity : BaseActivity() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = StaggeredGridLayoutManager(2,OrientationHelper.VERTICAL)
 
-        val fab = findViewById(R.id.chooser_act_upper) as FloatingActionButton
+        val fab = findViewById<FloatingActionButton>(R.id.chooser_act_upper)
         supportActionBar!!.subtitle = adapter.getPath()
         fab.setOnClickListener({
             if (!adapter.upLevel(externalRoot))

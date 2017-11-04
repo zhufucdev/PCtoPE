@@ -35,21 +35,23 @@
                 android:layout_height="wrap_content"
                 android:text="@string/conversion_icon_text_subtitle"/>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tutorial_next"
                 android:layout_gravity="end"
-                android:backgroundTint="@color/colorAccent"
+                app:backgroundTint="@color/colorAccent"
+                app:rippleColor="@color/colorAccentPrimary"
                 android:text="@string/next"
                 android:textColor="@color/brown_primary"/>
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tutorial_advenced_options_button"
                 android:text="@string/tutorial_show_advenced_options"
                 android:layout_marginStart="-8dp"
+                app:rippleColor="@color/colorAccentPrimary"
                 style="?attr/buttonBarButtonStyle"/>
 
             <LinearLayout
@@ -59,7 +61,7 @@
                 android:orientation="vertical"
                 android:visibility="invisible">
 
-                <Switch
+                <android.support.v7.widget.SwitchCompat
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tutorial_mcpack_switcher"

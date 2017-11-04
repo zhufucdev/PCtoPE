@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.NoActionBar.windowTranslucentStatus" parent="AppTheme.NoActionBar">
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar.windowTranslucentNavigation" parent="AppTheme.NoActionBar.windowTranslucentStatus">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+</resources>

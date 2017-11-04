@@ -5,11 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
-        android:layout_centerInParent="true" />
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/ic_launcher"
+        android:layout_centerInParent="true"
+        android:layout_margin="80dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

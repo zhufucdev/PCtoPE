@@ -1,277 +1,286 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-73:12
-MERGED from [com.android.support:design:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/6b9e6a748e5f4b27b7ebf452e42c391a/AndroidManifest.xml:17:1-31:12
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-76:12
+INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-76:12
+INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-76:12
+INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-76:12
+MERGED from [com.android.support:design:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-26.0.0.aar/72c9fcb80a884dd693c5023048a741ba/AndroidManifest.xml:17:1-31:12
 MERGED from [za.co.riggaroo:materialhelptutorial:1.0.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/materialhelptutorial-1.0.1.aar/6d57a3d3c3e9b620239041ad48877b32/AndroidManifest.xml:2:1-17:12
-MERGED from [com.android.support:appcompat-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/714e1a3f021973a6db368ba75ae14094/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0.aar/c96f0b655cc8e8a69b97c709a35e1ad6/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/3a4fa1d41c133b1186d43e930405619c/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:percent:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-25.4.0.aar/6b91f72895f05330ee8ce0502dbd54b5/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:cardview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/599dcd3ee666675a0ed817722b89226a/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:transition:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/7933b3647171916c34500b44d9810396/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/48b1b7332e15908e1556eb50091e8e40/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:cardview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.0.0.aar/75d4e72eeca935d8118bc32fb7ac1f18/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:transition:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-26.0.0.aar/3da9cfb23a977e76806e6b09a2056da4/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:percent:23.1.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-23.1.0.aar/e157bffe9e16650e0e6736635b769ee0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v4:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0.aar/77dcc602a0c170aa0852766306920290/AndroidManifest.xml:17:1-31:12
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:2:1-19:12
 MERGED from [com.github.rubensousa:floatingtoolbar:1.5.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/floatingtoolbar-1.5.1.aar/cda54389872322e93e3041ce1fa0acdb/AndroidManifest.xml:2:1-12:12
 MERGED from [com.github.zzz40500:android-shapeLoadingView:1.0.3.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/android-shapeLoadingView-1.0.3.2.aar/81cda7e0d333cac8408d1dbec0344da7/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:recyclerview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/eb6cadf1ad08bcbdf67ba72bc5ffb2f6/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-fragment:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/551a1b314d71bd4c9aa89f67e0c0e5b3/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-media-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/572500e1c53a9bba90134e96681b9d31/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-utils:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/40ffa5425d5655eea75c5b395a9a8bfc/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:animated-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/6952c59f0e0db4f9116fd993cd7aefe3/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-core-ui:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/80233e9c2fa9ddaebc5c8742353b1f8c/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/a450fc7e3eebcf53b485e1b96937ea7a/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/a96c612d15af60fca18a2eaca35aa036/AndroidManifest.xml:17:1-31:12
-INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-73:12
-INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-73:12
+MERGED from [com.android.support:recyclerview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0.aar/a95ef24d6eb9f43f329465dd7d3c05b4/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0.aar/1f9ee4f1ce06b2bcef9b522d33c54842/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-fragment:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0.aar/7c217ef868774d164d78c7c7881d09c9/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0.aar/d7e3ab289b6ae79cde3c9cda8825b6a2/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0.aar/a4904d3fe54e9d67825bd7d0d573adcd/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-media-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0.aar/019bae9f3e0450d693dfdb7a40a0fb73/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/5ad51ee27b62ff7163dc9d554d2a09ac/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/00f5218190f174d28378d7d54f894816/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:multidex:1.0.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/multidex-1.0.1.aar/702466c98366bf79834366c3ebf7033f/AndroidManifest.xml:16:1-19:12
+INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-76:12
+INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-76:12
+INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-76:12
 	package
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:3:5-32
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:4:5-32
 		INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
 		INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-73:12
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-76:12
 		INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-73:12
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:1-76:12
 		INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:5:5-81
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:6:5-81
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:5:22-78
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:6:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:6:5-80
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:7:5-80
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:6:22-77
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:7:22-77
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:7:5-84
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:8:5-84
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:7:22-81
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:8:22-81
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:8:5-75
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:9:5-75
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:11:5-75
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:11:5-75
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:8:22-72
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:9:22-72
 uses-permission#android.permission.INTERNET
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:9:5-67
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:10:5-67
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:12:5-67
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:12:5-67
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:9:22-64
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:10:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:10:5-79
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:11:5-79
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:13:5-79
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:13:5-79
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:10:22-76
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:11:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:11:5-76
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:12:5-76
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:14:5-76
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:14:5-76
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:11:22-73
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:12:22-73
 uses-permission#android.permission.READ_LOGS
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:12:5-68
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:13:5-68
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:15:5-68
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:15:5-68
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:12:22-65
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:13:22-65
 application
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:14:5-71:19
-MERGED from [com.android.support:design:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/6b9e6a748e5f4b27b7ebf452e42c391a/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:design:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/6b9e6a748e5f4b27b7ebf452e42c391a/AndroidManifest.xml:25:5-29:19
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:15:5-74:19
+MERGED from [com.android.support:design:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-26.0.0.aar/72c9fcb80a884dd693c5023048a741ba/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-26.0.0.aar/72c9fcb80a884dd693c5023048a741ba/AndroidManifest.xml:25:5-29:19
 MERGED from [za.co.riggaroo:materialhelptutorial:1.0.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/materialhelptutorial-1.0.1.aar/6d57a3d3c3e9b620239041ad48877b32/AndroidManifest.xml:11:5-15:19
 MERGED from [za.co.riggaroo:materialhelptutorial:1.0.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/materialhelptutorial-1.0.1.aar/6d57a3d3c3e9b620239041ad48877b32/AndroidManifest.xml:11:5-15:19
-MERGED from [com.android.support:appcompat-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/714e1a3f021973a6db368ba75ae14094/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:appcompat-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/714e1a3f021973a6db368ba75ae14094/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0.aar/c96f0b655cc8e8a69b97c709a35e1ad6/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0.aar/c96f0b655cc8e8a69b97c709a35e1ad6/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/3a4fa1d41c133b1186d43e930405619c/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/3a4fa1d41c133b1186d43e930405619c/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:percent:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-25.4.0.aar/6b91f72895f05330ee8ce0502dbd54b5/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:percent:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-25.4.0.aar/6b91f72895f05330ee8ce0502dbd54b5/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:cardview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/599dcd3ee666675a0ed817722b89226a/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:cardview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/599dcd3ee666675a0ed817722b89226a/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/7933b3647171916c34500b44d9810396/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/7933b3647171916c34500b44d9810396/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/48b1b7332e15908e1556eb50091e8e40/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/48b1b7332e15908e1556eb50091e8e40/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:cardview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.0.0.aar/75d4e72eeca935d8118bc32fb7ac1f18/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:cardview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.0.0.aar/75d4e72eeca935d8118bc32fb7ac1f18/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-26.0.0.aar/3da9cfb23a977e76806e6b09a2056da4/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-26.0.0.aar/3da9cfb23a977e76806e6b09a2056da4/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:percent:23.1.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-23.1.0.aar/e157bffe9e16650e0e6736635b769ee0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:percent:23.1.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-23.1.0.aar/e157bffe9e16650e0e6736635b769ee0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0.aar/77dcc602a0c170aa0852766306920290/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0.aar/77dcc602a0c170aa0852766306920290/AndroidManifest.xml:25:5-29:19
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:16:5-17:19
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:16:5-17:19
-MERGED from [com.android.support:recyclerview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/eb6cadf1ad08bcbdf67ba72bc5ffb2f6/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/eb6cadf1ad08bcbdf67ba72bc5ffb2f6/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-fragment:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/551a1b314d71bd4c9aa89f67e0c0e5b3/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-fragment:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/551a1b314d71bd4c9aa89f67e0c0e5b3/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/572500e1c53a9bba90134e96681b9d31/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/572500e1c53a9bba90134e96681b9d31/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/40ffa5425d5655eea75c5b395a9a8bfc/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-utils:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/40ffa5425d5655eea75c5b395a9a8bfc/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:animated-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/6952c59f0e0db4f9116fd993cd7aefe3/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:animated-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/6952c59f0e0db4f9116fd993cd7aefe3/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-core-ui:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/80233e9c2fa9ddaebc5c8742353b1f8c/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-core-ui:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/80233e9c2fa9ddaebc5c8742353b1f8c/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/a450fc7e3eebcf53b485e1b96937ea7a/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/a450fc7e3eebcf53b485e1b96937ea7a/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/a96c612d15af60fca18a2eaca35aa036/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/a96c612d15af60fca18a2eaca35aa036/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:recyclerview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0.aar/a95ef24d6eb9f43f329465dd7d3c05b4/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0.aar/a95ef24d6eb9f43f329465dd7d3c05b4/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0.aar/1f9ee4f1ce06b2bcef9b522d33c54842/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0.aar/1f9ee4f1ce06b2bcef9b522d33c54842/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-fragment:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0.aar/7c217ef868774d164d78c7c7881d09c9/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0.aar/7c217ef868774d164d78c7c7881d09c9/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0.aar/d7e3ab289b6ae79cde3c9cda8825b6a2/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0.aar/d7e3ab289b6ae79cde3c9cda8825b6a2/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0.aar/a4904d3fe54e9d67825bd7d0d573adcd/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0.aar/a4904d3fe54e9d67825bd7d0d573adcd/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-media-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0.aar/019bae9f3e0450d693dfdb7a40a0fb73/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0.aar/019bae9f3e0450d693dfdb7a40a0fb73/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/5ad51ee27b62ff7163dc9d554d2a09ac/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/5ad51ee27b62ff7163dc9d554d2a09ac/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/00f5218190f174d28378d7d54f894816/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/00f5218190f174d28378d7d54f894816/AndroidManifest.xml:25:5-29:19
 	android:supportsRtl
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:19:9-35
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:21:9-35
 	android:label
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:18:9-41
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:20:9-41
+	tools:ignore
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:23:9-43
+	android:roundIcon
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:19:9-54
 	android:configChanges
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:16:9-39
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:17:9-39
 	android:icon
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:17:9-43
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:18:9-43
 	android:allowBackup
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:20:9-40
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:22:9-40
 activity#com.zhufuc.pctope.Activities.FirstActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:21:9-32:20
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:24:9-35:20
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:23:13-67
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:26:13-67
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:22:13-53
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:25:13-53
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:24:13-28:29
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:25:17-69
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:25:25-66
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:27:17-77
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:27:27-74
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:30:27-74
 meta-data#android.app.shortcuts
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:29:13-31:53
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:32:13-34:53
 	android:resource
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:31:17-50
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:34:17-50
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:30:17-53
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:33:17-53
 activity#za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:34:9-36:87
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:37:9-39:59
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:36:13-84
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:39:13-56
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:35:13-97
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:38:13-97
 activity#com.zhufuc.pctope.Activities.MainActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:37:9-40:59
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:40:9-43:87
 	android:label
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:39:13-35
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:42:13-35
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:40:13-56
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:43:13-84
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:38:13-52
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:41:13-52
 activity#com.zhufuc.pctope.Activities.ConversionActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:41:9-43:83
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:44:9-46:59
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:43:13-80
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:46:13-56
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:42:13-58
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:45:13-58
 activity#com.zhufuc.pctope.Activities.ConversionActivityOld
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:44:9-45:58
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:47:9-48:58
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:45:13-56
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:48:13-56
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:44:19-67
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:47:19-67
 activity#com.zhufuc.pctope.Activities.SettingsActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:46:9-53:20
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:49:9-56:20
 	android:parentActivityName
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:49:13-66
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:52:13-66
 	android:label
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:48:13-60
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:51:13-60
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:47:13-56
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:50:13-56
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:50:13-52:77
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:53:13-55:77
 	android:value
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:52:17-74
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:55:17-74
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:51:17-63
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:54:17-63
 activity#com.zhufuc.pctope.Activities.AboutActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:54:9-56:69
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:57:9-59:69
 	android:parentActivityName
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:56:13-66
-	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:55:13-53
-activity#com.zhufuc.pctope.Activities.UserBugReport
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:57:9-59:47
-	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:59:13-44
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:59:13-66
 	android:name
 		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:58:13-53
-activity#com.zhufuc.pctope.Activities.DetailsActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:60:9-63:59
-	android:label
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:62:13-52
+activity#com.zhufuc.pctope.Activities.UserBugReport
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:60:9-62:47
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:63:13-56
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:62:13-44
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:61:13-55
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:61:13-53
+activity#com.zhufuc.pctope.Activities.DetailsActivity
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:63:9-66:59
+	android:label
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:65:13-52
+	android:theme
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:66:13-56
+	android:name
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:64:13-55
 activity#com.zhufuc.pctope.Activities.FileChooserActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:64:9-68
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:67:9-68
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:64:19-65
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:67:19-65
 activity#com.zhufuc.pctope.Activities.ShowLogActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:65:9-64
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:68:9-64
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:65:19-61
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:68:19-61
 meta-data#BUGRPT_APPID
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:68:9-70:42
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:71:9-73:42
 	android:value
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:70:13-39
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:73:13-39
 	android:name
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:69:13-40
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:72:13-40
 uses-sdk
 INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
 INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support:design:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/6b9e6a748e5f4b27b7ebf452e42c391a/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:design:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/6b9e6a748e5f4b27b7ebf452e42c391a/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-26.0.0.aar/72c9fcb80a884dd693c5023048a741ba/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-26.0.0.aar/72c9fcb80a884dd693c5023048a741ba/AndroidManifest.xml:21:5-23:62
 MERGED from [za.co.riggaroo:materialhelptutorial:1.0.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/materialhelptutorial-1.0.1.aar/6d57a3d3c3e9b620239041ad48877b32/AndroidManifest.xml:7:5-9:41
 MERGED from [za.co.riggaroo:materialhelptutorial:1.0.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/materialhelptutorial-1.0.1.aar/6d57a3d3c3e9b620239041ad48877b32/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/714e1a3f021973a6db368ba75ae14094/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/714e1a3f021973a6db368ba75ae14094/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0.aar/c96f0b655cc8e8a69b97c709a35e1ad6/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0.aar/c96f0b655cc8e8a69b97c709a35e1ad6/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/3a4fa1d41c133b1186d43e930405619c/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/3a4fa1d41c133b1186d43e930405619c/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:percent:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-25.4.0.aar/6b91f72895f05330ee8ce0502dbd54b5/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:percent:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-25.4.0.aar/6b91f72895f05330ee8ce0502dbd54b5/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/599dcd3ee666675a0ed817722b89226a/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/599dcd3ee666675a0ed817722b89226a/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/7933b3647171916c34500b44d9810396/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/7933b3647171916c34500b44d9810396/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/48b1b7332e15908e1556eb50091e8e40/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/48b1b7332e15908e1556eb50091e8e40/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:cardview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.0.0.aar/75d4e72eeca935d8118bc32fb7ac1f18/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.0.0.aar/75d4e72eeca935d8118bc32fb7ac1f18/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-26.0.0.aar/3da9cfb23a977e76806e6b09a2056da4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-26.0.0.aar/3da9cfb23a977e76806e6b09a2056da4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:percent:23.1.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-23.1.0.aar/e157bffe9e16650e0e6736635b769ee0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:percent:23.1.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-23.1.0.aar/e157bffe9e16650e0e6736635b769ee0/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0.aar/77dcc602a0c170aa0852766306920290/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0.aar/77dcc602a0c170aa0852766306920290/AndroidManifest.xml:21:5-23:54
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:7:5-9:41
 MERGED from [com.netease.nis.plugin:bugrpt:4.2.9] /home/zhufu/.gradle/caches/transforms-1/files-1.1/bugrpt-4.2.9.aar/dd3036b36f79a5d2dafe7b82fabc198a/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.rubensousa:floatingtoolbar:1.5.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/floatingtoolbar-1.5.1.aar/cda54389872322e93e3041ce1fa0acdb/AndroidManifest.xml:8:5-10:41
 MERGED from [com.github.rubensousa:floatingtoolbar:1.5.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/floatingtoolbar-1.5.1.aar/cda54389872322e93e3041ce1fa0acdb/AndroidManifest.xml:8:5-10:41
 MERGED from [com.github.zzz40500:android-shapeLoadingView:1.0.3.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/android-shapeLoadingView-1.0.3.2.aar/81cda7e0d333cac8408d1dbec0344da7/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.zzz40500:android-shapeLoadingView:1.0.3.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/android-shapeLoadingView-1.0.3.2.aar/81cda7e0d333cac8408d1dbec0344da7/AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:recyclerview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/eb6cadf1ad08bcbdf67ba72bc5ffb2f6/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/eb6cadf1ad08bcbdf67ba72bc5ffb2f6/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-fragment:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/551a1b314d71bd4c9aa89f67e0c0e5b3/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/551a1b314d71bd4c9aa89f67e0c0e5b3/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/572500e1c53a9bba90134e96681b9d31/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/572500e1c53a9bba90134e96681b9d31/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/40ffa5425d5655eea75c5b395a9a8bfc/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/40ffa5425d5655eea75c5b395a9a8bfc/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/6952c59f0e0db4f9116fd993cd7aefe3/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/6952c59f0e0db4f9116fd993cd7aefe3/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/80233e9c2fa9ddaebc5c8742353b1f8c/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/80233e9c2fa9ddaebc5c8742353b1f8c/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/a450fc7e3eebcf53b485e1b96937ea7a/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/a450fc7e3eebcf53b485e1b96937ea7a/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/a96c612d15af60fca18a2eaca35aa036/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/a96c612d15af60fca18a2eaca35aa036/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:recyclerview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0.aar/a95ef24d6eb9f43f329465dd7d3c05b4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0.aar/a95ef24d6eb9f43f329465dd7d3c05b4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0.aar/1f9ee4f1ce06b2bcef9b522d33c54842/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0.aar/1f9ee4f1ce06b2bcef9b522d33c54842/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0.aar/7c217ef868774d164d78c7c7881d09c9/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0.aar/7c217ef868774d164d78c7c7881d09c9/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0.aar/d7e3ab289b6ae79cde3c9cda8825b6a2/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0.aar/d7e3ab289b6ae79cde3c9cda8825b6a2/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0.aar/a4904d3fe54e9d67825bd7d0d573adcd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0.aar/a4904d3fe54e9d67825bd7d0d573adcd/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0.aar/019bae9f3e0450d693dfdb7a40a0fb73/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0.aar/019bae9f3e0450d693dfdb7a40a0fb73/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/5ad51ee27b62ff7163dc9d554d2a09ac/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/5ad51ee27b62ff7163dc9d554d2a09ac/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/00f5218190f174d28378d7d54f894816/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/00f5218190f174d28378d7d54f894816/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:multidex:1.0.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/multidex-1.0.1.aar/702466c98366bf79834366c3ebf7033f/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:multidex:1.0.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/multidex-1.0.1.aar/702466c98366bf79834366c3ebf7033f/AndroidManifest.xml:18:5-42
 INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
 INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/6b9e6a748e5f4b27b7ebf452e42c391a/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-26.0.0.aar/72c9fcb80a884dd693c5023048a741ba/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
 		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
@@ -281,34 +290,32 @@ INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManif
 		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
 		INJECTED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/6b9e6a748e5f4b27b7ebf452e42c391a/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:appcompat-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/714e1a3f021973a6db368ba75ae14094/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:appcompat-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/714e1a3f021973a6db368ba75ae14094/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:percent:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-25.4.0.aar/6b91f72895f05330ee8ce0502dbd54b5/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:percent:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/percent-25.4.0.aar/6b91f72895f05330ee8ce0502dbd54b5/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:cardview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/599dcd3ee666675a0ed817722b89226a/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:cardview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-25.4.0.aar/599dcd3ee666675a0ed817722b89226a/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:transition:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/7933b3647171916c34500b44d9810396/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:transition:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-25.4.0.aar/7933b3647171916c34500b44d9810396/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-v4:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/48b1b7332e15908e1556eb50091e8e40/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-v4:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-25.4.0.aar/48b1b7332e15908e1556eb50091e8e40/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:recyclerview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/eb6cadf1ad08bcbdf67ba72bc5ffb2f6/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.4.0.aar/eb6cadf1ad08bcbdf67ba72bc5ffb2f6/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-fragment:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/551a1b314d71bd4c9aa89f67e0c0e5b3/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-fragment:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-25.4.0.aar/551a1b314d71bd4c9aa89f67e0c0e5b3/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/572500e1c53a9bba90134e96681b9d31/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.4.0.aar/572500e1c53a9bba90134e96681b9d31/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/40ffa5425d5655eea75c5b395a9a8bfc/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-utils:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.4.0.aar/40ffa5425d5655eea75c5b395a9a8bfc/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:animated-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/6952c59f0e0db4f9116fd993cd7aefe3/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:animated-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.4.0.aar/6952c59f0e0db4f9116fd993cd7aefe3/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-core-ui:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/80233e9c2fa9ddaebc5c8742353b1f8c/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-core-ui:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.4.0.aar/80233e9c2fa9ddaebc5c8742353b1f8c/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/a450fc7e3eebcf53b485e1b96937ea7a/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-vector-drawable:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.4.0.aar/a450fc7e3eebcf53b485e1b96937ea7a/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/a96c612d15af60fca18a2eaca35aa036/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-compat:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-25.4.0.aar/a96c612d15af60fca18a2eaca35aa036/AndroidManifest.xml:26:9-28:38
+ADDED from [com.android.support:design:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-26.0.0.aar/72c9fcb80a884dd693c5023048a741ba/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0.aar/c96f0b655cc8e8a69b97c709a35e1ad6/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.0.aar/c96f0b655cc8e8a69b97c709a35e1ad6/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:cardview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.0.0.aar/75d4e72eeca935d8118bc32fb7ac1f18/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:cardview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.0.0.aar/75d4e72eeca935d8118bc32fb7ac1f18/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-26.0.0.aar/3da9cfb23a977e76806e6b09a2056da4/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/transition-26.0.0.aar/3da9cfb23a977e76806e6b09a2056da4/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0.aar/77dcc602a0c170aa0852766306920290/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-v4-26.0.0.aar/77dcc602a0c170aa0852766306920290/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:recyclerview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0.aar/a95ef24d6eb9f43f329465dd7d3c05b4/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0.aar/a95ef24d6eb9f43f329465dd7d3c05b4/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0.aar/1f9ee4f1ce06b2bcef9b522d33c54842/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0.aar/1f9ee4f1ce06b2bcef9b522d33c54842/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-fragment:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0.aar/7c217ef868774d164d78c7c7881d09c9/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0.aar/7c217ef868774d164d78c7c7881d09c9/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0.aar/d7e3ab289b6ae79cde3c9cda8825b6a2/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.0.0.aar/d7e3ab289b6ae79cde3c9cda8825b6a2/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0.aar/a4904d3fe54e9d67825bd7d0d573adcd/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.0.0.aar/a4904d3fe54e9d67825bd7d0d573adcd/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-media-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0.aar/019bae9f3e0450d693dfdb7a40a0fb73/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.0.0.aar/019bae9f3e0450d693dfdb7a40a0fb73/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/5ad51ee27b62ff7163dc9d554d2a09ac/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.0.0.aar/5ad51ee27b62ff7163dc9d554d2a09ac/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/00f5218190f174d28378d7d54f894816/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-compat-26.0.0.aar/00f5218190f174d28378d7d54f894816/AndroidManifest.xml:26:9-28:38
 	android:value
-		ADDED from [com.android.support:design:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/6b9e6a748e5f4b27b7ebf452e42c391a/AndroidManifest.xml:28:13-35
+		ADDED from [com.android.support:design:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-26.0.0.aar/72c9fcb80a884dd693c5023048a741ba/AndroidManifest.xml:28:13-35
 	android:name
-		ADDED from [com.android.support:design:25.4.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-25.4.0.aar/6b9e6a748e5f4b27b7ebf452e42c391a/AndroidManifest.xml:27:13-51
+		ADDED from [com.android.support:design:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/design-26.0.0.aar/72c9fcb80a884dd693c5023048a741ba/AndroidManifest.xml:27:13-51

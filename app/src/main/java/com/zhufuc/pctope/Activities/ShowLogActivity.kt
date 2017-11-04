@@ -49,7 +49,7 @@ class ShowLogActivity : BaseActivity() {
     }
 
     fun buildLogs(){
-        val textView = findViewById(R.id.log_textview) as TextView
+        val textView = findViewById<TextView>(R.id.log_textview)
         val logs = StringBuilder()
         for (i in 0 until mLog.getLogsCount())
             logs.append(mLog.getI()[i]+"\n")
@@ -73,7 +73,7 @@ class ShowLogActivity : BaseActivity() {
             }
         }
 
-        val scroll = findViewById(R.id.log_scroll) as ScrollView
+        val scroll = findViewById<ScrollView>(R.id.log_scroll)
         scroll.post({ scroll.fullScroll(ScrollView.FOCUS_DOWN) })
 
     }

@@ -73,7 +73,7 @@ open class BaseActivity : AppCompatActivity() {
 
             var imageView: ImageView? = null
             val layout = navigationView!!.getHeaderView(0)
-            imageView = layout.findViewById(R.id.drawer_header_image) as ImageView
+            imageView = layout.findViewById<ImageView>(R.id.drawer_header_image)
 
             if (ifImageExists) {
                 imageView.setImageBitmap(content)
