@@ -25,7 +25,7 @@ class ShowLogActivity : BaseActivity() {
 
         val pref = getSharedPreferences("data", Context.MODE_PRIVATE)
         if(!pref.getBoolean("hasLogDialogShown",false)){
-            val dialog = AlertDialog.Builder(this)
+            val dialog = android.support.v7.app.AlertDialog.Builder(this)
             dialog.setTitle(R.string.logs)
             dialog.setMessage(R.string.use_of_log)
             dialog.setPositiveButton(R.string.confirm,{ dialogInterface, i ->  val editor = pref.edit()

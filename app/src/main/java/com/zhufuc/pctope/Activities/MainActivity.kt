@@ -40,6 +40,7 @@ import android.view.animation.*
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.ProgressBar
+import com.tencent.bugly.crashreport.CrashReport
 
 import com.zhufuc.pctope.Adapters.FileChooserAdapter
 import com.zhufuc.pctope.Adapters.TextureItems
@@ -80,7 +81,6 @@ class MainActivity : BaseActivity() {
     private fun hideLoading() {
         progressBar!!.visibility = View.INVISIBLE
     }
-
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == 0) {
@@ -513,6 +513,7 @@ class MainActivity : BaseActivity() {
                 animator.duration = 400
                 animator.start()
             }
+            else chooser_root!!.visibility = View.INVISIBLE
 
             fab!!.rotation = 45.0f
             val first = RotateAnimation(0.0f, -45.0f * 4 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)

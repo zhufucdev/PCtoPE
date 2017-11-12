@@ -3,23 +3,24 @@ package com.zhufuc.pctope.Activities
 import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
-import android.os.AsyncTask
 import android.os.Build
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.os.Bundle
-import android.os.Handler
-import com.zhufuc.pctope.Utils.mLog
+import android.util.Log
+import com.tencent.bugly.CrashModule
 
-import com.netease.nis.bugrpt.CrashHandler
-import com.netease.nis.bugrpt.user.UserStrategy
+import com.tencent.bugly.crashreport.CrashReport
+import com.tencent.bugly.crashreport.crash.CrashDetailBean
 import com.zhufuc.pctope.R
 
 import java.util.ArrayList
 
 import za.co.riggaroo.materialhelptutorial.TutorialItem
 import za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity
+import java.nio.charset.Charset
 
 
 class FirstActivity : BaseActivity() {
@@ -97,8 +98,6 @@ class FirstActivity : BaseActivity() {
     }
 
     fun initBugprt() {
-
-        val strategy = UserStrategy(this)
         val preferences = getSharedPreferences("data", Context.MODE_PRIVATE)
         val editor = preferences.edit()
         if (preferences.getBoolean("ifHasBrokenDownLastStart", false)) {
@@ -109,10 +108,16 @@ class FirstActivity : BaseActivity() {
         }
         editor.putBoolean("ifHasBrokenDownLastStart", false)
         editor.apply()
-        strategy.setUserUncaughtExceptionCallback { thread, throwable ->
-            editor.putBoolean("ifHasBrokenDownLastStart", true)
-            editor.apply()
-        }
-        CrashHandler.init(applicationContext, strategy)
+
+        val userStrategy = CrashReport.UserStrategy(applicationContext)
+        userStrategy.setCrashHandleCallback(object : CrashReport.CrashHandleCallback() {
+            override fun onCrashHandleStart(p0: Int, p1: String?, p2: String?, p3: String?): MutableMap<String, String> {
+                editor.putBoolean("ifHasBrokenDownLastStart", true)
+                editor.apply()
+                return super.onCrashHandleStart(p0, p1, p2, p3)
+            }
+        })
+
+        CrashReport.initCrashReport(applicationContext,"e79f664cfd",ApplicationInfo.FLAG_DEBUGGABLE == 1,userStrategy)
     }
 }

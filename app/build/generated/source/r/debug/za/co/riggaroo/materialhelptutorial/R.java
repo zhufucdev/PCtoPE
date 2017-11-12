@@ -468,8 +468,8 @@ public final class R {
         public static final int abc_textfield_search_activated_mtrl_alpha = 0x7f080056;
         public static final int abc_textfield_search_default_mtrl_alpha = 0x7f080057;
         public static final int abc_textfield_search_material = 0x7f080058;
-        public static final int ic_navigate_next = 0x7f08007d;
-        public static final int notification_template_icon_bg = 0x7f08008e;
+        public static final int ic_navigate_next = 0x7f08007e;
+        public static final int notification_template_icon_bg = 0x7f08008f;
     }
     public static final class id {
         public static final int action0 = 0x7f09000b;
@@ -574,8 +574,8 @@ public final class R {
         public static final int topPanel = 0x7f09010d;
         public static final int up = 0x7f090121;
         public static final int useLogo = 0x7f090122;
-        public static final int withText = 0x7f09012a;
-        public static final int wrap_content = 0x7f09012c;
+        public static final int withText = 0x7f090129;
+        public static final int wrap_content = 0x7f09012b;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur = 0x7f0a0000;
@@ -647,7 +647,7 @@ public final class R {
         public static final int app_name = 0x7f0f0025;
         public static final int skip = 0x7f0f0097;
         public static final int status_bar_notification_info_overflow = 0x7f0f0098;
-        public static final int tutorial_done = 0x7f0f009c;
+        public static final int tutorial_done = 0x7f0f009b;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100000;

@@ -1,4 +1,4 @@
-#Sat Nov 04 09:19:16 UTC 2017
-base.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dexMerger/debug/3
+#Sat Nov 11 07:35:27 UTC 2017
+base.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dexMerger/debug/41
 renamed.0=classes.dex
-file.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex
+file.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dexMerger/debug/41/classes.dex

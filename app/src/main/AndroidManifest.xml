@@ -66,11 +66,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.FileChooserActivity" />
         <activity android:name=".Activities.ShowLogActivity" />
-
-        <!--Net Ease BugRPT-->
-        <meta-data
-            android:name="BUGRPT_APPID"
-            android:value="A001298994" />
     </application>
 
 </manifest>

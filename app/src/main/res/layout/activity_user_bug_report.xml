@@ -15,35 +15,49 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:padding="@dimen/text_margin">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/user_bug_report_title"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/user_bug_report_subtitle"/>
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/user_report"/>
 
-                <Switch
-                    android:layout_width="wrap_content"
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="70dp"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/checkbox_marked_circle"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/report_restart_app"
-                    android:textSize="12sp"
-                    android:checked="true"
-                    android:id="@+id/user_report_restart"/>
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/text_margin_small">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_bug_report_title"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/user_bug_report_subtitle"/>
+                </LinearLayout>
+
             </LinearLayout>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/report_restart_app"
+                android:textSize="12sp"
+                android:checked="true"
+                android:id="@+id/user_report_restart"
+                android:layout_marginStart="20dp"/>
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

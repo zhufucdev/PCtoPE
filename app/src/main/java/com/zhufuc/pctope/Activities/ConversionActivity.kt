@@ -6,10 +6,12 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Rect
 import android.os.*
 import android.support.design.widget.BottomSheetDialog
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
+import android.support.v4.view.GravityCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.CardView
 import android.support.v7.widget.SwitchCompat
@@ -133,7 +135,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
             }
 
             1 -> {
-                //Init and add Watchers
+                //Init and add Listeners
                 name = findViewById(R.id.conversion_name)
                 description = findViewById(R.id.conversion_description)
                 val next = findViewById<Button>(R.id.tutorial_next)
@@ -146,7 +148,13 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
                     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                         packname = doDestFixing(s.toString())
-
+                        if (packname[packname.length-1] == '\n'){
+                            description.requestFocus()
+                            val temp = StringBuilder(packname)
+                            temp.deleteCharAt(temp.length-1)
+                            packname = temp.toString()
+                            name.setText(packname)
+                        }
                     }
 
                 })
