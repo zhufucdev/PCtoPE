@@ -243,7 +243,9 @@ class ConversionActivity : TutorialActivity(layoutList) {
                         }
 
                     })
+
                     if (packname=="") packname = getString(R.string.project_unnamed)
+                    packname = doDestFixing(packname)
 
                     val mcpackPath : String = if(mcpackSwitcher.isChecked) "${Environment.getExternalStorageDirectory().path}/games/com.mojang/mcpacks/$packname.mcpack" else ""
                     conversion.compressFinalSize = compressFinalSize
@@ -387,22 +389,21 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
     fun getIconOFResourceCompression() : String{
         //Set Compression
-        var image: File? = null
-        var baseFrom: String? = null
-        if (conversion.VerStr == TextureCompat.fullPC || conversion.VerStr == brokenPC)
+        val baseFrom: String?
+        if (conversion.VerStr == (TextureCompat.fullPC) || conversion.VerStr == (TextureCompat.brokenPC))
             baseFrom = conversion.path + "/assets/minecraft/textures"
         else
             baseFrom = conversion.path + "/textures"
-        //grass >> sword >> never mind
-        image = FindFile.withKeywordOnce("grass_side.png", baseFrom)
-        if (image == null) {
-            image = FindFile.withKeywordOnce("iron_sword.png", baseFrom)
-            if (image == null)
-                image = FindFile.withKeywordOnce(".png", baseFrom)
-        }
-        return image!!.path
-    }
 
+        var image: File = FindFile.withKeywordOnce("grass_side.png", baseFrom)!!
+        //grass >> sword >> never mind
+        if (image.path == null) {
+            image = FindFile.withKeywordOnce("iron_sword.png", baseFrom)!!
+            if (image.path == null)
+                image = FindFile.withKeywordOnce(".png", baseFrom)!!
+        }
+        return image.path
+    }
 
     private fun loadDialogLayout(dialogView: View, bitmap: Bitmap?) {
 

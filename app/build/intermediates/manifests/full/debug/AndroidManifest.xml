@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhufuc.pctope"
-    android:versionCode="48"
-    android:versionName="2.5.4.2weekly" >
+    android:versionCode="49"
+    android:versionName="2.5.4.3weekly" >
 
     <uses-sdk
         android:minSdkVersion="18"
@@ -45,7 +45,7 @@
         <activity
             android:name="com.zhufuc.pctope.Activities.MainActivity"
             android:label="PCtoPE"
-            android:theme="@style/AppTheme.NoActionBar.windowTranslucentNavigation" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.zhufuc.pctope.Activities.ConversionActivity"
             android:theme="@style/AppTheme.NoActionBar" />

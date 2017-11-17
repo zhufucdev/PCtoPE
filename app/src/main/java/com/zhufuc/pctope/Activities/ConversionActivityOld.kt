@@ -76,7 +76,7 @@ class ConversionActivityOld : BaseActivity() {
     private var cards: LinearLayout? = null
     private var error_layout: LinearLayout? = null
 
-    private var conversion: TextureConversionUtils? = null
+    private lateinit var conversion: TextureConversionUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //Preload
@@ -94,8 +94,8 @@ class ConversionActivityOld : BaseActivity() {
             return
         }
 
-        conversion!!.skipUnzip = skipUnzip!!
-        conversion!!.setOnUncompressListener(object : TextureConversionUtils.OnUncompressListener {
+        conversion.skipUnzip = skipUnzip!!
+        conversion.setOnUncompressListener(object : TextureConversionUtils.OnUncompressListener {
             override fun onPreUncompress() {
                 unzipping_tip!!.visibility = View.VISIBLE
                 cards!!.visibility = View.GONE
@@ -119,7 +119,7 @@ class ConversionActivityOld : BaseActivity() {
             }
         })
 
-        conversion!!.setOnCrashListener(object : TextureConversionUtils.OnCrashListener{
+        conversion.setOnCrashListener(object : TextureConversionUtils.OnCrashListener{
             override fun onCrash(errorContent: String) {
                 runOnUiThread {
                     unzipping_tip!!.visibility = View.GONE
@@ -131,7 +131,7 @@ class ConversionActivityOld : BaseActivity() {
 
         })
 
-        conversion!!.setConversionChangeListener(object : TextureConversionUtils.ConversionChangeListener {
+        conversion.setConversionChangeListener(object : TextureConversionUtils.ConversionChangeListener {
 
             internal var alertDialog: ProgressDialog? = null
 
@@ -184,24 +184,24 @@ class ConversionActivityOld : BaseActivity() {
         })
 
         //Overwrite dialog
-        if (File(conversion!!.path).exists() && (!skipUnzip!!)) {
+        if (File(conversion.path).exists() && (!skipUnzip!!)) {
             val dialog = AlertDialog.Builder(this@ConversionActivityOld)
             dialog.setTitle(R.string.overwrite_title)
             dialog.setMessage(R.string.overwrite_content)
             dialog.setCancelable(false)
             dialog.setNegativeButton(R.string.skip) { dialog, which ->
                 skipUnzip = true
-                conversion!!.skipUnzip = skipUnzip!!
-                conversion!!.UncompressPack()
+                conversion.skipUnzip = skipUnzip!!
+                conversion.UncompressPack()
             }
             dialog.setPositiveButton(R.string.overwrite) { dialog, which ->
                 skipUnzip = false
-                conversion!!.skipUnzip = skipUnzip!!
-                conversion!!.UncompressPack()
+                conversion.skipUnzip = skipUnzip!!
+                conversion.UncompressPack()
             }
             dialog.show()
         } else
-            conversion!!.UncompressPack()
+            conversion.UncompressPack()
 
     }
 
@@ -295,7 +295,7 @@ class ConversionActivityOld : BaseActivity() {
             name!!.isEnabled = false
             description!!.isEnabled = false
 
-            conversion!!.compressFinalSize = compressFinalSize
+            conversion.compressFinalSize = compressFinalSize
 
             var mcpackDest = ""
             if (format == 1){
@@ -309,14 +309,14 @@ class ConversionActivityOld : BaseActivity() {
                 mcpackDest = "${dest.path}/${packname}.mcpack"
             }
 
-            Thread(Runnable { conversion!!.doConverting(packname!!, packdescription!!,mcpackDest) }).start()
+            Thread(Runnable { conversion.doConverting(packname!!, packdescription!!,mcpackDest) }).start()
         } else
             Snackbar.make(v, R.string.unclickable_unzipping, Snackbar.LENGTH_LONG).show()
     }
 
     fun loadIcon() {
         val icon = findViewById<ImageView>(R.id.img_card_icon)
-        val bitmap = conversion!!.icon
+        val bitmap = conversion.icon
         if (bitmap != null) {
             icon.setImageBitmap(bitmap)
         } else {
@@ -361,7 +361,7 @@ class ConversionActivityOld : BaseActivity() {
         val PackType = findViewById<TextView>(R.id.info_pack_type)
         val PackInMC = findViewById<TextView>(R.id.info_pack_in_mc_ver)
         var type: String? = resources.getString(R.string.info_pack_type)
-        when (conversion!!.VerStr) {
+        when (conversion.VerStr) {
             TextureCompat.fullPE -> type += resources.getString(R.string.type_fullPE)
             TextureCompat.fullPC -> type += resources.getString(R.string.type_fullPC)
             TextureCompat.brokenPE -> type += resources.getString(R.string.type_brokenPE)
@@ -370,11 +370,11 @@ class ConversionActivityOld : BaseActivity() {
         }
         PackType.text = type
 
-        var ver = conversion!!.decisions!!.getInMinecraftVer(PackInMC)
+        var ver = conversion.decisions!!.getInMinecraftVer(PackInMC)
         if (ver == null)
             ver = resources.getString(R.string.info_file_not_exists)
 
-        PackInMC.text = resources.getString(R.string.info_pack_in_mc_ver) + ver!!
+        PackInMC.text = "${resources.getString(R.string.info_pack_in_mc_ver)}$ver"
 
         val supportOrNot = findViewById<ImageView>(R.id.support_or_not_icon)
         if (ver == resources.getString(R.string.type_before_1_9)) {
@@ -382,21 +382,20 @@ class ConversionActivityOld : BaseActivity() {
         }
 
         //Set Compression
-        var image: File? = null
-        var baseFrom: String? = null
-        if (conversion!!.VerStr == TextureCompat.fullPC || conversion!!.VerStr == brokenPC)
-            baseFrom = conversion!!.path + "/assets/minecraft/textures"
+        val baseFrom: String?
+        if (conversion.VerStr == (TextureCompat.fullPC) || conversion.VerStr == (TextureCompat.brokenPC))
+            baseFrom = conversion.path + "/assets/minecraft/textures"
         else
-            baseFrom = conversion!!.path + "/textures"
-        //grass >> sword >> never mind
-        image = FindFile.withKeywordOnce("grass_side.png", baseFrom)
-        if (image == null) {
-            image = FindFile.withKeywordOnce("iron_sword.png", baseFrom)
-            if (image == null)
-                image = FindFile.withKeywordOnce(".png", baseFrom)
-        }
-        val imageLocation = image!!.path
+            baseFrom = conversion.path + "/textures"
 
+        var image: File = FindFile.withKeywordOnce("grass_side.png", baseFrom)!!
+        //grass >> sword >> never mind
+        if (image.path == null) {
+            image = FindFile.withKeywordOnce("iron_sword.png", baseFrom)!!
+            if (image.path == null)
+                image = FindFile.withKeywordOnce(".png", baseFrom)!!
+        }
+        val imageLocation = image.path
 
         //set listener
         val compress = findViewById<CardView>(R.id.compression_card)
@@ -523,16 +522,16 @@ class ConversionActivityOld : BaseActivity() {
 
                         iconMap = CompressImage.getBitmap(iconMap!!, scale)
 
-                        conversion!!.icon = iconMap
+                        conversion.icon = iconMap
                         loadIcon()
                     }
                     builder.setNegativeButton(R.string.thanks) { dialogInterface, i ->
-                        conversion!!.icon = iconMap
+                        conversion.icon = iconMap
                         loadIcon()
                     }
                     builder.show()
                 } else {
-                    conversion!!.icon = iconMap
+                    conversion.icon = iconMap
                     loadIcon()
                 }
             }
@@ -552,7 +551,7 @@ class ConversionActivityOld : BaseActivity() {
 
         val text = findViewById<TextView>(R.id.error_layout_text)
         text.text = text.text.toString() + this@ConversionActivityOld.getString(R.string.not_pack)
-        val notpack = File(conversion!!.path)
+        val notpack = File(conversion.path)
         mLog.i("PackConversion", "Deleting " + notpack.toString())
         class deleteTask : AsyncTask<Void, Int, Boolean>() {
             override fun doInBackground(vararg voids: Void): Boolean? {

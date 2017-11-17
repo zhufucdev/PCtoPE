@@ -226,13 +226,16 @@ class MainActivity : BaseActivity() {
         if (Build.VERSION.SDK_INT<Build.VERSION_CODES.N_MR1)
             return
         val manager = getSystemService(ShortcutManager::class.java)
-        val max = manager.maxShortcutCountPerActivity
+        val max = manager.maxShortcutCountPerActivity-1
         val infos = ArrayList<ShortcutInfo>()
-        for (i in 0 until mTextures.size){
-            if (i>=max) break
+        var i = 0
+        while(i < max && i < mTextures.size){
 
             val temp = mTextures[i]
-            if (!temp.IfIsResourcePack("PE")!!) continue
+            if (!temp.IfIsResourcePack("PE")!!) {
+                i--
+                continue
+            }
 
             val intent = Intent(ACTION_VIEW,null,this@MainActivity,DetailsActivity::class.java)
             intent.putExtra("texture_name", temp.name)
@@ -246,6 +249,8 @@ class MainActivity : BaseActivity() {
                     .setIntent(intent)
                     .build()
             infos.add(info)
+
+            i++
         }
         manager.dynamicShortcuts = infos
     }

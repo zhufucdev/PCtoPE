@@ -24,16 +24,18 @@
 
                 <android.support.v7.widget.AppCompatImageView
                     android:layout_gravity="center_vertical"
-                    android:layout_width="70dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
+                    android:layout_marginEnd="@dimen/text_margin"
                     app:srcCompat="@drawable/checkbox_marked_circle"/>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="@dimen/text_margin_small">
+                    android:orientation="vertical">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

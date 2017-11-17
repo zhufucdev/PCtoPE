@@ -154,11 +154,11 @@ ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest
 	android:name
 		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:38:13-97
 activity#com.zhufuc.pctope.Activities.MainActivity
-ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:40:9-43:87
+ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:40:9-43:59
 	android:label
 		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:42:13-35
 	android:theme
-		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:43:13-84
+		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:43:13-56
 	android:name
 		ADDED from /home/zhufu/AndroidStudioProjects/PCtoPE/app/src/main/AndroidManifest.xml:41:13-52
 activity#com.zhufuc.pctope.Activities.ConversionActivity

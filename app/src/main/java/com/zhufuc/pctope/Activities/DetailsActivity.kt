@@ -298,21 +298,21 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
         val VerStr = textures!!.getVersion()
 
         //Set Compression
-        var image: File? = null
-        var baseFrom: String? = null
-        if (VerStr.equals(TextureCompat.fullPC) || VerStr.equals(TextureCompat.brokenPC))
+
+        val baseFrom: String?
+        if (VerStr == (TextureCompat.fullPC) || VerStr == (TextureCompat.brokenPC))
             baseFrom = path!! + "/assets/minecraft/textures"
         else
             baseFrom = path!! + "/textures"
-        //grass >> sword >> never mind
-        image = FindFile.withKeywordOnce("grass_side.png", baseFrom)
-        if (image == null) {
-            image = FindFile.withKeywordOnce("iron_sword.png", baseFrom)
-            if (image == null)
-                image = FindFile.withKeywordOnce(".png", baseFrom)
-        }
-        val imageLocation = image!!.path
 
+        var image: File = FindFile.withKeywordOnce("grass_side.png", baseFrom)!!
+        //grass >> sword >> never mind
+        if (image.path == null) {
+            image = FindFile.withKeywordOnce("iron_sword.png", baseFrom)!!
+            if (image.path == null)
+                image = FindFile.withKeywordOnce(".png", baseFrom)!!
+        }
+        val imageLocation = image.path
 
         //set listener
         val compress = findViewById<CardView>(R.id.compression_card)

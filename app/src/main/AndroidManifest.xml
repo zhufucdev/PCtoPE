@@ -40,7 +40,7 @@
         <activity
             android:name=".Activities.MainActivity"
             android:label="PCtoPE"
-            android:theme="@style/AppTheme.NoActionBar.windowTranslucentNavigation" />
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.ConversionActivity"
             android:theme="@style/AppTheme.NoActionBar" />
