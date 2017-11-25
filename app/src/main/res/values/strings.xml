@@ -144,5 +144,6 @@
     <string name="done">Done!</string>
     <string name="pref_conversion_style">Conversion UI Style</string>
     <string name="click_to_jump">Click three times to jump through.</string>
+    <string name="double_back_exit">Press again to exit.</string>
 
 </resources>

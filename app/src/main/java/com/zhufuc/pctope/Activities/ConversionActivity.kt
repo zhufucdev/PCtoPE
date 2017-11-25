@@ -371,8 +371,8 @@ class ConversionActivity : TutorialActivity(layoutList) {
             val text = findViewById<TextView>(R.id.conversion_icon_text)
             if (hasIconBeenOverwritten) text.text = "${text.text}?"
         } else {
-            val finishBottom = findViewById<FloatingActionButton>(R.id.finishBottom)
-            Snackbar.make(finishBottom, R.string.pack_icon_not_found, Snackbar.LENGTH_INDEFINITE)
+            val next = findViewById<Button>(R.id.tutorial_next)
+            Snackbar.make(next, R.string.pack_icon_not_found, Snackbar.LENGTH_INDEFINITE)
                     .setAction(R.string.ok) {
                         val choose = Intent(ConversionActivity@this,FileChooserActivity::class.java)
                         startActivityForResult(choose, 0)
@@ -397,14 +397,14 @@ class ConversionActivity : TutorialActivity(layoutList) {
         else
             baseFrom = conversion.path + "/textures"
 
-        var image: File = FindFile.withKeywordOnce("grass_side.png", baseFrom)!!
+        var image: String = FindFile.withKeywordOnce("grass_side.png", baseFrom)!!
         //grass >> sword >> never mind
-        if (image.path == null) {
+        if (image.isEmpty()) {
             image = FindFile.withKeywordOnce("iron_sword.png", baseFrom)!!
-            if (image.path == null)
+            if (image.isEmpty())
                 image = FindFile.withKeywordOnce(".png", baseFrom)!!
         }
-        return image.path
+        return image
     }
 
     private fun loadDialogLayout(dialogView: View, bitmap: Bitmap?) {

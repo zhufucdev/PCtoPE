@@ -10,6 +10,7 @@ import android.os.Environment
 import android.util.Log
 
 import com.zhufuc.pctope.R
+import com.zhufuc.pctope.Utils.ListFiles
 
 import net.lingala.zip4j.exception.ZipException
 import net.lingala.zip4j.model.ZipParameters
@@ -27,7 +28,6 @@ import java.io.IOException
 import java.nio.charset.Charset
 import java.text.DecimalFormat
 import java.util.*
-import java.util.zip.ZipFile
 import kotlin.collections.ArrayList
 
 /**
@@ -233,7 +233,7 @@ constructor(private val FilePath: String, private val context: Context) {
             mLog.i("Conversion","Listing $it")
             json.append(it+",\n")
         }
-        json.deleteCharAt(json.length-2)//del the last ","
+        json.deleteCharAt(json.length-2)//del the latest ","
         json.append(']')
         Log.i("Conversion","JSON = \"${json.toString()}\"")
         textures_list.writeText(json.toString(),Charset.defaultCharset())
@@ -242,12 +242,7 @@ constructor(private val FilePath: String, private val context: Context) {
 
 
     private fun onPEDecisions() {
-        val JSONs = File("$textures/").listFiles()
-        for (f in JSONs) {
-            val n = f.path
-            if (n.substring(n.lastIndexOf('.'), n.length) == ".json")
-                f.delete()
-        }
+        textures = File("$path/textures")
     }
 
     private fun doJsonFixing(text : String): String {
@@ -586,7 +581,7 @@ constructor(private val FilePath: String, private val context: Context) {
                     decisions = PackVersionDecisions(File(path))
                     VerStr = decisions!!.packVersion
                     if (VerStr!![0] != 'E') {
-                        iconPath = if (VerStr == TextureCompat.fullPC) path + "/pack.png" else if (VerStr == TextureCompat.fullPE) path + "/pack_icon.png" else null
+                        iconPath = if (VerStr == TextureCompat.fullPC || VerStr == TextureCompat.brokenPC) path + "/pack.png" else if (VerStr == TextureCompat.fullPE || VerStr == TextureCompat.brokenPE) path + "/pack_icon.png" else null
 
                         mOnUncompressListener.onPostUncompress(true, VerStr)
                     } else {

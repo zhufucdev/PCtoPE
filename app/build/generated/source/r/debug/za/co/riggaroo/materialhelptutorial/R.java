@@ -645,9 +645,9 @@ public final class R {
         public static final int abc_shareactionprovider_share_with_application = 0x7f0f001d;
         public static final int abc_toolbar_collapse_description = 0x7f0f001e;
         public static final int app_name = 0x7f0f0025;
-        public static final int skip = 0x7f0f0098;
-        public static final int status_bar_notification_info_overflow = 0x7f0f0099;
-        public static final int tutorial_done = 0x7f0f009c;
+        public static final int skip = 0x7f0f0099;
+        public static final int status_bar_notification_info_overflow = 0x7f0f009a;
+        public static final int tutorial_done = 0x7f0f009d;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100000;

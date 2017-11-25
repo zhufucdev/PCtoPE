@@ -388,14 +388,14 @@ class ConversionActivityOld : BaseActivity() {
         else
             baseFrom = conversion.path + "/textures"
 
-        var image: File = FindFile.withKeywordOnce("grass_side.png", baseFrom)!!
+        var image: String = FindFile.withKeywordOnce("grass_side.png", baseFrom)!!
         //grass >> sword >> never mind
-        if (image.path == null) {
+        if (image.isEmpty()) {
             image = FindFile.withKeywordOnce("iron_sword.png", baseFrom)!!
-            if (image.path == null)
+            if (image.isEmpty())
                 image = FindFile.withKeywordOnce(".png", baseFrom)!!
         }
-        val imageLocation = image.path
+        val imageLocation = image
 
         //set listener
         val compress = findViewById<CardView>(R.id.compression_card)

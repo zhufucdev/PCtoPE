@@ -45,20 +45,23 @@ class FileChooserAdapter(private var root: String?,private var lastFixes : List<
         initData()
     }
 
-    private fun initData() {
+    private fun initData(){
         val fileList = ArrayList<File>()
         val folderList = ArrayList<File>()
         list = ArrayList()
         val files = File(root!!).listFiles()
-        for (f in files)
-            if (f.exists()) {
-                if (f.isFile) {
-                    (0 until lastFixes.size)
-                            .filter { f.path.contains(lastFixes[it]) }
-                            .forEach { fileList.add(f) }
-                } else
-                    folderList.add(f)
-            }
+        files
+                .filter { it.exists() }
+                .forEach { f ->
+                    if (f.isFile) {
+                        for (suffix in lastFixes)
+                            if (f.path.endsWith(suffix)){
+                                fileList.add(f)
+                                break
+                            }
+                    } else
+                        folderList.add(f)
+                }
 
         Collections.sort(folderList)
         Collections.sort(fileList)
@@ -105,9 +108,6 @@ class FileChooserAdapter(private var root: String?,private var lastFixes : List<
                     }
                 }
                 loadImage().execute()
-
-
-
             }
 
             holder.zipFileView.setOnClickListener(onClickListener)

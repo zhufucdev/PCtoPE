@@ -33,6 +33,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager
 import android.support.v7.widget.Toolbar
 import android.support.v7.widget.helper.ItemTouchHelper
 import android.transition.TransitionInflater
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewAnimationUtils
@@ -390,11 +391,23 @@ class MainActivity : BaseActivity() {
         super.onStart()
     }
 
+    var lastTime : Long = 0
+    var count = 0
     override fun onBackPressed() {
         if (drawerLayout!!.isDrawerOpen(GravityCompat.START)) {
             drawerLayout!!.closeDrawer(GravityCompat.START)
-        } else
-            ActivityCollector.finishAll()
+        } else {
+            if (count == 0) {
+                lastTime = System.currentTimeMillis()
+                Snackbar.make(fab!!,R.string.double_back_exit,700).show()
+                Handler().postDelayed({count = 0},700)
+            }
+            else if (System.currentTimeMillis() - lastTime <= 700){
+                ActivityCollector.finishAll()
+            }
+            Log.d("DoubleBack","Count = $count , Delay = ${System.currentTimeMillis() - lastTime}")
+            count ++
+        }
     }
 
     var mTextures : ArrayList<Textures> = ArrayList()

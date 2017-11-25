@@ -116,10 +116,19 @@ class FirstActivity : BaseActivity() {
             tutorialActivity.putParcelableArrayListExtra(MaterialTutorialActivity.MATERIAL_TUTORIAL_ARG_TUTORIAL_ITEMS, getTutorialItems(this))
             startActivityForResult(tutorialActivity, 0)
 
+            updateDefaults()
             editor.putBoolean("isbooted", true)
             editor.apply()
         } else
             onActivityResult(0, 0, null)
+    }
+
+    private fun updateDefaults(){
+        val settings = getSharedPreferences("com.zhufuc.pctope_preferences", Context.MODE_PRIVATE)
+        val settingsEditor = settings.edit()
+        settingsEditor.putString("pref_conversion_style","new")
+        settingsEditor.putString("pref_language","auto")
+        settingsEditor.apply()
     }
 
     fun initBugprt() {

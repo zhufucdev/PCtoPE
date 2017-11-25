@@ -7,20 +7,14 @@ import java.io.File
  */
 
 object FindFile {
-    fun withKeywordOnce(keyword: String, findFrom: String): File? {
-        val listBase = File(findFrom).listFiles()
-        for (n in listBase) {
-            if (n.isFile) {
-                val str = n.path
-                val keyLength = keyword.length
-                val start = str.lastIndexOf('/') + 1
-                if (str.indexOf(keyword, start) != -1)
-                    return n
-            } else {
-                val mayReturn = FindFile.withKeywordOnce(keyword, n.path)
-                if (mayReturn != null) return mayReturn
+    fun withKeywordOnce(keyword: String, findFrom: String): String? {
+        val lister = ListFiles(findFrom)
+        val list = lister.getList()
+        for (n in list) {
+            if (n.indexOf(keyword)!=-1){
+                return n
             }
         }
-        return null
+        return ""
     }
 }

@@ -143,4 +143,5 @@
     <string name="done">完成！</string>
     <string name="pref_conversion_style">转化界面风格</string>
     <string name="click_to_jump">连点三次跳过</string>
+    <string name="double_back_exit">再次点击以退出</string>
 </resources>
