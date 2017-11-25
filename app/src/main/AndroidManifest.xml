@@ -23,7 +23,7 @@
         tools:ignore="InnerclassSeparator" >
         <activity
             android:name=".Activities.FirstActivity"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,7 +40,7 @@
         <activity
             android:name=".Activities.MainActivity"
             android:label="PCtoPE"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar.windowTranslucentStatus" />
         <activity
             android:name=".Activities.ConversionActivity"
             android:theme="@style/AppTheme.NoActionBar" />

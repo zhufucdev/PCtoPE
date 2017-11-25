@@ -8,8 +8,8 @@ android {
         applicationId "com.zhufuc.pctope"
         minSdkVersion 18
         targetSdkVersion 26
-        versionCode 49
-        versionName "2.5.4.3weekly"
+        versionCode 51
+        versionName "2.5.4.4weekly"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -33,7 +33,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('libs/zip4j_1.3.2.jar')
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.60"
     //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:26.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -47,6 +47,7 @@ dependencies {
     compile 'com.github.zzz40500:android-shapeLoadingView:1.0.3.2'
     testCompile 'junit:junit:4.12'
 }
+
 repositories {
     mavenCentral()
     google()

@@ -37,6 +37,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
     internal val finishIntent = Intent()
 
     private fun MakeErrorDialog(errorString: String) {
+        Looper.prepare()
         //make up a error dialog
         val error_dialog = AlertDialog.Builder(this@ConversionActivity)
         error_dialog.setTitle(R.string.error)
@@ -52,6 +53,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
             copy.text = errorString
             finish()
         }.show()
+        Looper.loop()
     }
 
     internal var skipUnzip: Boolean = false

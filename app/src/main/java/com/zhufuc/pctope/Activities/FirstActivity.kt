@@ -9,7 +9,12 @@ import android.os.Build
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.os.Bundle
+import android.os.Handler
+import android.support.design.widget.Snackbar
 import android.util.Log
+import android.widget.FrameLayout
+import android.widget.Toast
+import android.widget.Toolbar
 import com.tencent.bugly.CrashModule
 
 import com.tencent.bugly.crashreport.CrashReport
@@ -58,17 +63,36 @@ class FirstActivity : BaseActivity() {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         if (requestCode == 1){
-            isGranted = (ContextCompat.checkSelfPermission(this@FirstActivity, permission[0]) == PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this@FirstActivity, permission[1]) == PackageManager.PERMISSION_GRANTED)
+            isGranted = (ContextCompat.checkSelfPermission(this@FirstActivity, permission[0]) == PackageManager.PERMISSION_GRANTED )
             InitTutorial()
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
+    lateinit var toolbar : android.support.v7.widget.Toolbar
+    lateinit var frame : FrameLayout
     private var needsToDoNext = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_first)
+
+        toolbar = findViewById(R.id.first_toolbar)
+        frame = findViewById(R.id.first_frame)
+        Handler().postDelayed({
+            Snackbar.make(frame,R.string.click_to_jump,Snackbar.LENGTH_INDEFINITE).show()
+            var lastTime : Long = 0
+            var i = 0
+            frame.setOnClickListener {
+                if (i == 0) lastTime = System.currentTimeMillis()
+
+                i++
+                if (System.currentTimeMillis() - lastTime >= 500) i = 0
+                else if (i>=3) onActivityResult(0,0,null)
+                lastTime = System.currentTimeMillis()
+
+                if (i>3) i=0
+            }
+        },5000)
 
         initBugprt()
 
@@ -78,6 +102,7 @@ class FirstActivity : BaseActivity() {
                 ActivityCompat.requestPermissions(this@FirstActivity, permission, 1)
             else
                 InitTutorial()
+
     }
 
     private fun InitTutorial() {

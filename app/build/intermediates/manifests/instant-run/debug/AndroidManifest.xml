@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.zhufuc.pctope"
-    android:versionCode="48"
-    android:versionName="2.5.4.2weekly" >
+    android:versionCode="51"
+    android:versionName="2.5.4.4weekly" >
 
     <uses-sdk
         android:minSdkVersion="18"
@@ -29,7 +29,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.zhufuc.pctope.Activities.FirstActivity"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen" >
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,7 +46,7 @@
         <activity
             android:name="com.zhufuc.pctope.Activities.MainActivity"
             android:label="PCtoPE"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar.windowTranslucentStatus" />
         <activity
             android:name="com.zhufuc.pctope.Activities.ConversionActivity"
             android:theme="@style/AppTheme.NoActionBar" />

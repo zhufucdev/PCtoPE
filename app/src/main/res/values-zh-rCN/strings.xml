@@ -11,7 +11,7 @@
     <string name="failed">失败…</string>
     <string name="deleted_completed">删除完成!</string>
     <string name="deteted_failed">删除失败…</string>
-    <string name="preparing_for_firstboot">正在准备…</string>
+    <string name="preparing_for_firstboot">正在检查授权…</string>
     <string name="permissions_request">你需要给予应用权限</string>
     <string name="ok">好的</string>
     <string name="choosing_alert">文件选择</string>
@@ -142,4 +142,5 @@
     <string name="compress_into_mcpack_at_the_same_time">同时压缩到mcpack</string>
     <string name="done">完成！</string>
     <string name="pref_conversion_style">转化界面风格</string>
+    <string name="click_to_jump">连点三次跳过</string>
 </resources>
