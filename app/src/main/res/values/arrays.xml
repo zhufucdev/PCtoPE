@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="compression_options">
-        <item>On Compression</item>
+        <item>No Compression</item>
         <item>8x</item>
         <item>16x</item>
         <item>32x</item>

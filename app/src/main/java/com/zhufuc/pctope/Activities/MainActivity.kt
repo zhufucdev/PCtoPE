@@ -1,6 +1,7 @@
 package com.zhufuc.pctope.Activities
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.ActivityOptions
 import android.content.ClipboardManager
 import android.content.Context
@@ -9,6 +10,7 @@ import android.content.Intent.ACTION_VIEW
 import android.content.pm.PackageManager
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
+import android.content.res.ColorStateList
 import android.graphics.BitmapFactory
 import android.graphics.drawable.Icon
 import android.os.*
@@ -16,6 +18,7 @@ import android.preference.PreferenceManager
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
+import android.support.percent.PercentRelativeLayout
 import android.support.v4.app.ActivityCompat
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.content.ContextCompat
@@ -24,6 +27,8 @@ import android.support.v4.widget.DrawerLayout
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AlertDialog
 import android.support.v7.util.DiffUtil
+import android.support.v7.view.menu.MenuBuilder
+import android.support.v7.widget.ActionMenuView
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
@@ -34,13 +39,9 @@ import android.support.v7.widget.Toolbar
 import android.support.v7.widget.helper.ItemTouchHelper
 import android.transition.TransitionInflater
 import android.util.Log
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewAnimationUtils
+import android.view.*
 import android.view.animation.*
-import android.widget.FrameLayout
-import android.widget.LinearLayout
-import android.widget.ProgressBar
+import android.widget.*
 import com.tencent.bugly.crashreport.CrashReport
 
 import com.zhufuc.pctope.Adapters.FileChooserAdapter
@@ -90,7 +91,7 @@ class MainActivity : BaseActivity() {
                 loadList()
                 updatePinnedShortcut()
                 initShortcuts()
-                if (chooser_root!!.visibility == View.VISIBLE)
+                if (chooser_root.visibility == View.VISIBLE)
                     Handler().postDelayed({ Choose() }, 1000)
             }
         } else if (requestCode == 2) {
@@ -114,17 +115,29 @@ class MainActivity : BaseActivity() {
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setHomeAsUpIndicator(R.drawable.menu)
 
+        toobarFore = findViewById(R.id.toolbar_fore)
+        toobarFore.title = getString(R.string.mulit_select)
+
+        menuView = findViewById(R.id.menu_item_view)
+        menuView.menu.clear()
+        menuInflater.inflate(R.menu.toolbar_menu,menuView.menu)
+
+        foreLayout = findViewById(R.id.fore_toolbar_layout)
+        foreLayout.visibility = View.GONE
     }
 
     private val permissions = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS, Manifest.permission.READ_EXTERNAL_STORAGE)
 
     private var swipeRefreshLayout: SwipeRefreshLayout? = null
 
-    private var fab: FloatingActionButton? = null
-    private var recyclerView: RecyclerView? = null
-    private var android_nothing_card: LinearLayout? = null
-    private var chooser_root: FrameLayout? = null
-    private var toolbar: Toolbar? = null
+    private lateinit var fab: FloatingActionButton
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var android_nothing_card: LinearLayout
+    private lateinit var chooser_root: FrameLayout
+    private lateinit var toolbar: Toolbar
+    private lateinit var toobarFore : Toolbar
+    private lateinit var foreLayout : PercentRelativeLayout
+    private lateinit var menuView : ActionMenuView
     private var isFromShortcut : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -141,7 +154,7 @@ class MainActivity : BaseActivity() {
         android_nothing_card = findViewById(R.id.android_nothing)
         chooser_root = findViewById(R.id.chooser_in_main)
 
-        chooser_root!!.visibility = View.INVISIBLE
+        chooser_root.visibility = View.INVISIBLE
 
         val intent = intent
         isGranted = intent.getBooleanExtra("isGranted", true)
@@ -149,16 +162,18 @@ class MainActivity : BaseActivity() {
 
         mLog.d("Permissions", isGranted.toString())
 
-        //file choosing
-        fab!!.setOnClickListener { Choose() }
+        initToolbar()
 
-        recyclerView!!.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        //file choosing
+        fab.setOnClickListener { Choose() }
+
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (newState > 0) {
-                    fab!!.hide()
+                    fab.hide()
                 } else {
-                    fab!!.show()
+                    fab.show()
                 }
             }
         })
@@ -167,7 +182,7 @@ class MainActivity : BaseActivity() {
         if (isGranted) {
             initActivity()
         } else {
-            Snackbar.make(fab!!, R.string.permissions_request, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(fab, R.string.permissions_request, Snackbar.LENGTH_INDEFINITE)
                     .setAction(R.string.ok) {
                         ActivityCompat.requestPermissions(this@MainActivity, permissions, 1)
                     }.show()
@@ -201,8 +216,6 @@ class MainActivity : BaseActivity() {
             true
         }
 
-        initToolbar()
-
         super.onCreate(savedInstanceState)
 
     }
@@ -218,7 +231,14 @@ class MainActivity : BaseActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            android.R.id.home -> drawerLayout!!.openDrawer(GravityCompat.START)
+            android.R.id.home -> {
+                if (!items.isInSelectMode)
+                    drawerLayout!!.openDrawer(GravityCompat.START)
+                else{
+                    inSelectMode(false,false)
+
+                }
+            }
         }
         return super.onOptionsItemSelected(item)
     }
@@ -300,54 +320,51 @@ class MainActivity : BaseActivity() {
         }
         firstLoad().execute()
 
-        recyclerView!!.addItemDecoration(SpacesItemDecoration(16))
-        recyclerView!!.setHasFixedSize(true)
+        recyclerView.addItemDecoration(SpacesItemDecoration(16))
+        recyclerView.setHasFixedSize(true)
 
-        val mCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.START or ItemTouchHelper.END) {
-            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
-                return false
-            }
 
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val position = viewHolder.adapterPosition
-                val deleting = mTextures[position]
-                val test = File(deleting.path)
-                mTextures.removeAt(position)
+        menuView.setOnMenuItemClickListener { item ->
+            when(item!!.itemId){
+                R.id.delete -> {
+                    val paths = ArrayList<Textures>()
+                    var hasBeenDeleted = 0
+                    for(it in items.selectedItems) {
+                        val position = it-hasBeenDeleted
+                        val path = items.getItem(position)
+                        paths.add(path)
+                        mTextures.remove(path)
+                        items.notifyItemRemoved(position)
+                        hasBeenDeleted++
+                    }
 
-                if (items.itemCount == 0) {
-                    recyclerView!!.visibility = View.GONE
-                    android_nothing_card!!.visibility = View.VISIBLE
-                    val show = AnimationUtils.loadAnimation(this@MainActivity, R.anim.cards_show)
-                    android_nothing_card!!.startAnimation(show)
+                    setLayoutManager()
+                    initShortcuts()
+                    updatePinnedShortcut()
+                    Snackbar.make(fab, R.string.deleted_completed, Snackbar.LENGTH_LONG)
+                            .setCallback(DeletingCallback(paths.toList()))
+                            .setAction(R.string.undo) {
+                                paths.forEach {
+                                    if (File(it.path).exists()) {
+
+                                        mTextures.add(it.position,it)
+                                        recyclerView.visibility = View.VISIBLE
+                                        android_nothing_card.visibility = View.GONE
+                                        loadList()
+                                        setLayoutManager()
+                                        initShortcuts()
+                                        updatePinnedShortcut()
+                                    } else {
+                                        Snackbar.make(fab, R.string.failed, Snackbar.LENGTH_SHORT).show()
+                                    }
+                                }
+
+                            }.show()
+                    inSelectMode(false,false)
                 }
-                items.notifyItemRemoved(position)
-
-                setLayoutManager()
-                initShortcuts()
-                updatePinnedShortcut()
-
-                Snackbar.make(fab!!, R.string.deleted_completed, Snackbar.LENGTH_LONG)
-                        .setCallback(DeletingCallback(test))
-                        .setAction(R.string.undo) {
-                            if (test.exists()) {
-
-                                mTextures.add(position, deleting)
-                                recyclerView!!.visibility = View.VISIBLE
-                                android_nothing_card!!.visibility = View.GONE
-                                //items = TextureItems(mTextures)
-                                //recyclerView!!.adapter = items
-
-                                setLayoutManager()
-                                initShortcuts()
-                                updatePinnedShortcut()
-                            } else {
-                                Snackbar.make(fab!!, R.string.failed, Snackbar.LENGTH_SHORT).show()
-                            }
-                        }.show()
             }
+            true
         }
-        val itemTouchHelper = ItemTouchHelper(mCallback)
-        itemTouchHelper.attachToRecyclerView(recyclerView)
 
         //for swipe refresh layout
         swipeRefreshLayout = findViewById(R.id.swipe_refresh)
@@ -361,15 +378,15 @@ class MainActivity : BaseActivity() {
                 }
 
                 runOnUiThread {
-                    loadList()
+                    inSelectMode(false,true)
                     swipeRefreshLayout!!.isRefreshing = false
                 }
             }).start()
         }
 
-        android_nothing_card!!.setOnClickListener {
+        android_nothing_card.setOnClickListener {
             val show = AnimationUtils.loadAnimation(this@MainActivity, R.anim.cards_show)
-            android_nothing_card!!.startAnimation(show)
+            android_nothing_card.startAnimation(show)
             show.setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(animation: Animation) {
 
@@ -386,27 +403,31 @@ class MainActivity : BaseActivity() {
         }
     }
 
-
-    override fun onStart() {
-        super.onStart()
-    }
-
     var lastTime : Long = 0
     var count = 0
     override fun onBackPressed() {
         if (drawerLayout!!.isDrawerOpen(GravityCompat.START)) {
             drawerLayout!!.closeDrawer(GravityCompat.START)
-        } else {
+        } else if (!items.isInSelectMode) {
             if (count == 0) {
                 lastTime = System.currentTimeMillis()
-                Snackbar.make(fab!!,R.string.double_back_exit,700).show()
-                Handler().postDelayed({count = 0},700)
+                Snackbar.make(fab,R.string.double_back_exit,Snackbar.LENGTH_LONG)
+                        .setCallback(object :Snackbar.Callback(){
+                            override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+                                count = 0
+                                super.onDismissed(transientBottomBar, event)
+                            }
+                        })
+                        .show()
             }
-            else if (System.currentTimeMillis() - lastTime <= 700){
+            else{
                 ActivityCollector.finishAll()
             }
             Log.d("DoubleBack","Count = $count , Delay = ${System.currentTimeMillis() - lastTime}")
             count ++
+        }
+        else{
+            inSelectMode(false,false)
         }
     }
 
@@ -414,18 +435,18 @@ class MainActivity : BaseActivity() {
     lateinit var items : TextureItems
 
     private fun loadList() {
-
-
         mTextures = ArrayList()
 
         val packsListDir = File(Environment.getExternalStorageDirectory().toString() + "/games/com.mojang/resource_packs/")
         val packsList: Array<File>
-        var make: Boolean? = true
+        var make = true
 
         if (!packsListDir.exists()) make = packsListDir.mkdirs()
 
-        if (make!!) {
+        if (make) {
             packsList = packsListDir.listFiles()
+            items = TextureItems(mTextures)
+            recyclerView.adapter = items
 
             for (aPacksList in packsList) {
                 if (aPacksList.exists())
@@ -436,77 +457,112 @@ class MainActivity : BaseActivity() {
                         }
                     }
             }
-            items = TextureItems(mTextures)
             items.setOnItemClickListener(object : TextureItems.OnItemClickListener {
+                override fun onLongPress(view: View, position: Int) {
+                    inSelectMode(false)
+                }
                 override fun onItemClick(view: View, position: Int) {
                     if (!items.getIfIsAlertIconShown(view)) {
-                        val intent = Intent(this@MainActivity, DetailsActivity::class.java)
+                        if (!items.isInSelectMode) {
+                            val intent = Intent(this@MainActivity, DetailsActivity::class.java)
 
-                        val temp = items.getItem(position)
-                        intent.putExtra("texture_name", temp.name)
-                        intent.putExtra("texture_description", temp.description)
-                        intent.putExtra("texture_icon", temp.icon)
-                        intent.putExtra("texture_version", temp.getVersion())
-                        intent.putExtra("texture_path", temp.path)
+                            val temp = items.getItem(position)
+                            intent.putExtra("texture_name", temp.name)
+                            intent.putExtra("texture_description", temp.description)
+                            intent.putExtra("texture_icon", temp.icon)
+                            intent.putExtra("texture_version", temp.getVersion())
+                            intent.putExtra("texture_path", temp.path)
 
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                            val options = ActivityOptions.makeSceneTransitionAnimation(this@MainActivity, view.findViewById(R.id.card_texture_icon), getString(R.string.pack_icon_transition))
-                            ActivityCompat.startActivityForResult(this@MainActivity, intent, 2, options.toBundle())
-                        }
-                        else {
-                            startActivityForResult(intent,2)
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                val options = ActivityOptions.makeSceneTransitionAnimation(this@MainActivity, view.findViewById(R.id.card_texture_icon), getString(R.string.pack_icon_transition))
+                                ActivityCompat.startActivityForResult(this@MainActivity, intent, 2, options.toBundle())
+                            } else {
+                                startActivityForResult(intent, 2)
+                            }
                         }
                     }
                 }
             })
 
             runOnUiThread({
-                recyclerView!!.adapter = items
-                items.notifyDataSetChanged()
                 setLayoutManager()
+                items.notifyDataSetChanged()
             })
         } else
             MakeErrorDialog("Failed to make textures root directory.")
     }
 
+    fun inSelectMode(withLoadingList: Boolean){
+        if (items.isInSelectMode){
+            val animation = AnimationUtils.loadAnimation(this,R.anim.cards_show)
+            foreLayout.visibility = View.VISIBLE
+            foreLayout.startAnimation(animation)
+            setSupportActionBar(toobarFore)
+        }
+        else{
+            if (withLoadingList)
+                loadList()
+            items.deselectAll()
+            val animation = AnimationUtils.loadAnimation(this,R.anim.cards_hide)
+            foreLayout.startAnimation(animation)
+            animation.setAnimationListener(object : Animation.AnimationListener{
+                override fun onAnimationRepeat(animation: Animation?) {}
+
+                override fun onAnimationEnd(animation: Animation?) {
+                    foreLayout.visibility = View.GONE
+                    setSupportActionBar(toolbar)
+
+                }
+
+                override fun onAnimationStart(animation: Animation?) {}
+
+            })
+        }
+    }
+
+    fun inSelectMode(inSelect : Boolean,withLoadingList: Boolean){
+        items.isInSelectMode = inSelect
+        inSelectMode(withLoadingList)
+    }
+
     private var adapter: FileChooserAdapter? = null
     var level_up : FloatingActionButton? = null
     private fun Choose() {
-        if (chooser_root!!.visibility == View.INVISIBLE) {
-            fab!!.isEnabled = false
+        if (chooser_root.visibility == View.INVISIBLE) {
+            fab.isEnabled = false
             level_up!!.show()
-            toolbar!!.setTitle(R.string.choosing_alert)
-            toolbar!!.subtitle = adapter!!.getPath()
+            toolbar.setTitle(R.string.choosing_alert)
+            toolbar.subtitle = adapter!!.getPath()
 
-            chooser_root!!.visibility = View.VISIBLE
+            chooser_root.visibility = View.VISIBLE
             if (!isFromShortcut) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2, fab!!.y.toInt() - fab!!.height / 2, 0f, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat())
+                    val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab.x.toInt() + fab.width / 2, fab.y.toInt() - fab.height / 2, 0f, Math.hypot(chooser_root.width.toDouble(), chooser_root.height.toDouble()).toFloat())
                     animator.duration = 300
                     animator.start()
                 }
             }
             val first = RotateAnimation(0.0f, 45.0f * 4 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
             first.duration = 200
-            fab!!.startAnimation(first)
+            fab.startAnimation(first)
             first.setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(animation: Animation) {
 
                 }
 
                 override fun onAnimationEnd(animation: Animation) {
-                    fab!!.rotation = 60.0f
+                    fab.rotation = 60.0f
                     val second = RotateAnimation(15.0f, 0.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
                     second.duration = 100
-                    fab!!.startAnimation(second)
+                    fab.startAnimation(second)
                     second.setAnimationListener(object : Animation.AnimationListener {
                         override fun onAnimationStart(animation: Animation) {
 
                         }
 
                         override fun onAnimationEnd(animation: Animation) {
-                            fab!!.rotation = 45.0f
-                            fab!!.isEnabled = true
+                            fab.rotation = 45.0f
+                            fab.isEnabled = true
                         }
 
                         override fun onAnimationRepeat(animation: Animation) {
@@ -520,20 +576,20 @@ class MainActivity : BaseActivity() {
                 }
             })
         } else {
-            fab!!.isEnabled = false
+            fab.isEnabled = false
             level_up!!.hide()
-            toolbar!!.setTitle(getString(R.string.app_name))
-            toolbar!!.subtitle = ""
+            toolbar.setTitle(getString(R.string.app_name))
+            toolbar.subtitle = ""
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab!!.x.toInt() + fab!!.width / 2,
-                        fab!!.y.toInt() - fab!!.height / 2, Math.hypot(chooser_root!!.width.toDouble(), chooser_root!!.height.toDouble()).toFloat(), 0f)
+                val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab.x.toInt() + fab.width / 2,
+                        fab.y.toInt() - fab.height / 2, Math.hypot(chooser_root.width.toDouble(), chooser_root.height.toDouble()).toFloat(), 0f)
                 animator.duration = 400
                 animator.start()
             }
-            else chooser_root!!.visibility = View.INVISIBLE
+            else chooser_root.visibility = View.INVISIBLE
 
-            fab!!.rotation = 45.0f
+            fab.rotation = 45.0f
             val first = RotateAnimation(0.0f, -45.0f * 4 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
             first.duration = 200
             first.setAnimationListener(object : Animation.AnimationListener {
@@ -542,18 +598,18 @@ class MainActivity : BaseActivity() {
                 }
 
                 override fun onAnimationEnd(animation: Animation) {
-                    fab!!.rotation = -15.0f
+                    fab.rotation = -15.0f
                     val second = RotateAnimation(0.0f, 15.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
                     second.duration = 100
-                    fab!!.startAnimation(second)
+                    fab.startAnimation(second)
                     second.setAnimationListener(object : Animation.AnimationListener {
                         override fun onAnimationStart(animation: Animation) {
 
                         }
 
                         override fun onAnimationEnd(animation: Animation) {
-                            fab!!.rotation = 0.0f
-                            fab!!.isEnabled = true
+                            fab.rotation = 0.0f
+                            fab.isEnabled = true
                         }
 
                         override fun onAnimationRepeat(animation: Animation) {
@@ -566,9 +622,9 @@ class MainActivity : BaseActivity() {
 
                 }
             })
-            fab!!.startAnimation(first)
+            fab.startAnimation(first)
 
-            Handler().postDelayed({ chooser_root!!.visibility = View.INVISIBLE }, 390)
+            Handler().postDelayed({ chooser_root.visibility = View.INVISIBLE }, 390)
         }
         isFromShortcut = false
     }
@@ -590,14 +646,14 @@ class MainActivity : BaseActivity() {
                     startActivityForResult(intent, 0)
                 }
                 else{
-                    toolbar!!.subtitle = path
+                    toolbar.subtitle = path
                 }
             }
 
         })
         level_up!!.setOnClickListener({
             if(adapter!!.upLevel(Environment.getExternalStorageDirectory().path))
-                toolbar!!.subtitle = adapter!!.getPath()
+                toolbar.subtitle = adapter!!.getPath()
             else
                 Snackbar.make(fab as View,R.string.non_upper_level,Snackbar.LENGTH_SHORT).show()
         })
@@ -607,11 +663,11 @@ class MainActivity : BaseActivity() {
 
     fun setLayoutManager() {
         if (items.itemCount == 0) {
-            recyclerView!!.visibility = View.GONE
-            android_nothing_card!!.visibility = View.VISIBLE
+            recyclerView.visibility = View.GONE
+            android_nothing_card.visibility = View.VISIBLE
         } else {
-            recyclerView!!.visibility = View.VISIBLE
-            android_nothing_card!!.visibility = View.GONE
+            recyclerView.visibility = View.VISIBLE
+            android_nothing_card.visibility = View.GONE
         }
 
         var layoutManager = LinearLayoutManager(this@MainActivity)
@@ -630,6 +686,6 @@ class MainActivity : BaseActivity() {
             }
         }
 
-        recyclerView!!.layoutManager = layoutManager
+        recyclerView.layoutManager = layoutManager
     }
 }

@@ -15,6 +15,7 @@ MERGED from [com.android.support:support-v4:26.0.0] /home/zhufu/.gradle/caches/t
 MERGED from [com.tencent.bugly:crashreport:2.6.6.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/crashreport-2.6.6.1.aar/c6fae159960101bb7cd64e840c78ccc2/AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.rubensousa:floatingtoolbar:1.5.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/floatingtoolbar-1.5.1.aar/c99e9d8bfd0280a601be67f528170a5f/AndroidManifest.xml:2:1-12:12
 MERGED from [com.github.zzz40500:android-shapeLoadingView:1.0.3.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/android-shapeLoadingView-1.0.3.2.aar/9c51694a3a4f225d849e97754575a510/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.ybq:Android-SpinKit:1.1.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/Android-SpinKit-1.1.0.aar/d4b61fcdbff3ce26a4f04ef02ee8ac25/AndroidManifest.xml:2:1-10:12
 MERGED from [com.android.support:recyclerview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0.aar/823fa2e9af287e7e1e75409804330b0b/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:animated-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0.aar/89dd6b3ae8380828b78132777c83f289/AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-fragment:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/support-fragment-26.0.0.aar/c8c2eabdcd9194baf399da953cfcc3eb/AndroidManifest.xml:17:1-31:12
@@ -241,6 +242,8 @@ MERGED from [com.github.rubensousa:floatingtoolbar:1.5.1] /home/zhufu/.gradle/ca
 MERGED from [com.github.rubensousa:floatingtoolbar:1.5.1] /home/zhufu/.gradle/caches/transforms-1/files-1.1/floatingtoolbar-1.5.1.aar/c99e9d8bfd0280a601be67f528170a5f/AndroidManifest.xml:8:5-10:41
 MERGED from [com.github.zzz40500:android-shapeLoadingView:1.0.3.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/android-shapeLoadingView-1.0.3.2.aar/9c51694a3a4f225d849e97754575a510/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.zzz40500:android-shapeLoadingView:1.0.3.2] /home/zhufu/.gradle/caches/transforms-1/files-1.1/android-shapeLoadingView-1.0.3.2.aar/9c51694a3a4f225d849e97754575a510/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.ybq:Android-SpinKit:1.1.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/Android-SpinKit-1.1.0.aar/d4b61fcdbff3ce26a4f04ef02ee8ac25/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.ybq:Android-SpinKit:1.1.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/Android-SpinKit-1.1.0.aar/d4b61fcdbff3ce26a4f04ef02ee8ac25/AndroidManifest.xml:6:5-8:41
 MERGED from [com.android.support:recyclerview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0.aar/823fa2e9af287e7e1e75409804330b0b/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.0.0.aar/823fa2e9af287e7e1e75409804330b0b/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:26.0.0] /home/zhufu/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.0.0.aar/89dd6b3ae8380828b78132777c83f289/AndroidManifest.xml:20:5-44

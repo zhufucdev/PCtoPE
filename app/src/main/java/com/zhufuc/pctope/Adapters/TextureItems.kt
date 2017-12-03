@@ -2,9 +2,11 @@ package com.zhufuc.pctope.Adapters
 
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,11 +28,17 @@ import kotlin.collections.ArrayList
 
 class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<TextureItems.ViewHolder>() {
     private val mTextures: ArrayList<Textures>
+    private var viewHolders = ArrayList<ViewHolder>()
+    var isInSelectMode = false
 
-    private var mOnItemClickListener: OnItemClickListener? = null
+    private var mOnItemClickListener: OnItemClickListener = object : OnItemClickListener{
+        override fun onItemClick(view: View, position: Int) {}
+        override fun onLongPress(view: View, position: Int) {}
+    }
 
     interface OnItemClickListener {
         fun onItemClick(view: View, position: Int)
+        fun onLongPress(view: View, position: Int)
     }
 
     class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
@@ -40,13 +48,24 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
         var AlertIcon: ImageView
         var cardView: CardView
 
-
         init {
             TextureIcon = v.findViewById(R.id.card_texture_icon)
             TextureName = v.findViewById(R.id.card_texture_name)
             TextureDescription = v.findViewById(R.id.card_texture_name_subname)
             AlertIcon = v.findViewById(R.id.card_texture_alert_icon)
             cardView = v.findViewById(R.id.card_texture_card)
+        }
+
+        var isSet : Boolean = false
+        fun setForeground(){
+            if (!isSet){
+                val foreground = ContextCompat.getDrawable(cardView.context,R.drawable.foreground_selected)
+                cardView.foreground = foreground
+            }
+            else{
+                cardView.foreground = null
+            }
+            isSet = !isSet
         }
     }
 
@@ -64,6 +83,7 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val textures = mTextures[position]
+        viewHolders.add(holder)
         //Titles
         var name = textures.name
         var description = textures.description
@@ -90,14 +110,23 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
             holder.TextureIcon.setImageResource(R.drawable.bug_pack_icon)
 
         holder.cardView.setOnClickListener {
-            if (holder.AlertIcon.visibility == View.VISIBLE) {
-                val convert = Intent(holder.AlertIcon.context, ConversionActivity::class.java)
-                convert.putExtra("willSkipUnzipping", true)
-                convert.putExtra("filePath", textures.position)
-                holder.AlertIcon.context.startActivity(convert)
-                return@setOnClickListener
+            if (!isInSelectMode) {
+                if (holder.AlertIcon.visibility == View.VISIBLE) {
+                    val convert = Intent(holder.AlertIcon.context, ConversionActivity::class.java)
+                    convert.putExtra("willSkipUnzipping", true)
+                    convert.putExtra("filePath", textures.position)
+                    holder.AlertIcon.context.startActivity(convert)
+                }
             }
-            mOnItemClickListener!!.onItemClick(it, textures.position)
+            else{
+                holder.setForeground()
+                if (holder.isSet)
+                    selectedItems.add(position)
+                else
+                    selectedItems.remove(position)
+                selectedItems.sort()
+            }
+            mOnItemClickListener.onItemClick(it, textures.position)
         }
         holder.AlertIcon.setOnClickListener {
             val dialog = AlertDialog.Builder(holder.AlertIcon.context)
@@ -106,6 +135,17 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
             dialog.setNegativeButton(R.string.ok, null)
             dialog.show()
         }
+        holder.cardView.setOnLongClickListener({
+            holder.setForeground()
+            isInSelectMode = holder.isSet
+            if (isInSelectMode)
+                selectedItems.add(position)
+            else
+                selectedItems.remove(position)
+            selectedItems.sort()
+            mOnItemClickListener.onLongPress(it,position)
+            true
+        })
 
         //Alert icon
         if (!textures.IfIsResourcePack("PE")!!) {
@@ -119,23 +159,23 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
         holder.AlertIcon.visibility = GONE
     }
 
-
     fun setOnItemClickListener(listener: OnItemClickListener) {
         this.mOnItemClickListener = listener
     }
 
     override fun getItemCount(): Int = mTextures.size
 
-    fun remove(position: Int) {
-        mTextures.removeAt(position)
-    }
-
     fun getItem(index: Int): Textures = mTextures[index]
 
     fun getIfIsAlertIconShown(view: View): Boolean = ViewHolder(view).AlertIcon.visibility == View.VISIBLE
 
-    fun clear() {
-        mTextures.clear()
+    fun deselectAll(){
+        selectedItems = ArrayList()
+        viewHolders.forEach {
+            if (it.isSet)
+                it.setForeground()
+        }
     }
 
+    var selectedItems = ArrayList<Int>()
 }

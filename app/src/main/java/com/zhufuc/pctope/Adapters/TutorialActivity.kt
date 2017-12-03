@@ -22,6 +22,7 @@ abstract class TutorialActivity(LayoutRes : Array<Int>) : AppCompatActivity(){
     private val res = LayoutRes
     var Layouts = ArrayList<TutorialLayout>()
     var showingPostition = 0
+    var isInAnimations = false
     lateinit var animationLeftToCenter : Animation
     lateinit var animationCenterToLeft : Animation
     lateinit var animationRightToCenter : Animation
@@ -71,10 +72,13 @@ abstract class TutorialActivity(LayoutRes : Array<Int>) : AppCompatActivity(){
                         animationRightToCenter.setAnimationListener(null)
 
                         showingPostition++
+                        isInAnimations = false
                         onPageSwitched()
                     }
 
-                    override fun onAnimationStart(animation: Animation?) {}
+                    override fun onAnimationStart(animation: Animation?) {
+                        isInAnimations = true
+                    }
 
                 })
 
@@ -94,10 +98,13 @@ abstract class TutorialActivity(LayoutRes : Array<Int>) : AppCompatActivity(){
                         animationCenterToRight.setAnimationListener(null)
 
                         showingPostition--
+                        isInAnimations = false
                         onPageSwitched()
                     }
 
-                    override fun onAnimationStart(animation: Animation?) {}
+                    override fun onAnimationStart(animation: Animation?) {
+                        isInAnimations = true
+                    }
 
                 })
 

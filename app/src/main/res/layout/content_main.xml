@@ -11,6 +11,35 @@
         android:layout_height="?attr/actionBarSize"
         android:theme="@style/AppTheme.AppBarOverlay">
 
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/fore_toolbar_layout">
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_heightPercent="92%"
+                android:id="@+id/toolbar_fore"
+                android:background="@color/white"
+                app:titleTextColor="@color/black"
+                app:title="@string/mulit_select"
+                app:navigationIcon="@drawable/arrow_left_black" >
+                <android.support.v7.widget.ActionMenuView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/menu_item_view"
+                    android:layout_gravity="end"/>
+            </android.support.v7.widget.Toolbar>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_heightPercent="8%"
+                android:layout_below="@id/toolbar_fore"
+                android:background="@color/colorPrimaryDark"/>
+        </android.support.percent.PercentRelativeLayout>
+
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"

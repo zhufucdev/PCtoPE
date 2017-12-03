@@ -19,7 +19,7 @@
     <string name="error_dialog">Whoops! We met some trouble:</string>
     <string name="close">close</string>
     <string name="copy">copy</string>
-    <string name="not_pack">This is not a PC or PE textures pack.</string>
+    <string name="not_pack">This is not a PC or PE texture pack.</string>
     <string name="deleting">deleting…</string>
     <string name="completed">Completed!</string>
     <string name="failed">Failed…</string>
@@ -145,5 +145,7 @@
     <string name="pref_conversion_style">Conversion UI Style</string>
     <string name="click_to_jump">Click three times to jump through.</string>
     <string name="double_back_exit">Press again to exit.</string>
+    <string name="mulit_select">Multi Select</string>
+    <string name="delete">Delete</string>
 
 </resources>

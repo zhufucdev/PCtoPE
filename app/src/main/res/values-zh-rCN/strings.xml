@@ -144,4 +144,6 @@
     <string name="pref_conversion_style">转化界面风格</string>
     <string name="click_to_jump">连点三次跳过</string>
     <string name="double_back_exit">再次点击以退出</string>
+    <string name="mulit_select">多选</string>
+    <string name="delete">删除</string>
 </resources>

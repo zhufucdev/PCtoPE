@@ -6,14 +6,11 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Rect
 import android.os.*
 import android.support.design.widget.BottomSheetDialog
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
-import android.support.v4.view.GravityCompat
 import android.support.v7.app.AlertDialog
-import android.support.v7.widget.CardView
 import android.support.v7.widget.SwitchCompat
 import android.text.Editable
 import android.text.TextWatcher
@@ -30,6 +27,7 @@ import com.zhufuc.pctope.Utils.*
 import java.io.File
 
 import com.zhufuc.pctope.Utils.TextureCompat.brokenPC
+import java.util.*
 
 val layoutList = arrayOf(R.layout.tutorial_conversion_welcome,R.layout.tutorial_conversion_step1,R.layout.tutorial_conversion_step2)
 
@@ -207,7 +205,6 @@ class ConversionActivity : TutorialActivity(layoutList) {
                         blocker.visibility = View.VISIBLE
                     }
 
-
                     val loadingText = findViewById<TextView>(R.id.tutorial_loading_msg)
                     conversion.setConversionChangeListener(object : TextureConversionUtils.ConversionChangeListener{
                         override fun inDoingVersionDecisions() {
@@ -335,10 +332,12 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
     override fun onBackPressed() {
         //super.onBackPressed()
-        if (showingPostition > 0 && !isDoingConverting)
-            back()
-        else
-            super.onBackPressed()
+        if (showingPostition > 0 && !isDoingConverting) {
+            if (!isInAnimations)
+                back()
+        }
+            else
+                super.onBackPressed()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -115,10 +115,13 @@
         android:orientation="vertical"
         android:gravity="center">
 
-        <com.mingle.widget.LoadingView
+        <com.github.ybq.android.spinkit.SpinKitView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="wrap_content"
+            android:id="@+id/loadingAnimation"
+            android:layout_margin="@dimen/text_margin_small"
+            style="@style/SpinKitView.DoubleBounce"
+            app:SpinKit_Color="@color/brown_primary"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

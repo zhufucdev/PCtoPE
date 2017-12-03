@@ -196,12 +196,6 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
                     description = ""
                 }
 
-                try {
-                    Thread.sleep(600)
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-
                 return true
 
             }
