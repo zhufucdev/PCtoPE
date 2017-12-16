@@ -92,7 +92,7 @@
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/coolblack"
+                    app:srcCompat="@drawable/ic_coolapk"
                     android:foreground="?attr/selectableItemBackground"
                     android:clickable="true"
                     android:id="@+id/visit_coolapk"

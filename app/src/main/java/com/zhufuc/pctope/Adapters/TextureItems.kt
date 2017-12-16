@@ -2,12 +2,15 @@ package com.zhufuc.pctope.Adapters
 
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
+import android.support.v7.view.menu.ActionMenuItemView
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -48,12 +51,17 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
         var AlertIcon: ImageView
         var cardView: CardView
 
+        private var foregroundBack : Drawable
+
         init {
             TextureIcon = v.findViewById(R.id.card_texture_icon)
             TextureName = v.findViewById(R.id.card_texture_name)
             TextureDescription = v.findViewById(R.id.card_texture_name_subname)
             AlertIcon = v.findViewById(R.id.card_texture_alert_icon)
             cardView = v.findViewById(R.id.card_texture_card)
+
+            foregroundBack = cardView.foreground
+
         }
 
         var isSet : Boolean = false
@@ -63,7 +71,7 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
                 cardView.foreground = foreground
             }
             else{
-                cardView.foreground = null
+                cardView.foreground = foregroundBack
             }
             isSet = !isSet
         }
@@ -77,7 +85,6 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.texture_item, parent, false)
-
         return ViewHolder(view)
     }
 
@@ -88,11 +95,11 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
         var name = textures.name
         var description = textures.description
         //Change text if it isn't a PE pack
-        if (name == null) {
+        if (name.isNullOrEmpty()) {
             name = holder.TextureName.resources.getString(R.string.unable_to_get_name)
             holder.TextureDescription.visibility = GONE
         }
-        if (description == null || description == "") {
+        if (description.isNullOrEmpty()) {
             description = ""
             holder.TextureDescription.visibility = GONE
         }
@@ -170,12 +177,34 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
     fun getIfIsAlertIconShown(view: View): Boolean = ViewHolder(view).AlertIcon.visibility == View.VISIBLE
 
     fun deselectAll(){
-        selectedItems = ArrayList()
+        selectedItems.clear()
         viewHolders.forEach {
             if (it.isSet)
                 it.setForeground()
         }
+        isSelectAllButtonActive = false
+    }
+
+    fun selectAll(){
+        selectedItems.clear()
+        viewHolders.forEach {
+            if (!it.isSet)
+                it.setForeground()
+            selectedItems.add(it.layoutPosition)
+        }
+        isSelectAllButtonActive = true
+    }
+
+    fun selectInverse(){
+        selectedItems.clear()
+        viewHolders.forEach {
+            it.setForeground()
+            if (it.isSet)
+                selectedItems.add(it.layoutPosition)
+        }
     }
 
     var selectedItems = ArrayList<Int>()
+    var isSelectAllButtonActive = false
+        get() = selectedItems.size == viewHolders.size
 }

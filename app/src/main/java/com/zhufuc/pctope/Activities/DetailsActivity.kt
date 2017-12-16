@@ -243,6 +243,7 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
     var isFullScreenShown = false
 
     fun setFullScreen(shown : Boolean){
+        isFullScreenShown = shown
         val mInfo = PhotoView.getImageViewInfo(iconView)
         if (shown){
             iconView.visibility = View.INVISIBLE
@@ -291,19 +292,20 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
             setFullScreen(false)
         }
 
-        if (name != null)
+        if (!name.isNullOrEmpty())
             toolbarLayout.title = name
         else
             toolbarLayout.title = getString(R.string.unable_to_get_name)
 
-        description = if (description == null) "" else description
-        if (description != "") {
+        val smallestWith = resources.configuration.smallestScreenWidthDp
+        mLog.d("Smallest Screen Width","$smallestWith")
+        if (!description.isNullOrEmpty()) {
             packdescription.visibility = View.VISIBLE
             packdescription.text = description
-            toolbarLayout.expandedTitleMarginBottom = 140
+            toolbarLayout.expandedTitleMarginBottom = Math.round(3/7.0*smallestWith).toInt()
         } else {
             packdescription.visibility = View.INVISIBLE
-            toolbarLayout.expandedTitleMarginBottom = 100
+            toolbarLayout.expandedTitleMarginBottom = Math.round(25/79.0*smallestWith).toInt()
         }
     }
 
@@ -552,20 +554,23 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
         val id = item.itemId
         when (id) {
             android.R.id.home -> onBackPressed()
-            else -> {
-            }
         }
         return true
     }
 
     override fun onBackPressed() {
-        fab!!.visibility = View.INVISIBLE
+        if (!isFullScreenShown) {
+            fab!!.visibility = View.INVISIBLE
 
-        val intent = Intent()
-        intent.putExtra("isDataChanged", isDataChanged)
-        setResult(Activity.RESULT_OK, intent)
+            val intent = Intent()
+            intent.putExtra("isDataChanged", isDataChanged)
+            setResult(Activity.RESULT_OK, intent)
 
-        super.onBackPressed()
+            super.onBackPressed()
+        }
+        else {
+            setFullScreen(false)
+        }
     }
 
     //Activity Result

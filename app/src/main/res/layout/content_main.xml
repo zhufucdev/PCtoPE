@@ -22,6 +22,7 @@
                 app:layout_heightPercent="92%"
                 android:id="@+id/toolbar_fore"
                 android:background="@color/white"
+                style="@style/AppTheme.AppBarOverlay"
                 app:titleTextColor="@color/black"
                 app:title="@string/mulit_select"
                 app:navigationIcon="@drawable/arrow_left_black" >
@@ -29,7 +30,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/menu_item_view"
-                    android:layout_gravity="end"/>
+                    android:layout_gravity="end"
+                    android:foreground="?attr/selectableItemBackground"
+                    style="@style/AppTheme.AppBarOverlay"/>
             </android.support.v7.widget.Toolbar>
             <View
                 android:layout_width="match_parent"

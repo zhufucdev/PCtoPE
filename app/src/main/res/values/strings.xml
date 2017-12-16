@@ -109,7 +109,7 @@
     <string name="thanks">Thanks</string>
     <string name="please_wait">Please wait…</string>
     <string name="operations">Operations</string>
-    <string name="unable_to_get_name">Unable To Get Name</string>
+    <string name="unable_to_get_name">Unable to get name</string>
     <string name="report_restart_app">Restart Application</string>
     <string name="crash_converstion_input_file_not_found">Chosen File Not Found! Try to use another File Manager.</string>
     <string name="folder">Folder</string>
@@ -147,5 +147,7 @@
     <string name="double_back_exit">Press again to exit.</string>
     <string name="mulit_select">Multi Select</string>
     <string name="delete">Delete</string>
+    <string name="select_all">Select All/None</string>
+    <string name="select_inverse">Inverse</string>
 
 </resources>

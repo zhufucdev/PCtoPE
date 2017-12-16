@@ -469,7 +469,7 @@ public final class R {
         public static final int abc_textfield_search_default_mtrl_alpha = 0x7f080056;
         public static final int abc_textfield_search_material = 0x7f080057;
         public static final int ic_navigate_next = 0x7f08007f;
-        public static final int notification_template_icon_bg = 0x7f080090;
+        public static final int notification_template_icon_bg = 0x7f080092;
     }
     public static final class id {
         public static final int action0 = 0x7f09001a;
@@ -552,30 +552,30 @@ public final class R {
         public static final int search_plate = 0x7f0900fa;
         public static final int search_src_text = 0x7f0900fb;
         public static final int search_voice_btn = 0x7f0900fc;
-        public static final int select_dialog_listview = 0x7f0900fd;
-        public static final int shortcut = 0x7f0900fe;
-        public static final int showCustom = 0x7f0900ff;
-        public static final int showHome = 0x7f090100;
-        public static final int showTitle = 0x7f090101;
-        public static final int spacer = 0x7f090106;
-        public static final int split_action_bar = 0x7f090107;
-        public static final int src_atop = 0x7f09010a;
-        public static final int src_in = 0x7f09010b;
-        public static final int src_over = 0x7f09010c;
-        public static final int status_bar_latest_event_content = 0x7f09010e;
-        public static final int submit_area = 0x7f090110;
-        public static final int tabMode = 0x7f090113;
-        public static final int text = 0x7f090115;
-        public static final int text2 = 0x7f090116;
-        public static final int textSpacerNoButtons = 0x7f090117;
-        public static final int time = 0x7f09011c;
-        public static final int title = 0x7f09011d;
-        public static final int title_template = 0x7f090120;
-        public static final int topPanel = 0x7f090124;
-        public static final int up = 0x7f090138;
-        public static final int useLogo = 0x7f090139;
-        public static final int withText = 0x7f090140;
-        public static final int wrap_content = 0x7f090142;
+        public static final int select_dialog_listview = 0x7f0900fe;
+        public static final int shortcut = 0x7f090100;
+        public static final int showCustom = 0x7f090101;
+        public static final int showHome = 0x7f090102;
+        public static final int showTitle = 0x7f090103;
+        public static final int spacer = 0x7f090108;
+        public static final int split_action_bar = 0x7f090109;
+        public static final int src_atop = 0x7f09010c;
+        public static final int src_in = 0x7f09010d;
+        public static final int src_over = 0x7f09010e;
+        public static final int status_bar_latest_event_content = 0x7f090110;
+        public static final int submit_area = 0x7f090112;
+        public static final int tabMode = 0x7f090115;
+        public static final int text = 0x7f090117;
+        public static final int text2 = 0x7f090118;
+        public static final int textSpacerNoButtons = 0x7f090119;
+        public static final int time = 0x7f09011e;
+        public static final int title = 0x7f09011f;
+        public static final int title_template = 0x7f090122;
+        public static final int topPanel = 0x7f090126;
+        public static final int up = 0x7f09013a;
+        public static final int useLogo = 0x7f09013b;
+        public static final int withText = 0x7f090142;
+        public static final int wrap_content = 0x7f090144;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur = 0x7f0a0000;
@@ -642,9 +642,9 @@ public final class R {
         public static final int abc_shareactionprovider_share_with_application = 0x7f0f001b;
         public static final int abc_toolbar_collapse_description = 0x7f0f001c;
         public static final int app_name = 0x7f0f0023;
-        public static final int skip = 0x7f0f0099;
-        public static final int status_bar_notification_info_overflow = 0x7f0f009a;
-        public static final int tutorial_done = 0x7f0f009d;
+        public static final int skip = 0x7f0f009b;
+        public static final int status_bar_notification_info_overflow = 0x7f0f009c;
+        public static final int tutorial_done = 0x7f0f009f;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat = 0x7f100000;

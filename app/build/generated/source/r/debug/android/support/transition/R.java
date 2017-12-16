@@ -50,18 +50,18 @@ public final class R {
         public static final int notification_top_pad_large_text = 0x7f0700ad;
     }
     public static final class drawable {
-        public static final int notification_action_background = 0x7f080088;
-        public static final int notification_bg = 0x7f080089;
-        public static final int notification_bg_low = 0x7f08008a;
-        public static final int notification_bg_low_normal = 0x7f08008b;
-        public static final int notification_bg_low_pressed = 0x7f08008c;
-        public static final int notification_bg_normal = 0x7f08008d;
-        public static final int notification_bg_normal_pressed = 0x7f08008e;
-        public static final int notification_icon_background = 0x7f08008f;
-        public static final int notification_template_icon_bg = 0x7f080090;
-        public static final int notification_template_icon_low_bg = 0x7f080091;
-        public static final int notification_tile_bg = 0x7f080092;
-        public static final int notify_panel_notification_icon_bg = 0x7f080093;
+        public static final int notification_action_background = 0x7f08008a;
+        public static final int notification_bg = 0x7f08008b;
+        public static final int notification_bg_low = 0x7f08008c;
+        public static final int notification_bg_low_normal = 0x7f08008d;
+        public static final int notification_bg_low_pressed = 0x7f08008e;
+        public static final int notification_bg_normal = 0x7f08008f;
+        public static final int notification_bg_normal_pressed = 0x7f080090;
+        public static final int notification_icon_background = 0x7f080091;
+        public static final int notification_template_icon_bg = 0x7f080092;
+        public static final int notification_template_icon_low_bg = 0x7f080093;
+        public static final int notification_tile_bg = 0x7f080094;
+        public static final int notify_panel_notification_icon_bg = 0x7f080095;
     }
     public static final class id {
         public static final int action_container = 0x7f090022;
@@ -90,16 +90,16 @@ public final class R {
         public static final int save_image_matrix = 0x7f0900e9;
         public static final int save_non_transition_alpha = 0x7f0900ea;
         public static final int save_scale_type = 0x7f0900eb;
-        public static final int tag_transition_group = 0x7f090114;
-        public static final int text = 0x7f090115;
-        public static final int text2 = 0x7f090116;
-        public static final int time = 0x7f09011c;
-        public static final int title = 0x7f09011d;
-        public static final int transition_current_scene = 0x7f090126;
-        public static final int transition_layout_save = 0x7f090127;
-        public static final int transition_position = 0x7f090128;
-        public static final int transition_scene_layoutid_cache = 0x7f090129;
-        public static final int transition_transform = 0x7f09012a;
+        public static final int tag_transition_group = 0x7f090116;
+        public static final int text = 0x7f090117;
+        public static final int text2 = 0x7f090118;
+        public static final int time = 0x7f09011e;
+        public static final int title = 0x7f09011f;
+        public static final int transition_current_scene = 0x7f090128;
+        public static final int transition_layout_save = 0x7f090129;
+        public static final int transition_position = 0x7f09012a;
+        public static final int transition_scene_layoutid_cache = 0x7f09012b;
+        public static final int transition_transform = 0x7f09012c;
     }
     public static final class integer {
         public static final int status_bar_notification_info_maxnum = 0x7f0a000a;
@@ -113,7 +113,7 @@ public final class R {
         public static final int notification_template_part_time = 0x7f0b004c;
     }
     public static final class string {
-        public static final int status_bar_notification_info_overflow = 0x7f0f009a;
+        public static final int status_bar_notification_info_overflow = 0x7f0f009c;
     }
     public static final class style {
         public static final int TextAppearance_Compat_Notification = 0x7f100132;

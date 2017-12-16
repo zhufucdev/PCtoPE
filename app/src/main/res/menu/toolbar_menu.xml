@@ -2,6 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/select_all"
+        android:icon="@drawable/ic_select_all_black"
+        android:title="@string/select_all"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/select_inverse"
+        android:icon="@drawable/ic_select_inverse"
+        android:title="@string/select_inverse"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/delete"
         android:icon="@drawable/ic_delete_black_24dp"
         android:title="@string/delete"

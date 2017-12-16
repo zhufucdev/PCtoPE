@@ -265,7 +265,7 @@ class MainActivity : BaseActivity() {
             intent.putExtra("texture_version", temp.getVersion())
             intent.putExtra("texture_path", temp.path)
             val info = ShortcutInfo.Builder(this,"pack $i")
-                    .setShortLabel(temp.name)
+                    .setShortLabel(if(temp.name.isNullOrEmpty()){getString(R.string.unable_to_get_name)}else{temp.name})
                     .setIcon(Icon.createWithBitmap(BitmapFactory.decodeFile(temp.icon)))
                     .setIntent(intent)
                     .build()
@@ -361,6 +361,17 @@ class MainActivity : BaseActivity() {
 
                             }.show()
                     inSelectMode(false,false)
+                }
+
+                R.id.select_all -> {
+                    if (!items.isSelectAllButtonActive)
+                        items.selectAll()
+                    else
+                        items.deselectAll()
+                }
+
+                R.id.select_inverse -> {
+                    items.selectInverse()
                 }
             }
             true
