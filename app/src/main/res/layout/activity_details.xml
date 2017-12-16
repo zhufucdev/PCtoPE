@@ -47,6 +47,7 @@
                     android:layout_gravity="bottom"
                     android:layout_marginBottom="2dp"
                     android:textSize="17sp"
+                    android:maxLines="1"
                     android:text="description"/>
 
             </LinearLayout>
@@ -151,5 +152,18 @@
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/full_screen_image_view_layout"
+        android:background="@color/black">
+        <com.bm.library.PhotoView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/photo_view"
+            android:scaleType="centerInside"/>
+    </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>

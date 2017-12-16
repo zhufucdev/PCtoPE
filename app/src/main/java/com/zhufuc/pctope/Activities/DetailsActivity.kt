@@ -20,14 +20,11 @@ import android.support.v7.widget.CardView
 import android.support.v7.widget.Toolbar
 import android.view.*
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.widget.AdapterView
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.Spinner
-import android.widget.TextView
-import android.widget.Toast
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.*
+import com.bm.library.Info
+import com.bm.library.PhotoView
 
 import com.zhufuc.pctope.Utils.Textures
 import com.zhufuc.pctope.R
@@ -240,22 +237,59 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
     }
 
     lateinit var iconView : ImageView
+    lateinit var iconFullScreenView : PhotoView
+    lateinit var iconLayout : FrameLayout
     lateinit var toolbarLayout : CollapsingToolbarLayout
+    var isFullScreenShown = false
+
+    fun setFullScreen(shown : Boolean){
+        val mInfo = PhotoView.getImageViewInfo(iconView)
+        if (shown){
+            iconView.visibility = View.INVISIBLE
+            iconLayout.visibility = View.VISIBLE
+            iconLayout.startAnimation(AnimationUtils.loadAnimation(this,R.anim.cards_show))
+            iconFullScreenView.animaFrom(mInfo)
+
+            fab!!.visibility = View.INVISIBLE
+        }
+        else {
+            iconFullScreenView.animaTo(mInfo,{
+                iconLayout.startAnimation(AnimationUtils.loadAnimation(this,R.anim.cards_hide))
+                iconLayout.visibility = View.GONE
+                iconView.visibility = View.VISIBLE
+                fab!!.visibility = View.VISIBLE
+            })
+        }
+    }
+
     fun initBasicTitles() {
 
         iconView = findViewById(R.id.details_icon)
+        iconFullScreenView = findViewById(R.id.photo_view)
+        iconLayout = findViewById(R.id.full_screen_image_view_layout)
+
         val packdescription = findViewById<TextView>(R.id.details_description)
         toolbarLayout = findViewById(R.id.details_toolbar_layout)
 
         val vto = iconView.viewTreeObserver
         vto.addOnPreDrawListener (this)
 
-        if (icon != null)
-            iconView.setImageBitmap(BitmapFactory.decodeFile(icon))
+        if (icon != null) {
+            val icon = BitmapFactory.decodeFile(icon)
+            iconView.setImageBitmap(icon)
+            iconFullScreenView.setImageBitmap(icon)
+        }
         else
             iconView.setImageResource(R.drawable.bug_pack_icon)
 
-
+        iconFullScreenView.enable()
+        iconFullScreenView.maxScale = 8f
+        iconView.setOnClickListener {
+            setFullScreen(true)
+        }
+        iconFullScreenView.setOnClickListener {
+            setFullScreen(false)
+        }
 
         if (name != null)
             toolbarLayout.title = name
