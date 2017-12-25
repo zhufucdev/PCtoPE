@@ -4,7 +4,7 @@
     <string name="permissions_request">You need to grant the permissions.</string>
     <string name="ok">OK</string>
     <string name="choosing_alert">File Choosing</string>
-    <string name="choosing_none">You chose nothing.</string>
+    <string name="choosing_none">You choose nothing.</string>
     <string name="guide_welcome">Welcome to The Conversion Tutorial</string>
     <string name="label_guide">conversion guide</string>
     <string name="project_name">name</string>
@@ -32,7 +32,7 @@
     <string name="do_final_step">Now we\'re doing final steps.</string>
     <string name="loading">Loading…</string>
     <string name="pack_icon_not_found">This may be a pack without an icon.You can change it.</string>
-    <string name="android_nothing">Nothing here! Why not add one?</string>
+    <string name="android_nothing">Nothing here! Why don't you add one?</string>
     <string name="tutorial_welcome">Welcome to PCtoPE!</string>
     <string name="tutorial_wlcome_subtitle">We shall use an simple guide to tell you how to use this APP.</string>
     <string name="tutorial_step1">There\'s a \"+\" button at the bottom of the screen.</string>
