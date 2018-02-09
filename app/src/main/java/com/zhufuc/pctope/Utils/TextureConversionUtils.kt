@@ -300,100 +300,58 @@ constructor(private val FilePath: String, private val context: Context) {
         //==>define
         //for basic information
         val raw = context.resources
-        val data = arrayOf(raw.openRawResource(R.raw.items_client), raw.openRawResource(R.raw.blocks), raw.openRawResource(R.raw.flipbook_textures), raw.openRawResource(R.raw.item_texture), raw.openRawResource(R.raw.terrain_texture))
-        val pathes = arrayOf(File(path + "/items_client.json"), File(path + "/blocks.json"))
+        val blocks = raw.openRawResource(R.raw.blocks).reader().readText()
+        val itemsClient = raw.openRawResource(R.raw.items_client).reader().readText()
+        val flipBook = raw.openRawResource(R.raw.flipbook_textures).reader().readText()
+        var itemTexture = raw.openRawResource(R.raw.item_texture).reader().readText()
+        var terrainTexture = raw.openRawResource(R.raw.terrain_texture).reader().readText()
+        //fixing
+        itemTexture = doJsonFixing(itemTexture)
+        terrainTexture = doJsonFixing(terrainTexture)
+        //==>writing
+        //two defaults
+        File("$path/blocks.json").writeText(blocks)
+        File("$path/items_client.json").writeText(itemsClient)
+        //for "flipbook_texture.json"
+        File("$textures/flipbook_texture.json").writeText(flipBook)
+        //for "item_texture.json"
+        val itemTextureJSON = JSONObject(itemTexture)
+        itemTextureJSON.put("resource_pack_name",packname)
+        File("$textures/item_texture.json").writeText(itemTextureJSON.toString())
+        //for "terrain_texture.json"
+        val terrainBlockJSON = JSONObject(terrainTexture)
+        terrainBlockJSON.put("resource_pack_name",packname)
+        File("$textures/terrain_texture.json").writeText(terrainBlockJSON.toString())
+        //for "manifest.json"
+        val out = JSONObject()
+        val versionArray = JSONArray()
 
-        for (i in pathes.indices){
-            pathes[i].writeBytes(data[i].readBytes(DEFAULT_BUFFER_SIZE))
-        }
-
-        //for terrain block textures
-        val textBefore = "{" + System.getProperty("line.separator") + makeSpace(4) + "\"resource_pack_name\":" + "\"" + packname + "\"" + System.getProperty("line.separator")
-        val terrainOut = FileOutputStream("$textures/terrain_texture.json")
         try {
-            terrainOut.write(textBefore.toByteArray())
-            terrainOut.write(doJsonFixing(data[4].reader(Charset.defaultCharset()).readText()).toByteArray())
-        } catch (e: IOException) {
-            mOnCrashListener.onCrash(e.toString())
+            versionArray.put(0)
+            versionArray.put(0)
+            versionArray.put(1)
+
+            out.put("format_version", 1)
+            val header = JSONObject()
+            header.put("description", packdescription)
+            header.put("name", packname)
+            header.put("uuid", UUID.randomUUID().toString())
+            header.put("version", versionArray)
+            out.put("header", header)
+
+            val modules = JSONArray()
+            val modulesObjs = JSONObject()
+            modulesObjs.put("description", packdescription)
+            modulesObjs.put("type", "resources")
+            modulesObjs.put("uuid", UUID.randomUUID().toString())
+            modulesObjs.put("version", versionArray)
+            modules.put(modulesObjs)
+            out.put("modules", modules)
+
+        } catch (e: JSONException) {
             e.printStackTrace()
         }
-
-        //for item texture file
-
-        val itemOut = FileOutputStream("$textures/item_texture.json")
-        var isCreated: Boolean? = true
-        val temp = arrayOf("$textures/item_texture.json", "$textures/flipbook_textures.json", path + "/manifest.json")
-        for (i in temp.indices) {
-            val t = File(temp[i])
-            if (!t.exists())
-                try {
-                    if (!t.createNewFile())
-                        isCreated = false
-                } catch (e: IOException) {
-                    mOnCrashListener.onCrash(e.toString())
-                    e.printStackTrace()
-                }
-
-        }
-        if (isCreated!!) {
-            try {
-                itemOut.write(textBefore.toByteArray())
-                itemOut.write(doJsonFixing(data[3].reader(Charset.defaultCharset()).readText()).toByteArray())
-                itemOut.close()
-            } catch (e: IOException) {
-                mOnCrashListener.onCrash(e.toString())
-                e.printStackTrace()
-            }
-
-            //for flip book texture
-            val flipOut = FileOutputStream("$textures/flipbook_textures.json")
-            try {
-                flipOut.write(doJsonFixing(data[2].reader(Charset.defaultCharset()).readText()).toByteArray())
-                flipOut.close()
-            } catch (e: IOException) {
-                mOnCrashListener.onCrash(e.toString())
-                e.printStackTrace()
-            }
-
-            //for manifest file
-
-            val intro: String
-            val out = JSONObject()
-            val versionArray = JSONArray()
-
-            try {
-                versionArray.put(0)
-                versionArray.put(0)
-                versionArray.put(1)
-
-                out.put("format_version", 1)
-                val header = JSONObject()
-                header.put("description", packdescription)
-                header.put("name", packname)
-                header.put("uuid", UUID.randomUUID().toString())
-                header.put("version", versionArray)
-                out.put("header", header)
-
-                val modules = JSONArray()
-                val modulesObjs = JSONObject()
-                modulesObjs.put("description", packdescription)
-                modulesObjs.put("type", "resources")
-                modulesObjs.put("uuid", UUID.randomUUID().toString())
-                modulesObjs.put("version", versionArray)
-                modules.put(modulesObjs)
-                out.put("modules", modules)
-
-            } catch (e: JSONException) {
-                e.printStackTrace()
-            }
-
-            intro = JsonFormatTool().formatJson(out.toString())
-
-            File(path + "/manifest.json").writeText(intro, Charset.defaultCharset())
-
-        } else
-            mOnCrashListener.onCrash("Could not create JSON files.")
-
+        File("$path/manifest.json").writeText(JsonFormatTool.formatJson(out.toString()))
     }
 
     var compressFinalSize = 0

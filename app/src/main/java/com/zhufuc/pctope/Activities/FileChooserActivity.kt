@@ -32,7 +32,7 @@ class FileChooserActivity : BaseActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.chooser_act_recycler)
         val intent = intent
         val dataCommit = intent.getStringArrayExtra("format")
-        val list : List<String> = if (dataCommit==null){ mutableListOf("png","jpg") } else{ dataCommit.toList() }
+        val list : List<String> = dataCommit?.toList() ?: mutableListOf("png","jpg")
 
         adapter = FileChooserAdapter(externalRoot,list)
         adapter.setOnItemClickListener(object : FileChooserAdapter.OnItemClickListener{

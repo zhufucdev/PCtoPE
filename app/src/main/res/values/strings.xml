@@ -149,5 +149,25 @@
     <string name="delete">Delete</string>
     <string name="select_all">Select All/None</string>
     <string name="select_inverse">Inverse</string>
+    <string name="editor_tab_json">JSON</string>
+    <string name="editor_tab_image">Image</string>
+    <string name="needed">Needed</string>
+    <string name="pctope_editor">PCtoPE Editor</string>
+    <string name="extra">Extra</string>
+    <string name="message_needed_json">This card is about JSONs that what is necessary. If a Minecraft Texture Pack doesn\'t have the following files, it can\'t be used or something will go wrong while using the pack. Click one of the following items to edit or create a JSON file.</string>
+    <string name="json_object">JSON Object</string>
+    <string name="json_array">JSON Array</string>
+    <string name="subtitle_manifest">The Manifest file in PE pack. Maybe the most important thing in an Minecraft texture pack, including pack\'s name,description,uuid,version, and so on.</string>
+    <string name="subtitle_blocks">A file that records the information of blocks. For example, is a block visible,what the texture of a block is, and so on.</string>
+    <string name="title_manifest">Manifest</string>
+    <string name="title_blocks">Blocks Infos</string>
+    <string name="title_name">name</string>
+    <string name="title_description">description</string>
+    <string name="title_version">version code</string>
+    <string name="title_uuid">UUID code</string>
+    <string name="to_overwrite_header">Content Above</string>
+    <string name="to_overwrite_header_subtitle">In Needed Card</string>
+    <string name="content">Content</string>
+    <string name="null_value">Null Value</string>
 
 </resources>

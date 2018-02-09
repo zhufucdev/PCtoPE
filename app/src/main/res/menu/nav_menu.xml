@@ -5,6 +5,9 @@
         <item android:title="@string/nav_textures_manager"
             android:icon="@drawable/view_agenda"
             android:id="@+id/nav_manager"/>
+        <item android:title="@string/pctope_editor"
+            android:icon="@drawable/ic_pctope_editor_icon"
+            android:id="@+id/nav_pctope_editor"/>
 
     </group>
     <item android:title="@string/nav_application">

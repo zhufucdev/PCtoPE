@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleCard">
+        <attr name="android:text"/>
+    </declare-styleable>
+    <declare-styleable name="MaterialTitleView">
+        <attr name="android:text"/>
+        <attr name="android:subtitle"/>
+    </declare-styleable>
+</resources>

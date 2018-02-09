@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground"
+    android:id="@+id/json_item_view"
+    android:padding="6dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="55sp"
+            android:layout_height="55sp"
+            android:maxLength="1"
+            android:id="@+id/shape_text"
+            android:gravity="center"
+            android:textSize="27sp"
+            android:textColor="@color/white"
+            android:background="@drawable/json_view_shape"
+            android:text="A"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/text_margin_small"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:id="@+id/title"
+                android:text="Title"
+                android:textColor="@color/black"
+                android:textSize="26sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:id="@+id/subtitle"
+                android:text="Subtitle"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:id="@+id/recycle_view_recursion"/>
+
+</LinearLayout>

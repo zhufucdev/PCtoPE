@@ -58,7 +58,7 @@ package com.zhufuc.pctope.Utils
  * @author  yanghaitao
  * @version  [版本号, 2014年9月29日]
  */
-class JsonFormatTool {
+object JsonFormatTool {
 
     /**
      * 返回格式化JSON字符串。
@@ -150,10 +150,5 @@ class JsonFormatTool {
         return result.toString()
     }
 
-    companion object {
-        /**
-         * 单位缩进字符串。
-         */
-        private val SPACE = "   "
-    }
+    private val SPACE = "   "
 }

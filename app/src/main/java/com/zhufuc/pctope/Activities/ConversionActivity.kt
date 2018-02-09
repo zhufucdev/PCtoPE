@@ -20,6 +20,7 @@ import android.view.animation.AnimationUtils
 import android.widget.*
 import com.zhufuc.pctope.Adapters.TutorialActivity
 import com.zhufuc.pctope.Collectors.ActivityCollector
+import com.zhufuc.pctope.Env.EnvironmentCalculations.MakeErrorDialog
 
 import com.zhufuc.pctope.R
 import com.zhufuc.pctope.Utils.*
@@ -33,27 +34,6 @@ val layoutList = arrayOf(R.layout.tutorial_conversion_welcome,R.layout.tutorial_
 
 class ConversionActivity : TutorialActivity(layoutList) {
     internal val finishIntent = Intent()
-
-    private fun MakeErrorDialog(errorString: String) {
-        Looper.prepare()
-        //make up a error dialog
-        val error_dialog = AlertDialog.Builder(this@ConversionActivity)
-        error_dialog.setTitle(R.string.error)
-        error_dialog.setMessage(this@ConversionActivity.getString(R.string.error_dialog) + errorString)
-        error_dialog.setIcon(R.drawable.alert_octagram)
-        error_dialog.setCancelable(false)
-        error_dialog.setPositiveButton(R.string.close) { dialogInterface, i ->
-            finishIntent.putExtra("Status_return", false)
-            finish()
-        }
-        error_dialog.setNegativeButton(R.string.copy) { dialogInterface, i ->
-            val copy = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            copy.text = errorString
-            finish()
-        }.show()
-        Looper.loop()
-    }
-
     internal var skipUnzip: Boolean = false
     internal var isPreFinished: Boolean = false
     private lateinit var name: EditText
@@ -109,7 +89,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
                 conversion.setOnCrashListener(object : TextureConversionUtils.OnCrashListener{
                     override fun onCrash(errorContent: String) {
-                        MakeErrorDialog(errorContent)
+                        MakeErrorDialog(errorContent,this@ConversionActivity)
                     }
                 })
 

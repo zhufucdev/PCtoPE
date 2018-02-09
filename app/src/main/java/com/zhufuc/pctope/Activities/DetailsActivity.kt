@@ -25,6 +25,7 @@ import android.view.animation.AnimationUtils
 import android.widget.*
 import com.bm.library.Info
 import com.bm.library.PhotoView
+import com.zhufuc.pctope.Env.EnvironmentCalculations.MakeErrorDialog
 
 import com.zhufuc.pctope.Utils.Textures
 import com.zhufuc.pctope.R
@@ -81,20 +82,6 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
             }
 
         return size
-    }
-
-    private fun MakeErrorDialog(errorString: String) {
-        //make up a error dialog
-        val error_dialog = AlertDialog.Builder(this@DetailsActivity)
-        error_dialog.setTitle(R.string.error)
-        error_dialog.setMessage(this@DetailsActivity.getString(R.string.error_dialog) + errorString)
-        error_dialog.setIcon(R.drawable.alert_octagram)
-        error_dialog.setCancelable(false)
-        error_dialog.setPositiveButton(R.string.close, null)
-        error_dialog.setNegativeButton(R.string.copy) { dialogInterface, i ->
-            val copy = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            copy.primaryClip = ClipData.newPlainText("PathCopied",path)
-        }.show()
     }
 
     internal var FabListener: View.OnClickListener = View.OnClickListener {
@@ -162,7 +149,7 @@ class DetailsActivity : BaseActivity(),ViewTreeObserver.OnPreDrawListener {
         //on Crash
         textureEditor!!.setOnCrashListener (object : Textures.Edit.OnCrashListener{
             override fun onCrash(e: String) {
-                MakeErrorDialog(e)
+                MakeErrorDialog(e,this@DetailsActivity)
             }
 
         })

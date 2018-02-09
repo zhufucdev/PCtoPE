@@ -2,8 +2,6 @@ package com.zhufuc.pctope.Activities
 
 import android.app.Activity
 import android.app.ProgressDialog
-import android.content.ClipboardManager
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -37,6 +35,7 @@ import com.github.rubensousa.floatingtoolbar.FloatingToolbarMenuBuilder
 
 import com.zhufuc.pctope.R
 import com.zhufuc.pctope.Utils.*
+import com.zhufuc.pctope.Env.EnvironmentCalculations.MakeErrorDialog
 
 import java.io.File
 import java.io.FileNotFoundException
@@ -46,25 +45,6 @@ import com.zhufuc.pctope.Utils.TextureCompat.brokenPC
 
 class ConversionActivityOld : BaseActivity() {
     internal val finishIntent = Intent()
-
-    private fun MakeErrorDialog(errorString: String) {
-        //make up a error dialog
-        val error_dialog = AlertDialog.Builder(this@ConversionActivityOld)
-        error_dialog.setTitle(R.string.error)
-        error_dialog.setMessage(this@ConversionActivityOld.getString(R.string.error_dialog) + errorString)
-        error_dialog.setIcon(R.drawable.alert_octagram)
-        error_dialog.setCancelable(false)
-        error_dialog.setPositiveButton(R.string.close) { dialogInterface, i ->
-            finishIntent.putExtra("Status_return", false)
-            finish()
-        }
-        error_dialog.setNegativeButton(R.string.copy) { dialogInterface, i ->
-            val copy = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            copy.text = errorString
-            finish()
-        }.show()
-    }
-
     internal var skipUnzip: Boolean? = false
     internal var isPreFinished: Boolean? = false
     private var name: TextInputEditText? = null
@@ -90,7 +70,7 @@ class ConversionActivityOld : BaseActivity() {
         try {
             conversion = TextureConversionUtils(file!!, this)
         } catch (e: FileNotFoundException) {
-            MakeErrorDialog(e.toString())
+            MakeErrorDialog(e.toString(),this)
             return
         }
 
@@ -125,7 +105,7 @@ class ConversionActivityOld : BaseActivity() {
                     unzipping_tip!!.visibility = View.GONE
                     cards!!.visibility = View.GONE
                     error_layout!!.visibility = View.VISIBLE
-                    MakeErrorDialog(errorContent)
+                    MakeErrorDialog(errorContent,this@ConversionActivityOld)
                 }
             }
 

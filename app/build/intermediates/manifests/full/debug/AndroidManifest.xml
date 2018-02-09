@@ -46,6 +46,7 @@
         <activity
             android:name="com.zhufuc.pctope.Activities.MainActivity"
             android:label="PCtoPE"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar.windowTranslucentStatus" />
         <activity
             android:name="com.zhufuc.pctope.Activities.ConversionActivity"
@@ -73,10 +74,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.zhufuc.pctope.Activities.FileChooserActivity" />
         <activity android:name="com.zhufuc.pctope.Activities.ShowLogActivity" />
-
-        <meta-data
-            android:name="android.arch.lifecycle.VERSION"
-            android:value="27.0.0-SNAPSHOT" />
+        <activity
+            android:name="com.zhufuc.pctope.Activities.PCtoPEEditor"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar.windowTranslucentStatus" />
+        <activity android:name="com.zhufuc.pctope.Activities.JSONEditActivity" />
+        <activity android:name="com.zhufuc.pctope.Activities.BlockEditorActivity" />
     </application>
 
 </manifest>

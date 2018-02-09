@@ -8,7 +8,9 @@
     android:id="@+id/card_texture_card"
     card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
     card_view:cardElevation="@dimen/cardview_default_elevation"
-    android:foreground="?attr/selectableItemBackground">
+    android:foreground="?attr/selectableItemBackground"
+    android:stateListAnimator="@animator/lift_on_touch"
+    tools:targetApi="lollipop">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -22,7 +24,7 @@
 
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="wrap_content"
-                android:layout_height="74sp"
+                android:layout_height="59sp"
                 android:id="@+id/card_texture_icon"
                 android:adjustViewBounds="true"
                 android:transitionName="@string/pack_icon_transition"
@@ -37,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/card_texture_name"
                     android:textColor="#2c3e50"
-                    android:textSize="30sp"
+                    android:textSize="26sp"
                     android:text="Title"/>
                 <TextView
                     android:layout_width="wrap_content"

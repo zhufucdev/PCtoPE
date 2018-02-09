@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     app:srcCompat="@drawable/github_circle"
-                    android:foreground="?attr/selectableItemBackground"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:id="@+id/visit_github"/>
                 <TextView
@@ -104,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     app:srcCompat="@drawable/ic_coolapk"
-                    android:foreground="?attr/selectableItemBackground"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:id="@+id/visit_coolapk"
                     android:padding="8dp"/>

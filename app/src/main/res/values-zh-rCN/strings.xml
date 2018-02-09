@@ -148,4 +148,24 @@
     <string name="delete">删除</string>
     <string name="select_all">全选/全不选</string>
     <string name="select_inverse">反选</string>
+    <string name="editor_tab_json">JSON数据值</string>
+    <string name="editor_tab_image">贴图</string>
+    <string name="needed">必备</string>
+    <string name="pctope_editor">PCtoPE 编辑器</string>
+    <string name="extra">额外</string>
+    <string name="message_needed_json">这张卡片是关于必要的JSON文件的。如果材质包中不包含以下文件，此包就不能使用或使用时MC会抛出错误。点击以下任意一项以创建或修改该JSON文件。</string>
+    <string name="json_object">JSON 对象</string>
+    <string name="json_array">JSON 数组</string>
+    <string name="subtitle_manifest">PE材质包的签名文件，或许是材质包中最重要的东西，包括了材质包的名称、简介、UUID、版本，等等</string>
+    <string name="subtitle_blocks">"记录方块信息的文件。记录的信息有：方块是否可视、方块的贴图，等等 "</string>
+    <string name="title_manifest">签名</string>
+    <string name="title_blocks">方块信息</string>
+    <string name="title_name">名称</string>
+    <string name="title_description">简介</string>
+    <string name="title_version">版本号</string>
+    <string name="title_uuid">UUID代号</string>
+    <string name="to_overwrite_header">上述内容</string>
+    <string name="to_overwrite_header_subtitle">详见“必备”卡片</string>
+    <string name="content">内容</string>
+    <string name="null_value">值为空</string>
 </resources>

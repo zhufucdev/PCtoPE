@@ -15,6 +15,7 @@ import android.graphics.BitmapFactory
 import android.graphics.drawable.Icon
 import android.os.*
 import android.preference.PreferenceManager
+import android.support.annotation.RequiresApi
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
@@ -48,6 +49,7 @@ import com.zhufuc.pctope.Adapters.FileChooserAdapter
 import com.zhufuc.pctope.Adapters.TextureItems
 import com.zhufuc.pctope.Utils.Textures
 import com.zhufuc.pctope.Collectors.ActivityCollector
+import com.zhufuc.pctope.Env.EnvironmentCalculations.MakeErrorDialog
 import com.zhufuc.pctope.Interf.DeletingCallback
 import com.zhufuc.pctope.Interf.SpacesItemDecoration
 import com.zhufuc.pctope.Utils.*
@@ -60,28 +62,12 @@ import kotlin.collections.ArrayList
 
 class MainActivity : BaseActivity() {
 
-    private fun MakeErrorDialog(errorString: String) {
-        //make up a error dialog
-        val error_dialog = AlertDialog.Builder(this@MainActivity)
-        error_dialog.setTitle(R.string.error)
-        error_dialog.setMessage(this@MainActivity.getString(R.string.error_dialog) + errorString)
-        error_dialog.setIcon(R.drawable.alert_octagram)
-        error_dialog.setCancelable(false)
-        error_dialog.setPositiveButton(R.string.close) { dialogInterface, i -> finish() }
-        error_dialog.setNegativeButton(R.string.copy) { dialogInterface, i ->
-            val copy = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            copy.text = errorString
-            finish()
-        }.show()
-    }
-
-    private var progressBar: ProgressBar? = null
     private fun showLoading() {
-        progressBar!!.visibility = View.VISIBLE
+        findViewById<View>(R.id.progressbar).visibility = View.VISIBLE
     }
 
     private fun hideLoading() {
-        progressBar!!.visibility = View.INVISIBLE
+        findViewById<View>(R.id.progressbar).visibility = View.INVISIBLE
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -143,8 +129,6 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         setContentView(R.layout.activity_main)
 
-        progressBar = findViewById(R.id.progressbar_in_main)
-
         fab = findViewById(R.id.fab)
         level_up = findViewById(R.id.fab_level_up)
         level_up!!.visibility = View.INVISIBLE
@@ -197,25 +181,6 @@ class MainActivity : BaseActivity() {
         navigationView = findViewById(R.id.nav_view)
         drawerLayout = findViewById(R.id.drawer_main)
 
-        navigationView!!.setNavigationItemSelectedListener { item ->
-            drawerLayout!!.closeDrawer(GravityCompat.START)
-            when (item.itemId) {
-                R.id.nav_settings -> {
-                    val settings = Intent(this@MainActivity, SettingsActivity::class.java)
-                    startActivity(settings)
-                }
-                R.id.nav_about -> {
-                    val about = Intent(this@MainActivity, AboutActivity::class.java)
-                    startActivity(about)
-                }
-                R.id.nav_log -> {
-                    val log = Intent(this@MainActivity, ShowLogActivity::class.java)
-                    startActivity(log)
-                }
-            }
-            true
-        }
-
         super.onCreate(savedInstanceState)
 
     }
@@ -236,11 +201,10 @@ class MainActivity : BaseActivity() {
                     drawerLayout!!.openDrawer(GravityCompat.START)
                 else{
                     inSelectMode(false,false)
-
                 }
             }
         }
-        return super.onOptionsItemSelected(item)
+        return true
     }
 
     private fun initShortcuts(){
@@ -322,6 +286,7 @@ class MainActivity : BaseActivity() {
 
         recyclerView.addItemDecoration(SpacesItemDecoration(16))
         recyclerView.setHasFixedSize(true)
+        recyclerView.itemAnimator = DefaultItemAnimator()
 
 
         menuView.setOnMenuItemClickListener { item ->
@@ -497,10 +462,10 @@ class MainActivity : BaseActivity() {
 
             runOnUiThread({
                 setLayoutManager()
-                items.notifyDataSetChanged()
+                items.notifyDataChanged()
             })
         } else
-            MakeErrorDialog("Failed to make textures root directory.")
+            MakeErrorDialog("Failed to make textures root directory.",this)
     }
 
     fun inSelectMode(withLoadingList: Boolean){

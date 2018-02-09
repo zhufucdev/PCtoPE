@@ -17,7 +17,7 @@ class mLog {
             val SDF = SimpleDateFormat("hh:mm:ss")
             val date = SDF.format(Date())
             logs.add("[$date] $tag : $msg")
-            logCountChangeListener!!.onLogChange()
+            logCountChangeListener.onLogChange()
         }
         fun d(tag : String ,msg: String){
             Log.d(tag,msg)

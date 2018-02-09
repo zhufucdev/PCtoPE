@@ -25,10 +25,8 @@ import java.util.StringTokenizer
  */
 
 class PackVersionDecisions(private val path: File) {
-    var name: String? = null
-        private set
-    var description: String? = null
-        private set
+    var name: String = ""
+    var description: String = ""
 
     init {
         if (File(path.toString() + "/manifest.json").exists()) readManifest()
@@ -41,7 +39,7 @@ class PackVersionDecisions(private val path: File) {
                 val manifest = File(path.toString() + "/manifest.json")
                 var v = ""
                 if (manifest.exists()) {
-                    if (name != null && description != null) {
+                    if (name.isNotEmpty() && description.isNotEmpty()) {
                         if (File(path.toString() + "/pack_icon.png").exists())
                             v = "full"
                         else

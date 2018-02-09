@@ -91,6 +91,7 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val textures = mTextures[position]
         viewHolders.add(holder)
+        Log.d("MainActivity Adapter","Holder added. Count = ${viewHolders.size}")
         //Titles
         var name = textures.name
         var description = textures.description
@@ -202,6 +203,11 @@ class TextureItems(textures: ArrayList<Textures>) : RecyclerView.Adapter<Texture
             if (it.isSet)
                 selectedItems.add(it.layoutPosition)
         }
+    }
+
+    fun notifyDataChanged(){
+        viewHolders.clear()
+        notifyDataSetChanged()
     }
 
     var selectedItems = ArrayList<Int>()
