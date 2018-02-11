@@ -34,7 +34,9 @@ class BlockEditorActivity : BaseActivity() {
             override fun doInBackground(vararg params: Void?): Boolean {
                 textures = Textures(File(intent.getStringExtra("path")))
                 blockList.addAll(textures.getBlocks()!!)
-                adapter = BlocksAdapter(blockList)
+                adapter = BlocksAdapter(,{
+
+                })
                 return true
             }
 

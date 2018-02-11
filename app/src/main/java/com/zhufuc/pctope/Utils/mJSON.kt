@@ -17,7 +17,7 @@ class mJSON(content: String) {
         const val TYPE_OBJECT = 1;
         const val TYPE_ARRAY = 2;
         const val TYPE_VALUE = 3;
-        const val DATA_NOT_FOUND_MSG = "[Data Not Found]"
+        const val DATA_NOT_FOUND_FLAG = "[Data Not Found]"
     }
 
     fun set(pathData: String,value: String){
@@ -79,13 +79,13 @@ class mJSON(content: String) {
             val temp : String
             = if (type == TYPE_OBJECT){
                 val obj = JSONObject(last)
-                if (!obj.has(path[i])) return DATA_NOT_FOUND_MSG
+                if (!obj.has(path[i])) return DATA_NOT_FOUND_FLAG
                 obj.getString(path[i])
             }
             else if (type == TYPE_ARRAY && path[i].indexOf("array")!=-1 && path[i].indexOf('.')!=-1){
                 val array = JSONArray(last)
                 val index : Int = path[i].substring(path[i].indexOf('.')+1).toInt()
-                if (array.length()<=index) return DATA_NOT_FOUND_MSG
+                if (array.length()<=index) return DATA_NOT_FOUND_FLAG
                 array.getString(index)
             }
             else {

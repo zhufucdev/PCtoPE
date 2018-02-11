@@ -9,65 +9,69 @@ import org.json.JSONObject
 class Block(val name: String,val textureInfo: BlockTextureInfo?,val carriedTextureInfo: BlockTextureInfo?,val isotropic : String = "",val sound: String = "",val blockShape : String = ""){
     val isEmpty : Boolean
         get() = (textureInfo == null || textureInfo.isEmpty) && (carriedTextureInfo == null || carriedTextureInfo.isEmpty) && isotropic.isEmpty() && sound.isEmpty() && blockShape.isEmpty()
-    class BlockTextureInfo(val BlockJSON : String,val TerrainBlockJSON: String){
-        /**
-         * @BlockJSON  part of 'block.json' file content
-         */
-        val blockJSON = mJSON(BlockJSON)
-        val terrainBlockJSON = mJSON(mJSON(TerrainBlockJSON).get("texture_data"))
 
-        val isOriginTexture: Boolean
-        get() =  blockJSON.rootType == mJSON.TYPE_VALUE
+    /**
+     * @param BlockJSON
+     */
+    class BlockTextureInfo{
+        companion object {
+            /**
+             * @param JSONBlock JSON String in block.json/BLOCK_NAME/(texture or carried_texture)
+             * @param JSONTerrain JSON String in texture/terrain_texture.json/texture_data
+             */
+            fun buildWithJSON(JSONBlock: String,JSONTerrain: String): BlockTextureInfo{
+                val b = mJSON(JSONBlock)
+                val t = mJSON(JSONTerrain)
+                val result = BlockTextureInfo()
 
-        var up : BlockTextureValue
-        var down : BlockTextureValue
-        var side : BlockTextureValue
-        var origin : BlockTextureValue? = null
-        init {
-            val label_up = blockJSON.get("up")
-            up = BlockTextureValue(label_up, terrainBlockJSON.get(label_up))
-
-            val label_down = blockJSON.get("down")
-            down = BlockTextureValue(label_down,terrainBlockJSON.get(label_down))
-
-            val label_side = blockJSON.get("side")
-            side = BlockTextureValue(label_side,terrainBlockJSON.get(label_side))
-
-            if (isOriginTexture)
-                origin = BlockTextureValue(BlockJSON,terrainBlockJSON.get(BlockJSON))
-        }
-
-
-        class BlockTextureValue(val label: String,val value: String){
-            val isEmpty: Boolean
-            get() = label.isEmpty() || noRepeatPaths.isEmpty()
-
-            private var noRepeatPaths : List<String> = listOf()
-            init {
-                val json = mJSON(mJSON(value).get("textures"))
-                if (json.toString() != mJSON.DATA_NOT_FOUND_MSG) {
-                    when {
-                        json.rootType == mJSON.TYPE_VALUE -> {
-                            noRepeatPaths = listOf(json.get(""))
-                        }
-                        json.rootType == mJSON.TYPE_ARRAY -> {
-                            val paths = ArrayList<String>()
-                            json.list().forEach {
-                                val type = json.getType(it)
-                                if (type == mJSON.TYPE_VALUE) {
-                                    paths.add(json.get(it))
-                                } else if (type == mJSON.TYPE_OBJECT) {
-                                    paths.add(json.get("$it/path"))
-                                }
-                            }
-                            noRepeatPaths = EnvironmentCalculations.getNoRepeat(paths)
-                        }
-                        else -> noRepeatPaths = listOf(json.get("path"))
-                    }
+                if (b.rootType == mJSON.TYPE_VALUE){
+                    result.origin = BlockTextureValue.build(b.toString(),t.get("texture_data"))
                 }
             }
+        }
+        var up : BlockTextureValue? = null
+        var down : BlockTextureValue? = null
+        var side : BlockTextureValue? = null
+        var origin : BlockTextureValue? = null
 
-            fun getNoRepeatPaths() : List<String> = noRepeatPaths
+        class BlockTextureValue{
+            var name: String? = null
+
+            val isEmpty: Boolean
+            get() = name.isNullOrEmpty() || noRepeatPaths.isEmpty()
+            var noRepeatPaths : List<String> = listOf()
+
+            companion object {
+                fun build(name: String, JSONValue: String): BlockTextureValue{
+                    val json = mJSON(mJSON(JSONValue).get("$name/textures"))
+                    var noRepeatPaths : List<String> = listOf()
+                    if (json.toString() != mJSON.DATA_NOT_FOUND_FLAG) {
+                        when {
+                            json.rootType == mJSON.TYPE_VALUE -> {
+                                noRepeatPaths = listOf(json.get(""))
+                            }
+                            json.rootType == mJSON.TYPE_ARRAY -> {
+                                val paths = ArrayList<String>()
+                                json.list().forEach {
+                                    val type = json.getType(it)
+                                    if (type == mJSON.TYPE_VALUE) {
+                                        paths.add(json.get(it))
+                                    } else if (type == mJSON.TYPE_OBJECT) {
+                                        paths.add(json.get("$it/path"))
+                                    }
+                                }
+                                noRepeatPaths = EnvironmentCalculations.getNoRepeat(paths)
+                            }
+                            else -> noRepeatPaths = listOf(json.get("path"))
+                        }
+                    }
+
+                    val result = BlockTextureValue()
+                    result.name = name
+                    result.noRepeatPaths = noRepeatPaths
+                    return result
+                }
+            }
         }
 
         val isEmpty: Boolean
@@ -78,13 +82,13 @@ class Block(val name: String,val textureInfo: BlockTextureInfo?,val carriedTextu
         val result = JSONObject()
         if (!(textureInfo == null || textureInfo.isEmpty)) {
             if (textureInfo.isOriginTexture) {
-                result.put("textures", textureInfo.origin!!.label)
+                result.put("textures", textureInfo.origin!!.name)
             }
             else {
                 val textures = JSONObject()
-                textures.put("up",textureInfo.up.label)
-                textures.put("down",textureInfo.down.label)
-                textures.put("side",textureInfo.side.label)
+                textures.put("up",textureInfo.up.name)
+                textures.put("down",textureInfo.down.name)
+                textures.put("side",textureInfo.side.name)
                 result.put("textures",textures)
             }
         }
@@ -126,6 +130,11 @@ class Block(val name: String,val textureInfo: BlockTextureInfo?,val carriedTextu
             val blockShape: String = block.get("$nameSet/blockshape")
             //result
             return Block(nameSet,textureInfo, carriedTextureInfo, isotropic, sound, blockShape)
+        }
+
+        fun listBlockByJSON(BlockJSON: String,TerrainBlockJSON: String): List<Block>{
+            val result = ArrayList<Block>()
+
         }
     }
 

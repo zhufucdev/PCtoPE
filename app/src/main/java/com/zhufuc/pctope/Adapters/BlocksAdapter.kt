@@ -13,8 +13,10 @@ import com.zhufuc.pctope.View.Tagger
 
 /**
  * Created by zhufu on 2/3/18.
+ * @param data Call when loading data of blocks
  */
-class BlocksAdapter(val mList : ArrayList<Block>) : RecyclerView.Adapter<BlocksAdapter.ViewHolder>() {
+class BlocksAdapter(val totalItemCount: Int,data: (Int) -> Block) : RecyclerView.Adapter<BlocksAdapter.ViewHolder>() {
+    var mList = ArrayList<Block>()
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent!!.context).inflate(R.layout.pctope_editor_block_info,parent,false)
         return ViewHolder(view)
