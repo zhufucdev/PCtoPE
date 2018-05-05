@@ -74,10 +74,6 @@
         <activity android:name="com.zhufuc.pctope.Activities.FileChooserActivity" />
         <activity android:name="com.zhufuc.pctope.Activities.ShowLogActivity" />
 
-        <meta-data
-            android:name="android.arch.lifecycle.VERSION"
-            android:value="27.0.0-SNAPSHOT" />
-
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
             android:authorities="com.zhufuc.pctope.com.android.tools.ir.server.InstantRunContentProvider"

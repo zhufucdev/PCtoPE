@@ -26,9 +26,6 @@ import com.zhufuc.pctope.Utils.*
 
 import java.io.File
 
-import com.zhufuc.pctope.Utils.TextureCompat.brokenPC
-import java.util.*
-
 val layoutList = arrayOf(R.layout.tutorial_conversion_welcome,R.layout.tutorial_conversion_step1,R.layout.tutorial_conversion_step2)
 
 class ConversionActivity : TutorialActivity(layoutList) {
@@ -122,16 +119,16 @@ class ConversionActivity : TutorialActivity(layoutList) {
                     dialog.setNegativeButton(R.string.skip) { dialog, which ->
                         skipUnzip = true
                         conversion.skipUnzip = skipUnzip
-                        conversion.UncompressPack()
+                        conversion.uncompressPack()
                     }
                     dialog.setPositiveButton(R.string.overwrite) { dialog, which ->
                         skipUnzip = false
                         conversion.skipUnzip = skipUnzip
-                        conversion.UncompressPack()
+                        conversion.uncompressPack()
                     }
                     dialog.show()
                 } else if (!isPreFinished)
-                    conversion.UncompressPack()
+                    conversion.uncompressPack()
             }
 
             1 -> {
@@ -391,7 +388,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
     fun getIconOFResourceCompression() : String{
         //Set Compression
         val baseFrom: String?
-        if (conversion.VerStr == (TextureCompat.fullPC) || conversion.VerStr == (TextureCompat.brokenPC))
+        if (conversion.verStr == (TextureCompat.fullPC) || conversion.verStr == (TextureCompat.brokenPC))
             baseFrom = conversion.path + "/assets/minecraft/textures"
         else
             baseFrom = conversion.path + "/textures"

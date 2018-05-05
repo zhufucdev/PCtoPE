@@ -192,16 +192,16 @@ class ConversionActivityOld : BaseActivity() {
             dialog.setNegativeButton(R.string.skip) { dialog, which ->
                 skipUnzip = true
                 conversion.skipUnzip = skipUnzip!!
-                conversion.UncompressPack()
+                conversion.uncompressPack()
             }
             dialog.setPositiveButton(R.string.overwrite) { dialog, which ->
                 skipUnzip = false
                 conversion.skipUnzip = skipUnzip!!
-                conversion.UncompressPack()
+                conversion.uncompressPack()
             }
             dialog.show()
         } else
-            conversion.UncompressPack()
+            conversion.uncompressPack()
 
     }
 
@@ -361,7 +361,7 @@ class ConversionActivityOld : BaseActivity() {
         val PackType = findViewById<TextView>(R.id.info_pack_type)
         val PackInMC = findViewById<TextView>(R.id.info_pack_in_mc_ver)
         var type: String? = resources.getString(R.string.info_pack_type)
-        when (conversion.VerStr) {
+        when (conversion.verStr) {
             TextureCompat.fullPE -> type += resources.getString(R.string.type_fullPE)
             TextureCompat.fullPC -> type += resources.getString(R.string.type_fullPC)
             TextureCompat.brokenPE -> type += resources.getString(R.string.type_brokenPE)
@@ -383,7 +383,7 @@ class ConversionActivityOld : BaseActivity() {
 
         //Set Compression
         val baseFrom: String?
-        if (conversion.VerStr == (TextureCompat.fullPC) || conversion.VerStr == (TextureCompat.brokenPC))
+        if (conversion.verStr == (TextureCompat.fullPC) || conversion.verStr == (TextureCompat.brokenPC))
             baseFrom = conversion.path + "/assets/minecraft/textures"
         else
             baseFrom = conversion.path + "/textures"

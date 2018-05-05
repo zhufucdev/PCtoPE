@@ -10,7 +10,6 @@ import android.os.Environment
 import android.util.Log
 
 import com.zhufuc.pctope.R
-import com.zhufuc.pctope.Utils.ListFiles
 
 import net.lingala.zip4j.exception.ZipException
 import net.lingala.zip4j.model.ZipParameters
@@ -44,13 +43,13 @@ constructor(private val FilePath: String, private val context: Context) {
     }
 
     var decisions: PackVersionDecisions? = null
-    var VerStr: String? = null
+    var verStr: String? = null
 
     private fun doVersionDecisions() {
-        mLog.i("Conversion","Version = $VerStr")
-        if (VerStr == TextureCompat.brokenPE || VerStr == TextureCompat.fullPE) {
+        mLog.i("Conversion","Version = $verStr")
+        if (verStr == TextureCompat.brokenPE || verStr == TextureCompat.fullPE) {
             onPEDecisions()
-        } else if (VerStr == TextureCompat.brokenPC || VerStr == TextureCompat.fullPC) {
+        } else if (verStr == TextureCompat.brokenPC || verStr == TextureCompat.fullPC) {
             onPcDecisions()
         }
     }
@@ -78,10 +77,10 @@ constructor(private val FilePath: String, private val context: Context) {
         //画 已解决
         //护甲
 
-        val FROM = arrayOf(File("$textures/entity/chest/normal_double.png"), File("$textures/items/dragon_breath.png"), File("$textures/entity/bear/polarbear.png"), File("$textures/entity/cat/black.png"), File("$textures/entity/zombie_pigman.png"), File("$textures/gui/options_background.png"), File("$textures/painting/paintings_kristoffer_zetterstrand.png"))
-        val TO = arrayOf(File("$textures/entity/chest/double_normal.png"), File("$textures/items/dragons_breath.png"), File("$textures/entity/polarbear.png"), File("$textures/entity/cat/blackcat.png"), File("$textures/entity/pig/pigzombie.png"), File("$textures/gui/background.png"), File("$textures/painting/kz.png"))
-        for (i in TO.indices) {
-            FROM[i].renameTo(TO[i])
+        val from = arrayOf(File("$textures/entity/chest/normal_double.png"), File("$textures/items/dragon_breath.png"), File("$textures/entity/bear/polarbear.png"), File("$textures/entity/cat/black.png"), File("$textures/entity/zombie_pigman.png"), File("$textures/gui/options_background.png"), File("$textures/painting/paintings_kristoffer_zetterstrand.png"))
+        val to = arrayOf(File("$textures/entity/chest/double_normal.png"), File("$textures/items/dragons_breath.png"), File("$textures/entity/polarbear.png"), File("$textures/entity/cat/blackcat.png"), File("$textures/entity/pig/pigzombie.png"), File("$textures/gui/background.png"), File("$textures/painting/kz.png"))
+        from.forEachIndexed { index, it ->
+            it.renameTo(to[index])
         }
 
 
@@ -93,7 +92,7 @@ constructor(private val FilePath: String, private val context: Context) {
             val compasses = ArrayList<Bitmap>()
             for (i in 0..31) {
                 val format = DecimalFormat("00")
-                val image = File("$textures/items/compass_" + format.format(i) + ".png")
+                val image = File("$textures/items/compass_${format.format(i)}.png")
                 if (image.exists()) {
                     val now = BitmapFactory.decodeFile(image.path)
                     compasses.add(now)
@@ -106,7 +105,7 @@ constructor(private val FilePath: String, private val context: Context) {
             val canvas = Canvas(bitmap)
             canvas.drawBitmap(compasses[0], Matrix(), null)
 
-            for (i in 1..compasses.size - 1) {
+            for (i in 1 until compasses.size) {
                 canvas.drawBitmap(compasses[i], 0f, (compasses[i - 1].height * i).toFloat(), null)
             }
 
@@ -140,13 +139,13 @@ constructor(private val FilePath: String, private val context: Context) {
                 .forEach { it.renameTo(File("$textures/environment/" + it.name)) }
 
         //For armors
-        val armor_folder = File("$textures/models/armor")
-        if (armor_folder.exists() && armor_folder.isDirectory){
-            val armors_list = armor_folder.listFiles()
-            for (i in 0 until armors_list.size){
-                if (armors_list[i].name.contains("_layer")){
+        val armorFolder = File("$textures/models/armor")
+        if (armorFolder.exists() && armorFolder.isDirectory){
+            val armorsList = armorFolder.listFiles()
+            for (i in 0 until armorsList.size){
+                if (armorsList[i].name.contains("_layer")){
                     var newPath : String
-                    val oldName = armors_list[i].name
+                    val oldName = armorsList[i].name
                     var newName = StringBuilder(oldName)
                     val index = oldName.indexOf("_layer")
 
@@ -157,8 +156,8 @@ constructor(private val FilePath: String, private val context: Context) {
                         }
                     else newName.delete(index,index+6)
 
-                    newPath = "${armor_folder.path}/$newName"
-                    armors_list[i].renameTo(File(newPath))
+                    newPath = "${armorFolder.path}/$newName"
+                    armorsList[i].renameTo(File(newPath))
                 }
             }
         }
@@ -210,33 +209,33 @@ constructor(private val FilePath: String, private val context: Context) {
     }
 
     private fun onPcDecisions() {
-        val icon = File(path + "/pack.png")
-        val iconPE = File(path + "/pack_icon.png")
+        val icon = File("$path/pack.png")
+        val iconPE = File("$path/pack_icon.png")
         icon.renameTo(iconPE)//Rename icon to PE
-        textures = File(path + "/assets/minecraft/textures")
+        textures = File("$path/assets/minecraft/textures")
         val texturePE = File("$path/textures")
         mLog.i("Conversion","Moving $textures to $texturePE")
         textures.renameTo(texturePE)//Move textures folder
         textures = texturePE
 
         //Delete something that we don't need
-        File(path + "/pack.mcmeta").delete()
-        DeleteFolder.Delete(path + "/assets")
+        File("$path/pack.mcmeta").delete()
+        DeleteFolder.Delete("$path/assets")
 
         doPCSpecialResourcesDecisions()
 
-        val files = ListFiles(textures)
-        val textures_list = File("$textures/textures_list.json")
+        val files = listFiles(textures)
+        val texturesList = File("$textures/textures_list.json")
         val json = StringBuilder()
         json.append("[\n")
         files!!.forEach {
             mLog.i("Conversion","Listing $it")
-            json.append(it+",\n")
+            json.append("$it,\n")
         }
         json.deleteCharAt(json.length-2)//del the latest ","
         json.append(']')
-        Log.i("Conversion","JSON = \"${json.toString()}\"")
-        textures_list.writeText(json.toString(),Charset.defaultCharset())
+        Log.i("Conversion","JSON = \"$json\"")
+        texturesList.writeText(json.toString(),Charset.defaultCharset())
 
     }
 
@@ -248,7 +247,6 @@ constructor(private val FilePath: String, private val context: Context) {
     private fun doJsonFixing(text : String): String {
         val lines = ArrayList<String>()
         lines.addAll(text.lines())
-        mLog.i("JsonFixing","array size=${lines.size}")
         var i = 0
         while (i<lines.size){
             val thisLine = lines[i]
@@ -290,75 +288,61 @@ constructor(private val FilePath: String, private val context: Context) {
             i++
         }
         val string = StringBuilder()
-        for (i in 0 until lines.size)
-            string.append(lines[i]+"\n")
+        for (j in 0 until lines.size)
+            string.append(lines[j]+"\n")
         return string.toString()
     }
 
-    @Throws(FileNotFoundException::class)
+    private fun putJSONPrefix(json: String): String = JSONObject(json).put("resource_pack_name",packname).toString() @Throws(JSONException::class)
+
     private fun doJSONWriting() {
         //==>define
         //for basic information
         val raw = context.resources
         val data = arrayOf(raw.openRawResource(R.raw.items_client), raw.openRawResource(R.raw.blocks), raw.openRawResource(R.raw.flipbook_textures), raw.openRawResource(R.raw.item_texture), raw.openRawResource(R.raw.terrain_texture))
-        val pathes = arrayOf(File(path + "/items_client.json"), File(path + "/blocks.json"))
+        val paths = arrayOf(File("$path/items_client.json"), File("$path/blocks.json"))
 
-        for (i in pathes.indices){
-            pathes[i].writeBytes(data[i].readBytes(DEFAULT_BUFFER_SIZE))
+        for (i in paths.indices){
+            paths[i].writeBytes(data[i].readBytes(DEFAULT_BUFFER_SIZE))
         }
 
         //for terrain block textures
-        val textBefore = "{" + System.getProperty("line.separator") + makeSpace(4) + "\"resource_pack_name\":" + "\"" + packname + "\"" + System.getProperty("line.separator")
-        val terrainOut = FileOutputStream("$textures/terrain_texture.json")
-        try {
-            terrainOut.write(textBefore.toByteArray())
-            terrainOut.write(doJsonFixing(data[4].reader(Charset.defaultCharset()).readText()).toByteArray())
-        } catch (e: IOException) {
-            mOnCrashListener.onCrash(e.toString())
-            e.printStackTrace()
-        }
-
+        var out = File("$textures/terrain_texture.json")
+        var fixed = doJsonFixing(data[4].reader().readText())
+        fixed = putJSONPrefix(fixed)
+        out.writeText(fixed)
         //for item texture file
 
-        val itemOut = FileOutputStream("$textures/item_texture.json")
-        var isCreated: Boolean? = true
-        val temp = arrayOf("$textures/item_texture.json", "$textures/flipbook_textures.json", path + "/manifest.json")
+        var isCreated = true
+        val temp = arrayOf("$textures/item_texture.json", "$textures/flipbook_textures.json", "$path/manifest.json")
         for (i in temp.indices) {
             val t = File(temp[i])
             if (!t.exists())
                 try {
-                    if (!t.createNewFile())
-                        isCreated = false
+                    isCreated = t.createNewFile()
                 } catch (e: IOException) {
                     mOnCrashListener.onCrash(e.toString())
                     e.printStackTrace()
                 }
 
         }
-        if (isCreated!!) {
-            try {
-                itemOut.write(textBefore.toByteArray())
-                itemOut.write(doJsonFixing(data[3].reader(Charset.defaultCharset()).readText()).toByteArray())
-                itemOut.close()
-            } catch (e: IOException) {
-                mOnCrashListener.onCrash(e.toString())
-                e.printStackTrace()
-            }
+        if (isCreated) {
+            //For Item Texture
+            out = File("$textures/item_texture.json")
+            fixed = doJsonFixing(data[3].reader().readText())
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        fixed = putJSONPrefix(fixed)
+            out.writeText(fixed)
 
             //for flip book texture
-            val flipOut = FileOutputStream("$textures/flipbook_textures.json")
-            try {
-                flipOut.write(doJsonFixing(data[2].reader(Charset.defaultCharset()).readText()).toByteArray())
-                flipOut.close()
-            } catch (e: IOException) {
-                mOnCrashListener.onCrash(e.toString())
-                e.printStackTrace()
-            }
+            out = File("$textures/flipbook_textures.json")
+            fixed = doJsonFixing(data[2].reader().readText())
+            out.writeText(fixed)
+
+            //Free up space
+            fixed = ""
 
             //for manifest file
-
-            val intro: String
-            val out = JSONObject()
+            val out1 = JSONObject()
             val versionArray = JSONArray()
 
             try {
@@ -366,13 +350,13 @@ constructor(private val FilePath: String, private val context: Context) {
                 versionArray.put(0)
                 versionArray.put(1)
 
-                out.put("format_version", 1)
+                out1.put("format_version", 1)
                 val header = JSONObject()
                 header.put("description", packdescription)
                 header.put("name", packname)
                 header.put("uuid", UUID.randomUUID().toString())
                 header.put("version", versionArray)
-                out.put("header", header)
+                out1.put("header", header)
 
                 val modules = JSONArray()
                 val modulesObjs = JSONObject()
@@ -381,15 +365,14 @@ constructor(private val FilePath: String, private val context: Context) {
                 modulesObjs.put("uuid", UUID.randomUUID().toString())
                 modulesObjs.put("version", versionArray)
                 modules.put(modulesObjs)
-                out.put("modules", modules)
+                out1.put("modules", modules)
 
             } catch (e: JSONException) {
                 e.printStackTrace()
+                mOnCrashListener.onCrash(e.toString())
             }
 
-            intro = JsonFormatTool().formatJson(out.toString())
-
-            File(path + "/manifest.json").writeText(intro, Charset.defaultCharset())
+            File("$path/manifest.json").writeText(out1.toString(), Charset.defaultCharset())
 
         } else
             mOnCrashListener.onCrash("Could not create JSON files.")
@@ -400,7 +383,7 @@ constructor(private val FilePath: String, private val context: Context) {
     private fun doMainInCompressing(n: File) {
         if (n.isFile) {
             //Show progress
-            mLog.d("compression", "Compressing " + n)
+            mLog.d("compression", "Compressing $n")
             mConversionChangeListener.inDoingImageCompressions(n.path)
 
 
@@ -415,9 +398,9 @@ constructor(private val FilePath: String, private val context: Context) {
             var compressHeight = compressFinalSize
             var compressWidth = compressFinalSize
             if (image.width - image.height < -5) {
-                compressHeight = compressHeight * (image.width / compressFinalSize)
+                compressHeight *= (image.width / compressFinalSize)
             } else if (image.height - image.width > 5) {
-                compressWidth = compressWidth * (image.height / compressFinalSize)
+                compressWidth *= (image.height / compressFinalSize)
             }
             val compressed = CompressImage.getBitmap(image, compressHeight, compressWidth)
 
@@ -462,7 +445,7 @@ constructor(private val FilePath: String, private val context: Context) {
             }
             val fileName = FilePath.substring(FilePath.lastIndexOf('/') + 1, FilePath.lastIndexOf('.'))
             //==>get file name
-            path += "/" + fileName
+            path += "/$fileName"
             mLog.d("unzip", "We will unzip $FilePath to $path")
         } else
             path = FilePath
@@ -519,7 +502,7 @@ constructor(private val FilePath: String, private val context: Context) {
         this.mConversionChangeListener = listener
     }
 
-    fun UncompressPack() {
+    fun uncompressPack() {
         class UnzippingTask : AsyncTask<Void, Int, Boolean>() {
 
             override fun onPreExecute() {
@@ -530,7 +513,7 @@ constructor(private val FilePath: String, private val context: Context) {
                 if (!skipUnzip) {
                     mOnUncompressListener.inUncompressing()
                     try {
-                        mLog.d("unzip", "Unzipping to " + path)
+                        mLog.d("unzip", "Unzipping to $path")
                         unzip(File(FilePath), path, "0")
                     } catch (e: Exception) {
                         return false
@@ -540,50 +523,46 @@ constructor(private val FilePath: String, private val context: Context) {
                 return isPathUseful//Find the true root path
             }
 
-            private val isPathUseful: Boolean?
-                get() {
-                    val pathDecisions = File(path)
-                    if (pathDecisions.exists() && pathDecisions.isDirectory) {
-                        val FileListInPath = pathDecisions.listFiles()
-                        val Dirs = ArrayList<File>()
-                        var FilesFound = 0
-                        var DirsFound = 0
-                        for (test in FileListInPath) {
-                            if (test.isFile)
-                                FilesFound++
-                            else if (test.isDirectory) {
-                                Dirs.add(test)
-                                DirsFound++
-                            }
-                        }
-                        if (FilesFound >= 1 && DirsFound >= 1) {
-                            return true
-                        } else {
-                            var isFoundNext: Boolean? = false
-                            for (i in Dirs.indices) {
-                                path = Dirs[i].path
-                                if (isPathUseful!!) {
-                                    isFoundNext = true
-                                    return true
-                                }
-                            }
-                            if (!(isFoundNext)!!) {
-                                return false
-                            }
+            private val isPathUseful: Boolean = false
+            get() {
+                val pathDecisions = File(path)
+                if (pathDecisions.exists() && pathDecisions.isDirectory) {
+                    val fileListInPath = pathDecisions.listFiles()
+                    val dirs = ArrayList<File>()
+                    var filesFound = 0
+                    var dirsFound = 0
+                    for (test in fileListInPath) {
+                        if (test.isFile)
+                            filesFound++
+                        else if (test.isDirectory) {
+                            dirs.add(test)
+                            dirsFound++
                         }
                     }
-                    return false
+                    if (filesFound >= 1 && dirsFound >= 1) {
+                        return true
+                    } else {
+                        for (i in dirs.indices) {
+                            path = dirs[i].path
+                            if (field) {
+                                return true
+                            }
+                        }
+                        return false
+                    }
                 }
+                return false
+            }
 
 
             override fun onPostExecute(result: Boolean?) {
                 if (result!!) {
                     decisions = PackVersionDecisions(File(path))
-                    VerStr = decisions!!.packVersion
-                    if (VerStr!![0] != 'E') {
-                        iconPath = if (VerStr == TextureCompat.fullPC || VerStr == TextureCompat.brokenPC) path + "/pack.png" else if (VerStr == TextureCompat.fullPE || VerStr == TextureCompat.brokenPE) path + "/pack_icon.png" else null
+                    verStr = decisions!!.packVersion
+                    if (verStr!![0] != 'E') {
+                        iconPath = if (verStr == TextureCompat.fullPC || verStr == TextureCompat.brokenPC) path + "/pack.png" else if (verStr == TextureCompat.fullPE || verStr == TextureCompat.brokenPE) path + "/pack_icon.png" else null
 
-                        mOnUncompressListener.onPostUncompress(true, VerStr)
+                        mOnUncompressListener.onPostUncompress(true, verStr)
                     } else {
                         mOnUncompressListener.onPostUncompress(false, null)
                     }
@@ -595,9 +574,9 @@ constructor(private val FilePath: String, private val context: Context) {
         UnzippingTask().execute()
     }
 
-    fun doConverting(packname: String, packdescription: String, mcpackCompressDest : String) {
-        this.packname = packname
-        this.packdescription = packdescription
+    fun doConverting(packName: String, packDescription: String, mcpackCompressDest : String) {
+        this.packname = packName
+        this.packdescription = packDescription
 
         mLog.i("Pack Conversion", "Doing version decisions...")
         mConversionChangeListener.inDoingVersionDecisions()
@@ -615,17 +594,17 @@ constructor(private val FilePath: String, private val context: Context) {
         }
 
         //For if icon doesn't exist
-        val iconTest = File(path + "/pack_icon.png")
+        val iconTest = File("$path/pack_icon.png")
         if (!iconTest.exists()) {
             mLog.i("Pack Conversion", "Writing icon for non-icon-pack...")
             val inputStream = context.resources.openRawResource(R.raw.bug_pack_icon)
 
-            File(path + "/pack_icon.png").writeBytes(inputStream.readBytes(DEFAULT_BUFFER_SIZE))
+            File("$path/pack_icon.png").writeBytes(inputStream.readBytes(DEFAULT_BUFFER_SIZE))
         }
 
         //Move to dest
         mLog.i("Pack Conversion", "Moving to dest...")
-        val dest = File(Environment.getExternalStorageDirectory().toString() + "/games/com.mojang/resource_packs/" + packname)
+        val dest = File(Environment.getExternalStorageDirectory().toString() + "/games/com.mojang/resource_packs/" + packName)
         if (dest.isDirectory && dest.exists()) dest.mkdirs()
         File(path).renameTo(dest)
 
@@ -656,22 +635,22 @@ constructor(private val FilePath: String, private val context: Context) {
         }
 
     companion object {
-        private val filelist = ArrayList<String>()
+        private val fileList = ArrayList<String>()
 
-        private fun ListFiles(path: File): ArrayList<String>? {
+        private fun listFiles(path: File): ArrayList<String>? {
             val files = path.listFiles() ?: return null
             for (f in files) {
                 if (f.isDirectory) {
-                    ListFiles(f)
+                    listFiles(f)
                 } else {
-                    val path = f.path
-                    if (path.endsWith(".png")){
-                        val content = path.substring(path.lastIndexOf("textures/"),path.length)
-                        filelist.add(content)
+                    val s = f.path
+                    if (s.endsWith(".png")){
+                        val content = s.substring(s.lastIndexOf("textures/"))
+                        fileList.add(content)
                     }
                 }
             }
-            return filelist
+            return fileList
         }
 
         @Throws(ZipException::class, net.lingala.zip4j.exception.ZipException::class)

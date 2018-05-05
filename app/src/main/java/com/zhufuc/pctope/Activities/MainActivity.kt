@@ -1,8 +1,8 @@
 package com.zhufuc.pctope.Activities
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.app.ActivityOptions
+import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
@@ -10,39 +10,29 @@ import android.content.Intent.ACTION_VIEW
 import android.content.pm.PackageManager
 import android.content.pm.ShortcutInfo
 import android.content.pm.ShortcutManager
-import android.content.res.ColorStateList
 import android.graphics.BitmapFactory
 import android.graphics.drawable.Icon
 import android.os.*
 import android.preference.PreferenceManager
 import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
 import android.support.percent.PercentRelativeLayout
 import android.support.v4.app.ActivityCompat
-import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.app.AlertDialog
-import android.support.v7.util.DiffUtil
-import android.support.v7.view.menu.MenuBuilder
 import android.support.v7.widget.ActionMenuView
-import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.OrientationHelper
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.support.v7.widget.Toolbar
-import android.support.v7.widget.helper.ItemTouchHelper
-import android.transition.TransitionInflater
 import android.util.Log
 import android.view.*
 import android.view.animation.*
 import android.widget.*
-import com.tencent.bugly.crashreport.CrashReport
 
 import com.zhufuc.pctope.Adapters.FileChooserAdapter
 import com.zhufuc.pctope.Adapters.TextureItems
@@ -70,7 +60,7 @@ class MainActivity : BaseActivity() {
         error_dialog.setPositiveButton(R.string.close) { dialogInterface, i -> finish() }
         error_dialog.setNegativeButton(R.string.copy) { dialogInterface, i ->
             val copy = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            copy.text = errorString
+            copy.primaryClip = ClipData.newPlainText("Error",errorString)
             finish()
         }.show()
     }
@@ -91,7 +81,7 @@ class MainActivity : BaseActivity() {
                 loadList()
                 updatePinnedShortcut()
                 initShortcuts()
-                if (chooser_root.visibility == View.VISIBLE)
+                if (chooserRoot.visibility == View.VISIBLE)
                     Handler().postDelayed({ Choose() }, 1000)
             }
         } else if (requestCode == 2) {
@@ -107,7 +97,7 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    fun initToolbar() {
+    private fun initToolbar() {
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
@@ -115,8 +105,8 @@ class MainActivity : BaseActivity() {
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setHomeAsUpIndicator(R.drawable.menu)
 
-        toobarFore = findViewById(R.id.toolbar_fore)
-        toobarFore.title = getString(R.string.mulit_select)
+        toolbarFore = findViewById(R.id.toolbar_fore)
+        toolbarFore.title = getString(R.string.mulit_select)
 
         menuView = findViewById(R.id.menu_item_view)
         menuView.menu.clear()
@@ -132,10 +122,9 @@ class MainActivity : BaseActivity() {
 
     private lateinit var fab: FloatingActionButton
     private lateinit var recyclerView: RecyclerView
-    private lateinit var android_nothing_card: LinearLayout
-    private lateinit var chooser_root: FrameLayout
+    private lateinit var chooserRoot: FrameLayout
     private lateinit var toolbar: Toolbar
-    private lateinit var toobarFore : Toolbar
+    private lateinit var toolbarFore : Toolbar
     private lateinit var foreLayout : PercentRelativeLayout
     private lateinit var menuView : ActionMenuView
     private var isFromShortcut : Boolean = false
@@ -151,10 +140,9 @@ class MainActivity : BaseActivity() {
         level_up!!.rotation = -90f
 
         recyclerView = findViewById(R.id.recycle_view)
-        android_nothing_card = findViewById(R.id.android_nothing)
-        chooser_root = findViewById(R.id.chooser_in_main)
+        chooserRoot = findViewById(R.id.chooser_in_main)
 
-        chooser_root.visibility = View.INVISIBLE
+        chooserRoot.visibility = View.INVISIBLE
 
         val intent = intent
         isGranted = intent.getBooleanExtra("isGranted", true)
@@ -299,7 +287,7 @@ class MainActivity : BaseActivity() {
     private fun initActivity() {
         //init for textures list
         recyclerView = findViewById(R.id.recycle_view)
-        class firstLoad : AsyncTask<Void, Int, Boolean>() {
+        class FirstLoad : AsyncTask<Void, Int, Boolean>() {
             override fun onPreExecute() {
                 showLoading()
             }
@@ -318,7 +306,7 @@ class MainActivity : BaseActivity() {
                 updatePinnedShortcut()
             }
         }
-        firstLoad().execute()
+        FirstLoad().execute()
 
         recyclerView.addItemDecoration(SpacesItemDecoration(16))
         recyclerView.setHasFixedSize(true)
@@ -349,7 +337,6 @@ class MainActivity : BaseActivity() {
 
                                         mTextures.add(it.position,it)
                                         recyclerView.visibility = View.VISIBLE
-                                        android_nothing_card.visibility = View.GONE
                                         loadList()
                                         setLayoutManager()
                                         initShortcuts()
@@ -393,24 +380,6 @@ class MainActivity : BaseActivity() {
                     swipeRefreshLayout!!.isRefreshing = false
                 }
             }).start()
-        }
-
-        android_nothing_card.setOnClickListener {
-            val show = AnimationUtils.loadAnimation(this@MainActivity, R.anim.cards_show)
-            android_nothing_card.startAnimation(show)
-            show.setAnimationListener(object : Animation.AnimationListener {
-                override fun onAnimationStart(animation: Animation) {
-
-                }
-
-                override fun onAnimationEnd(animation: Animation) {
-                    loadList()
-                }
-
-                override fun onAnimationRepeat(animation: Animation) {
-
-                }
-            })
         }
     }
 
@@ -508,7 +477,7 @@ class MainActivity : BaseActivity() {
             val animation = AnimationUtils.loadAnimation(this,R.anim.cards_show)
             foreLayout.visibility = View.VISIBLE
             foreLayout.startAnimation(animation)
-            setSupportActionBar(toobarFore)
+            setSupportActionBar(toolbarFore)
         }
         else{
             if (withLoadingList)
@@ -539,16 +508,16 @@ class MainActivity : BaseActivity() {
     private var adapter: FileChooserAdapter? = null
     var level_up : FloatingActionButton? = null
     private fun Choose() {
-        if (chooser_root.visibility == View.INVISIBLE) {
+        if (chooserRoot.visibility == View.INVISIBLE) {
             fab.isEnabled = false
             level_up!!.show()
             toolbar.setTitle(R.string.choosing_alert)
             toolbar.subtitle = adapter!!.getPath()
 
-            chooser_root.visibility = View.VISIBLE
+            chooserRoot.visibility = View.VISIBLE
             if (!isFromShortcut) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab.x.toInt() + fab.width / 2, fab.y.toInt() - fab.height / 2, 0f, Math.hypot(chooser_root.width.toDouble(), chooser_root.height.toDouble()).toFloat())
+                    val animator = ViewAnimationUtils.createCircularReveal(chooserRoot, fab.x.toInt() + fab.width / 2, fab.y.toInt() - fab.height / 2, 0f, Math.hypot(chooserRoot.width.toDouble(), chooserRoot.height.toDouble()).toFloat())
                     animator.duration = 300
                     animator.start()
                 }
@@ -593,12 +562,12 @@ class MainActivity : BaseActivity() {
             toolbar.subtitle = ""
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                val animator = ViewAnimationUtils.createCircularReveal(chooser_root, fab.x.toInt() + fab.width / 2,
-                        fab.y.toInt() - fab.height / 2, Math.hypot(chooser_root.width.toDouble(), chooser_root.height.toDouble()).toFloat(), 0f)
+                val animator = ViewAnimationUtils.createCircularReveal(chooserRoot, fab.x.toInt() + fab.width / 2,
+                        fab.y.toInt() - fab.height / 2, Math.hypot(chooserRoot.width.toDouble(), chooserRoot.height.toDouble()).toFloat(), 0f)
                 animator.duration = 400
                 animator.start()
             }
-            else chooser_root.visibility = View.INVISIBLE
+            else chooserRoot.visibility = View.INVISIBLE
 
             fab.rotation = 45.0f
             val first = RotateAnimation(0.0f, -45.0f * 4 + 15, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f)
@@ -635,7 +604,7 @@ class MainActivity : BaseActivity() {
             })
             fab.startAnimation(first)
 
-            Handler().postDelayed({ chooser_root.visibility = View.INVISIBLE }, 390)
+            Handler().postDelayed({ chooserRoot.visibility = View.INVISIBLE }, 390)
         }
         isFromShortcut = false
     }
@@ -675,10 +644,10 @@ class MainActivity : BaseActivity() {
     fun setLayoutManager() {
         if (items.itemCount == 0) {
             recyclerView.visibility = View.GONE
-            android_nothing_card.visibility = View.VISIBLE
+            (findViewById<LinearLayout>(R.id.android_nothing)).visibility = View.VISIBLE
         } else {
             recyclerView.visibility = View.VISIBLE
-            android_nothing_card.visibility = View.GONE
+            (findViewById<LinearLayout>(R.id.android_nothing)).visibility = View.GONE
         }
 
         var layoutManager = LinearLayoutManager(this@MainActivity)
@@ -692,7 +661,7 @@ class MainActivity : BaseActivity() {
 
                 if (lineCount >= itemCount && itemCount != 0)
                     lineCount = items.itemCount
-                mLog.i("Layout Manager", "Layout manager set by Grid Layout Manager. Line count is " + lineCount)
+                mLog.i("Layout Manager", "Layout manager set by Grid Layout Manager. Line count is $lineCount")
                 layoutManager = GridLayoutManager(this, lineCount)
             }
         }

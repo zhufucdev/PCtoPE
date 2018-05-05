@@ -8,19 +8,19 @@ package android.support.percent;
 
 public final class R {
     public static final class attr {
-        public static final int layout_aspectRatio = 0x7f0400ce;
-        public static final int layout_heightPercent = 0x7f0400fd;
-        public static final int layout_marginBottomPercent = 0x7f040100;
-        public static final int layout_marginEndPercent = 0x7f040101;
-        public static final int layout_marginLeftPercent = 0x7f040102;
-        public static final int layout_marginPercent = 0x7f040103;
-        public static final int layout_marginRightPercent = 0x7f040104;
-        public static final int layout_marginStartPercent = 0x7f040105;
-        public static final int layout_marginTopPercent = 0x7f040106;
-        public static final int layout_widthPercent = 0x7f04010a;
+        public static final int layout_aspectRatio = 0x7f0400d8;
+        public static final int layout_heightPercent = 0x7f04010e;
+        public static final int layout_marginBottomPercent = 0x7f040111;
+        public static final int layout_marginEndPercent = 0x7f040112;
+        public static final int layout_marginLeftPercent = 0x7f040113;
+        public static final int layout_marginPercent = 0x7f040114;
+        public static final int layout_marginRightPercent = 0x7f040115;
+        public static final int layout_marginStartPercent = 0x7f040116;
+        public static final int layout_marginTopPercent = 0x7f040117;
+        public static final int layout_widthPercent = 0x7f04011b;
     }
     public static final class styleable {
-        public static final int[] PercentLayout_Layout = { 0x7f0400ce, 0x7f0400fd, 0x7f040100, 0x7f040101, 0x7f040102, 0x7f040103, 0x7f040104, 0x7f040105, 0x7f040106, 0x7f04010a };
+        public static final int[] PercentLayout_Layout = { 0x7f0400d8, 0x7f04010e, 0x7f040111, 0x7f040112, 0x7f040113, 0x7f040114, 0x7f040115, 0x7f040116, 0x7f040117, 0x7f04011b };
         public static final int PercentLayout_Layout_layout_aspectRatio = 0;
         public static final int PercentLayout_Layout_layout_heightPercent = 1;
         public static final int PercentLayout_Layout_layout_marginBottomPercent = 2;
