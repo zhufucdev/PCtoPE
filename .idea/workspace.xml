@@ -10,176 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14131d92-d8f2-464c-859f-b91ef97a112e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/PCtoPE.iml" afterPath="$PROJECT_DIR$/PCtoPE.iml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/zhufuc/pctope/BuildConfig.java" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/zhufuc/pctope/BuildConfig.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/compat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/compat/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/constraint/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/constraint/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreui/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreui/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreutils/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/coreutils/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/fragment/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/fragment/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/animated/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/graphics/drawable/animated/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/mediacompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/mediacompat/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/percent/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/percent/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/transition/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/transition/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v4/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v4/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/cardview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/cardview/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/zhufuc/pctope/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/com/zhufuc/pctope/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/za/co/riggaroo/materialhelptutorial/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/za/co/riggaroo/materialhelptutorial/R.java" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/constraint/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/constraint/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/constraint/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/constraint/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/constraint/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/constraint/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$anim.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$anim.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$bool.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$bool.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$color.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$integer.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$string.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/percent/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/percent/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/percent/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/percent/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/transition/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/transition/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$anim.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$anim.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$bool.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$bool.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$color.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$integer.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$string.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/cardview/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/cardview/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/cardview/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/cardview/R$color.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/cardview/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/cardview/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/cardview/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/cardview/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/cardview/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/cardview/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$anim.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$anim.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$bool.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$bool.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$color.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$integer.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$menu.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$mipmap.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$mipmap.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$raw.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$raw.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$string.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$transition.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$transition.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$xml.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/R$xml.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$bool.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$bool.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$color.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$integer.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$string.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/za/co/riggaroo/materialhelptutorial/R$styleable.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/BuildConfig.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/zhufuc/pctope/BuildConfig.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/constraint/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/constraint/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/constraint/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/constraint/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/constraint/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/constraint/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$anim.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$anim.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$bool.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$bool.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$color.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$integer.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$string.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/percent/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/percent/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/percent/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/percent/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/transition/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/transition/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$anim.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$anim.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$bool.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$bool.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$color.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$integer.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$string.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$color.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/cardview/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/AboutActivity$onCreate$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/AboutActivity$onCreate$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/AboutActivity$onCreate$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/AboutActivity$onCreate$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/AboutActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/AboutActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/AppCompatPreferenceActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/AppCompatPreferenceActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/BaseActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/BaseActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$MakeErrorDialog$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$MakeErrorDialog$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$MakeErrorDialog$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$MakeErrorDialog$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$doOnFail$deleteTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$doOnFail$deleteTask.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$loadIcon$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$loadIcon$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$onActivityResult$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$onActivityResult$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$onActivityResult$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity$onActivityResult$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ConversionActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$MakeErrorDialog$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$MakeErrorDialog$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1$OnProgressChangeListener$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1$OnProgressChangeListener$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1$OnProgressChangeListener$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1$OnProgressChangeListener$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$loadDetailedInfo$LoadingTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$loadDetailedInfo$LoadingTask.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$loadViews$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$loadViews$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$onActivityResult$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$onActivityResult$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$onActivityResult$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$onActivityResult$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$updateInformation$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity$updateInformation$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/DetailsActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/FileChooserActivity$init$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/FileChooserActivity$init$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/FileChooserActivity$init$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/FileChooserActivity$init$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/FileChooserActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/FileChooserActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/FirstActivity$initBugprt$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/FirstActivity$initBugprt$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/FirstActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/FirstActivity.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$1$onAnimationEnd$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$1$onAnimationEnd$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$2$onAnimationEnd$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$2$onAnimationEnd$1.class" />
@@ -191,7 +25,7 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$2$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$2$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$firstLoad.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$firstLoad.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$firstLoad.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$loadFileChooser$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$loadFileChooser$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$loadFileChooser$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$loadFileChooser$2.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$loadList$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$loadList$1.class" />
@@ -202,79 +36,7 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$onCreate$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$onCreate$3.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$onCreate$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity$onCreate$4.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/MainActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/SettingsActivity$changeListener$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/SettingsActivity$changeListener$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/SettingsActivity$onCreate$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/SettingsActivity$onCreate$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/SettingsActivity$onCreate$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/SettingsActivity$onCreate$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/SettingsActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/SettingsActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ShowLogActivity$buildLogs$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ShowLogActivity$buildLogs$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ShowLogActivity$buildLogs$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ShowLogActivity$buildLogs$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ShowLogActivity$onCreate$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ShowLogActivity$onCreate$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ShowLogActivity$onCreate$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ShowLogActivity$onCreate$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ShowLogActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/ShowLogActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/UserBugReport$onCreate$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/UserBugReport$onCreate$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/UserBugReport.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Activities/UserBugReport.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$OnItemClickListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$OnItemClickListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$ViewHolder.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$onBindViewHolder$loadImage.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$onBindViewHolder$loadImage.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$onClickListener$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$onClickListener$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/TextureItems$OnItemClickListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/TextureItems$OnItemClickListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/TextureItems$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/TextureItems$ViewHolder.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/TextureItems.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Adapters/TextureItems.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Collectors/ActivityCollector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Collectors/ActivityCollector.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Interf/DeletingCallback$onDismissed$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Interf/DeletingCallback$onDismissed$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Interf/DeletingCallback.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Interf/DeletingCallback.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Interf/SpacesItemDecoration.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Interf/SpacesItemDecoration.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$anim.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$anim.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$bool.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$bool.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$color.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$integer.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$menu.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$menu.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$mipmap.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$mipmap.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$raw.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$raw.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$string.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$transition.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$transition.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$xml.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/R$xml.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/CompressImage.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/CompressImage.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/DeleteFolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/DeleteFolder.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/DiffUtilCallback.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/DiffUtilCallback.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/FindFile.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/FindFile.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/GetPathFromUri4kitkat.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/GetPathFromUri4kitkat.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/JsonFormatTool$Companion.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/JsonFormatTool$Companion.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/JsonFormatTool.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/JsonFormatTool.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/PackVersionDecisions.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/PackVersionDecisions.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureCompat.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureCompat.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$Companion.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$Companion.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$ConversionChangeListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$ConversionChangeListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$OnCrashListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$OnCrashListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$OnUncompressListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$OnUncompressListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$UncompressPack$UnzippingTask.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/TextureConversionUtils.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/mLog$Companion$OnLogCountChangeListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/mLog$Companion$OnLogCountChangeListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/mLog$Companion$logCountChangeListener$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/mLog$Companion$logCountChangeListener$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/mLog$Companion.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/mLog$Companion.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/mLog.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/mLog.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/myContextWrapper.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/Utils/myContextWrapper.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$attr.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$bool.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$bool.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$color.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$dimen.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$drawable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$id.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$integer.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$string.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$style.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/za/co/riggaroo/materialhelptutorial/R$styleable.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/BuildConfig.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/zhufuc/pctope/BuildConfig.class" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/instant-run/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/instant-run/debug/AndroidManifest.xml" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/dep/dependencies.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/dep/dependencies.apk" />
@@ -288,18 +50,8 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_7.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_7.apk" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_9.apk" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_9.apk" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-snapshot.tab" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-snapshot.tab.keystream" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-snapshot.tab.keystream.len" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-snapshot.tab.len" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-snapshot.tab.values.at" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-snapshot.tab_i" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-snapshot.tab_i.len" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.keystream" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.keystream" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab.values.at" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab_i" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/inputs/source-to-output.tab_i" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len" />
@@ -313,11 +65,7 @@
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.s" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab.values.s" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab_i" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/proto.tab_i" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len" />
@@ -325,13 +73,9 @@
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab_i" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab_i" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab_i" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/subtypes.tab_i" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" />
-      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab_i" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/jvm/kotlin/supertypes.tab_i" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/counters.tab" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab.values.at" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/file-to-id.tab.values.at" />
@@ -350,42 +94,6 @@
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.values.s" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab.values.s" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab_i" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/caches-jvm/lookups/lookups.tab_i" />
       <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/last-build.bin" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/last-build.bin" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/AboutActivity$onCreate$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/AboutActivity$onCreate$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/AboutActivity$onCreate$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/AboutActivity$onCreate$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/AboutActivity.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/AboutActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/AppCompatPreferenceActivity.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/AppCompatPreferenceActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/BaseActivity.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/BaseActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$MakeErrorDialog$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$MakeErrorDialog$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$MakeErrorDialog$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$MakeErrorDialog$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$doOnFail$deleteTask.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$doOnFail$deleteTask.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$loadIcon$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$loadIcon$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$onActivityResult$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$onActivityResult$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$onActivityResult$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity$onActivityResult$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ConversionActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$FabListener$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$MakeErrorDialog$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$MakeErrorDialog$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1$OnProgressChangeListener$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1$OnProgressChangeListener$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1$OnProgressChangeListener$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1$OnProgressChangeListener$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1$3.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$initOperationalCards$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$loadDetailedInfo$LoadingTask.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$loadDetailedInfo$LoadingTask.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$loadViews$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$loadViews$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$onActivityResult$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$onActivityResult$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$onActivityResult$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$onActivityResult$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$updateInformation$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity$updateInformation$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/DetailsActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/FileChooserActivity$init$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/FileChooserActivity$init$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/FileChooserActivity$init$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/FileChooserActivity$init$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/FileChooserActivity.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/FileChooserActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/FirstActivity$initBugprt$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/FirstActivity$initBugprt$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/FirstActivity.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/FirstActivity.class" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$1$onAnimationEnd$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$1$onAnimationEnd$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$2$onAnimationEnd$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$Choose$2$onAnimationEnd$1.class" />
@@ -397,7 +105,7 @@
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$2$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$2$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$firstLoad.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$firstLoad.class" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$initActivity$firstLoad.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$loadFileChooser$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$loadFileChooser$1.class" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$loadFileChooser$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$loadFileChooser$2.class" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$loadList$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$loadList$1.class" />
@@ -408,56 +116,6 @@
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$onCreate$3.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$onCreate$3.class" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$onCreate$4.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity$onCreate$4.class" />
       <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/MainActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/SettingsActivity$changeListener$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/SettingsActivity$changeListener$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/SettingsActivity$onCreate$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/SettingsActivity$onCreate$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/SettingsActivity$onCreate$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/SettingsActivity$onCreate$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/SettingsActivity.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/SettingsActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ShowLogActivity$buildLogs$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ShowLogActivity$buildLogs$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ShowLogActivity$buildLogs$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ShowLogActivity$buildLogs$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ShowLogActivity$onCreate$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ShowLogActivity$onCreate$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ShowLogActivity$onCreate$2.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ShowLogActivity$onCreate$2.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ShowLogActivity.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/ShowLogActivity.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/UserBugReport$onCreate$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/UserBugReport$onCreate$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/UserBugReport.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Activities/UserBugReport.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$OnItemClickListener.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$OnItemClickListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$ViewHolder.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$onBindViewHolder$loadImage.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$onBindViewHolder$loadImage.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$onClickListener$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter$onClickListener$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/FileChooserAdapter.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/TextureItems$OnItemClickListener.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/TextureItems$OnItemClickListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/TextureItems$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/TextureItems$ViewHolder.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/TextureItems.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Adapters/TextureItems.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Collectors/ActivityCollector.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Collectors/ActivityCollector.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Interf/DeletingCallback$onDismissed$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Interf/DeletingCallback$onDismissed$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Interf/DeletingCallback.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Interf/DeletingCallback.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Interf/SpacesItemDecoration.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Interf/SpacesItemDecoration.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/CompressImage.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/CompressImage.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/DeleteFolder.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/DeleteFolder.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/DiffUtilCallback.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/DiffUtilCallback.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/FindFile.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/FindFile.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/GetPathFromUri4kitkat.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/GetPathFromUri4kitkat.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/JsonFormatTool$Companion.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/JsonFormatTool$Companion.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/JsonFormatTool.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/JsonFormatTool.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/PackVersionDecisions.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/PackVersionDecisions.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureCompat.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureCompat.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$Companion.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$Companion.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$ConversionChangeListener.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$ConversionChangeListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$OnCrashListener.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$OnCrashListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$OnUncompressListener.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$OnUncompressListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils$UncompressPack$UnzippingTask.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/TextureConversionUtils.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/mLog$Companion$OnLogCountChangeListener.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/mLog$Companion$OnLogCountChangeListener.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/mLog$Companion$logCountChangeListener$1.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/mLog$Companion$logCountChangeListener$1.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/mLog$Companion.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/mLog$Companion.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/mLog.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/mLog.class" />
-      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/myContextWrapper.class" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/zhufuc/pctope/Utils/myContextWrapper.class" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivity.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivityOld.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/ConversionActivityOld.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/TextureConversionUtils.kt" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/TextureConversionUtils.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/item_texture.json" afterPath="$PROJECT_DIR$/app/src/main/res/raw/item_texture.json" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -484,7 +142,7 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="18">
               <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
               <folding />
             </state>
@@ -494,7 +152,7 @@
       <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-324">
+            <state relative-caret-position="1404">
               <caret line="123" column="51" lean-forward="false" selection-start-line="123" selection-start-column="51" selection-end-line="123" selection-end-column="51" />
               <folding />
             </state>
@@ -2656,7 +2314,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="AndroidView">
@@ -2674,7 +2332,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2859,12 +2517,20 @@
       <option name="presentableId" value="Default" />
       <updated>1524971692559</updated>
     </task>
+    <task id="LOCAL-00001" summary="更改交互逻辑">
+      <created>1525525460776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1525525460776</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="743" extended-state="6" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2878,8 +2544,8 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25377885" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34179357" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25377885" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34179357" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2910,6 +2576,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2214">
+          <caret line="123" column="51" lean-forward="false" selection-start-line="123" selection-start-column="51" selection-end-line="123" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Utils/TextureConversionUtils.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6732">
+          <caret line="374" column="64" lean-forward="false" selection-start-line="374" selection-start-column="64" selection-end-line="374" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -2985,7 +2683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3018,7 +2715,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/zhufuc/pctope/Activities/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
+        <state relative-caret-position="1404">
           <caret line="123" column="51" lean-forward="false" selection-start-line="123" selection-start-column="51" selection-end-line="123" selection-end-column="51" />
           <folding />
         </state>
@@ -3026,7 +2723,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="18">
           <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
           <folding />
         </state>
