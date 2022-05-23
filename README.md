@@ -5,6 +5,7 @@ Good news is that it is fully open source, so feel to modify or simply learn how
 
 # PCtoPE
 [![Release](https://raw.githubusercontent.com/zhufucdev/PCtoPE/master/readme/release.png)](https://github.com/zhufucdev/PCtoPE)
+[![Android Build](https://github.com/zhufucdev/PCtoPE/actions/workflows/android.yml/badge.svg)](https://github.com/zhufucdev/PCtoPE/actions/workflows/android.yml)
 
 <img src="https://raw.githubusercontent.com/zhufucdev/PCtoPE/master/readme/icon.png" width="33%">
 
