@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.zhufuc.pctope.activities.UserBugReport">
+    tools:context="com.zhufucdev.pctope.activities.UserBugReport">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

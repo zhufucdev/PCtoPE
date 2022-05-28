@@ -8,7 +8,7 @@
     android:id="@+id/conversion_root"
     android:fitsSystemWindows="true"
     android:background="@color/activity_background"
-    tools:context="com.zhufuc.pctope.activities.ConversionActivity">
+    tools:context="com.zhufucdev.pctope.activities.ConversionActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

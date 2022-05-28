@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhufuc.pctope.activities.DetailsActivity"
+    tools:context="com.zhufucdev.pctope.activities.DetailsActivity"
     android:fitsSystemWindows="true"
     android:background="@color/activity_background">
 

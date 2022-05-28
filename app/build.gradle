@@ -5,7 +5,7 @@ android {
     compileSdkVersion 32
     buildToolsVersion "30.0.3"
     defaultConfig {
-        applicationId "com.zhufuc.pctope"
+        applicationId "com.zhufucdev.pctope"
         minSdkVersion 18
         targetSdkVersion 32
         versionCode 57
@@ -26,7 +26,7 @@ android {
         abortOnError false
         checkReleaseBuilds false
     }
-    namespace 'com.zhufuc.pctope'
+    namespace 'com.zhufucdev.pctope'
 
 }
 
