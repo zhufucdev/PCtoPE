@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhufuc.pctope.Activities.AboutActivity"
+    tools:context="com.zhufuc.pctope.activities.AboutActivity"
     android:background="@color/activity_background">
 
     <ScrollView
@@ -20,7 +20,7 @@
             android:orientation="vertical"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:gravity="center_horizontal">
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/about_icon"
@@ -55,7 +55,7 @@
 
     </ScrollView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -68,18 +68,19 @@
             android:text="@string/about_visit"
             android:textColor="@color/black"
             android:textSize="16sp"/>
-        <android.support.percent.PercentRelativeLayout
+        <androidx.percentlayout.widget.PercentRelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="20dp">
             <LinearLayout
+                android:layout_width="0dp"
                 app:layout_widthPercent="50%"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:id="@+id/about_visit_github">
-                <android.support.v7.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
@@ -93,13 +94,14 @@
                     android:text="GitHub"/>
             </LinearLayout>
             <LinearLayout
+                android:layout_width="0dp"
                 app:layout_widthPercent="50%"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_toEndOf="@id/about_visit_github"
                 android:gravity="center_horizontal"
                 android:id="@+id/about_visit_coolapk">
-                <android.support.v7.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
@@ -113,9 +115,9 @@
                     android:layout_height="wrap_content"
                     android:text="Coolapk"/>
             </LinearLayout>
-        </android.support.percent.PercentRelativeLayout>
+        </androidx.percentlayout.widget.PercentRelativeLayout>
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
 </RelativeLayout>

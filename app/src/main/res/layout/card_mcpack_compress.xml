@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_mcpack_compress"
+    android:foreground="?attr/selectableItemBackground"
     android:clickable="true"
-    android:foreground="?attr/selectableItemBackground">
+    android:focusable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +37,7 @@
 
         </LinearLayout>
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/card_mcpack_compress_chevron"
@@ -45,4 +47,4 @@
 
     </LinearLayout>
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

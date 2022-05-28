@@ -1,4 +1,0 @@
-#Sat Dec 16 10:44:42 UTC 2017
-base.0=/home/zhufu/AndroidStudioProjects/PCtoPE/app/build/intermediates/transforms/dexMerger/debug/9
-path.0=classes.dex
-renamed.0=classes.dex

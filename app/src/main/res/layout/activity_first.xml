@@ -12,13 +12,13 @@
         android:layout_height="140dp"
         android:background="@color/colorPrimary"
         android:id="@+id/first_header"/>
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_below="@id/first_header"
         android:id="@+id/first_app_bar">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/first_toolbar"
@@ -27,7 +27,7 @@
             app:titleTextColor="@color/white"
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ProgressBar
         android:layout_width="match_parent"

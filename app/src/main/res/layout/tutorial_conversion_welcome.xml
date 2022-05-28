@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/tutorial_welcome_title_layout">
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -74,7 +74,7 @@
             android:layout_marginTop="100dp"
             android:id="@+id/tutorial_welcome_error_layout"
             android:visibility="invisible">
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_horizontal_margin"

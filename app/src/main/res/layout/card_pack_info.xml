@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pdi_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:foreground="?attr/selectableItemBackground"
-    android:id="@+id/pdi_card"
     android:layout_margin="@dimen/card_margin_horizontal"
+    android:foreground="?attr/selectableItemBackground"
     card_view:cardCornerRadius="@dimen/card_recycler_corner_radius"
     card_view:cardElevation="@dimen/card_recycler_elevation">
 
@@ -15,13 +15,13 @@
         android:layout_height="match_parent"
         android:layout_margin="@dimen/text_margin_small">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/support_or_not_icon"
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:id="@+id/support_or_not_icon"
-            app:srcCompat="@drawable/checkbox_marked_circle"
             android:layout_gravity="center_vertical"
-            android:adjustViewBounds="true"/>
+            android:adjustViewBounds="true"
+            app:srcCompat="@drawable/checkbox_marked_circle" />
 
         <LinearLayout
             android:id="@+id/info_content_layout"
@@ -39,24 +39,18 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/info_pack_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/text_margin_very_small"
-                    android:text="@string/info_pack_type" />
+            <TextView
+                android:id="@+id/info_pack_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/text_margin_very_small"
+                android:text="@string/info_pack_type" />
 
-                <TextView
-                    android:id="@+id/info_pack_in_mc_ver"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/info_pack_in_mc_ver" />
-
+            <TextView
+                android:id="@+id/info_pack_in_mc_ver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/info_pack_in_mc_ver" />
         </LinearLayout>
-
-
     </LinearLayout>
-
-
-
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

@@ -1,57 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/activity_background"
-    tools:context="com.zhufuc.pctope.Activities.MainActivity">
-    <android.support.design.widget.AppBarLayout
+    tools:context="com.zhufuc.pctope.activities.MainActivity">
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.percent.PercentRelativeLayout
+        <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:id="@+id/fore_toolbar_layout">
-            <android.support.v7.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_heightPercent="92%"
-                android:id="@+id/toolbar_fore"
-                android:background="@color/white"
-                style="@style/AppTheme.AppBarOverlay"
-                app:titleTextColor="@color/black"
-                app:title="@string/mulit_select"
-                app:navigationIcon="@drawable/arrow_left_black" >
-                <android.support.v7.widget.ActionMenuView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/menu_item_view"
-                    android:layout_gravity="end"
-                    android:foreground="?attr/selectableItemBackground"
-                    style="@style/AppTheme.AppBarOverlay"/>
-            </android.support.v7.widget.Toolbar>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layout_heightPercent="8%"
-                android:layout_below="@id/toolbar_fore"
-                android:background="@color/colorPrimaryDark"/>
-        </android.support.percent.PercentRelativeLayout>
+            android:id="@+id/toolbar_fore"
+            android:background="@color/white"
+            style="@style/AppTheme.AppBarOverlay"
+            app:titleTextColor="@color/black"
+            app:title="@string/mulit_select"
+            app:navigationIcon="@drawable/arrow_left_black" >
+            <androidx.appcompat.widget.ActionMenuView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/menu_item_view"
+                android:layout_gravity="end"
+                android:foreground="?attr/selectableItemBackground"
+                style="@style/AppTheme.AppBarOverlay"/>
+        </androidx.appcompat.widget.Toolbar>
 
-
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?attr/colorPrimary"
             app:titleTextColor="@color/white"
             app:subtitleTextColor="@color/white"/>
-
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -67,16 +51,16 @@
             android:indeterminate="true"
             android:layout_marginTop="-7dp"/>
 
-        <android.support.v4.widget.SwipeRefreshLayout
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/swipe_refresh"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycle_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-        </android.support.v4.widget.SwipeRefreshLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         <include layout="@layout/android_nothing" />
 
@@ -86,7 +70,7 @@
             android:id="@+id/chooser_in_main"
             android:background="@color/activity_background">
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/file_chooser_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
@@ -100,7 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,7 +96,7 @@
             app:fabSize="normal"
             app:rippleColor="@color/colorAccentPrimary"/>
 
-        <android.support.design.widget.FloatingActionButton
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_level_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -123,8 +107,4 @@
             app:fabSize="normal"/>
 
     </RelativeLayout>
-
-
-
-
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

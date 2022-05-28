@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.zhufuc.pctope">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="30" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 获取设备信息 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络通信 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取网络状态 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 获取MAC地址 -->
-    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:configChanges="locale"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="InnerclassSeparator" >
+        tools:ignore="InnerclassSeparator">
         <activity
-            android:name=".Activities.FirstActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".activities.FirstActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,34 +39,35 @@
             android:name="za.co.riggaroo.materialhelptutorial.tutorial.MaterialTutorialActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.MainActivity"
+            android:name=".activities.MainActivity"
             android:label="PCtoPE"
             android:theme="@style/AppTheme.NoActionBar.windowTranslucentStatus" />
         <activity
-            android:name=".Activities.ConversionActivity"
+            android:name=".activities.ConversionActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activities.ConversionActivityOld"
-            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".Activities.SettingsActivity"
+            android:name=".activities.ConversionActivityOld"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".Activities.MainActivity">
+            android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.zhufuc.pctope.Activities.MainActivity" />
+                android:value="com.zhufuc.pctope.activities.MainActivity" />
         </activity>
         <activity
-            android:name=".Activities.AboutActivity"
-            android:parentActivityName=".Activities.MainActivity" />
+            android:name=".activities.AboutActivity"
+            android:parentActivityName=".activities.MainActivity" />
         <activity
-            android:name=".Activities.UserBugReport"
+            android:name=".activities.UserBugReport"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".Activities.DetailsActivity"
+            android:name=".activities.DetailsActivity"
             android:label="@string/project_unnamed"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activities.FileChooserActivity" />
-        <activity android:name=".Activities.ShowLogActivity" />
+        <activity android:name=".activities.FileChooserActivity" />
+        <activity android:name=".activities.ShowLogActivity" />
     </application>
 
 </manifest>
