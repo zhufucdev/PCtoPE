@@ -12,9 +12,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14131d92-d8f2-464c-859f-b91ef97a112e" name="Default" comment="Migrated into AndroidX &amp; adapted for Android R">
+    <list default="true" id="14131d92-d8f2-464c-859f-b91ef97a112e" name="Default" comment="Changed package name">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin-build/version.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +51,9 @@
     </replaceStrings>
   </component>
   <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="E:\IdeaProjects\android-key.jks" />
+    <option name="KEY_ALIAS" value="alternative_key" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
     <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
@@ -2213,7 +2218,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ApkExportedModule" value="PCtoPE.app" />
+    <property name="ExportApk.ApkPath" value="C:\Users\zhufu\Source\Android\PCtoPE\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-viewC:/Users/zhufu/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.4.0/51035a8f6342c20d4d8f242d100e6f25e0c271ac/material-1.4.0-sources.jar!/com/google/android/material/appbar/AppBarLayout.java_AppBarLayout_DIMENSIONS" value="1080&#10;1920" />
@@ -2369,7 +2377,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653707650490</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Bumped version code">
+      <created>1653708071636</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653708071636</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Changed package name">
+      <created>1653708725830</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653708725830</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2445,9 +2467,12 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="更改交互逻辑" />
     <MESSAGE value="Migrated into AndroidX &amp; adapted for Android R" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migrated into AndroidX &amp; adapted for Android R" />
+    <MESSAGE value="Bumped version code" />
+    <MESSAGE value="Changed package name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed package name" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
