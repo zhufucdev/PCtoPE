@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/text_margin">
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -14,9 +14,9 @@
             android:hint="@string/project_name"
             android:id="@+id/details_edit_name"/>
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -26,6 +26,6 @@
             android:hint="@string/project_description"
             android:id="@+id/details_edit_description"/>
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>
