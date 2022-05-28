@@ -7,6 +7,7 @@ import android.graphics.Canvas
 import android.graphics.Matrix
 import android.os.AsyncTask
 import android.os.Environment
+import android.system.ErrnoException
 import android.util.Log
 
 import com.zhufucdev.pctope.R
@@ -245,7 +246,7 @@ constructor(private val FilePath: String, private val context: Context) {
 
         //Delete something that we don't need
         File("$path/pack.mcmeta").delete()
-        DeleteFolder.Delete("$path/assets")
+        DeleteFolder.delete("$path/assets")
 
         doPCSpecialResourcesDecisions()
 
@@ -655,7 +656,11 @@ constructor(private val FilePath: String, private val context: Context) {
                 .toString() + "/games/com.mojang/resource_packs/" + packName
         )
         if (dest.isDirectory && dest.exists()) dest.mkdirs()
-        File(path).renameTo(dest)
+        val rename = File(path).renameTo(dest)
+        if (!rename) {
+            File(path).copyRecursively(dest)
+            DeleteFolder.delete(path)
+        }
 
         if (mcpackCompressDest != "") {
             mConversionChangeListener.inDoingMcpackCompressing(mcpackCompressDest)
@@ -712,7 +717,7 @@ constructor(private val FilePath: String, private val context: Context) {
             }
             val destDir = File(dest)// 解压目录
             if (destDir.exists()) {
-                DeleteFolder.Delete(dest)
+                DeleteFolder.delete(dest)
             }
             destDir.mkdirs()
             if (zFile.isEncrypted) {
