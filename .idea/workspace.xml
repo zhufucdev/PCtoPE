@@ -12,14 +12,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14131d92-d8f2-464c-859f-b91ef97a112e" name="Default" comment="Fixed several reference errors">
+    <list default="true" id="14131d92-d8f2-464c-859f-b91ef97a112e" name="Default" comment="Bumped version code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/activities/ConversionActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/activities/ConversionActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/activities/ConversionActivityOld.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/activities/ConversionActivityOld.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/activities/SettingsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/activities/SettingsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/interf/DeletingCallback.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/interf/DeletingCallback.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/utils/DeleteFolder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/utils/DeleteFolder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/utils/TextureConversionUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/zhufucdev/pctope/utils/TextureConversionUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -2435,7 +2430,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653714143661</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Make some method lowercased">
+      <created>1653716698253</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653716698253</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed cross device link exception">
+      <created>1653716742257</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1653716742257</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2524,12 +2533,14 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="更改交互逻辑" />
     <MESSAGE value="Migrated into AndroidX &amp; adapted for Android R" />
-    <MESSAGE value="Bumped version code" />
     <MESSAGE value="Changed package name" />
     <MESSAGE value="Improve VC structure" />
     <MESSAGE value="Fixed a typo" />
     <MESSAGE value="Fixed several reference errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed several reference errors" />
+    <MESSAGE value="Make some method lowercased" />
+    <MESSAGE value="Fixed cross device link exception" />
+    <MESSAGE value="Bumped version code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bumped version code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
