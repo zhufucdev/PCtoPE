@@ -67,7 +67,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
     private lateinit var conversion: TextureConversionUtils
 
     override fun onPageSwitched(){
-        when (showingPostition){
+        when (showingPosition){
             0 -> {
                 //Views
                 val fab_next = findViewById<FloatingActionButton>(R.id.tutorial_next)
@@ -359,7 +359,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
 
     override fun onBackPressed() {
         //super.onBackPressed()
-        if (showingPostition > 0 && !isDoingConverting) {
+        if (showingPosition > 0 && !isDoingConverting) {
             if (!isInAnimations)
                 back()
         }

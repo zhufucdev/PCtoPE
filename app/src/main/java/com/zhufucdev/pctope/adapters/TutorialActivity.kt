@@ -16,8 +16,8 @@ import android.widget.FrameLayout
  */
 abstract class TutorialActivity(LayoutRes : Array<Int>) : AppCompatActivity(){
     private val res = LayoutRes
-    var Layouts = ArrayList<TutorialLayout>()
-    var showingPostition = 0
+    var layouts = ArrayList<TutorialLayout>()
+    var showingPosition = 0
     var isInAnimations = false
     lateinit var animationLeftToCenter : Animation
     lateinit var animationCenterToLeft : Animation
@@ -30,8 +30,8 @@ abstract class TutorialActivity(LayoutRes : Array<Int>) : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        for (i in 0 until res.size){
-            Layouts.add(TutorialLayout(LayoutInflater.from(this).inflate(res[i],null)))
+        for (i in res.indices){
+            layouts.add(TutorialLayout(LayoutInflater.from(this).inflate(res[i],null)))
             Log.i("Tutorial","Added layout ${res[i]}.")
         }
 
@@ -53,21 +53,21 @@ abstract class TutorialActivity(LayoutRes : Array<Int>) : AppCompatActivity(){
     }
 
     fun show(index : Int){
-        if (Layouts.size>index && index>=0){
-            if (index>showingPostition){
+        if (layouts.size>index && index>=0){
+            if (index>showingPosition){
                 //Next
-                Layouts[showingPostition].view.startAnimation(animationCenterToLeft)
-                addContentView(Layouts[index].view,Layouts[index].parmas)
-                Layouts[index].view.startAnimation(animationRightToCenter)
+                layouts[showingPosition].view.startAnimation(animationCenterToLeft)
+                addContentView(layouts[index].view,layouts[index].parmas)
+                layouts[index].view.startAnimation(animationRightToCenter)
 
                 animationRightToCenter.setAnimationListener(object : Animation.AnimationListener{
                     override fun onAnimationRepeat(animation: Animation?) {}
 
                     override fun onAnimationEnd(animation: Animation?) {
-                        (Layouts[showingPostition].view.parent as ViewGroup).removeView(Layouts[showingPostition].view)
+                        (layouts[showingPosition].view.parent as ViewGroup).removeView(layouts[showingPosition].view)
                         animationRightToCenter.setAnimationListener(null)
 
-                        showingPostition++
+                        showingPosition++
                         isInAnimations = false
                         onPageSwitched()
                     }
@@ -80,20 +80,20 @@ abstract class TutorialActivity(LayoutRes : Array<Int>) : AppCompatActivity(){
 
 
             }
-            else if (index<showingPostition){
+            else if (index<showingPosition){
                 //Back
-                Layouts[showingPostition].view.startAnimation(animationCenterToRight)
-                addContentView(Layouts[index].view,Layouts[index].parmas)
-                Layouts[index].view.startAnimation(animationLeftToCenter)
+                layouts[showingPosition].view.startAnimation(animationCenterToRight)
+                addContentView(layouts[index].view,layouts[index].parmas)
+                layouts[index].view.startAnimation(animationLeftToCenter)
 
                 animationCenterToRight.setAnimationListener(object : Animation.AnimationListener{
                     override fun onAnimationRepeat(animation: Animation?) {}
 
                     override fun onAnimationEnd(animation: Animation?) {
-                        (Layouts[showingPostition].view.parent as ViewGroup).removeView(Layouts[showingPostition].view)
+                        (layouts[showingPosition].view.parent as ViewGroup).removeView(layouts[showingPosition].view)
                         animationCenterToRight.setAnimationListener(null)
 
-                        showingPostition--
+                        showingPosition--
                         isInAnimations = false
                         onPageSwitched()
                     }
@@ -105,22 +105,22 @@ abstract class TutorialActivity(LayoutRes : Array<Int>) : AppCompatActivity(){
                 })
 
             }
-            else if (index==showingPostition){
-                setContentView(Layouts[index].view)
+            else if (index==showingPosition){
+                setContentView(layouts[index].view)
             }
         }
 
     }
 
     fun next(){
-        show(showingPostition+1)
+        show(showingPosition+1)
     }
 
     fun back(){
-        show(showingPostition-1)
+        show(showingPosition-1)
     }
 
-    override fun <T : View?> findViewById(id: Int): T  = Layouts[showingPostition].view.findViewById<T>(id)
+    override fun <T : View?> findViewById(id: Int): T  = layouts[showingPosition].view.findViewById<T>(id)
 
 
 

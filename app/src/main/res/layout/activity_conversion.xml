@@ -15,7 +15,7 @@
         android:layout_height="250dp"
         android:id="@+id/appBar">
 
-            <com.google.android.material.appbar.AppBarLayout
+            <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/collapsing_bar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -62,7 +62,7 @@
                     android:background="?attr/colorPrimary"
                     app:popupTheme="@style/AppTheme.PopupOverlay"
                     app:layout_collapseMode="pin" />
-            </com.google.android.material.appbar.AppBarLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
