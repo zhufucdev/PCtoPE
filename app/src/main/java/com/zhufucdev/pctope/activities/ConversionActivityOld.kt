@@ -580,7 +580,7 @@ class ConversionActivityOld : BaseActivity() {
                 Snackbar.make(text, R.string.deleting, Snackbar.LENGTH_LONG).show()
                 var r: Boolean? = false
                 if (notpack.exists())
-                    r = DeleteFolder.Delete(notpack.toString())
+                    r = DeleteFolder.delete(notpack.toString())
                 else
                     r = true
 

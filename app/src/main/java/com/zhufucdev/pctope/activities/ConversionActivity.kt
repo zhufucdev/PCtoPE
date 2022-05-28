@@ -517,7 +517,7 @@ class ConversionActivity : TutorialActivity(layoutList) {
             override fun doInBackground(vararg voids: Void): Boolean {
                 Snackbar.make(text, R.string.deleting, Snackbar.LENGTH_LONG).show()
                 val r = if (notpack.exists())
-                    DeleteFolder.Delete(notpack.toString())
+                    DeleteFolder.delete(notpack.toString())
                 else
                     true
 

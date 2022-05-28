@@ -21,7 +21,7 @@ class DeletingCallback(whatWillBeDeleted: List<Textures>) : Snackbar.Callback() 
             Thread {
                 WhatWillBeDeleted.forEach {
                     mLog.i("Manager", "Deleting ${it.path}")
-                    DeleteFolder.Delete(it.path)
+                    DeleteFolder.delete(it.path)
                 }
             }.start()
         }

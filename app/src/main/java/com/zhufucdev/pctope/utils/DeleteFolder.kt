@@ -58,7 +58,7 @@ object DeleteFolder {
      * @param filePath  要删除的目录或文件
      * @return 删除成功返回 true，否则返回 false。
      */
-    fun Delete(filePath: String): Boolean {
+    fun delete(filePath: String): Boolean {
         val file = File(filePath)
         return if (!file.exists()) {
             false

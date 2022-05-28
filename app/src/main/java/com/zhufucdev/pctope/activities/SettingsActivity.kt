@@ -78,7 +78,7 @@ class SettingsActivity : AppCompatPreferenceActivity() {
 
         clearCache!!.onPreferenceClickListener = Preference.OnPreferenceClickListener{
             Thread {
-                externalCacheDir?.path?.let { cache -> DeleteFolder.Delete(cache) }
+                externalCacheDir?.path?.let { cache -> DeleteFolder.delete(cache) }
                 refreshCacheClear()
             }.start()
 
