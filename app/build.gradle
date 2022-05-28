@@ -8,8 +8,8 @@ android {
         applicationId "com.zhufuc.pctope"
         minSdkVersion 18
         targetSdkVersion 32
-        versionCode 56
-        versionName "2.6.3 weekly"
+        versionCode 57
+        versionName "2.7.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         vectorDrawables.useSupportLibrary = true
     }
