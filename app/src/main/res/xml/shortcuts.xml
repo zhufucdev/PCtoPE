@@ -10,8 +10,8 @@
 
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.zhufuc.pctope"
-            android:targetClass="com.zhufuc.pctope.activities.MainActivity" />
+            android:targetPackage="com.zhufucdev.pctope"
+            android:targetClass="com.zhufucdev.pctope.activities.MainActivity" />
         <categories
             android:name="android.shortcut.conversation"/>
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/activity_background"
-    tools:context="com.zhufuc.pctope.activities.FileChooserActivity">
+    tools:context="com.zhufucdev.pctope.activities.FileChooserActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

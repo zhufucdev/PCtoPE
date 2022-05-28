@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zhufuc.pctope.activities.AboutActivity"
+    tools:context="com.zhufucdev.pctope.activities.AboutActivity"
     android:background="@color/activity_background">
 
     <ScrollView
